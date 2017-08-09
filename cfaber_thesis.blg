@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: cfaber_thesis.aux
+The style file: apalike.bst
+Database file #1: ./cfaber_thesis.bib
+You've used 14 entries,
+            1935 wiz_defined-function locations,
+            553 strings with 5320 characters,
+and the built_in function-call counts, 3549 in all, are:
+= -- 380
+> -- 70
+< -- 10
++ -- 20
+- -- 20
+* -- 231
+:= -- 663
+add.period$ -- 49
+call.type$ -- 14
+change.case$ -- 83
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 162
+empty$ -- 261
+format.name$ -- 30
+if$ -- 684
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 3
+newline$ -- 80
+num.names$ -- 30
+pop$ -- 47
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 126
+stack$ -- 0
+substring$ -- 168
+swap$ -- 12
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 82
+warning$ -- 0
+while$ -- 20
+width$ -- 0
+write$ -- 190

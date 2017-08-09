@@ -1,0 +1,131 @@
+
+/* DTO for the Beaglebone black PID motor board Rev-B
+ * Ver - 2.0
+ * Clayton Faber - 2016
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+   compatible = "ti,beaglebone", "ti,beaglebone-black";
+
+   part-number = "BB-PRUPID-MOTOR";
+   version = "00A0";
+
+   /* This overlay uses the following resources */
+   exclusive-use =
+        //   P9-Header	//
+	"P9.17",	// I2C-2 - SCL
+	"P9.18",	// I2C-2 - SDA
+	"P9.22",        // Accel. GPIO Interrupt - IN2 gpio0[2]   
+	"P9.25",	// Accel. PRU0 Interrupt - IN1 (r31.t7)
+	"P9.27",	// PRU0 r30.t5 - Buffers Enable
+
+        //   P8-Header	//
+	"P8.11",	// PRU0 r30.t15 - PRU0 LED
+	"P8.12",	// GPIO1[14]    - GPIO LED
+	"P8.15",	// GPIO1[15]    - GPIO SWITCH
+	"P8.16",	// PRU0 r31.t14 - PRU0 SWITCH
+	"P8.27",	// PRU1 r31.t8  - ENC1
+	"P8.28",	// PRU1 r31.t10 - ENC3
+	"P8.29",	// PRU1 r31.t9  - ENC2
+	"P8.30",	// PRU1 r31.t11 - ENC4
+	"P8.39",	// PRU1 r30.t6  - M4-0
+	"P8.40",	// PRU1 r30.t7  - M4-1
+	"P8.41",	// PRU1 r30.t4  - M2-0
+	"P8.42",	// PRU1 r30.t5  - M2-1
+	"P8.43",	// PRU1 r30.t2  - M1-0
+	"P8.44",	// PRU1 r30.t3  - M1-1
+	"P8.45",	// PRU1 r30.t0  - M3-0
+	"P8.46",	// PRU1 r30.t1  - M3-1
+
+	//   Devices	//
+	"i2c1",      	// Claim use of I2C-2
+		//NOTE: Although this says i2c1 it mounts in /dev as I2C-2 and is labled on 
+		//	Beaglebone Black schematics as I2C1. On the Motor Board it is labled
+		//	as I2C-2 (same as the /dev name) to avoid confusion
+	"pru0",		// Claim use of the PRUs here
+	"pru1";		// and here
+ 
+
+
+   fragment@0 {
+      target = <&am33xx_pinmux>;
+      __overlay__ {
+
+         gpio_pins: pinmux_gpio_pins {         // The GPIO pins
+            pinctrl-single,pins = <
+		0x150 0x27 // P9_22 MODE7 | INPUT  | GPIO Pull-Down  //Used for Accelerometer Interrupt (opt.) 
+                0x030 0x07 // P8_12 MODE7 | OUTPUT | GPIO Output LED //GPIO Status LED
+		0x03c 0x27 // P8_15 MODE7 | INPUT  | GPIO pull-down  //GPIO Switch Input
+            >;
+         };
+
+	 pru_pru_pins: pinmux_pru_pru_pins {   // The PRU pin modes
+	    pinctrl-single,pins = <
+		//	P9	//
+		0x1ac 0x26  // P9_25 pru0_r31.t7,  MODE6 | INPUT  | PULL DWN | PRU // Used for Accelerometer Interrupt (opt.)
+		0x1a4 0x0D  // P9_27 pru0_r30.t5,  MODE5 | OUTPUT | PULL UP  | PRU // Used to enable buffers
+		//	P8	//
+		0x034 0x06  // P8_11 pru0_r30.t15, MODE6 | OUTPUT | PULL UP  | PRU // Used for PRU0 LED
+		0x038 0x26  // P8_16 pru0_r31.t14, MODE6 | INPUT  | PULL DWN | PRU // Used for PRU0 SWITCH
+		0x0E0 0x26  // P8_27 pru1_r31.t8,  MODE6 | INPUT  | PULL DWN | PRU // ENC1 Input
+		0x0E4 0x26  // P8_29 pru1_r31.t9,  MODE6 | INPUT  | PULL DWN | PRU // ENC2 Input
+		0x0E8 0x26  // P8_28 pru1_r31.t10, MODE6 | INPUT  | PULL DWN | PRU // ENC3 Input
+		0x0EC 0x26  // P8_30 pru1_r31.t11, MODE6 | INPUT  | PULL DWN | PRU // ENC4 Input
+		0x0A0 0x0D  // P8_45 pru1_r30.t0,  MODE5 | OUTPUT | DISABLE  | PRU // M3-0 Output
+		0x0A4 0x0D  // P8_46 pru1_r30.t1,  MODE5 | OUTPUT | DISABLE  | PRU // M3-1 Output
+		0x0A8 0x0D  // P8_43 pru1_r30.t2,  MODE5 | OUTPUT | DISABLE  | PRU // M1-0 Output 
+		0x0AC 0x0D  // P8_44 pru1_r30.t3,  MODE5 | OUTPUT | DISABLE  | PRU // M1-1 Output
+		0x0B0 0x0D  // P8_41 pru1_r30.t4,  MODE5 | OUTPUT | DISABLE  | PRU // M2-0 Output
+		0x0B4 0x0D  // P8_42 pru1_r30.t5,  MODE5 | OUTPUT | DISABLE  | PRU // M2-1 Output
+		0x0B8 0x0D  // P8_39 pru1_r30.t6,  MODE5 | OUTPUT | DISABLE  | PRU // M4-0 Output
+		0x0BC 0x0D  // P8_40 pru1_r30.t7,  MODE5 | OUTPUT | DISABLE  | PRU // M4-1 Output
+            >;
+         };
+	 
+	 bb_i2c1_pins: pinmux_bb_i2c1_pins {
+                pinctrl-single,pins = <
+                0x158 0x72    // i2c1_sda,  SLEWCTRL_SLOW | IMPUT_PULLUP | MODE2
+                0x15c 0x72    // i2c1_scl,  SLEWCTRL_SLOW | INPUT_PULLUP | MODE2
+            >;
+         };
+      };
+   };
+
+   fragment@1 {         // Enable the PRUSS
+      target = <&pruss>;
+      __overlay__ {
+         status = "okay";
+         pinctrl-names = "default";
+         pinctrl-0 = <&pru_pru_pins>;
+      };
+   };
+
+   fragment@2 {         // Enable the GPIOs
+      target = <&ocp>;
+      __overlay__ {
+         gpio_helper {
+            compatible = "gpio-of-helper";
+            status = "okay";
+            pinctrl-names = "default";
+            pinctrl-0 = <&gpio_pins>;
+         };
+      };
+   };
+   
+   fragment@3{
+      target = <&i2c1>;    
+      __overlay__ {
+      	status = "okay";
+      	pinctrl-names = "default";
+      	pinctrl-0 = <&bb_i2c1_pins>;
+	clock-frequency = <100000>;
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+
+      };
+   };
+};
