@@ -1,0 +1,87 @@
+#!/usr/bin/env sh
+
+# These two variables ar defined and exported from .bashrc file!
+# export PRU_SDK_DIR=/root/pru_sdk
+# export PRU_CGT_DIR=/root/pru_2.0.0B2
+
+# compile support library without optimization
+# enabled to keep argument passing convention
+
+#
+# Following option turns optimization on -O3
+# Does a great job of optimizing out a a delay loop!
+# 
+#
+
+PRU=./pru
+INC=./
+
+echo ""
+
+echo "==> Compiling pru0Lib ..."
+$PRU_CGT_DIR/bin/clpru \
+--silicon_version=2 \
+--hardware_mac=on \
+-i$PRU_CGT_DIR/include \
+-i$INC/include \
+-i$PRU_CGT_DIR/lib \
+-c \
+$PRU/pru0Lib.c
+
+echo "==> Compiling motorLib ..."
+$PRU_CGT_DIR/bin/clpru \
+--silicon_version=2 \
+--hardware_mac=on \
+-i$PRU_CGT_DIR/include \
+-i$INC/include \
+-i$PRU_CGT_DIR/lib \
+-c \
+$PRU/motorLib.c
+
+echo "==> Compiling pru0 ..."
+
+$PRU_CGT_DIR/bin/clpru \
+--silicon_version=2 \
+--hardware_mac=on \
+-i$PRU_CGT_DIR/include \
+-i$INC/include \
+-i$PRU_CGT_DIR/lib \
+-c \
+$PRU/pru0.c 
+
+# compile and link
+
+echo "==> Linking PRU code ..."
+
+$PRU_CGT_DIR/bin/clpru \
+--silicon_version=2 \
+--hardware_mac=on \
+-i$PRU_CGT_DIR/include \
+-i$INC/include \
+-i$PRU_CGT_DIR/lib \
+-z \
+pru0Lib.obj \
+motorLib.obj \
+pru0.obj \
+-llibc.a \
+-m pru0.map \
+-o pru0.elf \
+./pru0.cmd
+
+
+# convert ELF to binary file pru_main.bin
+
+echo "==> Converting .elf to .bin format"
+
+$PRU_CGT_DIR/bin/hexpru \
+./bin.cmd \
+./pru0.elf
+
+
+# build host program
+
+echo ""
+echo "==> Calling make to build host program and to assemble any .p files"
+echo ""
+make clean
+make START_ADDR=`./get_start_addr.sh ./pru0.elf`
