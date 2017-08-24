@@ -1,0 +1,72 @@
+\BOOKMARK [-1][-]{Doc-Start}{ABSTRACT}{}% 1
+\BOOKMARK [-1][-]{Doc-Start}{ACKNOWLEDGEMENTS}{}% 2
+\BOOKMARK [-1][-]{Doc-Start}{LIST OF FIGURES}{}% 3
+\BOOKMARK [-1][-]{Doc-Start}{LIST OF TABLES}{}% 4
+\BOOKMARK [0][-]{chapter.1}{INTRODUCTION}{Doc-Start}% 5
+\BOOKMARK [1][-]{section.1.1}{Growing World-Wide Interest in Robotics}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Motivation for Thesis Work}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Types of Motors Used in Mobile Robotics}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.4}{Motor Controllers}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.5}{Single-Board Computers}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.6}{Texas Instruments' BeagleBone Black}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.7}{Object and Scope of Thesis}{chapter.1}% 12
+\BOOKMARK [0][-]{chapter.2}{SIUE ROBOT CAPE DESIGN}{Doc-Start}% 13
+\BOOKMARK [1][-]{section.2.1}{Hardware Design Objectives}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{System Overview}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.3}{LINUX Device Tree Overlay}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.4}{I2C Interface}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.5}{H-Bidge Circuits}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.6}{Buffers and XOR Gate}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.7}{Real-Time Clock}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.8}{Accelerometer}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.9}{Servo Motor Controller}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.10}{User LEDs and Switches}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.11}{Schematic and PCB Layout}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{PRU SOFTWARE}{Doc-Start}% 25
+\BOOKMARK [1][-]{section.3.1}{Software Design Objectives}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{PID Algorithm Overview}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{Shared Memory Map}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{PRU 1: Hardware Interface}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.5}{PRU 0: PID Controller}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{DEMONSTRATION ROBOT}{Doc-Start}% 31
+\BOOKMARK [1][-]{section.4.1}{Robot Construction}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{PRU Library Routines}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Beaglebone Black Library Routines}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Robot Library Routines}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Graphical User Interface}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.6}{Demonstration Program}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.7}{Results of Navigation Test}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{SUMMARY, COMCLUSIONS, AND FUTURE WORK}{Doc-Start}% 39
+\BOOKMARK [1][-]{section.5.1}{Summary}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.2}{Conclusions}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{Future Work}{chapter.5}% 42
+\BOOKMARK [-1][-]{section.5.3}{REFERENCES}{}% 43
+\BOOKMARK [-1][-]{section.5.3}{APPENDICES}{}% 44
+\BOOKMARK [0][-]{chapter.1}{Global Defines and Structures}{section.5.3}% 45
+\BOOKMARK [0][-]{chapter.2}{Fixed-point Macros}{section.5.3}% 46
+\BOOKMARK [0][-]{chapter.3}{PRU 1 Assembly Code}{section.5.3}% 47
+\BOOKMARK [1][-]{section.3.1}{pru1.h}{chapter.3}% 48
+\BOOKMARK [1][-]{section.3.2}{pru1.p}{chapter.3}% 49
+\BOOKMARK [0][-]{chapter.4}{PRU 0 C Code}{section.5.3}% 50
+\BOOKMARK [1][-]{section.4.1}{pru0.h}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.2}{pru0.c}{chapter.4}% 52
+\BOOKMARK [1][-]{section.4.3}{pru0Lib.h}{chapter.4}% 53
+\BOOKMARK [1][-]{section.4.4}{pru0Lib.c}{chapter.4}% 54
+\BOOKMARK [1][-]{section.4.5}{motorLib.h}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.6}{motorLib.c}{chapter.4}% 56
+\BOOKMARK [0][-]{chapter.5}{ARM C Code}{section.5.3}% 57
+\BOOKMARK [1][-]{section.5.1}{beaglebot.c}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.2}{PRUlib.h}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.3}{PRUlib.c}{chapter.5}% 60
+\BOOKMARK [1][-]{section.5.4}{robotLib.h}{chapter.5}% 61
+\BOOKMARK [1][-]{section.5.5}{robotLib.c}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.6}{bbbLib.h}{chapter.5}% 63
+\BOOKMARK [1][-]{section.5.7}{bbbLib.c}{chapter.5}% 64
+\BOOKMARK [0][-]{chapter.6}{GUI Tcl/Tk Code}{section.5.3}% 65
+\BOOKMARK [0][-]{chapter.7}{Compile/Assemble Scripts}{section.5.3}% 66
+\BOOKMARK [1][-]{section.7.1}{Build Script}{chapter.7}% 67
+\BOOKMARK [1][-]{section.7.2}{Makefile}{chapter.7}% 68
+\BOOKMARK [0][-]{chapter.8}{SIUE Robot Cape Pins}{section.5.3}% 69
+\BOOKMARK [1][-]{section.8.1}{Device Tree Overlay File}{chapter.8}% 70
+\BOOKMARK [1][-]{section.8.2}{Overlay Install Script}{chapter.8}% 71
+\BOOKMARK [1][-]{section.8.3}{Quick Reference Guide}{chapter.8}% 72
