@@ -1,35 +1,11 @@
 \noindent \mbox {Figure}\hfill \makebox [1em]{Page}\par 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Authors's Robot for IEEE Competition\relax }}{3}{figure.caption.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces SIUE Motor Controller Board Using Cypress PSoC\relax }}{8}{figure.caption.3}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Dual Motor Controller Cape (DMCC)\relax }}{10}{figure.caption.4}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Raspberry Pi Offerings \relax }}{12}{figure.caption.5}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Authors's Robot for IEEE Competition\relax }}{1}{figure.caption.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces SIUE Robot Cape\relax }}{18}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces DRV8872 Functional Block Diagram\relax }}{23}{figure.caption.10}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Encoder Waveforms Using XOR Gate\relax }}{25}{figure.caption.11}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces PCB Layout of SIUE Robot Cape\relax }}{30}{figure.caption.12}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Schematic of SIUE Robot Cape (1 of 2)\relax }}{31}{figure.caption.13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Schematic of SIUE Robot Cape (2 of 2)\relax }}{32}{figure.caption.14}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces PCB Layout of SIUE Robot Cape\relax }}{6}{figure.caption.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Block Diagram of PID Control Used in Differential Drive Design\relax }}{35}{figure.caption.15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Shared-Memory Map\relax }}{38}{figure.caption.16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PRU 1 Register Aliases\relax }}{41}{figure.caption.17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart for PRU 1 Code\relax }}{45}{figure.caption.20}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Code Flowchart of PRU 0 for a Typical Move Command\relax }}{49}{figure.caption.24}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Demonstration Robot (top view)\relax }}{54}{figure.caption.25}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Demonstration Robot (bottom view)\relax }}{54}{figure.caption.26}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Process of Loading and Executing a Program Using PRUSSDRV and Linux\relax }}{55}{figure.caption.27}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces ARM fwd() Routine Flow Diagram\relax }}{60}{figure.caption.31}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tcl/Tk GUI Ensures Ease-Of-Use\relax }}{65}{figure.caption.35}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Robot Before (left) and After (right) Run - Trial \#1\relax }}{69}{figure.caption.36}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Robot before (left) and after (right) After Run, - Trial \#2\relax }}{69}{figure.caption.37}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Robot Before (left) and After (right) Run - Trial \#1\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Robot before (left) and after (right) After Run, - Trial \#2\relax }}{9}{figure.caption.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

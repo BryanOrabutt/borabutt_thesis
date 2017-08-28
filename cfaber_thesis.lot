@@ -1,28 +1,10 @@
 \noindent \mbox {Table}\hfill \makebox [1em]{Page}\par 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison of Motor Types Used in Robotics.\relax }}{5}{table.caption.2}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison of Motor Types Used in Robotics.\relax }}{3}{table.caption.2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces BeagleBone Black Pins Used by SIUE Robot Cape\relax }}{19}{table.caption.7}
-\contentsline {table}{\numberline {2.2}{\ignorespaces EEPROM Memory Map\relax }}{20}{table.caption.8}
-\contentsline {table}{\numberline {2.3}{\ignorespaces I2C-1 Addresses\relax }}{22}{table.caption.9}
+\contentsline {table}{\numberline {2.1}{\ignorespaces BeagleBone Black Pins Used by SIUE Robot Cape\relax }}{5}{table.caption.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces PRU 1 Macros (1 of 2)\relax }}{42}{table.caption.18}
-\contentsline {table}{\numberline {3.2}{\ignorespaces PRU 1 Macros (2 of 2)\relax }}{43}{table.caption.19}
-\contentsline {table}{\numberline {3.3}{\ignorespaces PRU 0 Functions\relax }}{46}{table.caption.21}
-\contentsline {table}{\numberline {3.4}{\ignorespaces \emph {motorLib} Function and Fix Macros (1 of 2)\relax }}{47}{table.caption.22}
-\contentsline {table}{\numberline {3.5}{\ignorespaces \emph {motorLib} Function and Fix Macros (2 of 2)\relax }}{48}{table.caption.23}
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces \emph {PRUlib} Functions\relax }}{56}{table.caption.28}
-\contentsline {table}{\numberline {4.2}{\ignorespaces \emph {bbbLib} Functions (1 of 2) \relax }}{58}{table.caption.29}
-\contentsline {table}{\numberline {4.3}{\ignorespaces \emph {bbbLib} Functions (2 of 2) \relax }}{59}{table.caption.30}
-\contentsline {table}{\numberline {4.4}{\ignorespaces \emph {robotLib} Functions (1 of 3)\relax }}{61}{table.caption.32}
-\contentsline {table}{\numberline {4.5}{\ignorespaces \emph {robotLib} Functions (2 of 3)\relax }}{62}{table.caption.33}
-\contentsline {table}{\numberline {4.6}{\ignorespaces \emph {robotLib} Functions (3 of 3)\relax }}{63}{table.caption.34}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces PRU 1 Macros (1 of 2)\relax }}{8}{table.caption.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

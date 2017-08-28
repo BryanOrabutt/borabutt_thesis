@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.7.6)  6 JUL 2017 11:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.7.6)  28 AUG 2017 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,20 +486,20 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 (./cfaber_thesis.aux)
 \openout1 = `cfaber_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -535,7 +535,7 @@ LaTeX Font Info:    ... okay on input line 62.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 62.
+LaTeX Info: Redefining \microtypecontext on input line 61.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -587,7 +587,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 62.
+Package hyperref Info: Link coloring ON on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -597,9 +597,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
 
 (./cfaber_thesis.out) (./cfaber_thesis.out)
 \@outlinefile=\write3
@@ -618,317 +618,125 @@ Package caption Info: End \AtBeginDocument code.
 {/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Copyright Page
 \c@temppage=\count145
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
  [0
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+] [2
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+] [3
+
+
+]
+(./cfaber_thesis.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
- [2
+) [4
 
-] [3] [4
-
-
-]
-(./cfaber_thesis.toc [5
-
-] [6])
+] [5])
 \tf@toc=\write4
 \openout4 = `cfaber_thesis.toc'.
 
- [7] (./cfaber_thesis.lof)
+
+[6] (./cfaber_thesis.lof)
 \tf@lof=\write5
 \openout5 = `cfaber_thesis.lof'.
+
+ [7
+
+] (./cfaber_thesis.lot)
+\tf@lot=\write6
+\openout6 = `cfaber_thesis.lot'.
 
  [8
 
 ]
-(./cfaber_thesis.lot)
-\tf@lot=\write6
-\openout6 = `cfaber_thesis.lot'.
-
- [9
-
-]
 Chapter 1.
+<./images/FaberRobot.png, id=460, 745.78625pt x 719.68875pt>
+File: ./images/FaberRobot.png Graphic file (type png)
+
+<use ./images/FaberRobot.png>
+Package pdftex.def Info: ./images/FaberRobot.png used on input line 106.
+(pdftex.def)             Requested size: 447.4752pt x 431.81659pt.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[1
+ [1
 
 
-] <./images/FaberRobot.png, id=470, 745.78625pt x 719.68875pt>
-File: ./images/FaberRobot.png Graphic file (type png)
-
-<use ./images/FaberRobot.png>
-Package pdftex.def Info: ./images/FaberRobot.png used on input line 127.
-(pdftex.def)             Requested size: 447.4752pt x 431.81659pt.
- [2] [3 <./images/FaberRobot.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
- [4]
-Overfull \hbox (1.46495pt too wide) in paragraph at lines 175--194
+ <./images/FaberRobot.png>]
+Overfull \hbox (1.46495pt too wide) in paragraph at lines 143--162
  [] 
  []
 
-[5] [6] <./images/PSoC_board.png, id=500, 582.67688pt x 520.94624pt>
-File: ./images/PSoC_board.png Graphic file (type png)
-
-<use ./images/PSoC_board.png>
-Package pdftex.def Info: ./images/PSoC_board.png used on input line 216.
-(pdftex.def)             Requested size: 437.00659pt x 390.70872pt.
- [7] [8 <./images/PSoC_board.png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-
- []
-
-<./images/DMCC.jpg, id=517, 2055.68pt x 1370.11874pt>
-File: ./images/DMCC.jpg Graphic file (type jpg)
- <use ./images/DMCC.jpg>
-Package pdftex.def Info: ./images/DMCC.jpg used on input line 237.
-(pdftex.def)             Requested size: 308.3387pt x 205.50894pt.
-
-[10 <./images/DMCC.jpg>]
-<./images/pispecs2.png, id=524, 1120.185pt x 582.175pt>
-File: ./images/pispecs2.png Graphic file (type png)
-
-<use ./images/pispecs2.png>
-Package pdftex.def Info: ./images/pispecs2.png used on input line 252.
-(pdftex.def)             Requested size: 448.06606pt x 232.86588pt.
- [11] [12 <./images/pispecs2.png>] [13] [14]
-[15]
+[2] [3] [4]
 Chapter 2.
-[16
-
-] <./images/BoardDiagram.jpg, id=556, 867.24pt x 578.16pt>
-File: ./images/BoardDiagram.jpg Graphic file (type jpg)
-
-<use ./images/BoardDiagram.jpg>
-Package pdftex.def Info: ./images/BoardDiagram.jpg used on input line 314.
-(pdftex.def)             Requested size: 607.06387pt x 404.70924pt.
-
-<./images/Pinlist.png, id=561, 1551.7975pt x 608.2725pt>
+<./images/Pinlist.png, id=487, 1551.7975pt x 608.2725pt>
 File: ./images/Pinlist.png Graphic file (type png)
 
 <use ./images/Pinlist.png>
-Package pdftex.def Info: ./images/Pinlist.png used on input line 328.
+Package pdftex.def Info: ./images/Pinlist.png used on input line 193.
 (pdftex.def)             Requested size: 465.54285pt x 182.48315pt.
 
-Overfull \hbox (13.85535pt too wide) in paragraph at lines 328--329
+Overfull \hbox (13.85535pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
-[17] [18 <./images/BoardDiagram.jpg>]
-<./images/eeprom_setup.png, id=571, 621.07031pt x 691.08188pt>
-File: ./images/eeprom_setup.png Graphic file (type png)
-
-<use ./images/eeprom_setup.png>
-Package pdftex.def Info: ./images/eeprom_setup.png used on input line 335.
-(pdftex.def)             Requested size: 465.80159pt x 518.31013pt.
-
-Overfull \hbox (14.11409pt too wide) in paragraph at lines 335--336
- [][] 
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-[19 <./images/Pinlist.png>] [20 <./images/eeprom_setup.png (PNG copy)>]
-[21] <./images/I2C_addr.png, id=588, 452.69125pt x 217.81375pt>
-File: ./images/I2C_addr.png Graphic file (type png)
-
-<use ./images/I2C_addr.png>
-Package pdftex.def Info: ./images/I2C_addr.png used on input line 363.
-(pdftex.def)             Requested size: 226.34506pt x 108.9066pt.
-
-<./images/DRV8872_block.PNG, id=589, 507.39563pt x 392.96812pt>
-File: ./images/DRV8872_block.PNG Graphic file (type png)
-
-<use ./images/DRV8872_block.PNG>
-Package pdftex.def Info: ./images/DRV8872_block.PNG used on input line 372.
-(pdftex.def)             Requested size: 431.28833pt x 334.02446pt.
- [22 <./images/I2C_addr.png>] [23 <./images/DRV8872_block.PNG>] [24] <./images/
-encoder.jpg, id=612, 128.8815pt x 65.5248pt>
-File: ./images/encoder.jpg Graphic file (type jpg)
-
-<use ./images/encoder.jpg>
-Package pdftex.def Info: ./images/encoder.jpg used on input line 399.
-(pdftex.def)             Requested size: 257.76236pt x 131.04926pt.
- [25 <./images/encoder.jpg>] [26] [27] [28]
-<./images/layout.PNG, id=640, 1029.8475pt x 653.44125pt>
+<./images/layout.PNG, id=488, 1029.8475pt x 653.44125pt>
 File: ./images/layout.PNG Graphic file (type png)
 
 <use ./images/layout.PNG>
-Package pdftex.def Info: ./images/layout.PNG used on input line 459.
+Package pdftex.def Info: ./images/layout.PNG used on input line 206.
 (pdftex.def)             Requested size: 514.9225pt x 326.71982pt.
+ [5
 
-<./images/schematic_1.png, id=641, 2208.25pt x 1706.375pt>
-File: ./images/schematic_1.png Graphic file (type png)
-
-<use ./images/schematic_1.png>
-Package pdftex.def Info: ./images/schematic_1.png used on input line 466.
-(pdftex.def)             Requested size: 552.06116pt x 426.59271pt.
-
-<./images/schematic_2.png, id=642, 2208.25pt x 1706.375pt>
-File: ./images/schematic_2.png Graphic file (type png)
-
-<use ./images/schematic_2.png>
-Package pdftex.def Info: ./images/schematic_2.png used on input line 473.
-(pdftex.def)             Requested size: 552.06116pt x 426.59271pt.
- [29] [30 <./images/layout.PNG>] [31 <./images/schematic_1.png>] [32 <./images/
-schematic_2.png>]
+ <./images/Pinlist.png>] [6 <./images/layout.PNG>]
 Chapter 3.
-[33
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 256.
+[7
 
-]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- <./images_ch3/PID_diff_flow.png, id=668, 735.74875pt x 621.32124pt>
-File: ./images_ch3/PID_diff_flow.png Graphic file (type png)
-
-<use ./images_ch3/PID_diff_flow.png>
-Package pdftex.def Info: ./images_ch3/PID_diff_flow.png used on input line 503.
-
-(pdftex.def)             Requested size: 331.08388pt x 279.59198pt.
- [34] [35 <./images_ch3/PID_diff_flow.png>] [36]
-
-LaTeX Warning: Reference `fig:Shared Memory' on page 37 undefined on input line
- 535.
-
-[37] <./images_ch3/sharedmemory-define.png, id=692, 1032.85875pt x 672.5125pt>
-File: ./images_ch3/sharedmemory-define.png Graphic file (type png)
-
-<use ./images_ch3/sharedmemory-define.png>
-Package pdftex.def Info: ./images_ch3/sharedmemory-define.png used on input lin
-e 540.
-(pdftex.def)             Requested size: 361.50598pt x 235.38289pt.
- [38 <./images_ch3/sharedmemory-define.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
- [39] <./images_ch3/pru1_define.png, id=706, 381.425pt x 620.3175pt>
-File: ./images_ch3/pru1_define.png Graphic file (type png)
-
-<use ./images_ch3/pru1_define.png>
-Package pdftex.def Info: ./images_ch3/pru1_define.png used on input line 564.
-(pdftex.def)             Requested size: 286.06804pt x 465.23698pt.
- [40] [41 <./images_ch3/pru1_define.png>]
-[42] [43] <./images_ch3/pru1flow.jpg, id=726, 615.29875pt x 784.9325pt>
-File: ./images_ch3/pru1flow.jpg Graphic file (type jpg)
-
-<use ./images_ch3/pru1flow.jpg>
-Package pdftex.def Info: ./images_ch3/pru1flow.jpg used on input line 637.
-(pdftex.def)             Requested size: 430.70618pt x 549.449pt.
- [44] [45 <./images_ch3/pru1flow.jpg>] [46]
-<./images_ch3/PRU0FlowNew.png, id=747, 1143.27126pt x 773.89125pt>
-File: ./images_ch3/PRU0FlowNew.png Graphic file (type png)
-
-<use ./images_ch3/PRU0FlowNew.png>
-Package pdftex.def Info: ./images_ch3/PRU0FlowNew.png used on input line 706.
-(pdftex.def)             Requested size: 571.63423pt x 386.94467pt.
- [47] [48] [49 <./images_ch3/PRU0FlowNew.png>] [50] [51]
-Chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
-
- []
-
-[52
-
-] <./images_ch4/robot_top.JPG, id=775, 3083.52pt x 2312.64pt>
-File: ./images_ch4/robot_top.JPG Graphic file (type jpg)
-
-<use ./images_ch4/robot_top.JPG>
-Package pdftex.def Info: ./images_ch4/robot_top.JPG used on input line 773.
-(pdftex.def)             Requested size: 308.37007pt x 231.27754pt.
- [53]
-<./images_ch4/robot_bot.JPG, id=780, 3083.52pt x 2312.64pt>
-File: ./images_ch4/robot_bot.JPG Graphic file (type jpg)
-
-<use ./images_ch4/robot_bot.JPG>
-Package pdftex.def Info: ./images_ch4/robot_bot.JPG used on input line 780.
-(pdftex.def)             Requested size: 308.37007pt x 231.27754pt.
- [54 <./images_ch4/robot_top.JPG> <./images_ch4/robot_bot.JPG>] <./images/PRUSS
-Load.JPG, id=787, 368.577pt x 75.1608pt>
-File: ./images/PRUSSLoad.JPG Graphic file (type jpg)
-
-<use ./images/PRUSSLoad.JPG>
-Package pdftex.def Info: ./images/PRUSSLoad.JPG used on input line 795.
-(pdftex.def)             Requested size: 460.7201pt x 93.95074pt.
-
-Overfull \hbox (9.0326pt too wide) in paragraph at lines 795--796
- [][] 
- []
-
-[55 <./images/PRUSSLoad.JPG>] [56] [57] [58]
-<./images/ArmFlow.png, id=815, 1493.58pt x 634.37pt>
-File: ./images/ArmFlow.png Graphic file (type png)
-
-<use ./images/ArmFlow.png>
-Package pdftex.def Info: ./images/ArmFlow.png used on input line 866.
-(pdftex.def)             Requested size: 597.42142pt x 253.7435pt.
- [59] [60 <./images/ArmFlow.png>] [61] [62] [63]
-<./images/GUI.png, id=838, 803.0pt x 789.95125pt>
-File: ./images/GUI.png Graphic file (type png)
- <use ./images/GUI.png>
-Package pdftex.def Info: ./images/GUI.png used on input line 942.
-(pdftex.def)             Requested size: 401.49902pt x 394.97466pt.
-
-[64] [65 <./images/GUI.png>] [66] [67] [68]
-<./images/robot-test1.png, id=870, 1284.8pt x 481.8pt>
+] [8] <./images/robot-test1.png, id=514, 1284.8pt x 481.8pt>
 File: ./images/robot-test1.png Graphic file (type png)
 
 <use ./images/robot-test1.png>
-Package pdftex.def Info: ./images/robot-test1.png used on input line 987.
+Package pdftex.def Info: ./images/robot-test1.png used on input line 263.
 (pdftex.def)             Requested size: 449.68674pt x 168.63252pt.
 
-<./images/robot-test2.png, id=871, 1284.8pt x 481.8pt>
+<./images/robot-test2.png, id=515, 1284.8pt x 481.8pt>
 File: ./images/robot-test2.png Graphic file (type png)
 
 <use ./images/robot-test2.png>
-Package pdftex.def Info: ./images/robot-test2.png used on input line 994.
+Package pdftex.def Info: ./images/robot-test2.png used on input line 270.
 (pdftex.def)             Requested size: 449.68674pt x 168.63252pt.
- [69 <./images/robot-test1.png> <./images/robot-test2.png>]
-Chapter 5.
-[70
+ [9 <./images/robot-test1.png> <./images/robot-test2.png>]
+Chapter 4.
+[10
 
-] [71] [72] (./cfaber_thesis.bbl
+]
+Chapter 5.
+[11
+
+] (./cfaber_thesis.bbl
 Missing character: There is no ¬ in font cmti12!
 Missing character: There is no ± in font cmti12!
-) [73
+) [12
 
 ]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -940,119 +748,21 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1082 \chapter{Global Defines and Structures}
-                                              
+l.335 \chapter{Global Defines and Structures}
+                                             
 Appendix A.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1083.
-(./include/mem.h [74
+nput line 336.
+(./include/mem.h [13
 
 
-] [75]) [76]pdfTeX warning (ext4): destination with the same identifier (name{c
+] [14]) [15]pdfTeX warning (ext4): destination with the same identifier (name{c
 hapter.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1085 \chapter{Fixed-point Macros}
-                                   
+l.338 \chapter{GUI Tcl/Tk Code}
+                               
 Appendix B.
-(./include/fix.h) [77
-
-]pdfTeX warning (ext4): destination with the same identifier (name{chapter.3}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1088 \chapter{PRU 1 Assembly Code}
-                                    
-Appendix C.
-pdfTeX warning (ext4): destination with the same identifier (name{section.3.1})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1090 \section{pru1.h}
-                        (./pru_code/pru1.h [78
-
-] [79] [80] [81] [82] [83])
-[84]pdfTeX warning (ext4): destination with the same identifier (name{section.3
-.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1093 \section{pru1.p}
-                        (./pru_code/pru1.p [85]) [86]pdfTeX warning (ext4): des
-tination with the same identifier (name{chapter.4}) has been already used, dupl
-icate ignored
-<to be read again> 
-                   \relax 
-l.1096 \chapter{PRU 0 C Code}
-                             
-Appendix D.
-pdfTeX warning (ext4): destination with the same identifier (name{section.4.1})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1098 \section{pru0.h}
-                        (./pru_code/pru0.h) [87
-
-]pdfTeX warning (ext4): destination with the same identifier (name{section.4.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1101 \section{pru0.c}
-                        (./pru_code/pru0.c [88]) [89]pdfTeX warning (ext4): des
-tination with the same identifier (name{section.4.3}) has been already used, du
-plicate ignored
-<to be read again> 
-                   \relax 
-l.1104 \section{pru0Lib.h}
-                           (./pru_code/pru0Lib.h) [90]pdfTeX warning (ext4): de
-stination with the same identifier (name{section.4.4}) has been already used, d
-uplicate ignored
-<to be read again> 
-                   \relax 
-l.1107 \section{pru0Lib.c}
-                           (./pru_code/pru0Lib.c [91]) [92]pdfTeX warning (ext4
-): destination with the same identifier (name{section.4.5}) has been already us
-ed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1110 \section{motorLib.h}
-                            (./pru_code/motorLib.h) [93]pdfTeX warning (ext4): 
-destination with the same identifier (name{section.4.6}) has been already used,
- duplicate ignored
-<to be read again> 
-                   \relax 
-l.1113 \section{motorLib.c}
-                            (./pru_code/motorLib.c [94] [95] [96] [97] [98])
-[99]pdfTeX warning (ext4): destination with the same identifier (name{chapter.5
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1116 \chapter{ARM C Code}
-                           
-Appendix E.
-pdfTeX warning (ext4): destination with the same identifier (name{section.5.1})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1118 \section{beaglebot.c}
-                             (./arm_c_code/beaglebot.c [100
-
-]) [101]pdfTeX warning (ext4): destination with the same identifier (name{secti
-on.5.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1121 \section{PRUlib.h}
-                          (./arm_c_code/PRUlib.h) [102]pdfTeX warning (ext4): d
-estination with the same identifier (name{section.5.3}) has been already used, 
-duplicate ignored
-<to be read again> 
-                   \relax 
-l.1124 \section{PRUlib.c}
-                          (./arm_c_code/PRUlib.c [103]) [104]
-(./arm_c_code/robotLib.h [105]) [106] (./arm_c_code/robotLib.c [107] [108]
-[109] [110] [111] [112] [113] [114]) [115] (./arm_c_code/bbbLib.h [116]
-[117]) [118] (./arm_c_code/bbbLib.c [119] [120] [121] [122] [123] [124]
-[125] [126] [127]) [128]
-Appendix F.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -1065,74 +775,273 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 ) (./tcl/gui.tcl
-[129
+[16
 
-] [130] [131] [132]) [133]
-Appendix G.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(./scripts/build [134
-
-]) [135]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-)
-(./scripts/Makefile) [136] [137]
-Appendix H.
-(./scripts/BB-PRUPID-MOTOR-00A0.dts [138
-
-] [139]) [140] (./scripts/install.sh)
-[141] <./images/pins.pdf, id=4524, 614.295pt x 794.97pt>
-File: ./images/pins.pdf Graphic file (type pdf)
-
-<use ./images/pins.pdf>
-Package pdftex.def Info: ./images/pins.pdf used on input line 1164.
-(pdftex.def)             Requested size: 411.5755pt x 532.62714pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1166.
- [142 <./images/pins.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1166.
+] [17] [18] [19])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
  (./cfaber_thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1166.
-
-Package rerunfilecheck Info: File `cfaber_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FE669D5A26CA64FE64F3A20C92215FBA;4564.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `cfaber_thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1166.
+Package rerunfilecheck Info: Checksums for `cfaber_thesis.out':
+(rerunfilecheck)             Before: FE669D5A26CA64FE64F3A20C92215FBA;4564
+(rerunfilecheck)             After:  C506E60FDC3D9F237BB21011F1FD889C;985.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 18166 strings out of 494820
- 268137 string characters out of 3178050
- 586926 words of memory out of 3000000
- 17366 multiletter control sequences out of 15000+200000
- 16028 words of font info for 111 fonts, out of 3000000 for 9000
+ 13042 strings out of 494820
+ 194195 string characters out of 3178050
+ 585671 words of memory out of 3000000
+ 15415 multiletter control sequences out of 15000+200000
+ 11405 words of font info for 62 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 37i,12n,50p,1011b,2178s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt8.pfb>
-Output written on cfaber_thesis.pdf (152 pages, 9724992 bytes).
+ 37i,12n,50p,412b,2176s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{table.caption.34} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.32} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.30} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.29} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.28} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.23} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.22} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.21} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.19} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.18} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.9} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.8} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.7} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.17} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.16} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.15} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.14} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.12} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.11} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.10} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.8} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.2} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on cfaber_thesis.pdf (29 pages, 3828918 bytes).
 PDF statistics:
- 5306 PDF objects out of 6186 (max. 8388607)
- 5053 compressed objects within 51 object streams
- 3562 named destinations out of 3580 (max. 500000)
- 9923 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1184 PDF objects out of 1200 (max. 8388607)
+ 1123 compressed objects within 12 object streams
+ 568 named destinations out of 1000 (max. 500000)
+ 7770 words of extra memory for PDF output out of 10000 (max. 10000000)
 
