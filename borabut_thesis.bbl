@@ -1,83 +1,20 @@
 \begin{thebibliography}{}
 
-\bibitem[AdamBots, 2008]{PIDctrl}
-AdamBots (2008).
-\newblock Pid velocity control.
-\newblock \url{adambots.com/wiki/PID_Velocity_Control}.
-\newblock accessed : 2009-12-22.
-
-\bibitem[BeagleBoard.org, 2016]{eLinux-BeagleBone}
-BeagleBoard.org (2016).
-\newblock Beagleboard:beagleboneblack.
-\newblock \url{http://elinux.org/Beagleboard:BeagleBoneBlack}.
-\newblock accessed : 2016-06-05.
-
-\bibitem[Benchoff, 2016]{RPi3}
-Benchoff, B. (2016).
-\newblock Introducing the raspberry pi 3.
-\newblock
-  \url{https://hackaday.com/2016/02/28/introducing-the-raspberry-pi-3/}.
-\newblock accessed : 2016-6-9.
-
 \bibitem[Coley, 2014]{BBB-SRM}
 Coley, G. (2014).
 \newblock {\em BeagleBone Black System Reference Manual}.
 \newblock BeagleBoard.org, revision c.1 edition.
 
-\bibitem[eLinux, 2016]{eLinux-deviceTree}
-eLinux (2016).
-\newblock Device tree.
-\newblock \url{http://elinux.org/Device_Tree}.
-\newblock accessed : 2015-09-12.
-
-\bibitem[Freescale-Semiconductor, 2013]{MMA8452Q}
-Freescale-Semiconductor (2013).
-\newblock {\em Xtrinsic MMA8452Q 3-Axis, 12-bit/8-bit Digital Accelerometer}.
-\newblock Freescale-Semiconductor, rev. 8.1 edition.
-
-\bibitem[Maxim, 2015]{DS3231M}
-Maxim (2015).
-\newblock {\em DS3231M ±5ppm, I2C Real-Time Clock}.
-\newblock Maxim, 7 edition.
-
-\bibitem[Molloy, 2014]{DEREK-MOLLOY}
-Molloy, D. (2014).
-\newblock {\em Exploring BeagleBone}.
-\newblock Wiley, Indiapolis, IN.
-
-\bibitem[NXP, 2014]{PCA9306}
-NXP (2014).
-\newblock {\em PCA9306 Dual bidirectional I2C-bus and SMBus voltage-level
-  translator}.
-\newblock NXP, pca9306 v.8 edition.
+\bibitem[Allen, 2012]{ALLEN-HOLBERG}
+Phillip E. Allen, Douglas R. Holberg  (2012).
+\newblock {\em CMOS Analog Circuit Design}.
+\newblock Oxford, New York, NY.
 
 \bibitem[Pololu, 2016]{encoder}
 Pololu (2016).
 \newblock 3.4. quadrature encoders.
 \newblock \url{https://www.pololu.com/docs/0J63/3.4}.
 \newblock accessed : 2016-6-10.
-
-\bibitem[Tan, 2016]{DMCC}
-Tan, P. (2016).
-\newblock Dual motor controller cape (dmcc) mk.7.
-\newblock
-  \url{http://exadler.myshopify.com/products/dual-motor-controller-cape-dmcc-m%
-k-6}.
-\newblock accessed : 2016-6-17.
-
-\bibitem[Texas-Instruments, 2015]{PRUWIKI}
-Texas-Instruments (2015).
-\newblock Pru linux application loader api guide.
-\newblock
-  \url{http://processors.wiki.ti.com/index.php/PRU_Linux_Application_Loader_AP%
-I_Guide}.
-\newblock accessed : 2016-5-10.
-
-\bibitem[Texas-Instruments, 2016]{DRV8872}
-Texas-Instruments (2016).
-\newblock {\em DRV8872 3.6-A Brushed DC Motor Driver With Fault Reporting (PWM
-  Control)}.
-\newblock Texas Instruments, revision c edition.
 
 \bibitem[Yeong Chin~Koo, 2015]{PID_Diff}
 Yeong Chin~Koo, E. A.~B. (2015).

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.7.6)  28 AUG 2017 17:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.7.6)  29 AUG 2017 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**cfaber_thesis.tex
-(./cfaber_thesis.tex
+**borabut_thesis.tex
+(./borabut_thesis.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ru
 ssian, ukrainian, bulgarian, loaded.
@@ -483,8 +483,8 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 )
 \c@theorem=\count136
 
-(./cfaber_thesis.aux)
-\openout1 = `cfaber_thesis.aux'.
+(./borabut_thesis.aux)
+\openout1 = `borabut_thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
@@ -601,9 +601,9 @@ LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
 LaTeX Info: Redefining \nameref on input line 61.
 
-(./cfaber_thesis.out) (./cfaber_thesis.out)
+(./borabut_thesis.out) (./borabut_thesis.out)
 \@outlinefile=\write3
-\openout3 = `cfaber_thesis.out'.
+\openout3 = `borabut_thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -632,7 +632,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 
 ]
-(./cfaber_thesis.toc
+(./borabut_thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -646,28 +646,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [4
-
-] [5])
+))
 \tf@toc=\write4
-\openout4 = `cfaber_thesis.toc'.
+\openout4 = `borabut_thesis.toc'.
 
+ [4
 
-[6] (./cfaber_thesis.lof)
+]
+(./borabut_thesis.lof)
 \tf@lof=\write5
-\openout5 = `cfaber_thesis.lof'.
+\openout5 = `borabut_thesis.lof'.
 
- [7
+ [5
 
-] (./cfaber_thesis.lot)
+] (./borabut_thesis.lot)
 \tf@lot=\write6
-\openout6 = `cfaber_thesis.lot'.
+\openout6 = `borabut_thesis.lot'.
 
- [8
+ [6
 
 ]
 Chapter 1.
-<./images/FaberRobot.png, id=460, 745.78625pt x 719.68875pt>
+<./images/FaberRobot.png, id=128, 745.78625pt x 719.68875pt>
 File: ./images/FaberRobot.png Graphic file (type png)
 
 <use ./images/FaberRobot.png>
@@ -685,9 +685,14 @@ Overfull \hbox (1.46495pt too wide) in paragraph at lines 143--162
  [] 
  []
 
-[2] [3] [4]
+[2] [3]
+
+LaTeX Warning: Reference `fig:PSoC_board' on page 4 undefined on input line 169
+.
+
+[4]
 Chapter 2.
-<./images/Pinlist.png, id=487, 1551.7975pt x 608.2725pt>
+<./images/Pinlist.png, id=154, 1551.7975pt x 608.2725pt>
 File: ./images/Pinlist.png Graphic file (type png)
 
 <use ./images/Pinlist.png>
@@ -698,7 +703,7 @@ Overfull \hbox (13.85535pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
-<./images/layout.PNG, id=488, 1029.8475pt x 653.44125pt>
+<./images/layout.PNG, id=155, 1029.8475pt x 653.44125pt>
 File: ./images/layout.PNG Graphic file (type png)
 
 <use ./images/layout.PNG>
@@ -712,14 +717,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 256.
 [7
 
-] [8] <./images/robot-test1.png, id=514, 1284.8pt x 481.8pt>
+] [8] <./images/robot-test1.png, id=180, 1284.8pt x 481.8pt>
 File: ./images/robot-test1.png Graphic file (type png)
 
 <use ./images/robot-test1.png>
 Package pdftex.def Info: ./images/robot-test1.png used on input line 263.
 (pdftex.def)             Requested size: 449.68674pt x 168.63252pt.
 
-<./images/robot-test2.png, id=515, 1284.8pt x 481.8pt>
+<./images/robot-test2.png, id=181, 1284.8pt x 481.8pt>
 File: ./images/robot-test2.png Graphic file (type png)
 
 <use ./images/robot-test2.png>
@@ -733,10 +738,7 @@ Chapter 4.
 Chapter 5.
 [11
 
-] (./cfaber_thesis.bbl
-Missing character: There is no Â in font cmti12!
-Missing character: There is no ± in font cmti12!
-) [12
+] (./borabut_thesis.bbl) [12
 
 ]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -781,251 +783,29 @@ File: lstlang2.sty 2004/09/05 1.3 listings language file
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
  [20]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
- (./cfaber_thesis.aux)
+ (./borabut_thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
+Package rerunfilecheck Info: File `borabut_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: C506E60FDC3D9F237BB21011F1FD889C;985.
 
 
-Package rerunfilecheck Warning: File `cfaber_thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `cfaber_thesis.out':
-(rerunfilecheck)             Before: FE669D5A26CA64FE64F3A20C92215FBA;4564
-(rerunfilecheck)             After:  C506E60FDC3D9F237BB21011F1FD889C;985.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 13042 strings out of 494820
- 194195 string characters out of 3178050
- 585671 words of memory out of 3000000
- 15415 multiletter control sequences out of 15000+200000
- 11405 words of font info for 62 fonts, out of 3000000 for 9000
+ 12873 strings out of 494820
+ 191994 string characters out of 3178050
+ 583522 words of memory out of 3000000
+ 15341 multiletter control sequences out of 15000+200000
+ 11040 words of font info for 57 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 37i,12n,50p,412b,2176s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{table.caption.34} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.32} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.30} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.29} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.28} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.23} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.22} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.21} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.19} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.18} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.9} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.8} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.7} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.17} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.16} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.15} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.14} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.12} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.11} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.10} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.8.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.8.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.8.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.11} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.2} has been referenced but does not exist
+ 37i,12n,50p,413b,2176s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.DMCC} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
@@ -1038,10 +818,10 @@ e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt8.pfb>
-Output written on cfaber_thesis.pdf (29 pages, 3828918 bytes).
+Output written on borabut_thesis.pdf (27 pages, 3806615 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 1123 compressed objects within 12 object streams
- 568 named destinations out of 1000 (max. 500000)
- 7770 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 811 PDF objects out of 1000 (max. 8388607)
+ 756 compressed objects within 8 object streams
+ 483 named destinations out of 1000 (max. 500000)
+ 7330 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,7 @@
 \contentsline {part}{ABSTRACT}{ii}{Doc-Start}
 \contentsline {part}{ACKNOWLEDGEMENTS}{iii}{Doc-Start}
-\contentsline {part}{LIST OF FIGURES}{vii}{Doc-Start}
-\contentsline {part}{LIST OF TABLES}{viii}{Doc-Start}
+\contentsline {part}{LIST OF FIGURES}{v}{Doc-Start}
+\contentsline {part}{LIST OF TABLES}{vi}{Doc-Start}
 \noindent \mbox {Chapter}\par 
 \contentsline {chapter}{\numberline {1.}INTRODUCTION}{1}{chapter.1}
 \noindent \vskip \baselineskip \par 
