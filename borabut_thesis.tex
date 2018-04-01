@@ -35,7 +35,7 @@
 
 
 \author{Bryan Orabutt}
-\title{Todo: Title}
+\title{Design of a Multichannel Constant Fraction Discriminator IC for Use in Nuclear Physics Applications}
 
 %%\advisor{John Q.\ Faculty} %% or 
 \advisor{Dr.}{George L. Engel}
@@ -45,8 +45,8 @@
 %\fifthreader{Karl Gauss, Sr.}
 %\secondadvisor{Karl Gauss} %if you haves two advisors (rare) then use this line also and pass the option `twoadvisors' to the class
 %\abstracttext{Chairperson: The Honorable Jill Smith} %optional -- you can use this to override the text on the abstract page; the grad school default is built-in
-\submitdate{April, 2017} %date the month/year submitted to grad school, use a comma between
-\copyrightyear{2017} %optional, but required if copyrighted
+\submitdate{April, 2018} %date the month/year submitted to grad school, use a comma between
+\copyrightyear{2018} %optional, but required if copyrighted
 
 %% all of these are optional; defaults are shown
 \major{Electrical Engineering} 
@@ -67,15 +67,15 @@
 
 %%% abstracts are optional
 \begin{abstract}
-
-Todo: Abstract
+\par This thesis presents the design and simulation of a multichannel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called constant fraction discrimination. Each of the sixteen channels in the IC contains a Nowlin circuit, leading edge discriminator, zero cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 20 mV and 2V both positive and negative, and input rise times between 3 nsec and 100 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude and rise time, having a time walk of only 1 nsec or less. The IC has been named CFD16C and the design presented is using the AMI 0.5 micron NWELL process.
 
 \end{abstract}
 
 \begin{acknowledgements}
 
-
-Todo: acknowledgements
+\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful.
+\par I would like to thank the other graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz. We all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
+\par I would like to thank my friends Jack White, Jared Charter, and Cameron Costanzo, Nelly Sanchez, and Shana Mankouski for helping me get to this point, each in their own ways. Finally I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and the woman who has been like a second mother to me, Vicki Kern, have been there for me and I know I could not have come this far without them.
 
 \end{acknowledgements}
 
@@ -93,186 +93,245 @@ Todo: acknowledgements
 
 
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
+\section{Background}
+\par This thesis presents the initial design of a multichannel integrated circuit (IC) for use in nuclear physics applications. The IC as of this writing has not been finished and development will continue in a newer design process. The IC will be capable of using constant fraction discrimination (CFD) to create output timing pulses that are independent of input voltage and rise time. The work on this IC has been made possible due to a grant from the National Science Foundation (NSF Grant\#1625499).
+\par Collaboration with nuclear physics researchers at Washington University in St. Louis has allowed the design of CFD16C to meet the needs for any experiments involving the PSD8C. The CFD16C is being designed to have better jitter and time walk performance than current existing CFD circuits using VME interface as well as offer functionality tailored to nuclear physics experiments. Combined with its companion ICs the CFD16C will allow for more precise experiments that was previously available.
 
-
-\section{This is a section}
-
-Todo: introduction + sections
-
-Figure reference example: Figure~\ref{fig:FaberRobot}
-
-\begin{figure}[htbp!]
-\centering
-\includegraphics[scale=.6,keepaspectratio=true]{./images/FaberRobot.png} 
-\caption{Authors's Robot for IEEE Competition}
-\label{fig:FaberRobot}
-\end{figure}
-
-Bulleted list example:
+\section{Need for an Integrated Circuit}
+\par There is a need for an IC containing multiple configurable CFD circuits. Other timing ICs and VME CFD circuits do not offer any custom tailored solutions to nuclear physics applications and can limit the scope of an experiment. An IC with the following features is desirable \cite{CFD}:
 
 \begin{itemize}
 \item 
-mechanical components to construct a mechanically-sound robot,
+Support for up to 16 detectors.
 \item
-a high-performance, small form factor computer platform that can be used for high-level decision making,
+Support amplitudes between 20 mV and 2 V  with between 3 nsec and 100 nsec rise times.
 \item
-an intelligent, flexible, dedicated motor controller highly integrated with the high-level compute platform, 
+Support for both positive and negative input pulse amplitudes.
 \item
-a method to quickly and easily integrate peripheral devices into the robotic system, and
+Output timing pulse should be independent of input amplitude and rise time.
 \item
-a quick and convenient way to change system parameters, thus promoting experimentation.
+Configurable leading edge threshold value for each channel.
+\item
+Programmable output pulse width between 50 nsec and 500 nsec.
+\item
+Allow for 1 KHz pulse repetition rates.
 \end{itemize}
 
-\noindent
-Numbered list example: 
-\begin{enumerate}
-\item
-Identify a maker of mechanical robot parts which are inexpensive, easy-to-use, and flexible. Students should \textbf{not} have to machine their own parts nor should they be constrained to use a prescribed robotics kit.
-\item
-Identify a SBC that would be able to handle the requirements of both movement and higher level decision making.
-\item
-Create a custom motor controller board capable of handling all motor types which could be highly integrated with the processor tasked with higher level decision making. The board should also contain key peripherals and the ability for the user to quickly and easily add additional peripherals.
-\item
-Create a graphical user interface (GUI) that would allow students to quickly configure the key parameters of the robotic system.
-\end{enumerate}
+\section{Previous Work}
+\par The CFD16C integrated circuit described in this thesis is intended to be used with another microchip (called PSD8C) which employs a technique known as pulse shape discrimination \cite{HALL}. Below is a summarized description of the PSD8C \cite{PROCTOR}. The PSD8C contains eight channels, each containing a time-to-voltage converter (TVC) and three sub channels. The TVC circuits are configurable with two time ranges (0.5 $\mu$sec and 2 $\mu$sec). Each sub channel contains a gated integrator that can be configured with 8 different charging rates, as well as configurable gate generators to set the start and width of the gate relative to the CFD timing pulse (each with 4 time ranges). The PSD8C also has support for 3 triggering modes. The output of a PSD8C channel consists of four sparsified pulse trains (one TVC, three integrators) that are synchronized for digitization by an off chip analog to digital converter (ADC). A system level diagram of the PSD8C is shown in Figure~\ref{fig:PSD} \cite{PSD-NSF}.\newpage
 
-Table example: 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1,keepaspectratio=true]{images/PSD_block.png} 
+\caption{System level overview for the PSD8C}
+\label{fig:PSD}
+\end{figure}
 
-\begin{table}[htbp!]
-\begin{center}
-\begin{tabular}{|p{0.75in}|p{2.5in}|p{2.5in}|}
-\hline
-Type & 
-Advantages & 
-Disadvantages\\
-\hline
-DC & 
-Wide selection available. Many come with gear boxes so high torque, low-velocity operation is possible. & 
-Poor standards in sizing and mounting arrangements.\\
-\hline
-Stepper & 
-Does not require gear reduction to power at low speeds. Dynamic braking achieved by leaving coils of stepper motor energized (motor will not turn, but will lock in place).& 
-Poor performance under varying loads. Not great for robot locomotion over uneven surfaces. Consumes high current.\\
-\hline
-Servo & 
-Inexpensive. Can be used for precise angular control, or for continuous rotation. Available in several standard sizes, with standard mounting holes. & 
-Practical weight limit for powering a robot is about 10 pounds.\\
-\hline
-\end{tabular}
-\caption{Comparison of Motor Types Used in Robotics.}
-\label{Tab:Motor_Types}
-\end{center}
+\par The PSD8C itself is a companion chip for another IC called HINP16C. It is useful to understand HINP16C as well in order to better understand the purpose of CFD16C. HINP16C contains 16 channels for use with silicon strip detectors \cite{HINP}. In each channel there is a charge sensitive amplifier (CSA) with two gain modes. In high gain mode the CSA has a gain of 15 $\frac{mV}{MeV}$ and in low gain it has a gain of 3 $\frac{mV}{MeV}$. The CSA outputs are split and act as inputs to energy and timing branches to produce sparsified pulse train outputs with synchronized addresses for an off chip ADC. 
+\par The energy branch consists of a shaping filter that has a return to baseline time of under 20 $\mu$sec. This \emph{slow shaper} circuit is used as input to a continuous-time peak sampling circuit. The timing branch has a pseudo CFD circuit that uses a leading-edge and zero-crossing discriminator. The zero-crossing discriminator makes use of a DC offset cancellation loop to null out any unwanted DC offsets. A DAC is used to correct offsets in the leading-edge discriminator as well as set the CFD threshold level. This CFD output is used to start a TVC circuit with a configurable measurement range (250 nsec and 1 $\mu$sec). This TVC and the peak sampling circuit are reset after a user configurable delay time (referenced to the CFD firing time). A system level diagram of HINP16C is showed in Figure~\ref{fig:HINP} \cite{HINP-THESIS}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1,keepaspectratio=true]{images/HINP_block.png} 
+\caption{System level overview for the HINP16C}
+\label{fig:HINP}
+\end{figure}
+
+\section{Scope of Thesis}
+The object of this thesis work was to begin the design and layout of essential analog elements of the CFD16C (Constant Fraction Discriminator - 16 Channels) integrated circuit. The CFD16C is a companion chip to accompany the PSD8C described in \cite{PROCTOR}. The CFD16C generates the timing pulses needed to start time-to-voltage converters on the PSD8C using a technique called constant fraction discrimination. Information about this technique can be found in \cite{NOWLIN}.
+\par This thesis contains five chapters. Chapter 2 describes the system level overview of the CFD16C. Chapter 3 contains descriptions of the electronic circuits designed for the CFD16C. Chapter 4 contains simulation results showing the circuit elements described in chapter 3 function appropriately. Chapter 5 has a summary, conclusion, and description of future work to be done on the CFD16C.
+
+\chapter{SYSTEM LEVEL DESIGN}
+\section{Overview of Chip}
+\par The CFD16C is designed in a 0.5 micron CMOS process. The chip is designed to act as a multichannel constant fraction discriminator with very low jitter and time walk in the output timing pulse. A system level block diagram of a single CFD channel can be seen in Figure~\ref{fig:CFD}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{images/CFD.png} 
+\caption{System level overview for one channel of the CFD16C}
+\label{fig:CFD}
+\end{figure}
+
+\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time ~10 times faster than its fall time. This input pulse goes to a Nowling circuit that creates a differential output and a high pass filtered output. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
+
+\section{Features of CFD16C}
+\par The CFD16C is being designed with several key features in mind to make it useful in experiments paired with the PSD8C. Below is a brief overview of the features that the CFD16C is intended to have when it is complete.
+
+\begin{itemize}
+\item
+16 channels to support two PSD8C microchips for every one CFD16C.
+\item
+Supports positive and negative input voltages.
+\item
+Employs constant fraction discrimination to generate a low jitter output timing pulse.
+\item
+Time walk of output timing pulse must not exceed 1 nsec.
+\item
+Each channel has a configurable leading edge threshold.
+\item
+Delay time on Nowlin circuit globally configurable between 0.5 pF and 8 pF.
+\item
+Width of output timing pulse globally configurable between 50 nsec and 500 nsec.
+\item
+Provide test point outputs of key points in channel circuitry.
+\item
+Provide multiplicity output proportional to number of channels fired.
+\item
+Provide logical OR of all channel outputs.
+\end{itemize}
+\section{Common Channel}
+\par The common channel of the CFD16C contains biasing circuits, two 5-bit configuration registers, multiplicty output, and channel OR output. One of the configuration registers is used to set the value of a programmable capacitor of the Nowlin circuit in every channel as well as provide negative polarity control for the leading edge threshold DAC. The second register is used to select the channel that the test point pad is connected and another bit to enable or disable a lockout time on the oneshot circuit.  Tables~\ref{Tab:reg1}-\ref{Tab:reg2} describe the register settings.
+\begin{table}[h]
+\parbox{.45\linewidth}{
+\centering
+	\begin{tabular}{|l|p{4cm}|}
+		\hline
+		Bit Position & Purpose\\\hline
+		0-3 &Programmable capacitor\\\hline
+		4 & Negative polarity.\\\hline
+	\end{tabular}
+    \caption{Register 0 functionality.}
+ 	\label{Tab:reg1}
+ 	}
+ 	\hfill
+\parbox{.45\linewidth}{
+	\begin{tabular}{|l|p{4cm}|}
+		\hline
+		Bit Position & Purpose\\\hline
+		0-3 & Test point channel.\\\hline
+		4 & Lockout enable..\\\hline
+	\end{tabular}
+    \caption{Register 1 functionality.}
+ 	\label{Tab:reg2}
+    }
 \end{table}
 
-Text emphasis example: \emph{SSC-32}
-
-Figure reference example: ~\ref{fig:PSoC_board}) Bold text example: \textbf{not} Underline example: \underline{both} 
-
-Ctiation: ~\cite{DMCC}. 
-
-
-
-\chapter{System Level Design}
-
-
-%TODO need to redo this at some point get a better image
-%
-%\begin{figure}[htbp!]
-% \centering
-% \includegraphics[scale=.4,keepaspectratio=true]{./images/BoardDiagram.jpg}
-% \caption{SIUE Robot Cape}
-% \label{fig:board_diagram}
-%\end{figure}
-
-%I put in the updated board diagram picture
-
-Table from image: 
-
-\begin{table}[htbp!]
- \centering
- \includegraphics[scale=.3,keepaspectratio=true]{./images/Pinlist.png}
- \caption{BeagleBone Black Pins Used by SIUE Robot Cape}
- \label{tab:Pin_list}
-\end{table}
-
-Units example (mu): 47 $\mu$F
-
-Plus/minus signs: $\pm$2g, $\pm$4g, and $\pm$8g 
-
-Sideways figure:
-
-\begin{sidewaysfigure}[htbp!]
- \centering
- \includegraphics[scale=.5,keepaspectratio=true]{./images/layout.PNG}
- \caption{PCB Layout of SIUE Robot Cape}
- \label{fig:Layout}
-\end{sidewaysfigure}
-
-
-\chapter{Circuit Level Design}
-Equation Array:
-
+\section{CFD Channel}
+\par The CFD16C contains 16 CFD channels used to generate a narrow timing pulse. This timing pulse is used to accurately mark the arrival of an analog input pulse for the PSD8C microchip. The channel design illustrated in Figure~\ref{fig:CFD} contains a Nowlin circuit, zero crossing discriminator, a leading edge discriminator, and a one shot circuit to create the timing pulse.
+\subsection{Nowlin Stage}
+\par The Nowlin circuit is used to create a differential output. One leg of this output is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, with a corner frequency of ~100 kHz. The Nowlin circuit is described in more detail in Chapter 3.
+\subsection{Zero Crossing Discriminator Stage}
+\par The differential outputs of the Nowlin circuit are used as inputs to a zero crossing discriminator. This discriminator is created by cascading three differential amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (5V) when the two differential output voltages cross the 0V threshold when referenced to analog ground (AGND). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. 
+\par To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. With too much delay there is not enough slew rate to accommodate the fast timings that are needed (1 ns or less time walk and jitter). The importance of high slew rate is the reason fro cascading multiple differential amplifiers as opposed to using one high gain diff-amp. The amplifiers designed have a gain of ~5. For first order approximations it is known that the bandwidth of a differential amplifier obeys Eqn~\ref{eq:bw} \cite{CFD}.
 \begin{eqnarray}
-pwm(n) &=& pwm(n-1) + \Delta(n) \\
-\Delta(n) &=& \Delta_p(n) + \Delta_i(n) + \Delta_d(n) \nonumber \\
-\Delta_p(n) &=& K_p \cdot e(n) \nonumber \\
-\Delta_i(n) &=& K_i \cdot \left[ e(n) - e(n-1) \right] \nonumber \\
-\Delta_d(n) &=& K_d \cdot \left[ e(n) - e(n-1) + 2 \cdot e(n-2) \right] \nonumber
+BW = \frac{0.35}{t_{10-90}}
+\label{eq:bw}
 \end{eqnarray}
-
-Tabular table:
-
-\begin{table}
-    \begin{tabular}{ | c | p{11cm} |}
-    	\hline
-	Macros & Usage and Description  \\ \hline
-	
-	\multirow{2}{*} {get\_state} & Usage: get\_state \\& Update the status register value in pru1. b0 contains wheel control information, while b1-2 contain flag bits.
-	Can be updated in shared memory from PRU0 or ARM \\ \hline
-
-	\multirow{2}{*}{read\_clk\_cnt} & Usage: read\_clk\_cnt \\& Reads in the number of PWM cycles to run before interrupting PRU0. \\ \hline
-
-	\multirow{2}{*}{read\_pwm\_res} & Usage: read\_pwm\_res \\ & Reads in the pwm maximum count from sharedMemory. Either 255 (8 bit), 1023 (10 bit), or 4095 (12 bit) \\ \hline
-
-	\multirow{2}{*}{read\_pwm\_values} & Usage: read\_pwm\_values \\ & Reads in PWM high time from Shared Memory \\ \hline
-
-	\multirow{3}{*} {pwm\_timer} & Usage:\\& pwm\_timer M\#\_ctrl, pwm\#, M\#\_1, M\#\_0, NEXT\_LINE \\ &
-	This decrements the PWM register given the timer register and will stop the pwm signal if necessary. \\ \hline
-
-	\multirow{2}{*}{pwm\_start} & Usage: pwm\_start \\ & Uses the state register to start the PWM singal using values stored in statReg.b0 \\ \hline
-
-	
-
-	\end{tabular}	
-    \caption{PRU 1 Macros (1 of 2)}
- 	\label{Tab:PRU1_Macro1}
+\par The zero crossing discriminator needs an overall bandwidth of 50 Mhz. Since there are three diff-amp stages, each diff-amp needs a total bandwidth of $\sqrt{3} \approx 1.7$  times larger. This means the differential amplifiers needs a bandwidth of at least 85 Mhz in order for the zero cross discriminator to function properly. The final output of the comparator is delayed by 10 nsec in order to ensure the leading edge discriminator output fires first.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{images/zcd.png} 
+\caption{Zero crossing discriminator stage.}
+\label{fig:ZCD}
+\end{figure}
+\subsection{Leading Edge Discriminator Stage}
+\par The high pass filter output of the Nowlin is used as a input to a leading edge discriminator. This discriminator is comprised of a differential amplifier that connects to a differential to single ended amplifier with a gain of ~1. The differential amplifier helps remove common mode noise \cite{COMMON_MODE}. Removing noise is essential to improving the jitter as it is directly related to the input noise  as shown by Eqn~\ref{eq:jitter} \cite{CFD}. 
+\begin{eqnarray}
+\sigma _t  = \frac{\sigma _v}{SR}
+\label{eq:jitter}
+\end{eqnarray}
+\par The output of the differential to single ended amplifier is compared against a user set threshold voltage that is generated by a 6-bit DAC. The DAC is used to set the noise floor threshold to give even greater noise immunity, as well as help nullify effects from offset voltages in the amplifier stages. Since the CFD channel can operate regardless of input voltage polarity, this DAC has a negative polarity control signal that when enabled (ie. 5V) will provide an output voltage that is below AGND. The same diff-amp and comparator circuits from the zero crossing discriminator circuit are used in the leading edge discriminator as well. 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{images/led.png} 
+\caption{Leading edge discriminator stage.}
+\label{fig:ZCD}
+\end{figure}
+\subsection{Oneshot Stage}
+\par The timing pulse of each CFD channel is produced in the oneshot stage (Fig~\ref{fig:oneshot-stage}). This stage contains and edge detector, two oneshot circuits, and a 4-bit unipolar DAC. The input to the oneshot stage comes from the digital output pulses from the comparators in both the leading edge discriminator and zero crossing discriminator. 
+\par The outputs of the two dicriminator stages are first ANDed together. Since the zero crossing discriminator (ZCD) stage is delayed, the leading edge discriminator stage (LED) can be used as a qualifier. The AND of these two thus guarantees that the output of the ZCD is from a real input pulse and not random transients. The ANDed discriminator signals are then used as input to an edge detector whose output triggers a oneshot circuit.
+\par A oneshot circuit is a circuit whose input is a narrow pulse and outputs a fixed width pulse \cite{ONESHOT}. There are two oneshots in this stage. The first one creates the timing pulse that will eventually be output to the CFD16C output pad for the channel. The second oneshot is triggered by the first, and creates a lockout timing pulse to prevent the first oneshot from firing for a fixed amount of time. The width of the timing pulse is determined by a 4-bit logarithmically distributed digital-to-analog converter (DAC) with timing values shown in Table~\ref{Tab:oneshot-pw}. The lockout oneshot has its pulse width determined by an analog control voltage that is generated off chip.
+\vspace{0.25in}
+\begin{table}[h]
+\centering
+	\begin{tabular}{|l|p{4cm}|}
+		\hline
+		Digital Value (V) & Pulse Width (nsec)\\\hline
+		0 & 500\\\hline
+		1 & 250\\\hline
+		2 & 100\\\hline
+		3 & 50\\\hline
+	\end{tabular}
+    \caption{DAC digital code word to oneshot pulse width mapping.}
+ 	\label{Tab:oneshot-pw}
 \end{table}
-
-
-
-escape sequence for underscore \\
-check\_encoder\_edges 
-
-Superscript: \emph{Makeblock}\textsuperscript{\textregistered}
-
-Newpage marker:
-
 \newpage
-\begin{figure}[!t]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./images/robot-test1.png}
- \caption{Robot Before (left) and After (right) Run - Trial \#1}
- \label{fig:robottest1}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{images/oneshot_stage.png} 
+\caption{Oneshot stage.}
+\label{fig:oneshot-stage}
 \end{figure}
-
-\begin{figure}[!t]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./images/robot-test2.png}
- \caption{Robot before (left) and after (right) After Run, - Trial \#2}
- \label{fig:robottest2}
+\subsection{Output Stage}
+\par The timing pulse output is generated by a one shot circuit that fires a fixed width output pulse in response to a narrow input pulse that is created by an edge detector. All of the channel outputs are generated in a final output stage that contains a configuration register and an analog mutliplexer. The channels provide two other outputs to the user:  a multiplicity output that provides an analog voltage proportional to the number of channels that have fired, and a test point output that can be configured to select several points of interest from within the channel to present on the output pad. The output stage also contains a qualifier circuit that compares the output of the channel with a global enable pin, and a channel enable register bit.
+\vspace{0.25in}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.6,keepaspectratio=true]{images/output_stage.png} 
+\caption{Output generation stage overview.}
+\label{fig:output-stage}
 \end{figure}
+%Table from image: 
 
-\chapter{Simulation}
+%\begin{table}[htbp!]
+% \centering
+ %\includegraphics[scale=.3,keepaspectratio=true]{./images/Pinlist.png}
+ %\caption{BeagleBone Black Pins Used by SIpeUE Robot Cape}
+ %\label{tab:Pin_list}
+%\end{table}
+
+\chapter{CIRCUIT LEVEL DESIGN}
+
+\section{Process Parameters}
+%Equation Array:
+
+%\begin{eqnarray}
+%pwm(n) &=& pwm(n-1) + \Delta(n) \\
+%\Delta(n) &=& \Delta_p(n) + \Delta_i(n) + \Delta_d(n) \nonumber \\
+%\Delta_p(n) &=& K_p \cdot e(n) \nonumber \\
+%\Delta_i(n) &=& K_i \cdot \left[ e(n) - e(n-1) \right] \nonumber \\
+%\Delta_d(n) &=& K_d \cdot \left[ e(n) - e(n-1) + 2 \cdot e(n-2) \right] \nonumber
+%\end{eqnarray}
+
+\section{Common Channel}
+
+\section{Digital Configuration}
+
+\section{Bandgap Reference}
+
+\section{Bias Currents}
+
+\section{Nowlin Circuit}
+
+\section{Differential Amplifier}
+
+\section{Comparator}
+
+\section{Oneshot Circuit}
+
+\section{Output Generation}
+
+\chapter{SIMULATION}
+\section{Methods}
+\par This chapter presents simulated data for many of the circuits designed for the CFD16C. This data was acquired using the Spectre simulator with Verilog-A test bench fixtures that produced stimuli for circuit level devices. The data presented represents ideal circumstances. More thorough simulation data will be obtained in the future when the IC is closer to completion.
+
+\section{Configuration Registers}
+
+\section{Bandgap}
+
+\section{Oneshot}
+
+\section{Nowlin}
+
+\section{Differential Amplifier}
+
+\section{Comparator}
+
+\section{Zero Crossing Discriminator}
+
+\section{Leading Edge Discriminator}
+
+\section{Walk Analysis}
 
 \chapter{SUMMARY, CONCLUSIONS, AND FUTURE WORK}
 
@@ -286,8 +345,6 @@ Newpage marker:
 
 \section{Future Work}
 
-References and bibliography:
-
 \references %single spacing / arabic numeral paginations, adds "REFERENCES" to table of contents
 
 %%%% for bibtex
@@ -298,8 +355,6 @@ References and bibliography:
 \bibliography{./borabut_thesis.bib}
 
 % If you have only a single appendix, do it this way.
-Appendicies: 
-
 
 \multipleappendices
 \lstset{
@@ -332,12 +387,6 @@ Appendicies:
          showstringspaces=false           
  }
 
-\chapter{Global Defines and Structures}
-\lstinputlisting{./include/mem.h}
+\chapter{Verilog-A Code}
 
-\chapter{GUI Tcl/Tk Code}
-language change:
-
-\lstset{language=[tk]tcl}
-\lstinputlisting{./tcl/gui.tcl}
 \end{document}

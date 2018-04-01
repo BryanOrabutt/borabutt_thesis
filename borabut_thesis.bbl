@@ -1,24 +1,53 @@
 \begin{thebibliography}{}
 
-\bibitem[Coley, 2014]{BBB-SRM}
-Coley, G. (2014).
-\newblock {\em BeagleBone Black System Reference Manual}.
-\newblock BeagleBoard.org, revision c.1 edition.
+\bibitem[electronics tutorials.ws, ]{ONESHOT}
+electronics tutorials.ws.
+\newblock Monostable multivibrators.
 
-\bibitem[Allen, 2012]{ALLEN-HOLBERG}
-Phillip E. Allen, Douglas R. Holberg  (2012).
-\newblock {\em CMOS Analog Circuit Design}.
-\newblock Oxford, New York, NY.
+\bibitem[Engel, 2016]{CFD}
+Engel, G. (2016).
+\newblock A multi-channel discriminator ic.
+\newblock \url{http://www.siue.edu/~gengel/ece584WebStuff/CFDchip.pdf}.
+\newblock accessed : 2017-1-10.
 
-\bibitem[Pololu, 2016]{encoder}
-Pololu (2016).
-\newblock 3.4. quadrature encoders.
-\newblock \url{https://www.pololu.com/docs/0J63/3.4}.
-\newblock accessed : 2016-6-10.
+\bibitem[G.~Engel, 2006]{PSD-NSF}
+G.~Engel, L.~Sobotka, M.~F. (2006).
+\newblock Nsf-mri proposal.
 
-\bibitem[Yeong Chin~Koo, 2015]{PID_Diff}
-Yeong Chin~Koo, E. A.~B. (2015).
-\newblock Motor speed controller for differential wheeled mobile robot.
-\newblock {\em ARPN Journal of Engineering and Applied Sciences}.
+\bibitem[G.~Engel, 2007]{HINP}
+G.~Engel, M.~Sadasivam, M.~N. (2007).
+\newblock Multi-channel integrated circuit for use in low and intermediate
+  energy nuclear physics - hinp16c.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
+
+\bibitem[Hall, 2007]{HALL}
+Hall, M.~J. (2007).
+\newblock Design considerations in systems employing multiple charge
+  integration for the detection of ionizing radiation.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Karki, 2000]{COMMON_MODE}
+Karki, J. (2000).
+\newblock Fully differential amplifiers remove noise from common-mode signals.
+\newblock
+  \url{https://www.edn.com/design/analog/4344425/Fully-differential-amplifiers-remove-noise-from-common-mode-signals}.
+
+\bibitem[M.~Simpson, 1996]{NOWLIN}
+M.~Simpson, G.~Young, R.~J. (1996).
+\newblock A monolithic, constant-fraction discriminator using distributed r-c
+  delay line shaping.
+\newblock {\em Nuclear Science, IEEE Transactions on}.
+
+\bibitem[Proctor, 2007]{PROCTOR}
+Proctor, J. (2007).
+\newblock Design of a multi-channel integrated circuit for use in nuclear
+  physics experiments where particle identification is required.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Sadasivam, 2002]{HINP-THESIS}
+Sadasivam, M. (2002).
+\newblock A multi-channel integrated circuit for use with silicon strip
+  detectors in experiments in low and intermediate physics.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
 
 \end{thebibliography}
