@@ -95,7 +95,7 @@
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
 \section{Background}
 \par This thesis presents the initial design of a multichannel integrated circuit (IC) for use in nuclear physics applications. The IC as of this writing has not been finished and development will continue in a newer design process. The IC will be capable of using constant fraction discrimination (CFD) to create output timing pulses that are independent of input voltage and rise time. The work on this IC has been made possible due to a grant from the National Science Foundation (NSF Grant\#1625499).
-\par Collaboration with nuclear physics researchers at Washington University in St. Louis has allowed the design of CFD16C to meet the needs for any experiments involving the PSD8C. The CFD16C is being designed to have better jitter and time walk performance than current existing CFD circuits using VME interface as well as offer functionality tailored to nuclear physics experiments. Combined with its companion ICs the CFD16C will allow for more precise experiments that was previously available.
+\par Collaboration with nuclear physics researchers at Washington University in St. Louis has allowed the design of CFD16C to meet the needs for any experiments involving the PSD8C. The CFD16C is being designed to have better jitter and time walk performance than current existing CFD circuits using VME interface as well as offer functionality tailored to nuclear physics experiments. Combined with its companion ICs the CFD16C will allow for more precise experiments than was previously available.
 
 \section{Need for an Integrated Circuit}
 \par There is a need for an IC containing multiple configurable CFD circuits. Other timing ICs and VME CFD circuits do not offer any custom tailored solutions to nuclear physics applications and can limit the scope of an experiment. An IC with the following features is desirable \cite{CFD}:
@@ -138,8 +138,16 @@ Allow for 1 KHz pulse repetition rates.
 \end{figure}
 
 \section{Scope of Thesis}
-The object of this thesis work was to begin the design and layout of essential analog elements of the CFD16C (Constant Fraction Discriminator - 16 Channels) integrated circuit. The CFD16C is a companion chip to accompany the PSD8C described in \cite{PROCTOR}. The CFD16C generates the timing pulses needed to start time-to-voltage converters on the PSD8C using a technique called constant fraction discrimination. Information about this technique can be found in \cite{NOWLIN}.
+\par The object of this thesis work was to begin the design and layout of essential analog elements of the CFD16C (Constant Fraction Discriminator - 16 Channels) integrated circuit. The CFD16C is a companion chip to accompany the PSD8C described in \cite{PROCTOR}. The CFD16C generates the timing pulses needed to start time-to-voltage converters on the PSD8C using a technique called constant fraction discrimination. Information about this technique can be found in \cite{NOWLIN}.
+\par The CFD16C is expected to use a 64-pin plastic QFN package. The design will not be continued in the 0.5 micro CMOS process described in this thesis but will be recreated in a newer 0.35 CMOS process. A top level view of the CFD16C described in this thesis is shown in Figure~\ref{fig:CFDtop}.
 \par This thesis contains five chapters. Chapter 2 describes the system level overview of the CFD16C. Chapter 3 contains descriptions of the electronic circuits designed for the CFD16C. Chapter 4 contains simulation results showing the circuit elements described in chapter 3 function appropriately. Chapter 5 has a summary, conclusion, and description of future work to be done on the CFD16C.
+\vspace{0.25in}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1,keepaspectratio=true]{images/CFDtop.png} 
+\caption{Top level view of CFD16C showing all inputs and outputs.}
+\label{fig:CFDtop}
+\end{figure}
 
 \chapter{SYSTEM LEVEL DESIGN}
 \section{Overview of Chip}
@@ -152,7 +160,9 @@ The object of this thesis work was to begin the design and layout of essential a
 \label{fig:CFD}
 \end{figure}
 
-\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time ~10 times faster than its fall time. This input pulse goes to a Nowling circuit that creates a differential output and a high pass filtered output. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
+\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time ~10 times faster than its fall time. This input pulse goes to a Nowlin circuit that creates a differential output and a high pass filtered output. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
+
+\par The CFD16C requires several supply voltages for successful operation. Analog devices are all powered from a 5V rail called AVDD. These same analog devices will be connected to a 0V rail called AVSS as their grounding point. The bulk connections for all NFETs will be made to a separate 0V rail called SVSS to mitigate substrate noise effects. Finally an analog ground, or AGND, that is halfway between AVDD and AVSS (ie. 2.5 V) is used as a reference point for many of the analog circuits in each of the 16 channels. 
 
 \section{Features of CFD16C}
 \par The CFD16C is being designed with several key features in mind to make it useful in experiments paired with the PSD8C. Below is a brief overview of the features that the CFD16C is intended to have when it is complete.
@@ -209,18 +219,31 @@ Provide logical OR of all channel outputs.
 \section{CFD Channel}
 \par The CFD16C contains 16 CFD channels used to generate a narrow timing pulse. This timing pulse is used to accurately mark the arrival of an analog input pulse for the PSD8C microchip. The channel design illustrated in Figure~\ref{fig:CFD} contains a Nowlin circuit, zero crossing discriminator, a leading edge discriminator, and a one shot circuit to create the timing pulse.
 \subsection{Nowlin Stage}
-\par The Nowlin circuit is used to create a differential output. One leg of this output is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, with a corner frequency of ~100 kHz. The Nowlin circuit is described in more detail in Chapter 3.
+\par The Nowlin circuit is used to create a differential output. One leg of this output is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, with a corner frequency of ~100 kHz. These outputs are shown in Figure~\ref{fig:nowlinout}. The Nowlin circuit is described in more detail in Chapter 3.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.40,keepaspectratio=true]{images/nowlin_out.png} 
+\caption{Nowlin differential (green) and high pass filtered (purple) outputs in response to 3 ns 20 mV pulse (blue). }
+\label{fig:nowlinout}
+\end{figure}
 \subsection{Zero Crossing Discriminator Stage}
 \par The differential outputs of the Nowlin circuit are used as inputs to a zero crossing discriminator. This discriminator is created by cascading three differential amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (5V) when the two differential output voltages cross the 0V threshold when referenced to analog ground (AGND). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. 
-\par To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. With too much delay there is not enough slew rate to accommodate the fast timings that are needed (1 ns or less time walk and jitter). The importance of high slew rate is the reason fro cascading multiple differential amplifiers as opposed to using one high gain diff-amp. The amplifiers designed have a gain of ~5. For first order approximations it is known that the bandwidth of a differential amplifier obeys Eqn~\ref{eq:bw} \cite{CFD}.
+\par To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. The importance of this underdrive voltage is illustrated in Figure~\ref{fig:underdrive}. With too much delay there is not enough slew rate to accommodate the fast timings that are needed (1 ns or less time walk and jitter). The importance of high slew rate is the reason fro cascading multiple differential amplifiers as opposed to using one high gain diff-amp. The amplifiers designed have a gain of ~5. For first order approximations it is known that the bandwidth of a differential amplifier obeys Eqn~\ref{eq:bw} \cite{CFD}.
 \begin{eqnarray}
 BW = \frac{0.35}{t_{10-90}}
 \label{eq:bw}
 \end{eqnarray}
-\par The zero crossing discriminator needs an overall bandwidth of 50 Mhz. Since there are three diff-amp stages, each diff-amp needs a total bandwidth of $\sqrt{3} \approx 1.7$  times larger. This means the differential amplifiers needs a bandwidth of at least 85 Mhz in order for the zero cross discriminator to function properly. The final output of the comparator is delayed by 10 nsec in order to ensure the leading edge discriminator output fires first.
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.55,keepaspectratio=true]{images/zcd.png} 
+\includegraphics[scale=.4,keepaspectratio=true]{images/zcd_out.png} 
+\caption{Zero crossing discriminator comparator output showing underdrive to force output low.}
+\label{fig:ZCD}
+\end{figure}
+
+\par The zero crossing discriminator needs an overall bandwidth of 50 Mhz. Since there are three diff-amp stages, each diff-amp needs a total bandwidth of $\sqrt{3} \approx 1.7$  times larger. This means the differential amplifiers needs a bandwidth of at least 85 Mhz in order for the zero cross discriminator to function properly. The final output of the comparator is delayed by 10 nsec in order to ensure the leading edge discriminator output fires first.\newpage
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{images/zcd_circuit.png} 
 \caption{Zero crossing discriminator stage.}
 \label{fig:ZCD}
 \end{figure}
@@ -231,22 +254,41 @@ BW = \frac{0.35}{t_{10-90}}
 \label{eq:jitter}
 \end{eqnarray}
 \par The output of the differential to single ended amplifier is compared against a user set threshold voltage that is generated by a 6-bit DAC. The DAC is used to set the noise floor threshold to give even greater noise immunity, as well as help nullify effects from offset voltages in the amplifier stages. Since the CFD channel can operate regardless of input voltage polarity, this DAC has a negative polarity control signal that when enabled (ie. 5V) will provide an output voltage that is below AGND. The same diff-amp and comparator circuits from the zero crossing discriminator circuit are used in the leading edge discriminator as well. 
+
+\par The DAC threshold voltage will be configured based on the noise floor and the expected input pulse amplitude for the experiment. Once an input pulse arrives from the Nowlin circuit and rises above this threshold voltage the leading edge discriminator will fire a digital  output pulse (5V). This output pulse indicates that an input pulse has arrived so that further output from the zero crossing discriminator can be treated as valid. Figure~\ref{fig:ledout} shows the output generation of the leading edge discriminator.
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.55,keepaspectratio=true]{images/led.png} 
+\includegraphics[scale=.4,keepaspectratio=true]{images/led_out.png} 
+\caption{Leading edge discriminator output generation.}
+\label{fig:ledout}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.5,keepaspectratio=true]{images/led_circuit.png} 
 \caption{Leading edge discriminator stage.}
-\label{fig:ZCD}
+\label{fig:LED}
 \end{figure}
 \subsection{Oneshot Stage}
 \par The timing pulse of each CFD channel is produced in the oneshot stage (Fig~\ref{fig:oneshot-stage}). This stage contains and edge detector, two oneshot circuits, and a 4-bit unipolar DAC. The input to the oneshot stage comes from the digital output pulses from the comparators in both the leading edge discriminator and zero crossing discriminator. 
-\par The outputs of the two dicriminator stages are first ANDed together. Since the zero crossing discriminator (ZCD) stage is delayed, the leading edge discriminator stage (LED) can be used as a qualifier. The AND of these two thus guarantees that the output of the ZCD is from a real input pulse and not random transients. The ANDed discriminator signals are then used as input to an edge detector whose output triggers a oneshot circuit.
+\par The outputs of the two dicriminator stages are first ANDed together. Since the zero crossing discriminator (ZCD) stage is delayed, the leading edge discriminator stage (LED) can be used as a qualifier. The AND of these two thus guarantees that the output of the ZCD is from a real input pulse and not random transients. This qualification pulse is shown in Figure~\ref{fig:qualifier}. The ANDed discriminator signals are then used as input to an edge detector whose output triggers a oneshot circuit.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.4,keepaspectratio=true]{images/qualifier.png} 
+\caption{Leading edge and zero cross discriminator outputs generating qualifier pulse for oneshot.}
+\label{fig:qualifier}
+\end{figure}
 \par A oneshot circuit is a circuit whose input is a narrow pulse and outputs a fixed width pulse \cite{ONESHOT}. There are two oneshots in this stage. The first one creates the timing pulse that will eventually be output to the CFD16C output pad for the channel. The second oneshot is triggered by the first, and creates a lockout timing pulse to prevent the first oneshot from firing for a fixed amount of time. The width of the timing pulse is determined by a 4-bit logarithmically distributed digital-to-analog converter (DAC) with timing values shown in Table~\ref{Tab:oneshot-pw}. The lockout oneshot has its pulse width determined by an analog control voltage that is generated off chip.
-\vspace{0.25in}
-\begin{table}[h]
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.6,keepaspectratio=true]{images/oneshot_stage.png} 
+\caption{Oneshot stage.}
+\label{fig:oneshot-stage}
+\end{figure}
+\begin{table}[ht]
 \centering
 	\begin{tabular}{|l|p{4cm}|}
 		\hline
-		Digital Value (V) & Pulse Width (nsec)\\\hline
+		Digital Value & Pulse Width (nsec)\\\hline
 		0 & 500\\\hline
 		1 & 250\\\hline
 		2 & 100\\\hline
@@ -255,22 +297,49 @@ BW = \frac{0.35}{t_{10-90}}
     \caption{DAC digital code word to oneshot pulse width mapping.}
  	\label{Tab:oneshot-pw}
 \end{table}
-\newpage
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=.55,keepaspectratio=true]{images/oneshot_stage.png} 
-\caption{Oneshot stage.}
-\label{fig:oneshot-stage}
-\end{figure}
 \subsection{Output Stage}
-\par The timing pulse output is generated by a one shot circuit that fires a fixed width output pulse in response to a narrow input pulse that is created by an edge detector. All of the channel outputs are generated in a final output stage that contains a configuration register and an analog mutliplexer. The channels provide two other outputs to the user:  a multiplicity output that provides an analog voltage proportional to the number of channels that have fired, and a test point output that can be configured to select several points of interest from within the channel to present on the output pad. The output stage also contains a qualifier circuit that compares the output of the channel with a global enable pin, and a channel enable register bit.
-\vspace{0.25in}
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=.6,keepaspectratio=true]{images/output_stage.png} 
 \caption{Output generation stage overview.}
 \label{fig:output-stage}
 \end{figure}
+\par All of the channel outputs are generated in a final output stage that contains a configuration register and an analog mutliplexer. Each channel has three outputs that are generated: the timing pulse output which connects to an output pad, a multiplicity current that goes to a resistor in the common channel, and a test point output.
+\par The timing pulse output comes from the output oneshot in the oneshot stage but is qualified in this stage. The output timing pulse will only be seen on the output pad of the channel if the global enable pin and the channel enable control signal are held in a logic high (5V). The global enable signal comes from a pin connection on the chip package while the channel enable is produced by the configuration register in the output stage.
+\par The multiplicity current is generated by a current mirror. There are two bias currents that are provided to each channel: one that is proportional to absolute temperature (PTAT) and one that has a zero temperature coefficient (ZTC). The PTAT current is copied to the output stage and controlled with a PFET switch. This current, when enabled, is sent to the common channel here it is connected to a resistor to ground (AVSS). Thus the more currents that are enabled, the larger the voltage across this resistor, creating a proportional voltage to the number of channels that have fired.
+\par The global channel OR output is also generated in the common channel. This logical OR signal is achieved by using a pseudo NMOS NOR gate. One NFET is placed in the output stage of each channel with a single PFET in the common area, followed by an inverter. This circuit is described further in Chapter 3.
+\par A test point output is also provided by the output stage. This test point will allow a user to route several analog nodes from within to the channel to a test point pad on the chip. An analog multiplexer is used to select from these possible test points. The register in the output stage contains the selection bits for this multiplexer, as well as a bit for the channel enable signal. Figure~\ref{fig:output-stage} shows the overall structure of the output stage. Table~\ref{tab:outreg} shows the bit configurations for the output stage register, and Table~\ref{tab:tpval} shows the possible test point values.
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+\centering
+	\begin{tabular}{|l|p{3cm}|}
+		\hline
+		Bit Position & Purpose\\\hline
+		0-3 & Select TP node.\\\hline
+		4 & Channel EN.\\\hline
+	\end{tabular}
+    \caption{Register bit functionality.}
+ 	\label{tab:outreg}
+ 	}
+ 	\hfill
+\parbox{.45\linewidth}{
+	\begin{tabular}{|l|p{4cm}|}
+		\hline
+		Select Value & Test Point\\\hline
+		0 & AGND\\\hline
+		1 & 4-bit DAC CV\\\hline
+		2 & Nowlin high pass filter output\\\hline
+		3 & 6-bit DAC output\\\hline
+		4 & Differential to single ended amp output.\\\hline
+		5 & Bandgap voltage\\\hline
+		6 & Nowlin constant fraction output\\\hline
+		7 & Nowlin delayed output\\\hline
+	\end{tabular}
+    \caption{Available test points from the AMUX.}
+ 	\label{tab:tpval}
+ 	}
+\end{table}
 %Table from image: 
 
 %\begin{table}[htbp!]

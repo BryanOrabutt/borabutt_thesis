@@ -46,82 +46,93 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces System level overview for the HINP16C\relax }}{4}{figure.caption.2}}
 \newlabel{fig:HINP}{{1.2}{4}{System level overview for the HINP16C\relax }{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Scope of Thesis}{4}{section.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Top level view of CFD16C showing all inputs and outputs.\relax }}{5}{figure.caption.3}}
+\newlabel{fig:CFDtop}{{1.3}{5}{Top level view of CFD16C showing all inputs and outputs.\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2.}SYSTEM LEVEL DESIGN}{6}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\noindent \vskip \baselineskip \par }
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Overview of Chip}{6}{section.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{6}{figure.caption.3}}
-\newlabel{fig:CFD}{{2.1}{6}{System level overview for one channel of the CFD16C\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Features of CFD16C}{6}{section.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{6}{figure.caption.4}}
+\newlabel{fig:CFD}{{2.1}{6}{System level overview for one channel of the CFD16C\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Features of CFD16C}{7}{section.2.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Common Channel}{7}{section.2.3}}
 \citation{CFD}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Register 0 functionality.\relax }}{8}{table.caption.4}}
-\newlabel{Tab:reg1}{{2.1}{8}{Register 0 functionality.\relax }{table.caption.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Register 1 functionality.\relax }}{8}{table.caption.4}}
-\newlabel{Tab:reg2}{{2.2}{8}{Register 1 functionality.\relax }{table.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Register 0 functionality.\relax }}{8}{table.caption.5}}
+\newlabel{Tab:reg1}{{2.1}{8}{Register 0 functionality.\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Register 1 functionality.\relax }}{8}{table.caption.5}}
+\newlabel{Tab:reg2}{{2.2}{8}{Register 1 functionality.\relax }{table.caption.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}CFD Channel}{8}{section.2.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Nowlin Stage}{8}{subsection.2.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Zero Crossing Discriminator Stage}{8}{subsection.2.4.2}}
 \citation{CFD}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Nowlin differential (green) and high pass filtered (purple) outputs in response to 3 ns 20 mV pulse (blue). \relax }}{9}{figure.caption.6}}
+\newlabel{fig:nowlinout}{{2.2}{9}{Nowlin differential (green) and high pass filtered (purple) outputs in response to 3 ns 20 mV pulse (blue). \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Zero Crossing Discriminator Stage}{9}{subsection.2.4.2}}
+\newlabel{eq:bw}{{2.1}{10}{Zero Crossing Discriminator Stage}{equation.2.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Zero crossing discriminator comparator output showing underdrive to force output low.\relax }}{10}{figure.caption.7}}
+\newlabel{fig:ZCD}{{2.3}{10}{Zero crossing discriminator comparator output showing underdrive to force output low.\relax }{figure.caption.7}{}}
 \citation{COMMON_MODE}
 \citation{CFD}
-\newlabel{eq:bw}{{2.1}{9}{Zero Crossing Discriminator Stage}{equation.2.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Zero crossing discriminator stage.\relax }}{9}{figure.caption.5}}
-\newlabel{fig:ZCD}{{2.2}{9}{Zero crossing discriminator stage.\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Leading Edge Discriminator Stage}{9}{subsection.2.4.3}}
-\newlabel{eq:jitter}{{2.2}{10}{Leading Edge Discriminator Stage}{equation.2.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Leading edge discriminator stage.\relax }}{10}{figure.caption.6}}
-\newlabel{fig:ZCD}{{2.3}{10}{Leading edge discriminator stage.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{10}{subsection.2.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Zero crossing discriminator stage.\relax }}{11}{figure.caption.8}}
+\newlabel{fig:ZCD}{{2.4}{11}{Zero crossing discriminator stage.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Leading Edge Discriminator Stage}{11}{subsection.2.4.3}}
+\newlabel{eq:jitter}{{2.2}{11}{Leading Edge Discriminator Stage}{equation.2.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Leading edge discriminator output generation.\relax }}{12}{figure.caption.9}}
+\newlabel{fig:ledout}{{2.5}{12}{Leading edge discriminator output generation.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Leading edge discriminator stage.\relax }}{12}{figure.caption.10}}
+\newlabel{fig:LED}{{2.6}{12}{Leading edge discriminator stage.\relax }{figure.caption.10}{}}
 \citation{ONESHOT}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces DAC digital code word to oneshot pulse width mapping.\relax }}{11}{table.caption.7}}
-\newlabel{Tab:oneshot-pw}{{2.3}{11}{DAC digital code word to oneshot pulse width mapping.\relax }{table.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Oneshot stage.\relax }}{12}{figure.caption.8}}
-\newlabel{fig:oneshot-stage}{{2.4}{12}{Oneshot stage.\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Output Stage}{12}{subsection.2.4.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Output generation stage overview.\relax }}{13}{figure.caption.9}}
-\newlabel{fig:output-stage}{{2.5}{13}{Output generation stage overview.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3.}CIRCUIT LEVEL DESIGN}{14}{chapter.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{13}{subsection.2.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Leading edge and zero cross discriminator outputs generating qualifier pulse for oneshot.\relax }}{13}{figure.caption.11}}
+\newlabel{fig:qualifier}{{2.7}{13}{Leading edge and zero cross discriminator outputs generating qualifier pulse for oneshot.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Oneshot stage.\relax }}{14}{figure.caption.12}}
+\newlabel{fig:oneshot-stage}{{2.8}{14}{Oneshot stage.\relax }{figure.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces DAC digital code word to oneshot pulse width mapping.\relax }}{14}{table.caption.13}}
+\newlabel{Tab:oneshot-pw}{{2.3}{14}{DAC digital code word to oneshot pulse width mapping.\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Output Stage}{14}{subsection.2.4.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Output generation stage overview.\relax }}{15}{figure.caption.14}}
+\newlabel{fig:output-stage}{{2.9}{15}{Output generation stage overview.\relax }{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Register bit functionality.\relax }}{16}{table.caption.15}}
+\newlabel{tab:outreg}{{2.4}{16}{Register bit functionality.\relax }{table.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Available test points from the AMUX.\relax }}{16}{table.caption.15}}
+\newlabel{tab:tpval}{{2.5}{16}{Available test points from the AMUX.\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3.}CIRCUIT LEVEL DESIGN}{17}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\noindent \vskip \baselineskip \par }
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Process Parameters}{14}{section.3.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Common Channel}{14}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Digital Configuration}{14}{section.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Bandgap Reference}{14}{section.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Bias Currents}{14}{section.3.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Nowlin Circuit}{14}{section.3.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Differential Amplifier}{14}{section.3.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}Comparator}{14}{section.3.8}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.9}Zero Crossing Discriminator}{14}{section.3.9}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.10}Leading Edge Discriminator}{14}{section.3.10}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.11}Oneshot Circuit}{14}{section.3.11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.12}Output Generation}{14}{section.3.12}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4.}SIMULATION}{15}{chapter.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Process Parameters}{17}{section.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Common Channel}{17}{section.3.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Digital Configuration}{17}{section.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Bandgap Reference}{17}{section.3.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Bias Currents}{17}{section.3.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Nowlin Circuit}{17}{section.3.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Differential Amplifier}{17}{section.3.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Comparator}{17}{section.3.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.9}Oneshot Circuit}{17}{section.3.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.10}Output Generation}{17}{section.3.10}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4.}SIMULATION}{18}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\noindent \vskip \baselineskip \par }
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Methods}{15}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Configuration Registers}{15}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Bandgap}{15}{section.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Oneshot}{15}{section.4.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Nowlin}{15}{section.4.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Differential Amplifier}{15}{section.4.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Comparator}{15}{section.4.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}Zero Crossing Discriminator}{15}{section.4.8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.9}Leading Edge Discriminator}{15}{section.4.9}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.10}Walk Analysis}{15}{section.4.10}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{16}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Methods}{18}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Configuration Registers}{18}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Bandgap}{18}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Oneshot}{18}{section.4.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Nowlin}{18}{section.4.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Differential Amplifier}{18}{section.4.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Comparator}{18}{section.4.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}Zero Crossing Discriminator}{18}{section.4.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.9}Leading Edge Discriminator}{18}{section.4.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.10}Walk Analysis}{18}{section.4.10}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{19}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\noindent \vskip \baselineskip \par }
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Summary}{16}{section.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Conclusions}{16}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Future Work}{16}{section.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Summary}{19}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Conclusions}{19}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Future Work}{19}{section.5.3}}
 \bibstyle{apalike}
 \bibdata{./borabut_thesis.bib}
-\bibcite{ONESHOT}{electronics tutorials.ws, }
 \bibcite{CFD}{Engel, 2016}
 \bibcite{PSD-NSF}{G.\nobreakspace  {}Engel, 2006}
 \bibcite{HINP}{G.\nobreakspace  {}Engel, 2007}
@@ -129,11 +140,12 @@
 \bibcite{COMMON_MODE}{Karki, 2000}
 \bibcite{NOWLIN}{M.\nobreakspace  {}Simpson, 1996}
 \bibcite{PROCTOR}{Proctor, 2007}
+\bibcite{ONESHOT}{Rao, 2006}
 \bibcite{HINP-THESIS}{Sadasivam, 2002}
 \@writefile{toc}{\noindent \vskip \baselineskip \par }
-\@writefile{toc}{\contentsline {part}{REFERENCES}{17}{section.5.3}}
-\@writefile{toc}{\contentsline {part}{APPENDICES}{18}{section.5.3}}
+\@writefile{toc}{\contentsline {part}{REFERENCES}{20}{section.5.3}}
+\@writefile{toc}{\contentsline {part}{APPENDICES}{21}{section.5.3}}
 \@writefile{toc}{\vskip -\baselineskip }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A.}Verilog-A Code}{18}{chapter.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A.}Verilog-A Code}{21}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}

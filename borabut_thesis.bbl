@@ -1,9 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[electronics tutorials.ws, ]{ONESHOT}
-electronics tutorials.ws.
-\newblock Monostable multivibrators.
-
 \bibitem[Engel, 2016]{CFD}
 Engel, G. (2016).
 \newblock A multi-channel discriminator ic.
@@ -43,6 +39,11 @@ Proctor, J. (2007).
 \newblock Design of a multi-channel integrated circuit for use in nuclear
   physics experiments where particle identification is required.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Rao, 2006]{ONESHOT}
+Rao, P. (2006).
+\newblock {\em Pulse And Digital Circuits}.
+\newblock McGraw-Hill Education Pvt Limited.
 
 \bibitem[Sadasivam, 2002]{HINP-THESIS}
 Sadasivam, M. (2002).
