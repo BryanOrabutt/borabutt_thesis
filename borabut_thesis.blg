@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: borabut_thesis.aux
 The style file: apalike.bst
 Database file #1: ./borabut_thesis.bib.bib
-You've used 9 entries,
+You've used 15 entries,
             1935 wiz_defined-function locations,
-            520 strings with 5042 characters,
-and the built_in function-call counts, 2359 in all, are:
-= -- 236
-> -- 63
-< -- 9
-+ -- 24
-- -- 18
-* -- 144
-:= -- 468
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 53
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 103
-empty$ -- 160
-format.name$ -- 27
-if$ -- 436
+            560 strings with 5670 characters,
+and the built_in function-call counts, 4065 in all, are:
+= -- 400
+> -- 105
+< -- 15
++ -- 36
+- -- 30
+* -- 260
+:= -- 782
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 89
+chr.to.int$ -- 15
+cite$ -- 15
+duplicate$ -- 187
+empty$ -- 298
+format.name$ -- 45
+if$ -- 774
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 48
-num.names$ -- 27
-pop$ -- 39
+missing$ -- 16
+newline$ -- 78
+num.names$ -- 45
+pop$ -- 79
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 90
 quote$ -- 0
-skip$ -- 90
+skip$ -- 150
 stack$ -- 0
-substring$ -- 114
-swap$ -- 3
+substring$ -- 186
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 76
 warning$ -- 0
-while$ -- 18
+while$ -- 30
 width$ -- 0
-write$ -- 113
+write$ -- 193

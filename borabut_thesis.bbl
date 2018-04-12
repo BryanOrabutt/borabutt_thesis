@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Baker, 2010]{BAKER}
+Baker, R.~J. (2010).
+\newblock {\em CMOS: Circuit Design, Layout, and Simulation}.
+\newblock Wiley, Hoboken, New Jersey, 3rd edition.
+
 \bibitem[Engel, 2016]{CFD}
 Engel, G. (2016).
 \newblock A multi-channel discriminator ic.
@@ -22,6 +27,11 @@ Hall, M.~J. (2007).
   integration for the detection of ionizing radiation.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
 
+\bibitem[Jack E.~Kemmerly, 2011]{CIRCUITS}
+Jack E.~Kemmerly, Steven M.~Durbin, W.~H. (2011).
+\newblock {\em Engineering Circuit Analysis}.
+\newblock McGraw-Hill Education, 8th edition.
+
 \bibitem[Karki, 2000]{COMMON_MODE}
 Karki, J. (2000).
 \newblock Fully differential amplifiers remove noise from common-mode signals.
@@ -34,6 +44,16 @@ M.~Simpson, G.~Young, R.~J. (1996).
   delay line shaping.
 \newblock {\em Nuclear Science, IEEE Transactions on}.
 
+\bibitem[Paul R~Gray, 2009]{BANDGAP}
+Paul R~Gray, Paul J~Hurst, S. H.~L. (2009).
+\newblock {\em Analysis and Design of Analog Integrated Circuits}.
+\newblock Wiley, 5th edition.
+
+\bibitem[Phillip E.~Allen, 2012]{ALLEN-HOLBERG}
+Phillip E.~Allen, D. R.~H. (2012).
+\newblock {\em CMOS Analog Circuit Design}.
+\newblock Oxford, New York, New York, 3rd edition.
+
 \bibitem[Proctor, 2007]{PROCTOR}
 Proctor, J. (2007).
 \newblock Design of a multi-channel integrated circuit for use in nuclear
@@ -45,10 +65,20 @@ Rao, P. (2006).
 \newblock {\em Pulse And Digital Circuits}.
 \newblock McGraw-Hill Education Pvt Limited.
 
+\bibitem[Razavi, 2001]{TRANS}
+Razavi, B. (2001).
+\newblock {\em Design of Analog CMOS Integrated Circuits}.
+\newblock McGraw-Hill Education, 1st edition.
+
 \bibitem[Sadasivam, 2002]{HINP-THESIS}
 Sadasivam, M. (2002).
 \newblock A multi-channel integrated circuit for use with silicon strip
   detectors in experiments in low and intermediate physics.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Sung-Mo~Kang, 2004]{NMOS}
+Sung-Mo~Kang, Yusuf~Leblebici, C.~K. (2004).
+\newblock {\em CMOS Digital Integrated Circuits: Analysis and Design}.
+\newblock McGraw-Hill Education, 4th edition.
 
 \end{thebibliography}
