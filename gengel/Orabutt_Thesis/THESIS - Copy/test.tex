@@ -1,0 +1,28 @@
+\documentclass[a4paper,11pt]{article}
+\begin{document}
+\section{table}
+\begin{tabular}{llllllllll}
+\multicolumn{1}{c}{Header} & \multicolumn{1}{c}{Pin \#} & \multicolumn{1}{c}{Signal} & \multicolumn{1}{c}{Configuration} & \multicolumn{1}{c}{Pullup/Pulldown} & \multicolumn{1}{c}{Input/Output} & \multicolumn{1}{c}{Mux Mode} & \multicolumn{1}{c}{Address} & \multicolumn{1}{c}{\$PINS} & \multicolumn{1}{c}{Purpose} \\ 
+\multicolumn{1}{c}{P9} & \multicolumn{1}{c}{17} & I2C-2 & \multicolumn{1}{c}{0x72} & \multicolumn{1}{c}{Pullup} & \multicolumn{1}{c}{In/Out} & 2 - I2C1 & 0x15C & \multicolumn{1}{r}{87} & Second I2C bus SCL \\ 
+\multicolumn{1}{c}{P9} & \multicolumn{1}{c}{18} & I2C-2 & \multicolumn{1}{c}{0x72} & \multicolumn{1}{c}{Pullup} & \multicolumn{1}{c}{In/Out} & 2 - I2C1 & 0x158 & \multicolumn{1}{r}{86} & Second I2C bus SDA \\ 
+\multicolumn{1}{c}{P9} & \multicolumn{1}{c}{22} & IN-2 & \multicolumn{1}{c}{0x27} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 7 - GPIO0[2] (@2) & 0x150 & \multicolumn{1}{r}{84} & Accelerometer interrupt (GPIO) \\ 
+\multicolumn{1}{c}{P9} & \multicolumn{1}{c}{25} & IN-1  & \multicolumn{1}{c}{0x26} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU0 r31.t7 & 0x1AC & \multicolumn{1}{r}{107} & Accelerometer interrupt (PRU0) \\ 
+\multicolumn{1}{c}{P9} & \multicolumn{1}{c}{27} & DRV-EN & \multicolumn{1}{c}{0x17} & \multicolumn{1}{c}{Pullup} & \multicolumn{1}{c}{Output} & 7 - GPIO3[19] (@115) & 0x1A4 & \multicolumn{1}{r}{105} & Output to enable buffers \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{11} & PRU\_LED & \multicolumn{1}{c}{0x0E} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 6 - PRU0 r30.t15 & 0x034 & \multicolumn{1}{r}{13} & PRU controlled LED \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{12} & GPIO\_LED & \multicolumn{1}{c}{0x0F} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 7 - GPIO1[12] (@44) & 0x030 & \multicolumn{1}{r}{12} & GPIO controlled LED \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{15} & GPIO\_SW & \multicolumn{1}{c}{0x27} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 7 - GPIO1[15] (@47) & 0x03C & \multicolumn{1}{r}{15} & GPIO input push button \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{16} & PRU\_SW & \multicolumn{1}{c}{0x26} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU0 r31.t14 & 0x038 & \multicolumn{1}{r}{14} & PRU input push button \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{27} & ENC1 & \multicolumn{1}{c}{0x2E} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU1 r31.t8 & 0x0E0 & \multicolumn{1}{r}{56} & PRU encoder input - Motor 1 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{28} & ENC2 & \multicolumn{1}{c}{0x2E} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU1 r31.t10 & 0x0E8 & \multicolumn{1}{r}{58} & PRU encoder input - Motor 2 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{29} & ENC3 & \multicolumn{1}{c}{0x2E} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU1 r31.t9 & 0x0E4 & \multicolumn{1}{r}{57} & PRU encoder input - Motor 3 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{30} & ENC4 & \multicolumn{1}{c}{0x2E} & \multicolumn{1}{c}{Pulldown} & \multicolumn{1}{c}{Input} & 6 - PRU1 r31.t11 & 0x0EC & \multicolumn{1}{r}{59} & PRU encoder input - Motor 4 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{39} & M4-0 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t6 & 0x0B8 & \multicolumn{1}{r}{46} & PRU PWM control - Motor 4 input 0 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{40} & M4-1 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t7 & 0x0BC & \multicolumn{1}{r}{47} & PRU PWM control - Motor 4 input 1 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{41} & M2-0 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t4 & 0x0B0 & \multicolumn{1}{r}{44} & PRU PWM control - Motor 2 input 0 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{42} & M2-1 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t5 & 0x0B4 & \multicolumn{1}{r}{45} & PRU PWM control - Motor 2 input 1 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{43} & M1-0 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t2 & 0x0A8 & \multicolumn{1}{r}{42} & PRU PWM control - Motor 1 input 0  \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{44} & M1-1 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 5 - PRU1 r30.t3 & 0x0AC & \multicolumn{1}{r}{43} & PRU PWM control - Motor 1 input 1 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{45} & M3-1 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 8 - PRU1 r30.t6 & 0x0A0 & \multicolumn{1}{r}{40} & PRU PWM control - Motor 4 input 1 \\ 
+\multicolumn{1}{c}{P8} & \multicolumn{1}{c}{46} & M3-0 & \multicolumn{1}{c}{0x0D} & \multicolumn{1}{c}{Disabled} & \multicolumn{1}{c}{Output} & 8 - PRU1 r30.t7 & 0x0A4 & \multicolumn{1}{r}{41} & PRU PWM control - Motor 4 input 0 \\ 
+\end{tabular}
+\end{document}

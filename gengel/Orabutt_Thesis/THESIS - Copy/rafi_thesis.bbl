@@ -1,0 +1,52 @@
+\begin{thebibliography}{}
+
+\bibitem[Allen, 2012]{ALLEN}
+Allen, P.~E. (2012).
+\newblock {\em CMOS analog circuit design}.
+\newblock Oxford University Press, USA, New York Oxford.
+
+\bibitem[Gianluigi De~Geronimo, 2001]{PICK_DETECT_2}
+Gianluigi De~Geronimo, Paul~O'Connor, A.~K. (2001).
+\newblock Analog cmos peak detect and hold circuits. part 2. the two-phase
+  offset-free and derandomizing configuration.
+\newblock {\em Nuclear Instruments and Methods in Physics Research A}, pages
+  544--556.
+
+\bibitem[Gianluigi De~Geronimo, 2002]{PICK_DETECT}
+Gianluigi De~Geronimo, Paul~O'Connor, A.~K. (2002).
+\newblock Analog cmos peak detect and hold circuits. part 1. analysis of
+  classical configuration.
+\newblock {\em Nuclear Instruments and Methods in Physics Research A}, pages
+  533--543.
+
+\bibitem[Hastings, 2001]{ALAN_BOOK}
+Hastings, A. (2001).
+\newblock {\em The ART of ANALOG LAYOUT}.
+\newblock Prentice Hall, Upper Saddle River,NJ07458.
+
+\bibitem[Helmuth, 2005]{SPIELER_BOOK}
+Helmuth, S. (2005).
+\newblock {\em Semiconductor Detector Systems}.
+\newblock Oxford University Press, New York.
+
+\bibitem[Rabaey, 2003]{RABAEY_BOOK}
+Rabaey, J. (2003).
+\newblock {\em Digital integrated circuits : a design perspective}.
+\newblock Pearson Education, Upper Saddle River, N.J.
+
+\bibitem[Razavi, 2001]{RAZAVI_BOOK}
+Razavi, B. (2001).
+\newblock {\em Design of analog CMOS integrated circuits}.
+\newblock McGraw-Hill, Boston, MA.
+
+\bibitem[Tsividis, 2011]{TSIVIDIS_BOOK}
+Tsividis, Y. (2011).
+\newblock {\em Operation and modeling of the MOS transistor}.
+\newblock Oxford University Press, New York.
+
+\bibitem[Weste, 2006]{WESTE}
+Weste, N. (2006).
+\newblock {\em CMOS VLSI design : a circuits and systems perspective}.
+\newblock Pearson Education, Delhi.
+
+\end{thebibliography}

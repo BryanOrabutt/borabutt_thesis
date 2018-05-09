@@ -1,0 +1,1346 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<worksheet version="3.0.3" xmlns="http://schemas.mathsoft.com/worksheet30" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://schemas.mathsoft.com/worksheet30" xmlns:ml="http://schemas.mathsoft.com/math30" xmlns:u="http://schemas.mathsoft.com/units10" xmlns:p="http://schemas.mathsoft.com/provenance10">
+  <settings>
+    <presentation>
+      <textRendering>
+        <textStyles>
+          <textStyle name="Normal">
+            <blockAttr margin-left="0" margin-right="0" text-indent="inherit" text-align="left" list-style-type="inherit" tabs="inherit" />
+            <inlineAttr font-family="Arial" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" line-through="false" vertical-align="baseline" />
+          </textStyle>
+        </textStyles>
+      </textRendering>
+      <mathRendering equation-color="#000">
+        <operators multiplication="narrow-dot" derivative="derivative" literal-subscript="large" definition="colon-equal" global-definition="triple-equal" local-definition="left-arrow" equality="bold-equal" symbolic-evaluation="right-arrow" />
+        <mathStyles>
+          <mathStyle name="Variables" font-family="Times New Roman" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="Constants" font-family="Times New Roman" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="User 1" font-family="Arial" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="User 2" font-family="Courier New" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="User 3" font-family="Arial" font-charset="0" font-size="10" font-weight="bold" font-style="normal" underline="false" />
+          <mathStyle name="User 4" font-family="Times New Roman" font-charset="0" font-size="10" font-weight="normal" font-style="italic" underline="false" />
+          <mathStyle name="User 5" font-family="Times New Roman" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="User 6" font-family="Arial" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="User 7" font-family="Times New Roman" font-charset="0" font-size="10" font-weight="normal" font-style="normal" underline="false" />
+          <mathStyle name="Math Text Font" font-family="Times New Roman" font-charset="0" font-size="14" font-weight="normal" font-style="normal" underline="false" />
+        </mathStyles>
+        <dimensionNames mass="mass" length="length" time="time" current="current" thermodynamic-temperature="temperature" luminous-intensity="luminosity" amount-of-substance="substance" display="false" />
+        <symbolics derivation-steps-style="vertical-insert" show-comments="false" evaluate-in-place="false" />
+        <results numeric-only="true">
+          <general precision="3" show-trailing-zeros="false" radix="dec" complex-threshold="10" zero-threshold="15" imaginary-value="i" exponential-threshold="3" />
+          <matrix display-style="auto" expand-nested-arrays="false" />
+          <unit format-units="true" simplify-units="true" fractional-unit-exponent="false" />
+        </results>
+      </mathRendering>
+      <pageModel show-page-frame="false" show-header-frame="false" show-footer-frame="false" header-footer-start-page="1" paper-code="1" orientation="portrait" print-single-page-width="false" page-width="612" page-height="792">
+        <margins left="86" right="86" top="86" bottom="86" />
+        <header use-full-page-width="true">
+          <left>
+          </left>
+          <center>
+          </center>
+          <right>
+          </right>
+        </header>
+        <footer use-full-page-width="true">
+          <left>
+          </left>
+          <center>
+          </center>
+          <right>
+          </right>
+        </footer>
+      </pageModel>
+      <colorModel background-color="#fff" default-highlight-color="#ffff80" />
+      <language math="en" UI="en" />
+    </presentation>
+    <calculation>
+      <builtInVariables array-origin="0" convergence-tolerance="0.001" constraint-tolerance="0.001" random-seed="1" prn-precision="4" prn-col-width="8" />
+      <calculationBehavior automatic-recalculation="true" matrix-strict-singularity-check="true" optimize-expressions="false" exact-boolean="true" strings-use-origin="false" zero-over-zero="0">
+        <compatibility multiple-assignment="MC12" local-assignment="MC12" />
+      </calculationBehavior>
+      <units>
+        <currentUnitSystem name="si" customized="false" />
+      </units>
+    </calculation>
+    <editor view-annotations="false" view-regions="false">
+      <ruler is-visible="false" ruler-unit="cm" />
+      <grid granularity-x="6" granularity-y="6" />
+    </editor>
+    <fileFormat image-type="none" image-quality="75" save-numeric-results="true" exclude-large-results="false" save-text-images="false" screen-dpi="96" />
+    <miscellaneous>
+      <handbook handbook-region-tag-ub="1" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295" />
+    </miscellaneous>
+  </settings>
+  <regions>
+    <region region-id="1" left="16.25" top="13" width="78.75" height="23.75" align-x="13" align-y="26.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">fF</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>15</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:id xml:space="preserve">F</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="2" left="16.25" top="58" width="76" height="35.75" align-x="13" align-y="77.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">K.PN</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>170</ml:real>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">μA</ml:id>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">V</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="3" left="125.75" top="64.5" width="71" height="21.5" align-x="122.5" align-y="77" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.TN0</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.5</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="4" left="216.25" top="64.5" width="48.75" height="21.5" align-x="213" align-y="77" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">n.n</ml:id>
+          <ml:real>1.2</ml:real>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="5" left="22.5" top="103.25" width="70.25" height="35.75" align-x="19.25" align-y="123" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">K.PP</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>60</ml:real>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">μA</ml:id>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">V</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="6" left="125.75" top="109.75" width="79.5" height="21.5" align-x="122.5" align-y="122.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.TP0</ml:id>
+          <ml:apply>
+            <ml:neg />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>0.7</ml:real>
+              <ml:id xml:space="preserve">V</ml:id>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="7" left="222.5" top="109.75" width="48.75" height="21.5" align-x="219.25" align-y="122.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">n.p</ml:id>
+          <ml:real>1.3</ml:real>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="10" left="3.25" top="1432.25" width="355.5" height="12.25" align-x="0" align-y="1440.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <area is-collapsed="true" name="" show-name="false" show-border="true" show-icon="false" show-timestamp="true" allow-expand="false" is-locked="false" timestamp="" top-lock-id="8" bottom-lock-id="9" />
+    </region>
+    <region region-id="11" left="9.75" top="1458" width="74.5" height="23.75" align-x="6.5" align-y="1471.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">fF</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>15</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:id xml:space="preserve">F</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="12" left="100" top="1458" width="74.5" height="23.75" align-x="96.75" align-y="1471.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">fC</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>15</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:id xml:space="preserve">C</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="13" left="3.25" top="1490.25" width="400" height="22.25" align-x="0" align-y="1503.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="14">Process parameters for the AMS C35 Process (3V option)</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="14" left="9.75" top="1522.5" width="67.5" height="21.5" align-x="6.5" align-y="1535.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">R.PH</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>1200</ml:real>
+            <ml:id xml:space="preserve">Ω</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="15" left="158" top="1522.5" width="221.5" height="17.25" align-x="154.75" align-y="1533" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Typical sheet resistance for RPOLYH resistor</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="16" left="9.75" top="1554.75" width="100.25" height="28" align-x="6.5" align-y="1570.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">α.PH</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:neg />
+              <ml:real>0.75</ml:real>
+            </ml:apply>
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>3</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="17" left="158" top="1561.25" width="195.75" height="17.25" align-x="154.75" align-y="1571.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Thermal coefficient for RPOLYH resistor</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="18" left="9.75" top="1587" width="56" height="21.5" align-x="6.5" align-y="1599.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">R.P2</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>50</ml:real>
+            <ml:id xml:space="preserve">Ω</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="19" left="158" top="1587" width="220" height="17.25" align-x="154.75" align-y="1597.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Typical sheet resistance for RPOLY2 resistor</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="20" left="9.75" top="1619.25" width="91.75" height="28" align-x="6.5" align-y="1635.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">α.P2</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.59</ml:real>
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>3</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="21" left="158" top="1632.25" width="194.25" height="17.25" align-x="154.75" align-y="1642.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Thermal coefficient for RPOLY2 resistor</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="22" left="9.75" top="1658" width="80.25" height="35.75" align-x="6.5" align-y="1677.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">C.pp</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>860</ml:real>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">fF</ml:id>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">μm</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="23" left="158" top="1671" width="251" height="17.25" align-x="154.75" align-y="1681.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Area capacitance for double poly capacitors fF/um2</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="24" left="9.75" top="1716.25" width="80.25" height="28" align-x="6.5" align-y="1732" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">α.pp</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>30</ml:real>
+            <ml:apply>
+              <ml:pow />
+              <ml:real>10</ml:real>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>6</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="25" left="151.5" top="1729" width="197.25" height="17.25" align-x="148.5" align-y="1739.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Thermal coefficient for double poly caps</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="26" left="9.75" top="1754.75" width="66.75" height="21.5" align-x="6.5" align-y="1767.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.TN0</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.5</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="27" left="151.5" top="1761.25" width="143.25" height="17.25" align-x="148.5" align-y="1771.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Threshold voltages fo NMOS</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="28" left="9.75" top="1793.5" width="75.25" height="21.5" align-x="6.5" align-y="1806" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.TP0</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:neg />
+              <ml:real>0.7</ml:real>
+            </ml:apply>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="29" left="151.5" top="1793.5" width="141.25" height="17.25" align-x="148.5" align-y="1804" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Threshold voltage for PMOS</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="30" left="16.25" top="1832.25" width="48.75" height="21.5" align-x="13" align-y="1844.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">n.n</ml:id>
+          <ml:real>1.3</ml:real>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="31" left="151.5" top="1832.25" width="178.5" height="17.25" align-x="148.5" align-y="1842.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Subthreshold slope factor for NMOS</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="32" left="16.25" top="1864.5" width="48.75" height="21.5" align-x="13" align-y="1877" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">n.p</ml:id>
+          <ml:real>1.2</ml:real>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="33" left="151.5" top="1864.5" width="177.75" height="17.25" align-x="148.5" align-y="1875" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Subthreshold slope factor for PMOS</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="34" left="16.25" top="1903.25" width="61.75" height="21.5" align-x="13" align-y="1915.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.DD</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>3.3</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="35" left="151.5" top="1903.25" width="76" height="17.25" align-x="148.5" align-y="1913.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Supply voltage</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="36" left="3.25" top="1942" width="140.5" height="17.25" align-x="0" align-y="1952.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Transconductance parameter</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="38" left="16.25" top="1974.25" width="71.75" height="35.75" align-x="13" align-y="1994" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">K.PN</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>170</ml:real>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">μA</ml:id>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">V</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="39" left="151.5" top="1974.25" width="66" height="35.75" align-x="148.5" align-y="1994" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">K.PP</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>60</ml:real>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">μA</ml:id>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">V</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="40" left="9.75" top="2051.5" width="106.75" height="17.25" align-x="6.5" align-y="2062" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Matching parameters:</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="41" left="145.25" top="2077.5" width="83.75" height="21.5" align-x="142" align-y="2090" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">A.KPN</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.007</ml:real>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="42" left="9.75" top="2083.75" width="86.75" height="21.5" align-x="6.5" align-y="2096.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">A.VTN</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>9.4</ml:real>
+              <ml:id xml:space="preserve">mV</ml:id>
+            </ml:apply>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="43" left="151.5" top="2103.25" width="78.25" height="21.5" align-x="148.5" align-y="2115.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">A.KVP</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.01</ml:real>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="44" left="9.75" top="2109.75" width="92.5" height="21.5" align-x="6.5" align-y="2122.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">A.VTP</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>14.5</ml:real>
+              <ml:id xml:space="preserve">mV</ml:id>
+            </ml:apply>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="45" left="3.25" top="2154.75" width="71.75" height="17.25" align-x="0" align-y="2165.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:id xml:space="preserve">Permitivity</ml:id>
+      </math>
+    </region>
+    <region region-id="46" left="9.75" top="2174.25" width="116.25" height="30" align-x="6.5" align-y="2191" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">ε.o</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>8.854</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:real>10</ml:real>
+                <ml:apply>
+                  <ml:neg />
+                  <ml:real>14</ml:real>
+                </ml:apply>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:div />
+              <ml:id xml:space="preserve">F</ml:id>
+              <ml:id xml:space="preserve">cm</ml:id>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="47" left="209.75" top="2232.25" width="67.5" height="21.5" align-x="206.5" align-y="2244.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">t.ox</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>7.6</ml:real>
+            <ml:id xml:space="preserve">nm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="48" left="183.75" top="2296.75" width="159.25" height="17.25" align-x="180.75" align-y="2307.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Oxide capacitance per unit area</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="49" left="145.25" top="2342" width="109" height="28" align-x="142" align-y="2357.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">N.A</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>212</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:real>10</ml:real>
+                <ml:real>15</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:pow />
+              <ml:id xml:space="preserve">cm</ml:id>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>3</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="50" left="16.25" top="2348.5" width="116.75" height="17.25" align-x="13" align-y="2358.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Substrate doping levels</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="51" left="280.75" top="2348.5" width="77.5" height="17.25" align-x="277.5" align-y="2358.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">P-SUBSTRATE</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="52" left="145.25" top="2380.75" width="109" height="28" align-x="142" align-y="2396.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">N.D</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>101</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:real>10</ml:real>
+                <ml:real>15</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:pow />
+              <ml:id xml:space="preserve">cm</ml:id>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>3</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="53" left="280.75" top="2380.75" width="42.25" height="17.25" align-x="277.5" align-y="2391" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">NWELL</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="54" left="158" top="2425.75" width="114.75" height="28" align-x="154.75" align-y="2441.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">n.i</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:apply>
+              <ml:mult />
+              <ml:real>1.05</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:real>10</ml:real>
+                <ml:real>10</ml:real>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:pow />
+              <ml:id xml:space="preserve">cm</ml:id>
+              <ml:apply>
+                <ml:neg />
+                <ml:real>3</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="55" left="16.25" top="2432.25" width="106.75" height="17.25" align-x="13" align-y="2442.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Intrinsic concentration</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="56" left="16.25" top="2464.5" width="84.5" height="17.25" align-x="13" align-y="2475" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Thermal voltage:</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="57" left="158" top="2464.5" width="68.75" height="21.5" align-x="154.75" align-y="2477" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">U.T</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>25.9</ml:real>
+            <ml:id xml:space="preserve">mV</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="58" left="158" top="2490.25" width="104.75" height="28" align-x="154.75" align-y="2506" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">q.e</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>1.602</ml:real>
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:pow />
+                <ml:real>10</ml:real>
+                <ml:apply>
+                  <ml:neg />
+                  <ml:real>19</ml:real>
+                </ml:apply>
+              </ml:apply>
+              <ml:id xml:space="preserve">C</ml:id>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="59" left="16.25" top="2503.25" width="90.25" height="17.25" align-x="13" align-y="2513.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Electronic charge:</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="60" left="16.25" top="2535.5" width="154.75" height="19.25" align-x="13" align-y="2547" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="12">IMPORTANT FUNCTIONS</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="61" left="16.25" top="2567.75" width="206.5" height="17.25" align-x="13" align-y="2578.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Functions to compute inversion coefficient.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="62" left="16.25" top="2593.5" width="149.75" height="40.25" align-x="13" align-y="2615.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">θN</ml:id>
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:id xml:space="preserve">S</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:apply>
+                    <ml:mult />
+                    <ml:real>2</ml:real>
+                    <ml:id xml:space="preserve">n.n</ml:id>
+                  </ml:apply>
+                  <ml:id xml:space="preserve">S</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">K.PN</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">U.T</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="63" left="216.25" top="2593.5" width="149.75" height="40.25" align-x="213" align-y="2615.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">θP</ml:id>
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:id xml:space="preserve">S</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:apply>
+                    <ml:mult />
+                    <ml:real>2</ml:real>
+                    <ml:id xml:space="preserve">n.p</ml:id>
+                  </ml:apply>
+                  <ml:id xml:space="preserve">S</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">K.PP</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">U.T</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="64" left="9.75" top="2664.5" width="220.75" height="17.25" align-x="6.5" align-y="2675" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Equation used to compute saturation voltage.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="65" left="254.75" top="2696.75" width="132.5" height="43" align-x="251.5" align-y="2720" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">VSATP</ml:id>
+            <ml:id xml:space="preserve">θ</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:real>2</ml:real>
+                  <ml:id xml:space="preserve">n.p</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">U.T</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:sqrt />
+                <ml:id xml:space="preserve">θ</ml:id>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:minus />
+              <ml:real>1</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">e</ml:id>
+                <ml:apply>
+                  <ml:neg />
+                  <ml:apply>
+                    <ml:sqrt />
+                    <ml:id xml:space="preserve">θ</ml:id>
+                  </ml:apply>
+                </ml:apply>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="66" left="35.5" top="2703.25" width="132.5" height="43" align-x="32.25" align-y="2726.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">VSATN</ml:id>
+            <ml:id xml:space="preserve">θ</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:real>2</ml:real>
+                  <ml:id xml:space="preserve">n.n</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">U.T</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:sqrt />
+                <ml:id xml:space="preserve">θ</ml:id>
+              </ml:apply>
+            </ml:apply>
+            <ml:apply>
+              <ml:minus />
+              <ml:real>1</ml:real>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">e</ml:id>
+                <ml:apply>
+                  <ml:neg />
+                  <ml:apply>
+                    <ml:sqrt />
+                    <ml:id xml:space="preserve">θ</ml:id>
+                  </ml:apply>
+                </ml:apply>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="67" left="9.75" top="2774.25" width="268.75" height="17.25" align-x="6.5" align-y="2784.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Equation used to compute shape factor given θ and I.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="68" left="9.75" top="2806.5" width="149.75" height="40.25" align-x="6.5" align-y="2828.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">SN</ml:id>
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:id xml:space="preserve">θ</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:apply>
+                    <ml:mult />
+                    <ml:real>2</ml:real>
+                    <ml:id xml:space="preserve">n.n</ml:id>
+                  </ml:apply>
+                  <ml:id xml:space="preserve">θ</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">K.PN</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">U.T</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="69" left="254.75" top="2806.5" width="149.75" height="40.25" align-x="251.5" align-y="2828.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">SP</ml:id>
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:id xml:space="preserve">θ</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:id xml:space="preserve">I</ml:id>
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:apply>
+                  <ml:mult />
+                  <ml:apply>
+                    <ml:mult />
+                    <ml:real>2</ml:real>
+                    <ml:id xml:space="preserve">n.p</ml:id>
+                  </ml:apply>
+                  <ml:id xml:space="preserve">θ</ml:id>
+                </ml:apply>
+                <ml:id xml:space="preserve">K.PP</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:pow />
+                <ml:id xml:space="preserve">U.T</ml:id>
+                <ml:real>2</ml:real>
+              </ml:apply>
+            </ml:apply>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="70" left="3.25" top="2864.5" width="135.5" height="17.25" align-x="0" align-y="2875" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Compute output resistance </f>
+        </p>
+      </text>
+    </region>
+    <region region-id="71" left="358" top="2909.75" width="57.25" height="21.5" align-x="354.75" align-y="2922.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">ϕ.o</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.8</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="72" left="3.25" top="2929" width="205" height="17.25" align-x="0" align-y="2939.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Design a butfer for the multiplicity output.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="73" left="3.25" top="2948.5" width="71" height="21.5" align-x="0" align-y="2961" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">I.mult</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>12</ml:real>
+            <ml:id xml:space="preserve">μA</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="74" left="9.75" top="2954.75" width="68.75" height="21.5" align-x="6.5" align-y="2967.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">PB.n</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.69</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="75" left="113" top="2954.75" width="68.75" height="21.5" align-x="109.75" align-y="2967.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">PB.p</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>1.02</ml:real>
+            <ml:id xml:space="preserve">V</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="76" left="3.25" top="2980.75" width="67.5" height="21.5" align-x="0" align-y="2993.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">R.S</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>8.6</ml:real>
+            <ml:id xml:space="preserve">KΩ</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="77" left="87" top="2980.75" width="63" height="21.5" align-x="83.75" align-y="2993.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">C.S</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.5</ml:real>
+            <ml:id xml:space="preserve">pF</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="78" left="9.75" top="3000" width="109.75" height="39.5" align-x="6.5" align-y="3021.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">VEN</ml:id>
+            <ml:id xml:space="preserve">L</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:real>2</ml:real>
+                <ml:id xml:space="preserve">L</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:sqrt />
+                <ml:id xml:space="preserve">PB.n</ml:id>
+              </ml:apply>
+            </ml:apply>
+            <ml:id xml:space="preserve">K.dsn</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="79" left="151.5" top="3000" width="109.75" height="39.5" align-x="148.5" align-y="3021.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:apply>
+            <ml:id xml:space="preserve">VEP</ml:id>
+            <ml:id xml:space="preserve">L</ml:id>
+          </ml:apply>
+          <ml:apply>
+            <ml:div />
+            <ml:apply>
+              <ml:mult />
+              <ml:apply>
+                <ml:mult />
+                <ml:real>2</ml:real>
+                <ml:id xml:space="preserve">L</ml:id>
+              </ml:apply>
+              <ml:apply>
+                <ml:sqrt />
+                <ml:id xml:space="preserve">PB.p</ml:id>
+              </ml:apply>
+            </ml:apply>
+            <ml:id xml:space="preserve">K.dsp</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="81" left="3.25" top="3038.75" width="400" height="17.25" align-x="0" align-y="3049" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Transistor M1 is the PFET input device and M2 is the PFET current source load.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="82" left="3.25" top="3071" width="111.75" height="17.25" align-x="0" align-y="3081.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Bias current of buffer.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="83" left="3.25" top="3103.25" width="51.5" height="21.5" align-x="0" align-y="3115.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">I.B</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>1</ml:real>
+            <ml:id xml:space="preserve">mA</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="84" left="3.25" top="3135.5" width="205.75" height="17.25" align-x="0" align-y="3146" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Let's assume a maximum capacitive load.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="85" left="9.75" top="3161.25" width="57.25" height="21.5" align-x="6.5" align-y="3173.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">C.L</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>20</ml:real>
+            <ml:id xml:space="preserve">pF</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="86" left="16.25" top="3161.25" width="223" height="17.25" align-x="13" align-y="3171.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Equations used to compute transconductance.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="87" left="3.25" top="3193.5" width="104" height="17.25" align-x="0" align-y="3204" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Determine slew rate.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="88" left="3.25" top="3329" width="266.75" height="17.25" align-x="0" align-y="3339.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Make the effective voltage of the two FETs the same.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="90" left="3.25" top="3413" width="216.5" height="17.25" align-x="0" align-y="3423.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Functions to compute gate-drain capacitance</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="91" left="9.75" top="3419.25" width="76.75" height="21.5" align-x="6.5" align-y="3432" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.EFF1</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>450</ml:real>
+            <ml:id xml:space="preserve">mV</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="92" left="138.75" top="3419.25" width="76.75" height="21.5" align-x="135.5" align-y="3432" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">V.EFF2</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>450</ml:real>
+            <ml:id xml:space="preserve">mV</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="96" left="9.75" top="3619.25" width="273" height="17.25" align-x="6.5" align-y="3629.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Functions used to compute the DB and SB capacitance</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="97" left="16.25" top="3632.25" width="283.75" height="17.25" align-x="13" align-y="3642.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Compute total settling time ... we need it less than 50 ns</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="98" left="9.75" top="3651.5" width="81.75" height="17.25" align-x="6.5" align-y="3662" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">LDIFF</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.7</ml:real>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="102" left="16.25" top="3761.25" width="63" height="21.5" align-x="13" align-y="3773.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <math optimize="false" disable-calc="false">
+        <ml:define>
+          <ml:id xml:space="preserve">L.1</ml:id>
+          <ml:apply>
+            <ml:mult />
+            <ml:real>0.7</ml:real>
+            <ml:id xml:space="preserve">μm</ml:id>
+          </ml:apply>
+        </ml:define>
+      </math>
+    </region>
+    <region region-id="104" left="3.25" top="3845.25" width="266" height="17.25" align-x="0" align-y="3855.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Function used to compute the gate-source capacitance</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="107" left="3.25" top="3961.25" width="243" height="17.25" align-x="0" align-y="3971.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Equations used to compute noise spectral density</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="108" left="3.25" top="3987" width="122.5" height="17.25" align-x="0" align-y="3997.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">First the thermal density</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="109" left="16.25" top="4051.5" width="159.25" height="17.25" align-x="13" align-y="4062" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <text use-page-width="false" push-down="false" lock-width="false">
+        <p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+          <f size="10">Use resistor to get bias current.</f>
+        </p>
+      </text>
+    </region>
+    <region region-id="112" left="3.25" top="4303.25" width="355.5" height="12.25" align-x="0" align-y="4311" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+      <area is-collapsed="true" name="" show-name="false" show-border="true" show-icon="false" show-timestamp="true" allow-expand="false" is-locked="false" timestamp="" top-lock-id="110" bottom-lock-id="111" />
+    </region>
+  </regions>
+</worksheet>

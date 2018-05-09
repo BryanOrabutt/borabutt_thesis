@@ -1,0 +1,147 @@
+
+
+
+
+\title{Preliminary Design of a 16-Channel Discriminator IC }
+
+
+\begin{document}
+
+% Insert title
+
+\maketitle
+
+% INTRODUCTION
+
+\section*{Introduction}
+
+This paper attempts to describe a preliminary design for a multi-channel discriminator chip. The integrated circuit (IC) will be called DISC16C, short for discriminator chip - 16 channels. Discriminators are widely used in radiation monitoring systems.  The purpose of a discriminator is to mark the arrival time of the input pulse. Ideally, the discriminator's output logic signal, marking the onset of the input pulse, should be independent of
+
+\begin{itemize}
+\item
+input pulse amplitude
+\item
+and input pulse risetime.
+\end{itemize}
+
+\noindent
+In reality, variations in the firing time of a discriminator generally fall into two categories: time walk, $t_w$, and time jitter, $\sigma_t$. The term time "walk" is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height and time jitter describes random variation in the rising edge of the output signal due to electronic noise in the system.\\
+
+\section*{Design Specifications}
+
+\noindent
+Design specifications for the IC include:
+
+\begin{itemize}
+\item
+Support 16 detectors.
+\item
+Must accommodate signals with risetime constants ranging from 3 nsec to 100 nsec.
+\item
+Should exhibit excellent walk and jitter characteristics for input pulse amplitudes ranging from 20 mV to 2 V.
+\item
+Must accommodate pulse repetition rates up to 1 KHz.
+\item
+The discriminator in each of the 16 channels should be of the constant fraction type (CFD). In CFD discriminators an attenuated version of the input is subtracted from a delayed version of input waveform and the time at which the difference between the two is equal to zero is used to mark the pulse arrival time. This results in timing independent of pulse amplitude.
+\item
+While the chip must support signals with risetime constants ranging from 3 nsec to 100 nsec, performance will be optimized for the shorter time constants.
+\item
+The output pulse width from a channel will be programmable (through an external analog control voltage) in the range of 10 nsec to 100 nsec.
+\item
+The analog supply voltage for the IC will be 5 Volts while all digital signals entering and leaving the IC will obey a 3.3 Volt standard.
+\item
+Power consumption of the 16 channel IC should not exceed 450 mW \emph{i.e.} 20 mW per channel with 50 mW for the circuits common to all channels.
+\item
+The IC is expected to occupy an area of aprpoximately 4 mm x 3 mm.  The chip will be packaged in a 64-pin plastic package.  A ground pin be be placed between the 16 analog input pins in order to reduce crosstalk.
+\item
+The chip is to be fabricated in an ON Semiconductor, 0.5 micron CMOS process.  The targeted process supports two poly and 3 metal layers.  A high resistance poly layer is available.
+\end{itemize}
+
+\section*{System Level Design Description}
+\noindent
+A block diagram depicting a single channel of the IC is presented in Figure~\ref{BlockDiagram}. The leading edge discriminator circuit shown in the figure consists of a cascade of 2 or 3 very high bandwidth (but relatively low gain) differential amplifiers. A "slow" DC offset cancellation loop drives the input referred offset for the cascaded amplifier to the sub-mV level. The amplified (offset-free) output is then compared with a programmable threshold using a continuous-time comparator.  The leading edge circuit output qualifies the output from the zero-cross circuit.  The leading edge comparator transitions first followed by the firing of the zero-cross discriminator, thereby marking input pulse arrival time. \\
+
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[scale=0.5,keepaspectratio=true]{./images/DISC16block.jpg}
+  \caption{Leading edge circuit qualifies output of zero-cross discriminator.  Leading edge and zero-cross circuits consists of cascade of low-gain high-bandwidth driving very high gain-bandwidth product (GBW) comparator }
+  \label{BlockDiagram}
+\end{figure}
+
+\noindent
+The Nowlin circuit is shown in more detail in Figure~\ref{Nowlin}.  The capacitor $C_0$ in the Nowlin cicuit along with the series resistance of $R_1$ and $R_2$ implement a "fast" shaper.  The output of this highpass filter is applied to the leading edge discriminator. Also, a fraction, $(\frac{R_2}{R_1 + R_2})$, of the fast shaper output is applied to the inverting input of the zero-cross discriminator circuit along with a delayed version of the input pulse connected to the non-inverting input. It is well-known that the time at which the differential voltage crosses through zero is independent of the pulse amplitude or rise time constant. \\
+
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[scale=0.3,keepaspectratio=true]{./images/nowlin.jpg}
+  \caption{Nowlin circit using lumped components, $R_1 \text{ and } C_1$, to implement delay. Here the fraction is set to $\frac{2}{3}.$}
+  \label{Nowlin}
+\end{figure}
+
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[scale=0.5,keepaspectratio=true]{./images/nowlin_fast.jpg}
+  \caption{Input signal with 3 ns risetime constant. A programmable capacitor array allows matching of delay in Nowlin circuit to risetime constant of input signal.}
+  \label{TypicalWaveforms}
+\end{figure}
+
+\noindent
+It is important that the slope which we shall refer to as the "slew rate" or SR of the differential signal when crossing through zero be maximized.  Nowlin delays which are very short produce maximum slope but at the expense of underdrive voltage. In Figure~\ref{TypicalWaveforms}, the input pulse rise time constant is 3 ns.  When the time constant in the Nowlin circuit is 300 ps, the SR is high but the underdrive is quite small. The underdrive must be sufficiently large so as to drive the comparator output to the logic false state.  When the time constant in the Nowlin circuit is 6 ns, the underdrive voltage is high but the SR suffers. When the time constant is 1.5 ns, a good compromise between SR and underdrive voltage is achieved. Capacitor $C_1$ is implemented using a (4-bit) programmable capacitor array. In this way, the delay can be matched to the risetime of the input pulse.
+
+
+\section*{Analysis}
+
+\noindent
+For input pulses with a risetime constant of 3 nsec, we require that the walk not exceed +/- 150 ps over the entire 2 mV - 2 V input amplitude range and the jitter should not exceed 300 ps at an input level of 200 mV. We will analyze jitter first.  Jitter is a consequence of the electronics noise associated with the Nowlin circuit as well as the noise of the \emph{first} differential amplifiers in the zero-cross discriminator circuit (where we assume the noise of succeeding stages when referred to the input is negligible since uncorrelated noise sources add in quadrature).  The noise of the first differential amplifier is $\sqrt{\frac{kT}{C_L}}$.
+
+
+\section*{Timeline}
+
+A timeline for the major development tasks is presented in Figure~\ref{Timeline}.
+
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[scale=0.7,keepaspectratio=true]{./images/NSFgant.jpg}
+  \caption{Timeline of major tasks.}
+  \label{Timeline}
+\end{figure}
+
+\section*{Conclusions}
+
+kkkkkkkk
+
+\bibliographystyle{./IEEEtran}
+\bibliography{./IEEEabrv,./IEEEexample}
+
+
+\begin{thebibliography}{1}
+
+\bibitem{TEST}
+
+author={Simpson, M.L. and Young, G.R. and Jackson, R.G. and Xu, M.},
+journal={Nuclear Science, IEEE Transactions on},
+title={A monolithic, constant-fraction discriminator using distributed R-C delay line shaping},
+year={1996},
+volume={43},
+number={3},
+pages={1695-1699},
+keywords={CMOS logic circuits;RC circuits;delay lines;detector circuits;discriminators;monolithic integrated circuits;nuclear electronics;20 mV to 2 V;N-well process;constant-fraction shaping;delay line;distributed R-C delay line shaping;monolithic CMOS constant-fraction discriminator;monolithic constant-fraction discriminator;slope degradation;timing errors;CMOS process;Capacitors;Circuits;Computational fluid dynamics;Delay lines;Detectors;Feedback;Laboratories;Signal generators;Timing},
+doi={10.1109/23.507173},
+ISSN={0018-9499},
+month={Jun}
+
+
+\bibitem{RABAEY_BOOK}
+Rabaey, J. (2003).
+\newblock {\em Digital integrated circuits : a design perspective}.
+\newblock Pearson Education, Upper Saddle River, N.J.
+
+\bibitem{TSIVIDIS_BOOK}
+Tsividis, Y. (2011).
+\newblock {\em Operation and modeling of the MOS transistor}.
+\newblock Oxford University Press, New York.
+
+\end{thebibliography}
+
+
+\end{document}
