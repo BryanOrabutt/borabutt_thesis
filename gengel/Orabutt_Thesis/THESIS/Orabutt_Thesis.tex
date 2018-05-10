@@ -15,7 +15,7 @@
 \usepackage{listings}
 \usepackage{rotating}
 \usepackage{tabularx}
-
+\usepackage{csvsimple}
 \usepackage{multirow}
 
 %% controls numbering of theorems
@@ -72,8 +72,7 @@
 
 \begin{abstract}
 
-This thesis documents the design, analysis, and simulation of a multi-channel integrated circuit (IC) consisting of 16 channels of constant fraction discrimination for use in Nuclear Physics experiments.  
-
+\par This thesis presents the design and simulation of a multichannel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses using constant fraction discriminators. These timing pulses are used for starting time-to-voltage converters (TVCs) on the PSD8C.
 \end{abstract}
 
 
@@ -82,14 +81,11 @@ This thesis documents the design, analysis, and simulation of a multi-channel in
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-\begin{acknowledgements}
+\begin{acknowledgements} 
 
-I  would  like  to thank  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, 
-Washington  University  Saint  Louis,  for  their  help  during  the  various  stages  of  this  project. 
-My  special  thanks  to  the  faculty  and  staff  of  ECE  department  for  their  direct  and  indirect 
-support without which I simply could not have progressed with my work. 
-
-
+\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I  would  like  to thank  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University  Saint  Louis,  for  their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and  indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
+\par I would also like to thank the other graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz and I all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
+\par I would like to thank my friends Jack White, Jared Charter, Andrew Quirin, Nelly Sanchez, and Shana Mankouski for their support during all of my endeavours in graduate school. Finally I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and Vicki Kern who has been like a second mother to me, have all been there for me and I know I could not have come this far without them.
 
 \end{acknowledgements}
 
@@ -126,7 +122,7 @@ useful for researchers working with radioactive ion beams, which can be composed
 The group’s first success was an analog shaped and peak sensing chip with on-board constant-fraction discriminators and
 sparsified readout. This chip is designed for use with arrays of Si strip detectors of medium scale (with the number of channels ranging from a few hundred to a few thousand) and is known as Heavy-Ion Nuclear Physics–16 Channel (HINP16C) [1,2]. 
 
-The second chip, christened Pulse Shape Discrimination–8 Channel(PSD8C), was designed to logically complement (in terms of detector types) the HINP16C chip. PSD8C performs pulse shape discrimination (PSD), and thus particle identification, if the time dependence of the light output of the scintillator depends on particle type. Moreover, PSD8C uses almost all the same supporting hardware as the HINP16C chip. Both ICs were fabricated in the ON-Semiconductor (formerly AMI) 0.5 mm n-well process (C5N),available through MOSIS (see \url{www.mosis.com}).
+The second chip, christened Pulse Shape Discrimination–8 Channel(PSD8C), was designed to logically complement (in terms of detector types) the HINP16C chip. PSD8C performs pulse shape discrimination (PSD), and thus particle identification, if the time dependence of the light output of the scintillator depends on particle type. Moreover, PSD8C uses almost all the same supporting hardware as the HINP16C chip. Both ICs were fabricated in the ON-Semiconductor (formerly AMI) 0.5 mm n-well process (C5N), available through MOSIS (see \url{www.mosis.com}).
 
 Talk about the block diagram of typical PSD system.
 
@@ -184,7 +180,7 @@ latter;
 and CFD circuits are not on-chip so as to provide greater flexibility.
 \end{itemize}
 
-PSD8C is described in detail in Refs. []. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm_2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
+PSD8C is described in detail in Refs. []. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
 problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 ps/C in the 500 ns mode, 40 ps/C in the 2 ms mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip’s analog output pulse trains).
 
@@ -214,6 +210,8 @@ The CFD chip described herein with its programmable Nowlin cirucit will allow th
 
 
 \section{Object and Scope of Work} 
+
+\par The object of this thesis work was to create a multichannel integrated circuit capable of constant fraction discrimination. This thesis is composed of five chapters. The system level architecture is presented in Chapter 2. Chapter 3 describes the circuit level design of the many sub-circuits that compose the CFD16C. Chapter 4 details the simulated performance of the CFD16C to show that it performs within the intended design specification. Finally Chapter 5 provides a summary, conclusions, and details future work to be done on the CFD16C.
 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 2
