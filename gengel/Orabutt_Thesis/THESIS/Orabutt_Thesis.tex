@@ -15,7 +15,6 @@
 \usepackage{listings}
 \usepackage{rotating}
 \usepackage{tabularx}
-\usepackage{csvsimple}
 \usepackage{multirow}
 
 %% controls numbering of theorems
@@ -294,8 +293,8 @@ Transconductance Matching Coefficient & $A_{KPN}$  &  0.7 \% $\cdot$ $\mu m$ \\
 \hline 
 \end{tabular} 
 \end{center}
-\label{TBL:NMOS_PARMS}
 \caption{NMOS Parameters}
+\label{TBL:NMOS_PARMS}
 \end{table}
 
 % PFET device properties
@@ -329,12 +328,16 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 % DESCRIPTION OF COMMON CHANNEL
 
 \section{Common Channel}
+\par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, signal ground generator, bandgap reference, and bias current generators.
 
 \subsection{Configuration registers}
+\par There are three registers in the common channel. 
 
 \subsection{Power on reset circuit}
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
+\par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called AGND, must be at a potential half way between AVDD and AVSS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.52 V and can be trimmed by $\pm 150$ mV.
 
 \subsection{Bandgap voltage reference}
 
