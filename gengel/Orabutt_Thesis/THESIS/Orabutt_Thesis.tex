@@ -344,7 +344,14 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \subsection{PTAT current reference}
 
 \subsection{Zero-tempco current reference}
-
+\par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.45,keepaspectratio=true]{../../../images/ztc_gen.png} 
+\caption{Zero temperature coefficient current generator.}
+\label{fig:ztc}
+\end{figure}
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$ 0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 70 k$\Omega$ NY resistor and a 30 k$\Omega$ HY resistor. This ZTC current is replicated using 16 current mirrors to provide one for each channel. The ZTC currents are used to give the DAC circuits an output that doesnt depend on temperature. 
 \subsection{Lockout DAC}
 
 \subsection{Multiplicity output buffer}
