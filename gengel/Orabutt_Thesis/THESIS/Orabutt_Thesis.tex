@@ -331,7 +331,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, signal ground generator, bandgap reference, and bias current generators.
 
 \subsection{Configuration registers}
-\par There are three registers in the common channel. 
+\par There are three registers in the common channel as well as one in each of the signal channels. 
 
 \subsection{Power on reset circuit}
 \par A power on reset circuit is used to start the PTAT bias current generator circuit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
@@ -351,7 +351,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \caption{Zero temperature coefficient current generator.}
 \label{fig:ztc}
 \end{figure}
-\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$ 0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 70 k$\Omega$ NY resistor and a 30 k$\Omega$ HY resistor. This ZTC current is replicated using 16 current mirrors to provide one for each channel. The ZTC currents are used to give the DAC circuits an output that doesnt depend on temperature. 
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesnt depend on temperature. 
 \subsection{Lockout DAC}
 
 \subsection{Multiplicity output buffer}

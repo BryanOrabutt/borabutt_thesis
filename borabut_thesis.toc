@@ -18,8 +18,8 @@
 \contentsline {subsection}{\numberline {2.4.1}Nowlin Stage}{8}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Zero Crossing Discriminator Stage}{9}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Leading Edge Discriminator Stage}{11}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{13}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Output Stage}{14}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{12}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Output Stage}{13}{subsection.2.4.5}
 \contentsline {chapter}{\numberline {3.}CIRCUIT LEVEL DESIGN}{17}{chapter.3}
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {3.1}Process Parameters}{17}{section.3.1}
@@ -28,14 +28,13 @@
 \contentsline {subsection}{\numberline {3.2.2}Bandgap Reference}{18}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Bias Currents}{19}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Nowlin Circuit}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Programmable Capacitor}{21}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Differential Amplifier}{23}{section.3.4}
-\contentsline {section}{\numberline {3.5}Comparator}{24}{section.3.5}
-\contentsline {section}{\numberline {3.6}Oneshot DAC}{25}{section.3.6}
+\contentsline {section}{\numberline {3.4}Differential Amplifier}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}Comparator}{23}{section.3.5}
+\contentsline {section}{\numberline {3.6}Oneshot DAC}{24}{section.3.6}
 \contentsline {section}{\numberline {3.7}Oneshot Circuit}{25}{section.3.7}
 \contentsline {section}{\numberline {3.8}Output Generation}{26}{section.3.8}
 \contentsline {subsection}{\numberline {3.8.1}Multiplicity}{26}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Channel OR}{27}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.2}Channel OR}{26}{subsection.3.8.2}
 \contentsline {subsection}{\numberline {3.8.3}Timing Pulse}{27}{subsection.3.8.3}
 \contentsline {chapter}{\numberline {4.}SIMULATION}{28}{chapter.4}
 \noindent \vskip \baselineskip \par 
@@ -48,20 +47,20 @@
 \contentsline {section}{\numberline {4.5}Nowlin}{29}{section.4.5}
 \contentsline {section}{\numberline {4.6}Differential Amplifier}{31}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}Frequency Response}{31}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Noise}{32}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Output swing}{32}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.2}Noise}{31}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Output swing}{31}{subsection.4.6.3}
 \contentsline {section}{\numberline {4.7}Comparator}{32}{section.4.7}
 \contentsline {section}{\numberline {4.8}Output Walk \& Jitter}{33}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}Time Walk}{34}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}DC Offsets}{35}{subsection.4.8.2}
-\contentsline {subsection}{\numberline {4.8.3}Jitter}{35}{subsection.4.8.3}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{37}{chapter.5}
+\contentsline {subsection}{\numberline {4.8.1}Time Walk}{33}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}DC Offsets}{34}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Jitter}{34}{subsection.4.8.3}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{36}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{37}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{38}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{38}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{36}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{37}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{37}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{39}{section.5.3}
-\contentsline {part}{APPENDICES}{41}{section.5.3}
+\contentsline {part}{REFERENCES}{38}{section.5.3}
+\contentsline {part}{APPENDICES}{40}{section.5.3}
 \vskip -\baselineskip 
-\contentsline {chapter}{\numberline {A.}Verilog-A Code}{41}{chapter.1}
+\contentsline {chapter}{\numberline {A.}Verilog-A Code}{40}{chapter.1}

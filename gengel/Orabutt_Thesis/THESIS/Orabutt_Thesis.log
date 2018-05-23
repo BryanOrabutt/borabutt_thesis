@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  21 MAY 2018 16:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  22 MAY 2018 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -708,21 +708,21 @@ Package microtype Info: Loading generic settings for font family
 [1
 
 
-] <./ch1_figures/PSD_block.png, id=276, 744.53156pt x 563.10374pt>
+] <./ch1_figures/PSD_block.png, id=278, 744.53156pt x 563.10374pt>
 File: ./ch1_figures/PSD_block.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_block.png>
 Package pdftex.def Info: ./ch1_figures/PSD_block.png used on input line 130.
 (pdftex.def)             Requested size: 446.72238pt x 337.86485pt.
  [2 <./ch1_figures/PSD_block.png>]
-<./ch1_figures/PSD_channel.png, id=284, 287.55853pt x 307.1475pt>
+<./ch1_figures/PSD_channel.png, id=286, 287.55853pt x 307.1475pt>
 File: ./ch1_figures/PSD_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_channel.png>
 Package pdftex.def Info: ./ch1_figures/PSD_channel.png used on input line 142.
 (pdftex.def)             Requested size: 287.55783pt x 307.14674pt.
 
-<./ch1_figures/PSD_sub_channel.png, id=285, 343.5234pt x 407.121pt>
+<./ch1_figures/PSD_sub_channel.png, id=287, 343.5234pt x 407.121pt>
 File: ./ch1_figures/PSD_sub_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_sub_channel.png>
@@ -747,7 +747,7 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [5]
-<./ch1_figures/PSD_system.png, id=304, 547.8066pt x 355.5684pt>
+<./ch1_figures/PSD_system.png, id=306, 547.8066pt x 355.5684pt>
 File: ./ch1_figures/PSD_system.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_system.png>
@@ -788,15 +788,22 @@ Chapter 2.
 Chapter 3.
 [11
 
-] [12] [13]
+] <../../../images/ztc_gen.png, id=340, 365.11406pt x 445.665pt>
+File: ../../../images/ztc_gen.png Graphic file (type png)
+
+<use ../../../images/ztc_gen.png>
+Package pdftex.def Info: ../../../images/ztc_gen.png used on input line 350.
+(pdftex.def)             Requested size: 164.2998pt x 200.5474pt.
+ [12] [13 <../../../images/ztc_gen.png>]
+[14]
 Chapter 4.
-[14
+[15
 
 ]
 Chapter 5.
-[15
+[16
 
-] (./Orabutt_Thesis.bbl) [16
+] (./Orabutt_Thesis.bbl) [17
 
 ]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -805,25 +812,25 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 452.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
 
 (./Orabutt_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 452.
 Package rerunfilecheck Info: File `Orabutt_Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 5B6D9F156C216EB7B627E1160FFCD4AB;2966.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 452.
  ) 
 Here is how much of TeX's memory you used:
- 11447 strings out of 494820
- 172932 string characters out of 3178050
- 316781 words of memory out of 3000000
- 14320 multiletter control sequences out of 15000+200000
+ 11456 strings out of 494820
+ 173118 string characters out of 3178050
+ 316919 words of memory out of 3000000
+ 14325 multiletter control sequences out of 15000+200000
  10812 words of font info for 69 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
  36i,12n,49p,1209b,406s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -835,10 +842,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmtt12.pfb>
-Output written on Orabutt_Thesis.pdf (25 pages, 1135106 bytes).
+Output written on Orabutt_Thesis.pdf (26 pages, 1150320 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 357 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
- 6517 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 363 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 6522 words of extra memory for PDF output out of 10000 (max. 10000000)
 
