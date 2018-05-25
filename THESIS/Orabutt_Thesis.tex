@@ -71,7 +71,7 @@
 
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multichannel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses using constant fraction discriminators. These timing pulses are used for starting time-to-voltage converters (TVCs) on the PSD8C.
+\par This thesis presents the design and simulation of a multichannel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called constant fraction discrimination. Each of the sixteen channels in the IC contains a Nowlin circuit, leading edge discriminator, zero cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 20 mV and 2V both positive and negative, and input rise times between 3 nsec and 100 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude and rise time, having a time walk of only 1 nsec or less. The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -91,8 +91,6 @@
 \tableofcontents
 
 \cleardoublepage %cause correct numbering of list of figures
-
-\acknowledgements
 
 \cleardoublepage
 
@@ -119,7 +117,7 @@ useful for researchers working with radioactive ion beams, which can be composed
 
  
 The group’s first success was an analog shaped and peak sensing chip with on-board constant-fraction discriminators and
-sparsified readout. This chip is designed for use with arrays of Si strip detectors of medium scale (with the number of channels ranging from a few hundred to a few thousand) and is known as Heavy-Ion Nuclear Physics–16 Channel (HINP16C) [1,2]. 
+sparsified readout. This chip is designed for use with arrays of Si strip detectors of medium scale (with the number of channels ranging from a few hundred to a few thousand) and is known as Heavy-Ion Nuclear Physics–16 Channel (HINP16C). 
 
 The second chip, christened Pulse Shape Discrimination–8 Channel(PSD8C), was designed to logically complement (in terms of detector types) the HINP16C chip. PSD8C performs pulse shape discrimination (PSD), and thus particle identification, if the time dependence of the light output of the scintillator depends on particle type. Moreover, PSD8C uses almost all the same supporting hardware as the HINP16C chip. Both ICs were fabricated in the ON-Semiconductor (formerly AMI) 0.5 mm n-well process (C5N), available through MOSIS (see \url{www.mosis.com}).
 
@@ -179,7 +177,7 @@ latter;
 and CFD circuits are not on-chip so as to provide greater flexibility.
 \end{itemize}
 
-PSD8C is described in detail in Refs. []. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
+PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
 problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 ps/C in the 500 ns mode, 40 ps/C in the 2 ms mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip’s analog output pulse trains).
 
@@ -192,7 +190,7 @@ While not including the timing circuits on PSD made it more flexible, those circ
 
 \begin{figure}[htbp!]
 	\centering
- 	\includegraphics[scale=0.9,keepaspectratio=true]{./ch1_figures/PSD_system.png}
+ 	\includegraphics[scale=0.8,keepaspectratio=true]{./ch1_figures/PSD_system.png}
  	\caption{PSD system using board-level CFD electronics}
  	\label{FIG:PSD_SYSTEM}
 \end{figure}
@@ -201,7 +199,7 @@ While not including the timing circuits on PSD made it more flexible, those circ
 
 \section{Sample Applications}
 
-To focus the reader’s attention on what would be possible with the PSD chip complemented by the CFD chip described in this tehses, consider a highly granular discrete element array for neutron detection using the recently developed inorganic [9] and plastic [11] scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA [12], while providing provocative data on such cases as 16Be [13] and 26O [14], sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilated – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has [15].  
+To focus the reader’s attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic [9] and plastic [11] scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA [12], while providing provocative data on such cases as 16Be [13] and 26O [14], sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilated – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has [15].  
 
 While we are enamored with the above idea, it is premature to propose such an array before the ground-work for scalable timing electronics, as we describe in this thesis, is successfully completed. (In fact the coupling of the scintillator – from Eljen – to the new blue sensitive SiPMs – from SensL – is simple compared to the development of the scalable electronics.) To this end however, we plan to develop a circuit board using the PSD and CFD chips to process signals from the new generation of PSD-capable plastic scintillators [11]. 
 
@@ -331,7 +329,15 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, signal ground generator, bandgap reference, and bias current generators.
 
 \subsection{Configuration registers}
-\par There are three registers in the common channel as well as one in each of the signal channels. 
+\par There are three registers in the common channel as well as one in each of the signal channels. Each register can be individually selected by providing an appropriate address and mode as shown in Table~\ref{tab:registers}. Address and mode are registered on the positive edge of the input STB signal, while data is registered on the falling edge. All registers in the common channel are selected with an address of 0000. 
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.3,keepaspectratio=true]{../data/modes.png}
+ \caption{Register mode usage.}
+ \label{tab:registers}
+\end{table}
+
 
 \subsection{Power on reset circuit}
 \par A power on reset circuit is used to start the PTAT bias current generator circuit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
@@ -340,11 +346,14 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called AGND, must be at a potential half way between AVDD and AVSS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
 
 \subsection{Bandgap voltage reference}
+\par The bandgap voltage reference used in this design was copied from PSD8C as a known working solution. A bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{C}$.
+\par This bandgap topology produces an output voltage of $\approx 1.2 V$ with near zero temperature independence. The design was pulled from an analog cells library provided by AMS and is a known working and manufactured component.
 
 \subsection{PTAT current reference}
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
+\par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A.
 \begin{figure}[htbp!]
 \centering
 \includegraphics[scale=.25,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 

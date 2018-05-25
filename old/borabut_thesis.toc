@@ -9,58 +9,58 @@
 \contentsline {section}{\numberline {1.2}Need for an Integrated Circuit}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Previous Work}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Scope of Thesis}{4}{section.1.4}
-\contentsline {chapter}{\numberline {2.}SYSTEM LEVEL DESIGN}{6}{chapter.2}
+\contentsline {chapter}{\numberline {2.}SYSTEM LEVEL DESIGN}{5}{chapter.2}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {2.1}Overview of Chip}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}Features of CFD16C}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Common Channel}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}CFD Channel}{8}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Nowlin Stage}{8}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Zero Crossing Discriminator Stage}{9}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Leading Edge Discriminator Stage}{11}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{12}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Output Stage}{13}{subsection.2.4.5}
-\contentsline {chapter}{\numberline {3.}CIRCUIT LEVEL DESIGN}{17}{chapter.3}
+\contentsline {section}{\numberline {2.1}Overview of Chip}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Features of CFD16C}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Common Channel}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}CFD Channel}{7}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Nowlin Stage}{7}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Zero Crossing Discriminator Stage}{8}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Leading Edge Discriminator Stage}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Oneshot Stage}{11}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Output Stage}{12}{subsection.2.4.5}
+\contentsline {chapter}{\numberline {3.}CIRCUIT LEVEL DESIGN}{15}{chapter.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {3.1}Process Parameters}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Common Channel}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Digital Configuration}{18}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Bandgap Reference}{18}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Bias Currents}{19}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Nowlin Circuit}{20}{section.3.3}
-\contentsline {section}{\numberline {3.4}Differential Amplifier}{22}{section.3.4}
-\contentsline {section}{\numberline {3.5}Comparator}{23}{section.3.5}
-\contentsline {section}{\numberline {3.6}Oneshot DAC}{24}{section.3.6}
-\contentsline {section}{\numberline {3.7}Oneshot Circuit}{25}{section.3.7}
-\contentsline {section}{\numberline {3.8}Output Generation}{26}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}Multiplicity}{26}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Channel OR}{26}{subsection.3.8.2}
-\contentsline {subsection}{\numberline {3.8.3}Timing Pulse}{27}{subsection.3.8.3}
-\contentsline {chapter}{\numberline {4.}SIMULATION}{28}{chapter.4}
+\contentsline {section}{\numberline {3.1}Process Parameters}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Common Channel}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Digital Configuration}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Bandgap Reference}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Bias Currents}{16}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Nowlin Circuit}{18}{section.3.3}
+\contentsline {section}{\numberline {3.4}Differential Amplifier}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}Comparator}{20}{section.3.5}
+\contentsline {section}{\numberline {3.6}Oneshot DAC}{21}{section.3.6}
+\contentsline {section}{\numberline {3.7}Oneshot Circuit}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}Output Generation}{22}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Multiplicity}{22}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Channel OR}{23}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.3}Timing Pulse}{23}{subsection.3.8.3}
+\contentsline {chapter}{\numberline {4.}SIMULATION}{24}{chapter.4}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {4.1}Methods}{28}{section.4.1}
-\contentsline {section}{\numberline {4.2}Common Channel}{28}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Bandgap}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Bias Current Generators}{28}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Oneshot DAC}{29}{section.4.3}
-\contentsline {section}{\numberline {4.4}Oneshot}{29}{section.4.4}
-\contentsline {section}{\numberline {4.5}Nowlin}{29}{section.4.5}
-\contentsline {section}{\numberline {4.6}Differential Amplifier}{31}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Frequency Response}{31}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Noise}{31}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Output swing}{31}{subsection.4.6.3}
-\contentsline {section}{\numberline {4.7}Comparator}{32}{section.4.7}
-\contentsline {section}{\numberline {4.8}Output Walk \& Jitter}{33}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}Time Walk}{33}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}DC Offsets}{34}{subsection.4.8.2}
-\contentsline {subsection}{\numberline {4.8.3}Jitter}{34}{subsection.4.8.3}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{36}{chapter.5}
+\contentsline {section}{\numberline {4.1}Methods}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}Common Channel}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Bandgap}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Bias Current Generators}{24}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Oneshot DAC}{25}{section.4.3}
+\contentsline {section}{\numberline {4.4}Oneshot}{25}{section.4.4}
+\contentsline {section}{\numberline {4.5}Nowlin}{25}{section.4.5}
+\contentsline {section}{\numberline {4.6}Differential Amplifier}{27}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Frequency Response}{27}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Noise}{27}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Output swing}{28}{subsection.4.6.3}
+\contentsline {section}{\numberline {4.7}Comparator}{28}{section.4.7}
+\contentsline {section}{\numberline {4.8}Output Walk \& Jitter}{28}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Time Walk}{29}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}DC Offsets}{30}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Jitter}{30}{subsection.4.8.3}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{32}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{37}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{32}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{33}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{33}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{38}{section.5.3}
-\contentsline {part}{APPENDICES}{40}{section.5.3}
+\contentsline {part}{REFERENCES}{34}{section.5.3}
+\contentsline {part}{APPENDICES}{36}{section.5.3}
 \vskip -\baselineskip 
-\contentsline {chapter}{\numberline {A.}Verilog-A Code}{40}{chapter.1}
+\contentsline {chapter}{\numberline {A.}Verilog-A Code}{36}{chapter.1}

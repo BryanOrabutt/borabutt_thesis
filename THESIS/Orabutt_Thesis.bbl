@@ -1,0 +1,20 @@
+\begin{thebibliography}{}
+
+\bibitem[Allen, 2012]{ALLEN}
+Allen, P.~E. (2012).
+\newblock {\em CMOS analog circuit design}.
+\newblock Oxford University Press, USA, New York Oxford.
+
+\bibitem[Hall, 2007]{HALL}
+Hall, M.~J. (2007).
+\newblock Design considerations in systems employing multiple charge
+  integration for the detection of ionizing radiation.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Proctor, 2007]{PROCTOR}
+Proctor, J. (2007).
+\newblock Design of a multi-channel integrated circuit for use in nuclear
+  physics experiments where particle identification is required.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\end{thebibliography}
