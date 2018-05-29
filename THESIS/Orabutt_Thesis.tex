@@ -340,16 +340,31 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 
 \subsection{Power on reset circuit}
-\par A power on reset circuit is used to start the PTAT bias current generator circuit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A soultion is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
-\par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called AGND, must be at a potential half way between AVDD and AVSS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
+\par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
 
 \subsection{Bandgap voltage reference}
-\par The bandgap voltage reference used in this design was copied from PSD8C as a known working solution. A bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{C}$.
+\par The bandgap voltage reference used in this design was provided in an analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{C}$ as can be seen in Figure~\ref{fig:bandgap}.
 \par This bandgap topology produces an output voltage of $\approx 1.2 V$ with near zero temperature independence. The design was pulled from an analog cells library provided by AMS and is a known working and manufactured component.
 
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.3,keepaspectratio=true]{../data/bandgap_temp.png} 
+\caption{Bandgap temperature dependence.}
+\label{fig:bandgap}
+\end{figure}
+
 \subsection{PTAT current reference}
+\par A PTAT current reference was used from the analog cells library provided by AMS. This current reference produces a bias current between 7.3 $\mu$A and 17.8 $\mu$A with a nominal value of 11.5 $\mu$A. This bias current is proportional to absolute temperature and is used to bias all of the amplifiers on the chip. A weakly or moderately inverted FET has a tranconductance linearly proportional to bias current but inversely proportional to absolute temperature. Thus by using PTAT currents for the moderately inverted FETs in the amplifier designs, the transconductance of the FETs becomes independent of temperature \cite{ALLEN}. Figure~\ref{fig:ptat} shows the temperature dependence of the PTAT current reference circuit.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.3,keepaspectratio=true]{../data/ptat.png} 
+\caption{PTAT current reference temperature dependence.}
+\label{fig:ptat}
+\end{figure}
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
@@ -371,6 +386,22 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \section{Signal Channel}
 
 \subsection{Programmable Nowlin circuit}
+\par The Nowlin circuit is used at the input stage of each of the signalll channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a constant fraction of the input voltage using a resistor voltage divider (ZC-). The ratio in this case is $\approx 0.67$. The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin.png} 
+\caption{Nowlin circuit.}
+\label{fig:Nowlin}
+\end{figure}
+\par C1 and the series combination of R1 and R2 create a high pass filter whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1+R2)\cdot C2} \approx 100 kHz$. This high pass filter output is used as input the the leading edge discriminator. The reason for high pass filtering is to remove any low frequency and DC noise present on the input pin as the actual signal pulse will always be a high frequency exponential pulse.
+\par The programmable capacitor (C2) in the Nowlin circuit is created by using switches, in this case transmission gates, to connect individual capacitors in and out of circuit with the Nowlin. Two transmission gates (t-gates) per capacitor are used to accomplish this. The two t-gates are connected in series which creates a circuit with three nodes: left, middle, right. The left node connects to the top plate of a 0.5 pF capacitor that is always in circuit, referenced to \emph{AGND}. The middle node connects to the top plate of one of the programmable capacitor elements, which is also referenced to \emph{AGND}. The right node of the switch circuit connects to \emph{AGND}.
+\par In this configuration when the control signal is on (ie. 3.3V), the capacitor at the middle node connects in parallel with the 0.5 pF capacitor, adding more capacitance to the ZC+ node in the Nowlin. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be $C_{total} = D \cdot 0.5pF + 0.5pF$ where D is the decimal value of the 4-bit programmable capacitor bus.
+\begin{table}[ht]
+ \centering
+ \includegraphics[scale=.5,keepaspectratio=true]{../data/pcap.png}
+ \caption{Programmable capacitor values and time constants.}
+ \label{tab:pcap}
+\end{table}
 
 \subsection{Leading-edge detector}
 
