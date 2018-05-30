@@ -5,16 +5,69 @@ Allen, P.~E. (2012).
 \newblock {\em CMOS analog circuit design}.
 \newblock Oxford University Press, USA, New York Oxford.
 
+\bibitem[Baker, 2010]{BAKER}
+Baker, R.~J. (2010).
+\newblock {\em CMOS: Circuit Design, Layout, and Simulation}.
+\newblock Wiley, Hoboken, New Jersey, 3rd edition.
+
+\bibitem[Engel, 2016]{CFD}
+Engel, G. (2016).
+\newblock A multi-channel discriminator ic.
+\newblock \url{http://www.siue.edu/~gengel/ece584WebStuff/CFDchip.pdf}.
+\newblock accessed : 2017-1-10.
+
+\bibitem[G.~Engel, 2007]{HINP}
+G.~Engel, M.~Sadasivam, M.~N. (2007).
+\newblock Multi-channel integrated circuit for use in low and intermediate
+  energy nuclear physics - hinp16c.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
+
 \bibitem[Hall, 2007]{HALL}
 Hall, M.~J. (2007).
 \newblock Design considerations in systems employing multiple charge
   integration for the detection of ionizing radiation.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
 
+\bibitem[Hastings, 2001]{ALAN_BOOK}
+Hastings, A. (2001).
+\newblock {\em The ART of ANALOG LAYOUT}.
+\newblock Prentice Hall, Upper Saddle River,NJ07458.
+
+\bibitem[Helmuth, 2005]{SPIELER_BOOK}
+Helmuth, S. (2005).
+\newblock {\em Semiconductor Detector Systems}.
+\newblock Oxford University Press, New York.
+
 \bibitem[Proctor, 2007]{PROCTOR}
 Proctor, J. (2007).
 \newblock Design of a multi-channel integrated circuit for use in nuclear
   physics experiments where particle identification is required.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Rabaey, 2003]{RABAEY_BOOK}
+Rabaey, J. (2003).
+\newblock {\em Digital integrated circuits : a design perspective}.
+\newblock Pearson Education, Upper Saddle River, N.J.
+
+\bibitem[Razavi, 2001]{RAZAVI_BOOK}
+Razavi, B. (2001).
+\newblock {\em Design of analog CMOS integrated circuits}.
+\newblock McGraw-Hill, Boston, MA.
+
+\bibitem[Sadasivam, 2002]{HINP-THESIS}
+Sadasivam, M. (2002).
+\newblock A multi-channel integrated circuit for use with silicon strip
+  detectors in experiments in low and intermediate physics.
+\newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Tsividis, 2011]{TSIVIDIS_BOOK}
+Tsividis, Y. (2011).
+\newblock {\em Operation and modeling of the MOS transistor}.
+\newblock Oxford University Press, New York.
+
+\bibitem[Weste, 2006]{WESTE}
+Weste, N. (2006).
+\newblock {\em CMOS VLSI design : a circuits and systems perspective}.
+\newblock Pearson Education, Delhi.
 
 \end{thebibliography}
