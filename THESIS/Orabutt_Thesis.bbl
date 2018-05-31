@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[A.~Spyrou, 2012]{SPYROU}
+A.~Spyrou, Z.~Kohley, T.~B. (2012).
+\newblock First observation of ground state dineutron decay:
+  $^{16}\mathrm{Be}$.
+\newblock {\em Physical Review Letters}.
+
 \bibitem[Allen, 2012]{ALLEN}
 Allen, P.~E. (2012).
 \newblock {\em CMOS analog circuit design}.
@@ -9,6 +15,12 @@ Allen, P.~E. (2012).
 Baker, R.~J. (2010).
 \newblock {\em CMOS: Circuit Design, Layout, and Simulation}.
 \newblock Wiley, Hoboken, New Jersey, 3rd edition.
+
+\bibitem[B.S.~Budden, 2015]{BUDDEN}
+B.S.~Budden, L.C.Stonehill, A. (2015).
+\newblock Handheld readout electronics to fully exploit the particle
+  discrimination capabilities of elpasolite scintillators.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
 
 \bibitem[Engel, 2016]{CFD}
 Engel, G. (2016).
@@ -38,6 +50,24 @@ Helmuth, S. (2005).
 \newblock {\em Semiconductor Detector Systems}.
 \newblock Oxford University Press, New York.
 
+\bibitem[I.~Tilquin, 1995]{TILQUIN}
+I.~Tilquin, Y. El~Masri, M.~P. (1995).
+\newblock Detection efficiency of the neutron modular detector demon and
+  related characteristics.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
+
+\bibitem[Kohley, 2015]{KOHLEY}
+Kohley, Z., B. T. C.~G. (2015).
+\newblock Three-body correlations in the ground-state decay of
+  $^{26}\mathrm{O}$.
+\newblock {\em Physical Review C}.
+
+\bibitem[N.~Zaitseva, 2012]{ZAITSEVA}
+N.~Zaitseva, B. L.~Rupert, I.~P. (2012).
+\newblock Plastic scintillators with efficient neutron/gamma pulse shape
+  discrimination author links open overlay panel.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
+
 \bibitem[Proctor, 2007]{PROCTOR}
 Proctor, J. (2007).
 \newblock Design of a multi-channel integrated circuit for use in nuclear
@@ -59,6 +89,11 @@ Sadasivam, M. (2002).
 \newblock A multi-channel integrated circuit for use with silicon strip
   detectors in experiments in low and intermediate physics.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[T.~Baumanna, 2005]{BAUMANNA}
+T.~Baumanna, J.~Boike, J.~B. (2005).
+\newblock Construction of a modular large-area neutron detector for the nscl.
+\newblock {\em Nuclear Instruments and Methods in Physics}.
 
 \bibitem[Tsividis, 2011]{TSIVIDIS_BOOK}
 Tsividis, Y. (2011).

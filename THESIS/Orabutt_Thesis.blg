@@ -3,44 +3,63 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Orabutt_Thesis.aux
 The style file: apalike.bst
 Database file #1: ./Orabutt_Thesis.bib.bib
-You've used 13 entries,
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Kohley, Z., Baumann, T., Christian, G." for entry KOHLEY
+while executing---line 1098 of file apalike.bst
+You've used 19 entries,
             1935 wiz_defined-function locations,
-            551 strings with 5302 characters,
-and the built_in function-call counts, 3573 in all, are:
-= -- 345
-> -- 91
-< -- 13
-+ -- 32
-- -- 26
-* -- 226
-:= -- 686
-add.period$ -- 40
-call.type$ -- 13
-change.case$ -- 71
-chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 168
-empty$ -- 271
-format.name$ -- 39
-if$ -- 685
+            579 strings with 6159 characters,
+and the built_in function-call counts, 5193 in all, are:
+= -- 501
+> -- 133
+< -- 19
++ -- 44
+- -- 38
+* -- 328
+:= -- 998
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 107
+chr.to.int$ -- 19
+cite$ -- 19
+duplicate$ -- 246
+empty$ -- 391
+format.name$ -- 57
+if$ -- 991
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 17
-newline$ -- 69
-num.names$ -- 39
-pop$ -- 74
+missing$ -- 23
+newline$ -- 99
+num.names$ -- 57
+pop$ -- 104
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 114
 quote$ -- 0
-skip$ -- 131
+skip$ -- 197
 stack$ -- 0
-substring$ -- 162
-swap$ -- 9
+substring$ -- 234
+swap$ -- 15
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 98
 warning$ -- 0
-while$ -- 26
+while$ -- 38
 width$ -- 0
-write$ -- 172
+write$ -- 244
+(There were 9 error messages)

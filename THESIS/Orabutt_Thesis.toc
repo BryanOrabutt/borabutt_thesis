@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{17}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{17}{subsection.3.2.8}
 \contentsline {section}{\numberline {3.3}Signal Channel}{17}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{17}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{19}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{19}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{19}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{18}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{20}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{20}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{20}{subsection.3.3.4}
 \contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{21}{chapter.4}
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{21}{section.4.1}
