@@ -251,9 +251,33 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \end{itemize} 
 
 \section{Features}
-\par 
+\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. 
 
 \section{System-Level Description}
+\par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multichannel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/CFD.png} 
+\caption{System level overview for one channel of the CFD16C}
+\label{fig:CFD}
+\end{figure}
+
+\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel.
+
+\subsection{Common Channel}
+\par The common channel contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. To load any specific register the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. How this address and mode decoding is accomplished is talked about more in Chapter 3. Table~\ref{tab:modes} shows the modes and usage for each of the registers.
+
+\begin{table}[ht]
+\centering
+\includegraphics[scale=.25,keepaspectratio=true]{../data/modes.png} 
+\caption{Register modes and usage}
+\label{tab:modes}
+\end{table}
+
+\par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and refernce voltages are generated here and distributed to each of the signal channels. Chapter 3 describes these circuits in more detail.
+
+\subsection{Signal Channel}
 
 \section{Chip Pinout}
 
@@ -330,14 +354,14 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, signal ground generator, bandgap reference, and bias current generators.
 
 \subsection{Configuration registers}
-\par There are three registers in the common channel as well as one in each of the signal channels. Each register can be individually selected by providing an appropriate address and mode as shown in Table~\ref{tab:registers}. Address and mode are registered on the positive edge of the input STB signal, while data is registered on the falling edge. All registers in the common channel are selected with an address of 0000. 
+\par There are three registers in the common channel as well as one in each of the signal channels. These registers were made using digital standard cells provided in the AMS design kit. The registers are D-registers with an enable input. The enable signal is active when a specified register's address and mode has been selected. A single 8-bit wide bus is used to present address, mode, and data to each of the registers. An 8-bit register in the common channel will register \emph{ADDR} and \emph{MODE} on the rising edge of \emph{STB}, with \emph{ADDR} being in the upper four bits. The 8-bits of data are then registered on the falling edge of \emph{STB}. This decoding topology can be seen in Figure~\ref{fig:register}.
 
-\begin{table}[htbp!]
+\begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.3,keepaspectratio=true]{../data/modes.png}
- \caption{Register mode usage.}
- \label{tab:registers}
-\end{table}
+ \includegraphics[scale=.3,keepaspectratio=true]{./ch3_figures/Register.png}
+ \caption{Register address and mode decoding}
+ \label{fig:register}
+\end{figure}
 
 
 \subsection{Power on reset circuit}
@@ -438,7 +462,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Output one-shot with lockout features}
 
-
+\subsection{Final output generation}
 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 4

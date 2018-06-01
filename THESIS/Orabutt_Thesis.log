@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  31 MAY 2018 16:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  1 JUN 2018 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,21 +702,21 @@ Package microtype Info: Loading generic settings for font family
 [1
 
 
-] <./ch1_figures/PSD_block.png, id=286, 744.53156pt x 563.10374pt>
+] <./ch1_figures/PSD_block.png, id=305, 744.53156pt x 563.10374pt>
 File: ./ch1_figures/PSD_block.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_block.png>
 Package pdftex.def Info: ./ch1_figures/PSD_block.png used on input line 128.
 (pdftex.def)             Requested size: 446.72238pt x 337.86485pt.
  [2 <./ch1_figures/PSD_block.png>]
-<./ch1_figures/PSD_channel.png, id=294, 287.55853pt x 307.1475pt>
+<./ch1_figures/PSD_channel.png, id=313, 287.55853pt x 307.1475pt>
 File: ./ch1_figures/PSD_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_channel.png>
 Package pdftex.def Info: ./ch1_figures/PSD_channel.png used on input line 140.
 (pdftex.def)             Requested size: 287.55783pt x 307.14674pt.
 
-<./ch1_figures/PSD_sub_channel.png, id=295, 343.5234pt x 407.121pt>
+<./ch1_figures/PSD_sub_channel.png, id=314, 343.5234pt x 407.121pt>
 File: ./ch1_figures/PSD_sub_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_sub_channel.png>
@@ -741,7 +741,7 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [5]
-<./ch1_figures/PSD_system.png, id=318, 547.8066pt x 355.5684pt>
+<./ch1_figures/PSD_system.png, id=338, 547.8066pt x 355.5684pt>
 File: ./ch1_figures/PSD_system.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_system.png>
@@ -774,111 +774,123 @@ Missing character: There is no “ in font cmr12!
 Chapter 2.
 [9
 
-] [10]
-Chapter 3.
-[11
+] <./ch2_figures/CFD.png, id=371, 804.00375pt x 181.67876pt>
+File: ./ch2_figures/CFD.png Graphic file (type png)
 
-] <../data/modes.png, id=366, 1443.3925pt x 294.09875pt>
+<use ./ch2_figures/CFD.png>
+Package pdftex.def Info: ./ch2_figures/CFD.png used on input line 261.
+(pdftex.def)             Requested size: 361.79836pt x 81.75467pt.
+ [10]
+<../data/modes.png, id=378, 1443.3925pt x 294.09875pt>
 File: ../data/modes.png Graphic file (type png)
+ <use ../data/modes.png>
+Package pdftex.def Info: ../data/modes.png used on input line 273.
+(pdftex.def)             Requested size: 360.84724pt x 73.5245pt.
 
-<use ../data/modes.png>
-Package pdftex.def Info: ../data/modes.png used on input line 337.
-(pdftex.def)             Requested size: 433.02109pt x 88.2303pt.
- [12 <../data/modes.png>]
-<../data/bandgap_temp.png, id=373, 1434.86063pt x 654.19406pt>
+[11 <./ch2_figures/CFD.png>] [12 <../data/modes.png>]
+Chapter 3.
+[13
+
+] <./ch3_figures/Register.png, id=398, 900.36375pt x 588.1975pt>
+File: ./ch3_figures/Register.png Graphic file (type png)
+
+<use ./ch3_figures/Register.png>
+Package pdftex.def Info: ./ch3_figures/Register.png used on input line 361.
+(pdftex.def)             Requested size: 270.1112pt x 176.4606pt.
+ [14] [15 <./ch3_figures/Register.png>]
+<../data/bandgap_temp.png, id=411, 1434.86063pt x 654.19406pt>
 File: ../data/bandgap_temp.png Graphic file (type png)
 
 <use ../data/bandgap_temp.png>
-Package pdftex.def Info: ../data/bandgap_temp.png used on input line 355.
+Package pdftex.def Info: ../data/bandgap_temp.png used on input line 379.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
- [13]
-<../data/ptat.png, id=382, 1434.86063pt x 618.05907pt>
+
+<../data/ptat.png, id=414, 1434.86063pt x 618.05907pt>
 File: ../data/ptat.png Graphic file (type png)
  <use ../data/ptat.png>
-Package pdftex.def Info: ../data/ptat.png used on input line 365.
+Package pdftex.def Info: ../data/ptat.png used on input line 389.
 (pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
 
-[14 <../data/bandgap_temp.png>]
-<../LTspice_Drawings/ztc_iref/circuit.png, id=390, 1261.513pt x 635.173pt>
+[16 <../data/bandgap_temp.png>]
+<../LTspice_Drawings/ztc_iref/circuit.png, id=423, 1261.513pt x 635.173pt>
 File: ../LTspice_Drawings/ztc_iref/circuit.png Graphic file (type png)
 
 <use ../LTspice_Drawings/ztc_iref/circuit.png>
 Package pdftex.def Info: ../LTspice_Drawings/ztc_iref/circuit.png used on input
- line 376.
+ line 400.
 (pdftex.def)             Requested size: 378.45682pt x 190.55336pt.
-
-<../data/ztc.png, id=391, 1434.86063pt x 654.19406pt>
+ [17 <../data/ptat.png>]
+<../data/ztc.png, id=430, 1434.86063pt x 654.19406pt>
 File: ../data/ztc.png Graphic file (type png)
  <use ../data/ztc.png>
-Package pdftex.def Info: ../data/ztc.png used on input line 383.
+Package pdftex.def Info: ../data/ztc.png used on input line 407.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
 
-[15 <../data/ptat.png>] [16 <../LTspice_Drawings/ztc_iref/circuit.png> <../data
-/ztc.png>]
-<../LTspice_Drawings/multiplicity/mult_buffer.png, id=404, 1261.513pt x 635.173
+[18 <../LTspice_Drawings/ztc_iref/circuit.png> <../data/ztc.png>]
+<../LTspice_Drawings/multiplicity/mult_buffer.png, id=438, 1261.513pt x 635.173
 pt>
 File: ../LTspice_Drawings/multiplicity/mult_buffer.png Graphic file (type png)
  <use ../LTspice_Drawings/multiplicity/mult_buffer.png>
 Package pdftex.def Info: ../LTspice_Drawings/multiplicity/mult_buffer.png used 
-on input line 398.
+on input line 422.
 (pdftex.def)             Requested size: 378.45682pt x 190.55336pt.
 
-<../LTspice_Drawings/nowlin/nowlin.png, id=407, 1261.513pt x 635.173pt>
+<../LTspice_Drawings/nowlin/nowlin.png, id=441, 1261.513pt x 635.173pt>
 File: ../LTspice_Drawings/nowlin/nowlin.png Graphic file (type png)
 
 <use ../LTspice_Drawings/nowlin/nowlin.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/nowlin.png used on input li
-ne 412.
+ne 436.
 (pdftex.def)             Requested size: 378.45682pt x 190.55336pt.
- [17] [18 <../LTspice_Drawings/multiplicity/mult_buffer.png>]
-<../LTspice_Drawings/nowlin/pcap.png, id=424, 1442.188pt x 675.323pt>
+ [19] [20 <../LTspice_Drawings/multiplicity/mult_buffer.png>]
+<../LTspice_Drawings/nowlin/pcap.png, id=458, 1442.188pt x 675.323pt>
 File: ../LTspice_Drawings/nowlin/pcap.png Graphic file (type png)
 
 <use ../LTspice_Drawings/nowlin/pcap.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/pcap.png used on input line
- 422.
+ 446.
 (pdftex.def)             Requested size: 432.65974pt x 202.59845pt.
 
-<../data/pcap.png, id=425, 818.05624pt x 495.8525pt>
+<../data/pcap.png, id=459, 818.05624pt x 495.8525pt>
 File: ../data/pcap.png Graphic file (type png)
  <use ../data/pcap.png>
-Package pdftex.def Info: ../data/pcap.png used on input line 429.
+Package pdftex.def Info: ../data/pcap.png used on input line 453.
 (pdftex.def)             Requested size: 245.41876pt x 148.7569pt.
 
-[19 <../LTspice_Drawings/nowlin/nowlin.png>] [20 <../LTspice_Drawings/nowlin/pc
+[21 <../LTspice_Drawings/nowlin/nowlin.png>] [22 <../LTspice_Drawings/nowlin/pc
 ap.png> <../data/pcap.png>]
 Chapter 4.
-[21
+[23
 
 ]
 Chapter 5.
-[22
+[24
 
-] (./Orabutt_Thesis.bbl [23
+] (./Orabutt_Thesis.bbl [25
 
-]) [24]
+]) [26]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 547.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 547.
 
 (./Orabutt_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 547.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 547.
 Package rerunfilecheck Info: File `Orabutt_Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 70BD16D603BF6FD0B994FB5F38A49F69;2912.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
+(rerunfilecheck)             Checksum: C8C5093AFA332179AC0E8CE9EA06CB54;3125.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 547.
  ) 
 Here is how much of TeX's memory you used:
- 11578 strings out of 494820
- 175155 string characters out of 3178050
- 318629 words of memory out of 3000000
- 14384 multiletter control sequences out of 15000+200000
- 11602 words of font info for 79 fonts, out of 3000000 for 9000
+ 11602 strings out of 494820
+ 175601 string characters out of 3178050
+ 319909 words of memory out of 3000000
+ 14397 multiletter control sequences out of 15000+200000
+ 11662 words of font info for 79 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
  36i,12n,49p,1300b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
@@ -892,10 +904,10 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb>
-Output written on Orabutt_Thesis.pdf (32 pages, 1515229 bytes).
+Output written on Orabutt_Thesis.pdf (34 pages, 1562001 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
- 6554 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 562 PDF objects out of 1000 (max. 8388607)
+ 483 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 6588 words of extra memory for PDF output out of 10000 (max. 10000000)
 
