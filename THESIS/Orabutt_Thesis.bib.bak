@@ -1,0 +1,150 @@
+@Book{RAZAVI_BOOK,
+ author = {Razavi, Behzad},
+ title = {Design of analog CMOS integrated circuits},
+ publisher = {McGraw-Hill},
+ year = {2001},
+ address = {Boston, MA},
+ isbn = {0-07-238032-2}
+ }
+
+@Book{WESTE,
+ author = {Weste, Neil},
+ title = {CMOS VLSI design : a circuits and systems perspective},
+ publisher = {Pearson Education},
+ year = {2006},
+ address = {Delhi},
+ isbn = {978-81-775-8568-1}
+ }
+
+@Book{TSIVIDIS_BOOK,
+ author = {Tsividis, Yannis},
+ title = {Operation and modeling of the MOS transistor},
+ publisher = {Oxford University Press},
+ year = {2011},
+ address = {New York},
+ isbn = {978-0-19-517015-3}
+ }
+
+@Book{RABAEY_BOOK,
+ author = {Rabaey, Jan},
+ title = {Digital integrated circuits : a design perspective},
+ publisher = {Pearson Education},
+ year = {2003},
+ address = {Upper Saddle River, N.J},
+ isbn = {0130909963}
+ }
+
+@Book{ALLEN,
+ author = {Allen, P. E.},
+ title = {CMOS analog circuit design},
+ publisher = {Oxford University Press, USA},
+ year = {2012},
+ address = {New York Oxford},
+ isbn = {978-0-19-976507-2}
+ }
+
+@Book{ALAN_BOOK,
+ author = {Hastings,Alan},
+ title = {The ART of ANALOG LAYOUT},
+ publisher = {Prentice Hall},
+ year = {2001},
+ address = {Upper Saddle River,NJ07458},
+ isbn ={0-13-087061-7}
+ }
+
+@Book{SPIELER_BOOK,
+ author = {Helmuth,Spirler},
+ title = {Semiconductor Detector Systems},
+ publisher = {Oxford University Press},
+ year = {2005},
+ address = {New York},
+ isbn ={978-0-19-852784-8}
+ }
+
+@Book{BAKER,
+ author = {R. Jacob Baker},
+ title = {CMOS: Circuit Design, Layout, and Simulation},
+ publisher = {Wiley},
+ edition = {3rd},
+ year = {2010},
+ address = {Hoboken, New Jersey},
+ isbn = {978-0470881323 }
+}
+
+@MastersThesis{PROCTOR,
+author = {Justin Proctor},
+title = {Design of a Multi-Channel Integrated Circuit for Use in Nuclear Physics Experiments Where Particle Identification is Required},
+school = {Southern Illinois University Edwardsville},
+year = {2007}
+}
+ 
+@misc{CFD,
+ title = {A Multi-Channel Discriminator IC},
+ author = {George Engel},
+ year = {2016},
+ howpublished={\url{http://www.siue.edu/~gengel/ece584WebStuff/CFDchip.pdf}},
+ note = {accessed : 2017-1-10}
+}
+
+@Article{HINP,
+author = {G.  Engel,  M.  Sadasivam,  M.  Nethi},
+title = {Multi-Channel  Integrated  Circuit  for  Use  in  Low  and Intermediate  Energy  Nuclear  Physics  -  HINP16C},
+journal = {Nuclear Instruments and Methods in Physics},
+year = {2007}
+}
+
+@MastersThesis{HINP-THESIS,
+author =  {Muthukumar Sadasivam},
+title = {A  Multi-channel  Integrated  Circuit  For  Use  With  Silicon  Strip  Detectors  In  Experiments  In  Low  and  Intermediate  Physics},
+school = {Southern Illinois University Edwardsville},
+year = {2002}
+}
+
+@MastersThesis{HALL,
+author = {Michael J. Hall},
+title = {Design Considerations in Systems Employing Multiple Charge Integration for the Detection of Ionizing Radiation },
+school = {Southern Illinois University Edwardsville},
+year = {2007}
+}
+
+@Article{BUDDEN,
+author = {B.S. Budden, L.C.Stonehill, A.Warniment},
+title = {Handheld readout electronics to fully exploit the particle discrimination capabilities of elpasolite scintillators},
+journal = {Nuclear Instruments and Methods in Physics},
+year = {2015}
+}
+
+@Article{ZAITSEVA,
+author = {N. Zaitseva, B. L. Rupert, I. Paweiczak},
+title = {Plastic scintillators with efficient neutron/gamma pulse shape discrimination Author links open overlay panel},
+journal = {Nuclear Instruments and Methods in Physics},
+year = {2012}
+}
+
+@Article{SPYROU,
+author = {A. Spyrou, Z. Kohley, T. Baumann},
+title = {First Observation of Ground State Dineutron Decay: $^{16}\mathrm{Be}$},
+journal = {Physical Review Letters},
+year = {2012}
+}
+
+@Article{BAUMANNA,
+author = {T. Baumanna, J. Boike, J. Brown},
+title = {Construction of a modular large-area neutron detector for the NSCL},
+journal = {Nuclear Instruments and Methods in Physics},
+year = {2005}
+}
+
+@article{KOHLEY,
+  title = {Three-body correlations in the ground-state decay of $^{26}\mathrm{O}$},
+  author = {Kohley Z., Baumann T., Christian G.},
+  journal = {Physical Review C},
+  year = {2015}
+}
+
+@Article{TILQUIN,
+author = {I. Tilquin, Y. El Masri, M. Parlog},
+title = {Detection efficiency of the neutron modular detector DEMON and related characteristics},
+journal = {Nuclear Instruments and Methods in Physics},
+year = {1995}
+}

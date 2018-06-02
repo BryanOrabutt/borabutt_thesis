@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {1.2}PSD8C IC}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Need for an Integrated Circuit}{6}{section.1.3}
 \contentsline {section}{\numberline {1.4}Sample Applications}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}Object and Scope of Work}{7}{section.1.5}
+\contentsline {section}{\numberline {1.5}Object and Scope of Work}{8}{section.1.5}
 \contentsline {chapter}{\numberline {2.}SYSTEM ARCHITECTURE}{9}{chapter.2}
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {2.1}System Specifications}{9}{section.2.1}
@@ -28,26 +28,26 @@
 \contentsline {subsection}{\numberline {3.2.4}Bandgap voltage reference}{15}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}PTAT current reference}{16}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Zero-tempco current reference}{17}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{19}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{18}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{19}{subsection.3.2.8}
 \contentsline {section}{\numberline {3.3}Signal Channel}{19}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{20}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{22}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{22}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{22}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Final output generation}{22}{subsection.3.3.5}
-\contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{23}{chapter.4}
+\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{23}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{23}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{23}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Final output generation}{23}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{24}{chapter.4}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Jitter Performance}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}Verification of One-Shot}{23}{section.4.4}
-\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{23}{section.4.5}
-\contentsline {section}{\numberline {4.6}Chip-Level Verification}{23}{section.4.6}
-\contentsline {chapter}{\numberline {5.}SUMMARY, COMCLUSIONS, AND FUTURE WORK}{24}{chapter.5}
+\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Jitter Performance}{24}{section.4.3}
+\contentsline {section}{\numberline {4.4}Verification of One-Shot}{24}{section.4.4}
+\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{24}{section.4.5}
+\contentsline {section}{\numberline {4.6}Chip-Level Verification}{24}{section.4.6}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{25}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{24}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{25}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{25}{section.5.3}
+\contentsline {part}{REFERENCES}{26}{section.5.3}
