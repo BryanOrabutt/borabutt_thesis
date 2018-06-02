@@ -179,7 +179,7 @@ and CFD circuits are not on-chip so as to provide greater flexibility.
 
 PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
-problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 psec/C in the 500 nsec mode, 40 psec/C in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip’s analog output pulse trains).
+problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 psec/C in the 500 nsec mode, 40 psec/C in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip's analog output pulse trains).
 
 (Still need to talk about enhancements that were made on PSD4)
 
@@ -199,7 +199,7 @@ While not including the timing circuits on PSD made it more flexible, those circ
 
 \section{Sample Applications}
 
-To focus the reader’s attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and 26O \cite{KOHLEY}, sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilated – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}.  
+To focus the reader's attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and 26O \cite{KOHLEY}, sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilated – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}.  
 
 While we are enamored with the above idea, it is premature to propose such an array before the ground-work for scalable timing electronics, as we describe in this thesis, is successfully completed. (In fact the coupling of the scintillator – from Eljen – to the new blue sensitive SiPMs – from SensL – is simple compared to the development of the scalable electronics.) To this end however, we plan to develop a circuit board using the PSD and CFD chips to process signals from the new generation of PSD-capable plastic scintillators \cite{ZAITSEVA}. 
 
@@ -253,12 +253,14 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \section{Features}
 \par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. 
 
+(talk about features in detail)
+
 \section{System-Level Description}
 \par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/CFD.png} 
+\includegraphics[scale=.5,keepaspectratio=true]{./ch2_figures/CFD.png} 
 \caption{System level overview for one channel of the CFD16C}
 \label{fig:CFD}
 \end{figure}
@@ -270,7 +272,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \begin{table}[ht]
 \centering
-\includegraphics[scale=.25,keepaspectratio=true]{../data/modes.png} 
+\includegraphics[scale=.3,keepaspectratio=true]{../data/modes.png} 
 \caption{Register modes and usage}
 \label{tab:modes}
 \end{table}
@@ -290,7 +292,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \section{Fabrication Process}
 
-The IC described in this thesis will be fabricated in the AMS-AG 0.35 micron NWELL process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs, and a high-resistance layer are all available to the designer. NFET device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET device properties are availabe in Table~\ref{TBL:PMOS_PARMS}.
+The IC described in this thesis will be fabricated in the AMS-AG 0.35 micron NWELL process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs, and a high-resistance layer are all available to the designer. NFET device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET device properties are available in Table~\ref{TBL:PMOS_PARMS}.
 
 % NFET device properties
 
@@ -358,17 +360,18 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/Register.png}
+ \includegraphics[scale=.45,keepaspectratio=true]{./ch3_figures/Register.png}
  \caption{Register address and mode decoding}
  \label{fig:register}
 \end{figure}
 
+\par The \emph{ADDR} and \emph{MODE} bits are compared against a hard coded value using the XOR and NOR gates. The hard coded values will be set to match the address of the channel the register is in, as well as the mode that should select the specific register. The \emph{ADDR} decoder circuit is then ORed with the MSB of \emph{MODE} so that all registers of a given mode can be selected if the global mode bit is set.
 
 \subsection{Power on reset circuit}
-\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A soultion is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
-\par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
+\par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
 
 \subsection{Bandgap voltage reference}
 \par The bandgap voltage reference used in this design was provided in an analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{^{\circ}C}$ as can be seen in Figure~\ref{fig:bandgap}.
@@ -393,7 +396,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
-\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesnt depend on temperature.
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
 \par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
 \begin{figure}[htbp!]
 \centering
@@ -450,7 +453,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{table}[ht]
  \centering
- \includegraphics[scale=.3,keepaspectratio=true]{../data/pcap.png}
+ \includegraphics[scale=.4,keepaspectratio=true]{../data/pcap.png}
  \caption{Programmable capacitor values and time constants.}
  \label{tab:pcap}
 \end{table}

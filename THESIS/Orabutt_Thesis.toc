@@ -23,14 +23,14 @@
 \contentsline {section}{\numberline {3.1}Fabrication Process}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}Common Channel}{13}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Configuration registers}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Power on reset circuit}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Power on reset circuit}{15}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Signal ground generator}{15}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Bandgap voltage reference}{15}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}PTAT current reference}{16}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.4}Bandgap voltage reference}{16}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}PTAT current reference}{17}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Zero-tempco current reference}{17}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{18}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{19}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{19}{subsection.3.2.8}
-\contentsline {section}{\numberline {3.3}Signal Channel}{19}{section.3.3}
+\contentsline {section}{\numberline {3.3}Signal Channel}{20}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{20}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{23}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{23}{subsection.3.3.3}
