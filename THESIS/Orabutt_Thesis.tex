@@ -82,7 +82,7 @@
 
 \begin{acknowledgements} 
 
-\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I  am grateful to  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University  Saint  Louis,  for  their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and  indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
+\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I am grateful to  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University Saint Louis, for their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
 \par I owe a debt of gratitude to my fellow graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz, Sri Kandula, and I all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
 \par I would not have gotten this far without my friends Jack White, Jared Charter, Andrew Quirin, Nelly Sanchez, and Shana Mankouski who have offered support during all of my endeavors in graduate school. Finally I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and Vicki Kern, have all been there for me and I know I could not have come this far without them.
 
@@ -251,9 +251,8 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \end{itemize} 
 
 \section{Features}
-\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. 
-
-(talk about features in detail)
+\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. 
+\par The CFD16C provides a test point output to allow the user to select different signal nodes from within a specified signal channel to route to a pin. A fast global OR is provided that can be used to determine if at least one signal channel has fired. A multiplicity output is also provided to give the user an anlog voltage proportional to the number of channels that have fired.
 
 \section{System-Level Description}
 \par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
@@ -417,7 +416,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par (Talk about how DAC works)
 
 \subsection{Multiplicity output buffer}
-\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance to the multiplicty currents, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
+\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
 \par The source follower circuit, shown in Figure~\ref{fig:mult}, is biased with a 1 mA current using resistor R1. The signal channel multiplicity currents are summed up using R2 creating an output voltage on the source of M3. This output voltage is 1.15 V when no channels have fired, and 2.7 V when all sixteen channels have fired. 
 
 \begin{figure}[htbp!]
@@ -433,7 +432,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, and a one-shot circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par The Nowlin circuit is used at the input stage of each of the signal channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a constant fraction, in this case $\frac{2}{3}$, of the input voltage using a resistor voltage divider (ZC-). The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
+\par The Nowlin circuit is used at the input stage of each of the signal channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a fraction, in this case $\frac{2}{3}$, of the input voltage using a resistor voltage divider (ZC-). The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin.png} 
@@ -466,6 +465,25 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \subsection{Output one-shot with lockout features}
 
 \subsection{Final output generation}
+\par All of the signal channel output are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
+\par A number of test point nodes from within the channel can be selected to be routed to a pin on the chip package. These available test point nodes are detailed in Table~\ref{tab:test-point}. A multiplexer at the end of each channel controls which test point is used. To prevent all sixteen channels from trying to drive the test point pin at once, a tri-state buffer with enable is used. This enable signal will only be active for the channel whose address is currently selected on the \emph{ADDR} bus, and all other channels will have their test point outputs put into a high impedance state.  
+
+\begin{table}[ht]
+ \centering
+ \includegraphics[scale=.4,keepaspectratio=true]{../data/test_points.png}
+ \caption{Test point multiplexer outputs}
+ \label{tab:test-point}
+\end{table}
+
+\par The multiplicity current is produced in response to the timing pulse output firing. Once the timing pulse has fired and been qualified, a PFET switch is turned on and allows a copy of the PTAT current to be sourced to the multiplicity buffer in the common channel. All of the channel multiplcity current output are sourced to the same node so that the voltage across the resistor in the multiplicty buffer will be determined by the sum of all of the currents from the fired channels. 
+\par The global OR signal is produced by the timing pulse as well. This output is generated using a pseudo-NMOS NOR gate. As shown in Figure~\ref{fig:pseudo-nmos}, in a pseudo-NMOS NOR gate a PFET acts as a pullup for parallel connected NFETs. Thus if any one NFET is turned on then the output node will be pulled to \emph{AVSS}. Each channel contains one of these NFETs with the PFET and a CMOS inverter being in the common channel. This allows for a very fast active high logic OR of all of the channels with reduced complexity since the NOR gate is distributed across all channels (reducing the amount of interconnect needed).
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
+ \caption{Fast pseudo-NMOS NOR}
+ \label{fig:pseudo-nmos}
+\end{figure}
 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 4

@@ -34,7 +34,7 @@
 
 
 \author{Bryan Orabutt}
-\title{Design and Analysis of a Mult-Channel Discriminator Integrated Circuit for Use in Nuclear Physics Experiments}
+\title{Design and Analysis of a Multi-Channel Discriminator Integrated Circuit for Use in Nuclear Physics Experiments}
 
 %%\advisor{John Q.\ Faculty} %% or 
 \advisor{Dr.}{George L. Engel}
@@ -45,7 +45,7 @@
 %\secondadvisor{Karl Gauss} %if you haves two advisors (rare) then use this line also and pass the option `twoadvisors' to the class
 %\abstracttext{Chairperson: The Honorable Jill Smith} %optional -- you can use this to override the text on the abstract page; the grad school default is built-in
 \submitdate{August, 2018} %date the month/year submitted to grad school, use a comma between
-\copyrightyear{2016} %optional, but required if copyrighted
+\copyrightyear{2018} %optional, but required if copyrighted
 
 %% all of these are optional; defaults are shown
 \major{Electrical Engineering} 
@@ -71,7 +71,7 @@
 
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multichannel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called constant fraction discrimination. Each of the sixteen channels in the IC contains a Nowlin circuit, leading edge discriminator, zero cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 20 mV and 2V both positive and negative, and input rise times between 3 nsec and 100 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude and rise time, having a time walk of only 500 psec or less (for input pulse rise time constants of 3 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called constant fraction discrimination. Each of the sixteen channels in the IC contains a Nowlin circuit, leading edge discriminator, zero cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 20 mV and 2V (both positive and negative), and input pulse rise times between 3 nsec and 100 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude and rise time, having a time walk of only 500 psec or less (for input pulse rise time constants of 3 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -82,9 +82,9 @@
 
 \begin{acknowledgements} 
 
-\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I  would  like  to thank  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University  Saint  Louis,  for  their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and  indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
-\par I would also like to thank the other graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz and I all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
-\par I would like to thank my friends Jack White, Jared Charter, Andrew Quirin, Nelly Sanchez, and Shana Mankouski for their support during all of my endeavors in graduate school. Finally I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and Vicki Kern, have all been there for me and I know I could not have come this far without them.
+\par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I am grateful to  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University Saint Louis, for their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
+\par I owe a debt of gratitude to my fellow graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz, Sri Kandula, and I all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
+\par I would not have gotten this far without my friends Jack White, Jared Charter, Andrew Quirin, Nelly Sanchez, and Shana Mankouski who have offered support during all of my endeavors in graduate school. Finally I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and Vicki Kern, have all been there for me and I know I could not have come this far without them.
 
 \end{acknowledgements}
 
@@ -108,20 +108,20 @@
 
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
 
-This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits is helping to re-shape this field.  The IC described in this thesis is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
+This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits are helping to re-shape this field.  The IC described in this thesis, called CFD16C (Constant Fraction Discriminator-16 Channels) is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE) in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
 
 \section{Research Background}
 
-The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, and (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer’s seat. The goal is to develop a ‘‘tool box’’ of circuits,
-useful for researchers working with radioactive ion beams, which can be composed in different ways to meet the researchers’ evolving needs and desires.
+The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, and (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer's seat. The goal is to develop a ‘‘tool box’’ of circuits,
+useful for researchers working with radioactive ion beams, which can be composed in different ways to meet the researchers' evolving needs and desires.
 
  
-The group’s first success was an analog shaped and peak sensing chip with on-board constant-fraction discriminators and
+The group's first success was an analog shaped and peak sensing chip with on-board constant-fraction discriminators and
 sparsified readout. This chip is designed for use with arrays of Si strip detectors of medium scale (with the number of channels ranging from a few hundred to a few thousand) and is known as Heavy-Ion Nuclear Physics–16 Channel (HINP16C). 
 
 The second chip, christened Pulse Shape Discrimination–8 Channel(PSD8C), was designed to logically complement (in terms of detector types) the HINP16C chip. PSD8C performs pulse shape discrimination (PSD), and thus particle identification, if the time dependence of the light output of the scintillator depends on particle type. Moreover, PSD8C uses almost all the same supporting hardware as the HINP16C chip. Both ICs were fabricated in the ON-Semiconductor (formerly AMI) 0.5 mm n-well process (C5N), available through MOSIS (see \url{www.mosis.com}).
 
-Talk about the block diagram of typical PSD system.
+(Talk about the block diagram of typical PSD system.)
 
 \begin{figure}[htbp!]
 	\centering
@@ -179,7 +179,7 @@ and CFD circuits are not on-chip so as to provide greater flexibility.
 
 PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode). The cost per channel is 25.
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
-problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 ps/C in the 500 ns mode, 40 ps/C in the 2 ms mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip’s analog output pulse trains).
+problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the ‘‘common stop’’ signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 ns/C) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 psec/C in the 500 nsec mode, 40 psec/C in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board ADCs (one for each of the chip's analog output pulse trains).
 
 (Still need to talk about enhancements that were made on PSD4)
 
@@ -199,7 +199,7 @@ While not including the timing circuits on PSD made it more flexible, those circ
 
 \section{Sample Applications}
 
-To focus the reader’s attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and 26O \cite{KOHLEY}, sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilated – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}.  
+To focus the reader's attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and 26O \cite{KOHLEY}, sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilation – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}).  
 
 While we are enamored with the above idea, it is premature to propose such an array before the ground-work for scalable timing electronics, as we describe in this thesis, is successfully completed. (In fact the coupling of the scintillator – from Eljen – to the new blue sensitive SiPMs – from SensL – is simple compared to the development of the scalable electronics.) To this end however, we plan to develop a circuit board using the PSD and CFD chips to process signals from the new generation of PSD-capable plastic scintillators \cite{ZAITSEVA}. 
 
@@ -208,7 +208,7 @@ The CFD chip described herein with its programmable Nowlin cirucit will allow th
 
 \section{Object and Scope of Work} 
 
-\par The object of this thesis work was to create a multichannel integrated circuit capable of constant fraction discrimination. This thesis is composed of five chapters. The system level architecture is presented in Chapter 2. Chapter 3 describes the circuit level design of the many sub-circuits that compose the CFD16C. Chapter 4 details the simulated performance of the CFD16C to show that it performs within the intended design specification. Finally Chapter 5 provides a summary, conclusions, and details future work to be done on the CFD16C.
+\par The object of this thesis work was to create a multi-channel integrated circuit capable of constant fraction discrimination. This thesis is composed of five chapters. The system level architecture is presented in Chapter 2. Chapter 3 describes the circuit level design of the many sub-circuits that compose the CFD16C. Chapter 4 details the simulated performance of the CFD16C to show that it performs within the intended design specification. Finally Chapter 5 provides a summary, conclusions, and details future work to be done on the CFD16C.
 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 2
@@ -228,9 +228,9 @@ The IC should support 16 detectors.
 \item
 It should support analog pulses of both polarities (relative to analog signal ground).
 \item
-It should accommodate analog exponentially shaped pulses with risetime constants ranging from 3 nsec to 100 nsec.
+It should accommodate analog exponentially shaped pulses with rise time constants ranging from 3 nsec to 100 nsec.
 \item
-It exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 20 mV to 2 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
+It must exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 20 mV to 2 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
 \item
 Pulse repetition rates up to 1 KHz must be accommodated.
 \item
@@ -238,7 +238,7 @@ The discriminator in each of the 16 channels should be of the constant fraction 
 \item
 Each channel should have a leading-edge threshold.
 \item
-While the chip must support signals with risetime constants ranging from 3 nsec to 100 nsec, performance will be optimized for the shorter time constants. 
+While the chip must support signals with rise time constants ranging from 3 nsec to 100 nsec, performance will be optimized for the shorter time constants. 
 \item
 The output pulse width from a channel should be programmable.
 \item
@@ -251,14 +251,15 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \end{itemize} 
 
 \section{Features}
-\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. 
+\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. 
+\par The CFD16C provides a number of outputs in addtion to the timing pulse. A test point output is available to allow the user to select different signal nodes from within a specified signal channel to route to a pin. A fast global OR is provided that can be used to determine if at least one signal channel has fired. A multiplicity output is also provided to give the user an anlog voltage proportional to the number of channels that have fired.
 
 \section{System-Level Description}
-\par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multichannel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
+\par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/CFD.png} 
+\includegraphics[scale=.5,keepaspectratio=true]{./ch2_figures/CFD.png} 
 \caption{System level overview for one channel of the CFD16C}
 \label{fig:CFD}
 \end{figure}
@@ -270,12 +271,12 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \begin{table}[ht]
 \centering
-\includegraphics[scale=.25,keepaspectratio=true]{../data/modes.png} 
+\includegraphics[scale=.3,keepaspectratio=true]{../data/modes.png} 
 \caption{Register modes and usage}
 \label{tab:modes}
 \end{table}
 
-\par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and refernce voltages are generated here and distributed to each of the signal channels. Chapter 3 describes these circuits in more detail.
+\par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and reference voltages are generated here and distributed to each of the signal channels. Chapter 3 describes these circuits in more detail.
 
 \subsection{Signal Channel}
 
@@ -290,7 +291,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \section{Fabrication Process}
 
-The IC described in this thesis will be fabricated in the AMS-AG 0.35 micron NWELL process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs, and a high-resistance layer are all available to the designer. NFET device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET device properties are availabe in Table~\ref{TBL:PMOS_PARMS}.
+The IC described in this thesis will be fabricated in the AMS-AG 0.35 micron NWELL process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs, and a high-resistance layer are all available to the designer. NFET device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET device properties are available in Table~\ref{TBL:PMOS_PARMS}.
 
 % NFET device properties
 
@@ -358,17 +359,18 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.3,keepaspectratio=true]{./ch3_figures/Register.png}
+ \includegraphics[scale=.45,keepaspectratio=true]{./ch3_figures/Register.png}
  \caption{Register address and mode decoding}
  \label{fig:register}
 \end{figure}
 
+\par The \emph{ADDR} and \emph{MODE} bits are compared against a hard coded value using the XOR and NOR gates. The hard coded values will be set to match the address of the channel the register is in, as well as the mode that should select the specific register. The \emph{ADDR} decoder circuit is then ORed with the MSB of \emph{MODE} so that all registers of a given mode can be selected if the global mode bit is set.
 
 \subsection{Power on reset circuit}
-\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A soultion is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
-\par In each of the signal channels the analog input circuitry is all referenced to a seperate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
+\par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
 
 \subsection{Bandgap voltage reference}
 \par The bandgap voltage reference used in this design was provided in an analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{^{\circ}C}$ as can be seen in Figure~\ref{fig:bandgap}.
@@ -393,7 +395,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
-\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesnt depend on temperature.
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
 \par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
 \begin{figure}[htbp!]
 \centering
@@ -410,11 +412,11 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \end{figure}
 
 \subsection{Lockout DAC}
-\par It is desireable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
+\par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
 \par (Talk about how DAC works)
 
 \subsection{Multiplicity output buffer}
-\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedence to the multiplicty currents, but low output impedence of $\frac{1}{g_{m M_{2}}}$. 
+\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
 \par The source follower circuit, shown in Figure~\ref{fig:mult}, is biased with a 1 mA current using resistor R1. The signal channel multiplicity currents are summed up using R2 creating an output voltage on the source of M3. This output voltage is 1.15 V when no channels have fired, and 2.7 V when all sixteen channels have fired. 
 
 \begin{figure}[htbp!]
@@ -430,7 +432,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, and a one-shot circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par The Nowlin circuit is used at the input stage of each of the signalll channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a constant fraction, in this case $\frac{2}{3}$, of the input voltage using a resistor voltage divider (ZC-). The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
+\par The Nowlin circuit is used at the input stage of each of the signal channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a fraction, in this case $\frac{2}{3}$, of the input voltage using a resistor voltage divider (ZC-). The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin.png} 
@@ -450,7 +452,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{table}[ht]
  \centering
- \includegraphics[scale=.3,keepaspectratio=true]{../data/pcap.png}
+ \includegraphics[scale=.4,keepaspectratio=true]{../data/pcap.png}
  \caption{Programmable capacitor values and time constants.}
  \label{tab:pcap}
 \end{table}
@@ -463,6 +465,25 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \subsection{Output one-shot with lockout features}
 
 \subsection{Final output generation}
+\par All of the signal channel output are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
+\par A number of test point nodes from within the channel can be selected to be routed to a pin on the chip package. These available test point nodes are detailed in Table~\ref{tab:test-point}. A multiplexer at the end of each channel controls which test point is used. To prevent all sixteen channels from trying to drive the test point pin at once, a tri-state buffer with enable is used. This enable signal will only be active for the channel whose address is currently selected on the \emph{ADDR} bus, and all other channels will have their test point outputs put into a high impedance state.  
+
+\begin{table}[ht]
+ \centering
+ \includegraphics[scale=.4,keepaspectratio=true]{../data/test_points.png}
+ \caption{Test point multiplexer outputs}
+ \label{tab:test-point}
+\end{table}
+
+\par The multiplicity current is produced in response to the timing pulse output firing. Once the timing pulse has fired and been qualified, a PFET switch is turned on and allows a copy of the PTAT current to be sourced to the multiplicity buffer in the common channel. All of the channel multiplcity current output are sourced to the same node so that the voltage across the resistor in the multiplicty buffer will be determined by the sum of all of the currents from the fired channels. 
+\par The global OR signal is produced by the timing pulse as well. This output is generated using a pseudo-NMOS NOR gate. As shown in Figure~\ref{fig:pseudo-nmos}, in a pseudo-NMOS NOR gate a PFET acts as a pullup for parallel connected NFETs. Thus if any one NFET is turned on then the output node will be pulled to \emph{AVSS}. Each channel contains one of these NFETs with the PFET and a CMOS inverter being in the common channel. This allows for a very fast active high logic OR of all of the channels with reduced complexity since the NOR gate is distributed across all channels (reducing the amount of interconnect needed).
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
+ \caption{Fast pseudo-NMOS NOR}
+ \label{fig:pseudo-nmos}
+\end{figure}
 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 4
@@ -489,7 +510,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-\chapter{SUMMARY, COMCLUSIONS, AND FUTURE WORK}
+\chapter{SUMMARY, CONCLUSIONS, AND FUTURE WORK}
 
 \section{Summary}
 
@@ -508,7 +529,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 %If you want to use bibtex  use the following lines, where your .bib file is called 'yourbib.bib'
 
 \bibliographystyle{apalike}
-\bibliography{./Orabutt_Thesis.bib}
+\bibliography{./Orabutt_Thesis}
 
 % If you have only a single appendix, do it this way.
 
