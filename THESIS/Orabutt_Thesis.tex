@@ -252,7 +252,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \section{Features}
 \par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. 
-\par The CFD16C provides a test point output to allow the user to select different signal nodes from within a specified signal channel to route to a pin. A fast global OR is provided that can be used to determine if at least one signal channel has fired. A multiplicity output is also provided to give the user an anlog voltage proportional to the number of channels that have fired.
+\par The CFD16C provides a number of outputs in addtion to the timing pulse. A test point output is available to allow the user to select different signal nodes from within a specified signal channel to route to a pin. A fast global OR is provided that can be used to determine if at least one signal channel has fired. A multiplicity output is also provided to give the user an anlog voltage proportional to the number of channels that have fired.
 
 \section{System-Level Description}
 \par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
