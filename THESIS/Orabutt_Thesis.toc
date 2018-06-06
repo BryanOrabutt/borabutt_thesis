@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {2.1}System Specifications}{9}{section.2.1}
 \contentsline {section}{\numberline {2.2}Features}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}System-Level Description}{11}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Common Channel}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Common Channel}{12}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Signal Channel}{12}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Chip Pinout}{15}{section.2.4}
 \contentsline {chapter}{\numberline {3.}ELECTRICAL LEVEL DESIGN}{17}{chapter.3}

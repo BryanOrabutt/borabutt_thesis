@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  5 JUN 2018 16:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  6 JUN 2018 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,13 +759,14 @@ Missing character: There is no “ in font cmr12!
 Chapter 2.
 [9
 
-] [10] <./ch2_figures/CFD.png, id=390, 804.00375pt x 181.67876pt>
-File: ./ch2_figures/CFD.png Graphic file (type png)
+] [10] <./ch2_figures/channel_block.png, id=390, 960.58875pt x 298.11375pt>
+File: ./ch2_figures/channel_block.png Graphic file (type png)
 
-<use ./ch2_figures/CFD.png>
-Package pdftex.def Info: ./ch2_figures/CFD.png used on input line 262.
-(pdftex.def)             Requested size: 442.20343pt x 99.92361pt.
- [11 <./ch2_figures/CFD.png>]
+<use ./ch2_figures/channel_block.png>
+Package pdftex.def Info: ./ch2_figures/channel_block.png used on input line 262
+.
+(pdftex.def)             Requested size: 451.47678pt x 140.11348pt.
+ [11 <./ch2_figures/channel_block.png>]
 <../data/modes.png, id=398, 1494.58376pt x 386.44376pt>
 File: ../data/modes.png Graphic file (type png)
 
@@ -779,14 +780,14 @@ File: ./ch2_figures/nowlin.png Graphic file (type png)
 <use ./ch2_figures/nowlin.png>
 Package pdftex.def Info: ./ch2_figures/nowlin.png used on input line 286.
 (pdftex.def)             Requested size: 317.98236pt x 245.71364pt.
- [13 <./ch2_figures/nowlin.png>]
-<./ch2_figures/delay.png, id=412, 526.96875pt x 166.6225pt>
+
+<./ch2_figures/delay.png, id=407, 526.96875pt x 166.6225pt>
 File: ./ch2_figures/delay.png Graphic file (type png)
 
 <use ./ch2_figures/delay.png>
 Package pdftex.def Info: ./ch2_figures/delay.png used on input line 294.
 (pdftex.def)             Requested size: 316.18369pt x 99.97426pt.
-
+ [13]
 <./ch2_figures/oneshot.png, id=414, 659.46375pt x 277.035pt>
 File: ./ch2_figures/oneshot.png Graphic file (type png)
 
@@ -797,7 +798,7 @@ Package pdftex.def Info: ./ch2_figures/oneshot.png used on input line 303.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./ch2_figures/delay.png>]
+[14 <./ch2_figures/nowlin.png> <./ch2_figures/delay.png>]
 <./ch2_figures/output.png, id=421, 503.8825pt x 122.4575pt>
 File: ./ch2_figures/output.png Graphic file (type png)
 
@@ -837,13 +838,13 @@ Package pdftex.def Info: ../data/ptat.png used on input line 432.
 (pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
 
 [21 <../data/bandgap_temp.png> <../data/ptat.png>]
-<../LTspice_Drawings/ztc_iref/circuit.png, id=476, 1261.513pt x 635.173pt>
+<../LTspice_Drawings/ztc_iref/circuit.png, id=476, 1263.119pt x 675.323pt>
 File: ../LTspice_Drawings/ztc_iref/circuit.png Graphic file (type png)
 
 <use ../LTspice_Drawings/ztc_iref/circuit.png>
 Package pdftex.def Info: ../LTspice_Drawings/ztc_iref/circuit.png used on input
  line 443.
-(pdftex.def)             Requested size: 441.53616pt x 222.31387pt.
+(pdftex.def)             Requested size: 378.93863pt x 202.59845pt.
 
 <../data/ztc.png, id=477, 1434.86063pt x 654.19406pt>
 File: ../data/ztc.png Graphic file (type png)
@@ -927,7 +928,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
  ) 
 Here is how much of TeX's memory you used:
  11670 strings out of 494820
- 176960 string characters out of 3178050
+ 177010 string characters out of 3178050
  320776 words of memory out of 3000000
  14432 multiletter control sequences out of 15000+200000
  12016 words of font info for 85 fonts, out of 3000000 for 9000
@@ -944,7 +945,7 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb>
-Output written on Orabutt_Thesis.pdf (42 pages, 1875830 bytes).
+Output written on Orabutt_Thesis.pdf (42 pages, 1888069 bytes).
 PDF statistics:
  635 PDF objects out of 1000 (max. 8388607)
  536 compressed objects within 6 object streams

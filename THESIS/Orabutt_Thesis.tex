@@ -259,12 +259,12 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.55,keepaspectratio=true]{./ch2_figures/CFD.png} 
+\includegraphics[scale=.47,keepaspectratio=true]{./ch2_figures/channel_block.png} 
 \caption{System level overview for one channel of the CFD16C}
 \label{fig:CFD}
 \end{figure}
 
-\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel.
+\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
 
 \subsection{Common Channel}
 \par The common channel contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. To load any specific register the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. How this address and mode decoding is accomplished is talked about more in Chapter 3. Table~\ref{tab:modes} shows the modes and usage for each of the registers.
@@ -440,7 +440,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.35,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
+\includegraphics[scale=.30,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
 \caption{Zero temperature coefficient current generator.}
 \label{fig:ztc}
 \end{figure}
