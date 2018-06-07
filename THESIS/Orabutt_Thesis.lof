@@ -7,18 +7,19 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{11}{figure.caption.5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces System level diagram of the common channel\relax }}{12}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{14}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces System level diagram of one-shot stage\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Timing pulse output qualification\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Zero cross discriminator with DC cancellation\relax }}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces System level diagram of one-shot stage\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Timing pulse output qualification\relax }}{16}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{19}{figure.caption.14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{21}{figure.caption.15}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{21}{figure.caption.16}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{23}{figure.caption.18}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Multiplicity output buffer.\relax }}{24}{figure.caption.19}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Nowlin circuit.\relax }}{25}{figure.caption.20}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Programmable capacitor circuit.\relax }}{27}{figure.caption.21}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{29}{figure.caption.24}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{24}{figure.caption.18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Multiplicity output buffer.\relax }}{25}{figure.caption.20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Nowlin circuit.\relax }}{26}{figure.caption.21}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Programmable capacitor circuit.\relax }}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{30}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

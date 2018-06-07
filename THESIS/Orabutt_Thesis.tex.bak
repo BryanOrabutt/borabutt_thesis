@@ -281,14 +281,24 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \subsection{Signal Channel}
 \par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, and is used by the leading-edge discriminator circuit.
-\par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator. This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal, as seen in Figure~\ref{fig:nowlinout}. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. With too much delay there is not enough slew rate to accommodate the fast timings that are needed.
+\par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator (Figure~\ref{fig:zcd}). This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal, as seen in Figure~\ref{fig:nowlinout}. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. With too much delay there is not enough slew rate to accommodate the fast timings that are needed.
+\par A DC offset cancellation loop is used to remove the effects of systematic DC offsets. Without this DC compensation loop, the output comparator would be permanently stuck in one state regardless of input from the Nowlin circuit. This same DC cancellation loop is also used in the Leading-edge discriminator.
 
-\begin{figure}[ht]
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/zcd.png} 
+\caption{Zero cross discriminator with DC cancellation}
+\label{fig:zcd}
+\end{figure}
+
+\begin{figure}[htbp!]
 \centering
 \includegraphics[scale=.4,keepaspectratio=true]{./ch2_figures/nowlin.png} 
 \caption{Input signal with 3 ns risetime constant showing Nowlin delay effects}
 \label{fig:nowlinout}
 \end{figure}
+
+
 
 \par The input to the leading-edge discriminator comes from the high-pass filter in the Nowlin circuit. The leading-edge discriminator has a user controllable threshold that is compared against the input from the Nowlin circuit. This threshold will be set just above the noise floor, ensuring that the comparator will only fire in response to a real pulse coming off of a detector and not just inherent noise in the circuit. This threshold can be made negative by applying a logic high (3.3V) to the \emph{NEG\_POL} input pin. The output of the leading edge discriminator is then used to qualify the zero-cross detector.
 
