@@ -449,11 +449,11 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
-\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
 \par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.34,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
+\includegraphics[scale=.36,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
 \caption{Zero temperature coefficient current generator.}
 \label{fig:ztc}
 \end{figure}
@@ -467,7 +467,31 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Lockout DAC}
 \par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
-\par (Talk about how DAC works)
+\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology that makes use of MOSFETs as resistors. A ZTC current is used as the input to the DAC. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror an extremely high output impedance of $r_{ds7}\cdot g_{m7} \cdot r_{ds6}$. A terminator circuit is used to ensure the current splits in half for the last stage (Stage0).
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{./ch3_figures/dac.png} 
+\caption{6-bit bipolar DAC}
+\label{fig:dac-block}
+\end{figure}
+
+\par The NFET \emph{M8} in Figure~\ref{fig:dac} acts as a switch to only allow current to flow when the control bit, \emph{D<i>}, is a logic 1. The currents are summed up and mirrored with another cascode current mirror in a final output stage of the DAC (Figure~\ref{fig:dac-out}). Either a PFET current mirror or NFET current mirror will be used depending on the sign bit. If the sign bit is high, meaning negative polarity is enabled, then the NFET current mirror will sink current from the DAC output. Conversely, if the sign bit is high, then the PFET current mirror sources current to the output.
+\par For the lockout voltage, the DAC will only source current to the output where it is passed through a diode connected NFET to create a voltage. The same DAC design is also used for the leading-edge dsicriminator threshold, and must be bipolar in that design. 
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.4,keepaspectratio=true]{../LTspice_Drawings/dac/dac_stage.png} 
+\caption{One stage of DAC using R2R ladder}
+\label{fig:dac}
+\end{figure}
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.55,keepaspectratio=true]{../LTspice_Drawings/dac/dac_out.png} 
+\caption{DAC output current stage}
+\label{fig:dac-out}
+\end{figure}
 
 \subsection{Multiplicity output buffer}
 \par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
@@ -475,7 +499,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.4,keepaspectratio=true]{../LTspice_Drawings/multiplicity/mult_buffer.png} 
+\includegraphics[scale=.45,keepaspectratio=true]{../LTspice_Drawings/multiplicity/mult_buffer.png} 
 \caption{Multiplicity output buffer.}
 \label{fig:mult}
 \end{figure}
