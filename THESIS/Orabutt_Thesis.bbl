@@ -16,11 +16,24 @@ Baker, R.~J. (2010).
 \newblock {\em CMOS: Circuit Design, Layout, and Simulation}.
 \newblock Wiley, Hoboken, New Jersey, 3rd edition.
 
+\bibitem[Binkley, 1994]{322878}
+Binkley, D.~M. (1994).
+\newblock Performance of non-delay-line constant-fraction discriminator timing
+  circuits.
+\newblock {\em IEEE Transactions on Nuclear Science}, 41(4):1169--1175.
+
 \bibitem[B.S.~Budden, 2015]{BUDDEN}
 B.S.~Budden, L.C.Stonehill, A. (2015).
 \newblock Handheld readout electronics to fully exploit the particle
   discrimination capabilities of elpasolite scintillators.
 \newblock {\em Nuclear Instruments and Methods in Physics}.
+
+\bibitem[Bult and Geelen, 1992]{DAC}
+Bult, K. and Geelen, G. (1992).
+\newblock An inherently linear and compact most-only current-division
+  technique.
+\newblock In {\em 1992 IEEE International Solid-State Circuits Conference
+  Digest of Technical Papers}, pages 198--199.
 
 \bibitem[Engel, 2016]{CFD}
 Engel, G. (2016).
@@ -89,6 +102,10 @@ Sadasivam, M. (2002).
 \newblock A multi-channel integrated circuit for use with silicon strip
   detectors in experiments in low and intermediate physics.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Singh et~al., 2012]{Singh2012OperationalTA}
+Singh, A.~P., Pandey, S.~K., and Kumar, M. (2012).
+\newblock Operational transconductance amplifier for low frequency application.
 
 \bibitem[T.~Baumanna, 2005]{BAUMANNA}
 T.~Baumanna, J.~Boike, J.~B. (2005).

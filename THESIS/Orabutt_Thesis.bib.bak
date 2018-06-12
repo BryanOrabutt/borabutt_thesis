@@ -148,3 +148,35 @@ title = {Detection efficiency of the neutron modular detector DEMON and related 
 journal = {Nuclear Instruments and Methods in Physics},
 year = {1995}
 }
+
+@INPROCEEDINGS{DAC,
+author={K. Bult and G. Geelen},
+booktitle={1992 IEEE International Solid-State Circuits Conference Digest of Technical Papers},
+title={An inherently linear and compact MOST-only current-division technique},
+year={1992},
+volume={},
+number={},
+pages={198-199},
+keywords={MOS integrated circuits;analogue processing circuits;0 to 20 kHz;1 V;1.5 MHz;MOS transistors;MOST-only current-division technique;THD;attenuation range;audio-band;bandwidth;dynamic range;inherently linear technique;linear MOS current division;switching functions;unity-gain frequency;Artificial intelligence;Circuits;Equations;Geometry;MOS capacitors;MOS devices;MOSFETs;Nonlinear distortion;Resistors;Voltage},
+doi={10.1109/ISSCC.1992.200480},
+ISSN={},
+month={Feb},}
+
+@inproceedings{Singh2012OperationalTA,
+  title={Operational Transconductance Amplifier for Low Frequency Application},
+  author={Abhay Pratap Singh and Sunil Kr. Pandey and Manish Kumar},
+  year={2012}
+}
+
+@ARTICLE{322878,
+author={D. M. Binkley},
+journal={IEEE Transactions on Nuclear Science},
+title={Performance of non-delay-line constant-fraction discriminator timing circuits},
+year={1994},
+volume={41},
+number={4},
+pages={1169-1175},
+keywords={CMOS integrated circuits;Monte Carlo methods;detector circuits;discriminators;high-pass filters;low-pass filters;nuclear electronics;scintillation counters;timing circuits;3.26 ns;6.5 ns;BGO/photomultiplier scintillation detector;Gaussian lowpass filters;Monte Carlo simulations;circuit networks;monolithic fabrication;non-delay-line constant-fraction discriminator timing circuits;scintillation detector signals;single-pole highpass filter;single-pole highpass filters;timing jitter;timing-signal underdrive;zero-crossing slope;Circuits;Computational fluid dynamics;Delay lines;Fabrication;Filters;Photomultipliers;Scintillation counters;Signal detection;Signal resolution;Timing jitter},
+doi={10.1109/23.322878},
+ISSN={0018-9499},
+month={Aug},}

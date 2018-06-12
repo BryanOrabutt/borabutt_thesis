@@ -467,7 +467,8 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Lockout DAC}
 \par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
-\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology that makes use of MOSFETs as resistors. A ZTC current is used as the input to the DAC. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror an extremely high output impedance of $r_{ds7}\cdot g_{m7} \cdot r_{ds6}$. A terminator circuit is used to ensure the current splits in half for the last stage (Stage0).
+\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities.
+\par The input to the DAC is a ZTC current coming from the common channel. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror an extremely high output impedance of $r_{ds7}\cdot g_{m7} \cdot r_{ds6}$. A terminator circuit is used to ensure the current splits in half for the last stage (Stage0).
 
 \begin{figure}[htbp!]
 \centering
@@ -488,7 +489,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.55,keepaspectratio=true]{../LTspice_Drawings/dac/dac_out.png} 
+\includegraphics[scale=.6,keepaspectratio=true]{../LTspice_Drawings/dac/dac_out.png} 
 \caption{DAC output current stage}
 \label{fig:dac-out}
 \end{figure}
@@ -541,6 +542,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 
 \subsection{Output one-shot with lockout features}
+\par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit 
 
 \subsection{Final output generation}
 \par All of the signal channel output are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
@@ -579,6 +581,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \section{Verification of One-Shot}
 
 \section{Performance Characterization of DAC}
+\par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and derivative non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). 
 
 \section{Chip-Level Verification}
 

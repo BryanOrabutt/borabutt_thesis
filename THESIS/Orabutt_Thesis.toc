@@ -31,11 +31,11 @@
 \contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{24}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{27}{subsection.3.2.8}
 \contentsline {section}{\numberline {3.3}Signal Channel}{29}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{29}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{32}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{32}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{32}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Final output generation}{32}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{30}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{31}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{31}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{31}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Final output generation}{33}{subsection.3.3.5}
 \contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{35}{chapter.4}
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{35}{section.4.1}
