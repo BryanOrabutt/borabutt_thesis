@@ -6,10 +6,10 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces PSD system using board-level CFD electronics\relax }}{7}{figure.caption.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{12}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces System level diagram of the common channel\relax }}{13}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces System level diagram of the common channel\relax }}{14}{figure.caption.6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Zero cross discriminator with DC cancellation\relax }}{15}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces System level diagram of one-shot stage\relax }}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces System level diagram of one-shot stage\relax }}{17}{figure.caption.9}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Timing pulse output qualification\relax }}{17}{figure.caption.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{21}{figure.caption.15}

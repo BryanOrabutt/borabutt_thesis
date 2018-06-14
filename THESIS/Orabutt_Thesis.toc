@@ -16,8 +16,8 @@
 \contentsline {section}{\numberline {2.2}Features}{11}{section.2.2}
 \contentsline {section}{\numberline {2.3}System-Level Description}{12}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Common Channel}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Signal Channel}{14}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Chip Pinout}{17}{section.2.4}
+\contentsline {subsection}{\numberline {2.3.2}Signal Channel}{13}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Chip Pinout}{18}{section.2.4}
 \contentsline {chapter}{\numberline {3.}ELECTRICAL LEVEL DESIGN}{19}{chapter.3}
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {3.1}Fabrication Process}{19}{section.3.1}
