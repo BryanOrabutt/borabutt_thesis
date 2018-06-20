@@ -25,4 +25,8 @@
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Programmable capacitor circuit.\relax }}{32}{figure.caption.25}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{34}{figure.caption.28}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 6-bit DAC DNL error summary\relax }}{36}{figure.caption.29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC INL error summary\relax }}{36}{figure.caption.30}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC worst case error\relax }}{37}{figure.caption.31}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC average case error\relax }}{38}{figure.caption.32}
 \addvspace {10\p@ }

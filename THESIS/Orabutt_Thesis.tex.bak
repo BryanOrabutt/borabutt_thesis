@@ -71,7 +71,7 @@
 
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used tp create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 20 mV and 2V (both positive and negative), and input pulse rise times between 3 nsec and 50 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 3 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used tp create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 3 nsec and 50 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 3 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -230,7 +230,7 @@ It should support analog pulses of both polarities (relative to analog signal gr
 \item
 It should accommodate analog exponentially shaped pulses with rise time constants ranging from 3 nsec to 50 nsec.
 \item
-It must exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 20 mV to 2 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
+It must exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 15 mV to 1.5 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
 \item
 Pulse repetition rates up to 1 KHz must be accommodated.
 \item
@@ -542,7 +542,9 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 
 \subsection{Output one-shot with lockout features}
-\par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit 
+\par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit is a circuit that creates a fixed width output pulse in response to a narrow input pulse. The one-shot circuit in the signal channels is what produces the output timing pulse used to start the TVCs on the PSD8C. The one-shot circuit design is shown in Figure~\ref{fig:oneshot-circuit}.
+
+
 
 \subsection{Final output generation}
 \par All of the signal channel output are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
@@ -581,7 +583,39 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \section{Verification of One-Shot}
 
 \section{Performance Characterization of DAC}
-\par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and derivative non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). 
+\par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and derivative non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). Derivative non-linearity describes how much the output changes for each increment of the digital code word for the DAC \cite{ALLEN}. In an ideal DAC this change would be exactly the same for each increment but in reality there are minor differences between each increment. The accumulation of all of these DNL errors over the whole range of the DAC is the INL error \cite{ALLEN}. 
+
+\par Figures~\ref{fig:dnl}--\ref{fig:inl} show the results of 200 Monte Carlo simulations. With each separate Monte Carlo simulation, the values of the process parameteres such offset voltages, threshold voltages, etc. will be assigned differently allowing for process variation from chip to chip to be examined. As can be seen the INL and DNL errors are almost all below 0.5 LSBs with only a few outliers. It can also be seen that the worst case INL and DNL occured on simulation 150.
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.31]{./ch4_figures/dnl_summary.png}
+ \caption{6-bit DAC DNL error summary}
+ \label{fig:dnl}
+\end{figure} 
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.31]{./ch4_figures/inl_summary.png}
+ \caption{6-bit DAC INL error summary}
+ \label{fig:inl}
+\end{figure} 
+
+\par Figure~\ref{fig:dac-worst} shows the worst case run out of all 200 simulations. It can easily be seen here than the DNL is well below 0.5 LSB for all increments of the code word except at the half way point. Examining other simulation plots show that this is the case for the other outliers as well, showing that the INL and DNL errors are in general very good and more than acceptable for this application. An average case simulation result is shown below in Figure~\ref{fig:dac-average}, showing that on average the INL and DNL errors are very good.
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.31]{./ch4_figures/dnl_worst.png}
+ \caption{6-bit DAC worst case error}
+ \label{fig:dac-worst}
+\end{figure} 
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.31]{./ch4_figures/dac_average.png}
+ \caption{6-bit DAC average case error}
+ \label{fig:dac-average}
+\end{figure} 
 
 \section{Chip-Level Verification}
 
