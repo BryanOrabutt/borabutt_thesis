@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  19 JUN 2018 16:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  21 JUN 2018 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,21 +687,21 @@ Package microtype Info: Loading generic settings for font family
 [1
 
 
-] <./ch1_figures/PSD_block.png, id=336, 744.53156pt x 563.10374pt>
+] <./ch1_figures/PSD_block.png, id=340, 744.53156pt x 563.10374pt>
 File: ./ch1_figures/PSD_block.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_block.png>
 Package pdftex.def Info: ./ch1_figures/PSD_block.png used on input line 126.
 (pdftex.def)             Requested size: 446.72238pt x 337.86485pt.
  [2 <./ch1_figures/PSD_block.png>]
-<./ch1_figures/PSD_channel.png, id=346, 287.55853pt x 307.1475pt>
+<./ch1_figures/PSD_channel.png, id=350, 287.55853pt x 307.1475pt>
 File: ./ch1_figures/PSD_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_channel.png>
 Package pdftex.def Info: ./ch1_figures/PSD_channel.png used on input line 140.
 (pdftex.def)             Requested size: 287.55783pt x 307.14674pt.
 
-<./ch1_figures/PSD_sub_channel.png, id=347, 343.5234pt x 407.121pt>
+<./ch1_figures/PSD_sub_channel.png, id=351, 343.5234pt x 407.121pt>
 File: ./ch1_figures/PSD_sub_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_sub_channel.png>
@@ -710,7 +710,7 @@ Package pdftex.def Info: ./ch1_figures/PSD_sub_channel.png used on input line 1
 (pdftex.def)             Requested size: 446.58035pt x 529.25725pt.
  [3] [4 <./ch1_figures/PSD_channel.png>] [5 <./ch1_figures/PSD_sub_channel.png>
 ] [6]
-<./ch1_figures/PSD_system.png, id=377, 547.8066pt x 355.5684pt>
+<./ch1_figures/PSD_system.png, id=381, 547.8066pt x 355.5684pt>
 File: ./ch1_figures/PSD_system.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_system.png>
@@ -740,7 +740,7 @@ Missing character: There is no “ in font cmr12!
 Chapter 2.
 [10
 
-] [11] <./ch2_figures/channel_block.png, id=415, 960.58875pt x 320.19624pt>
+] [11] <./ch2_figures/channel_block.png, id=419, 960.58875pt x 320.19624pt>
 File: ./ch2_figures/channel_block.png Graphic file (type png)
 
 <use ./ch2_figures/channel_block.png>
@@ -748,14 +748,14 @@ Package pdftex.def Info: ./ch2_figures/channel_block.png used on input line 261
 .
 (pdftex.def)             Requested size: 451.47678pt x 150.49225pt.
  [12 <./ch2_figures/channel_block.png>]
-<./ch2_figures/common_block.png, id=422, 824.07875pt x 673.51625pt>
+<./ch2_figures/common_block.png, id=426, 824.07875pt x 673.51625pt>
 File: ./ch2_figures/common_block.png Graphic file (type png)
 
 <use ./ch2_figures/common_block.png>
 Package pdftex.def Info: ./ch2_figures/common_block.png used on input line 273.
 
 (pdftex.def)             Requested size: 412.03836pt x 336.7573pt.
- [13] [14 <./ch2_figures/common_block.png>] <./ch2_figures/zcd.png, id=436, 969
+ [13] [14 <./ch2_figures/common_block.png>] <./ch2_figures/zcd.png, id=440, 969
 .6225pt x 272.01625pt>
 File: ./ch2_figures/zcd.png Graphic file (type png)
 
@@ -763,35 +763,35 @@ File: ./ch2_figures/zcd.png Graphic file (type png)
 Package pdftex.def Info: ./ch2_figures/zcd.png used on input line 288.
 (pdftex.def)             Requested size: 436.3261pt x 122.40617pt.
 
-<./ch2_figures/nowlin.png, id=437, 794.97pt x 614.295pt>
+<./ch2_figures/nowlin.png, id=441, 794.97pt x 614.295pt>
 File: ./ch2_figures/nowlin.png Graphic file (type png)
 
 <use ./ch2_figures/nowlin.png>
 Package pdftex.def Info: ./ch2_figures/nowlin.png used on input line 295.
 (pdftex.def)             Requested size: 317.98236pt x 245.71364pt.
  [15 <./ch2_figures/zcd.png>] [16 <./ch2_figures/nowlin.png>] <./ch2_figures/on
-eshot.png, id=449, 659.46375pt x 277.035pt>
+eshot.png, id=453, 659.46375pt x 277.035pt>
 File: ./ch2_figures/oneshot.png Graphic file (type png)
 
 <use ./ch2_figures/oneshot.png>
 Package pdftex.def Info: ./ch2_figures/oneshot.png used on input line 308.
 (pdftex.def)             Requested size: 428.64635pt x 180.0706pt.
 
-<./ch2_figures/output.png, id=451, 503.8825pt x 122.4575pt>
+<./ch2_figures/output.png, id=455, 503.8825pt x 122.4575pt>
 File: ./ch2_figures/output.png Graphic file (type png)
 
 <use ./ch2_figures/output.png>
 Package pdftex.def Info: ./ch2_figures/output.png used on input line 317.
 (pdftex.def)             Requested size: 352.71535pt x 85.71965pt.
  [17 <./ch2_figures/oneshot.png> <./ch2_figures/output.png>] <../data/modes.png
-, id=460, 1475.5125pt x 324.21124pt>
+, id=464, 1475.5125pt x 324.21124pt>
 File: ../data/modes.png Graphic file (type png)
 
 <use ../data/modes.png>
 Package pdftex.def Info: ../data/modes.png used on input line 326.
 (pdftex.def)             Requested size: 442.65717pt x 97.26411pt.
 
-<./ch2_figures/pinout.png, id=461, 933.4875pt x 828.09375pt>
+<./ch2_figures/pinout.png, id=465, 933.4875pt x 828.09375pt>
 File: ./ch2_figures/pinout.png Graphic file (type png)
 
 <use ./ch2_figures/pinout.png>
@@ -801,28 +801,28 @@ Package pdftex.def Info: ./ch2_figures/pinout.png used on input line 333.
 Chapter 3.
 [19
 
-] <./ch3_figures/Register.png, id=475, 900.36375pt x 588.1975pt>
+] <./ch3_figures/Register.png, id=479, 900.36375pt x 588.1975pt>
 File: ./ch3_figures/Register.png Graphic file (type png)
 
 <use ./ch3_figures/Register.png>
 Package pdftex.def Info: ./ch3_figures/Register.png used on input line 416.
 (pdftex.def)             Requested size: 405.15994pt x 264.68643pt.
  [20] [21 <./ch3_figures/Register.png>]
-<../data/bandgap_temp.png, id=488, 1434.86063pt x 654.19406pt>
+<../data/bandgap_temp.png, id=492, 1434.86063pt x 654.19406pt>
 File: ../data/bandgap_temp.png Graphic file (type png)
 
 <use ../data/bandgap_temp.png>
 Package pdftex.def Info: ../data/bandgap_temp.png used on input line 435.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
  [22]
-<../data/ptat.png, id=496, 1434.86063pt x 618.05907pt>
+<../data/ptat.png, id=500, 1434.86063pt x 618.05907pt>
 File: ../data/ptat.png Graphic file (type png)
  <use ../data/ptat.png>
 Package pdftex.def Info: ../data/ptat.png used on input line 445.
 (pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
 
 [23 <../data/bandgap_temp.png> <../data/ptat.png>]
-<../LTspice_Drawings/ztc_iref/circuit.png, id=506, 1233.408pt x 593.417pt>
+<../LTspice_Drawings/ztc_iref/circuit.png, id=510, 1233.408pt x 593.417pt>
 File: ../LTspice_Drawings/ztc_iref/circuit.png Graphic file (type png)
 
 <use ../LTspice_Drawings/ztc_iref/circuit.png>
@@ -830,21 +830,21 @@ Package pdftex.def Info: ../LTspice_Drawings/ztc_iref/circuit.png used on input
  line 456.
 (pdftex.def)             Requested size: 444.02655pt x 213.62994pt.
 
-<../data/ztc.png, id=507, 1434.86063pt x 654.19406pt>
+<../data/ztc.png, id=511, 1434.86063pt x 654.19406pt>
 File: ../data/ztc.png Graphic file (type png)
  <use ../data/ztc.png>
 Package pdftex.def Info: ../data/ztc.png used on input line 463.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
 
 [24] [25 <../LTspice_Drawings/ztc_iref/circuit.png> <../data/ztc.png>]
-<./ch3_figures/dac.png, id=521, 807.015pt x 249.93375pt>
+<./ch3_figures/dac.png, id=525, 807.015pt x 249.93375pt>
 File: ./ch3_figures/dac.png Graphic file (type png)
 
 <use ./ch3_figures/dac.png>
 Package pdftex.def Info: ./ch3_figures/dac.png used on input line 475.
 (pdftex.def)             Requested size: 443.85962pt x 137.46397pt.
  [26 <./ch3_figures/dac.png>]
-<../LTspice_Drawings/dac/dac_stage.png, id=530, 849.574pt x 673.717pt>
+<../LTspice_Drawings/dac/dac_stage.png, id=534, 849.574pt x 673.717pt>
 File: ../LTspice_Drawings/dac/dac_stage.png Graphic file (type png)
 
 <use ../LTspice_Drawings/dac/dac_stage.png>
@@ -852,7 +852,7 @@ Package pdftex.def Info: ../LTspice_Drawings/dac/dac_stage.png used on input li
 ne 485.
 (pdftex.def)             Requested size: 339.82358pt x 269.48203pt.
 
-<../LTspice_Drawings/dac/dac_out.png, id=531, 670.505pt x 703.428pt>
+<../LTspice_Drawings/dac/dac_out.png, id=535, 670.505pt x 703.428pt>
 File: ../LTspice_Drawings/dac/dac_out.png Graphic file (type png)
 
 <use ../LTspice_Drawings/dac/dac_out.png>
@@ -861,7 +861,7 @@ Package pdftex.def Info: ../LTspice_Drawings/dac/dac_out.png used on input line
 (pdftex.def)             Requested size: 402.3061pt x 422.06006pt.
  [27 <../LTspice_Drawings/dac/dac_stage.png>] [28 <../LTspice_Drawings/dac/dac_
 out.png>]
-<../LTspice_Drawings/multiplicity/mult_buffer.png, id=543, 709.049pt x 585.387p
+<../LTspice_Drawings/multiplicity/mult_buffer.png, id=547, 709.049pt x 585.387p
 t>
 File: ../LTspice_Drawings/multiplicity/mult_buffer.png Graphic file (type png)
  <use ../LTspice_Drawings/multiplicity/mult_buffer.png>
@@ -869,7 +869,7 @@ Package pdftex.def Info: ../LTspice_Drawings/multiplicity/mult_buffer.png used
 on input line 503.
 (pdftex.def)             Requested size: 319.06909pt x 263.4217pt.
 
-<../LTspice_Drawings/nowlin/nowlin.png, id=546, 1078.429pt x 516.329pt>
+<../LTspice_Drawings/nowlin/nowlin.png, id=550, 1078.429pt x 516.329pt>
 File: ../LTspice_Drawings/nowlin/nowlin.png Graphic file (type png)
 
 <use ../LTspice_Drawings/nowlin/nowlin.png>
@@ -878,7 +878,7 @@ ne 517.
 (pdftex.def)             Requested size: 323.53119pt x 154.89989pt.
  [29 <../LTspice_Drawings/multiplicity/mult_buffer.png>] [30 <../LTspice_Drawin
 gs/nowlin/nowlin.png>]
-<../LTspice_Drawings/nowlin/pcap.png, id=565, 707.443pt x 648.824pt>
+<../LTspice_Drawings/nowlin/pcap.png, id=569, 707.443pt x 648.824pt>
 File: ../LTspice_Drawings/nowlin/pcap.png Graphic file (type png)
 
 <use ../LTspice_Drawings/nowlin/pcap.png>
@@ -886,87 +886,108 @@ Package pdftex.def Info: ../LTspice_Drawings/nowlin/pcap.png used on input line
  527.
 (pdftex.def)             Requested size: 282.97218pt x 259.525pt.
 
-<../data/pcap.png, id=566, 1276.77pt x 817.0525pt>
+<../data/pcap.png, id=570, 1276.77pt x 817.0525pt>
 File: ../data/pcap.png Graphic file (type png)
  <use ../data/pcap.png>
-Package pdftex.def Info: ../data/pcap.png used on input line 534.
+Package pdftex.def Info: ../data/pcap.png used on input line 533.
 (pdftex.def)             Requested size: 319.19171pt x 204.26262pt.
 
-[31] [32 <../LTspice_Drawings/nowlin/pcap.png> <../data/pcap.png>]
-<../data/test_points.png, id=577, 1240.635pt x 627.34375pt>
+[31 <../data/pcap.png>]
+<./ch3_figures/oneshot_circuit.png, id=576, 861.2175pt x 287.0725pt>
+File: ./ch3_figures/oneshot_circuit.png Graphic file (type png)
+
+<use ./ch3_figures/oneshot_circuit.png>
+Package pdftex.def Info: ./ch3_figures/oneshot_circuit.png used on input line 5
+48.
+(pdftex.def)             Requested size: 456.4431pt x 152.14769pt.
+
+Overfull \hbox (4.7556pt too wide) in paragraph at lines 548--549
+ [][] 
+ []
+
+[32 <../LTspice_Drawings/nowlin/pcap.png>]
+<./ch3_figures/ramp.png, id=583, 1434.86063pt x 618.05907pt>
+File: ./ch3_figures/ramp.png Graphic file (type png)
+
+<use ./ch3_figures/ramp.png>
+Package pdftex.def Info: ./ch3_figures/ramp.png used on input line 557.
+(pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
+ [33 <./ch3_figures/oneshot_circuit.png> <./ch3_figures/ramp.png>] [34]
+<../data/test_points.png, id=596, 1240.635pt x 627.34375pt>
 File: ../data/test_points.png Graphic file (type png)
 
 <use ../data/test_points.png>
-Package pdftex.def Info: ../data/test_points.png used on input line 553.
+Package pdftex.def Info: ../data/test_points.png used on input line 574.
 (pdftex.def)             Requested size: 248.1226pt x 125.46652pt.
- [33 <../data/test_points.png>]
-<../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png, id=583, 806.212pt x 629.552pt
+
+<../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png, id=598, 806.212pt x 629.552pt
 >
 File: ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png Graphic file (type png)
  <use ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png>
 Package pdftex.def Info: ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png used o
-n input line 563.
+n input line 584.
 (pdftex.def)             Requested size: 282.17842pt x 220.3465pt.
- [34 <../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png>]
+ [35 <../data/test_points.png>] [36 <../LTspice_Drawings/pseudo-nmos/pseudo-nmo
+s.png>]
 Chapter 4.
-<./ch4_figures/dnl_summary.png, id=594, 1108.14pt x 897.3525pt>
+<./ch4_figures/dnl_summary.png, id=613, 1108.14pt x 897.3525pt>
 File: ./ch4_figures/dnl_summary.png Graphic file (type png)
 
 <use ./ch4_figures/dnl_summary.png>
-Package pdftex.def Info: ./ch4_figures/dnl_summary.png used on input line 590.
+Package pdftex.def Info: ./ch4_figures/dnl_summary.png used on input line 611.
 (pdftex.def)             Requested size: 343.51985pt x 278.17639pt.
 
-<./ch4_figures/inl_summary.png, id=595, 1108.14pt x 897.3525pt>
+<./ch4_figures/inl_summary.png, id=614, 1108.14pt x 897.3525pt>
 File: ./ch4_figures/inl_summary.png Graphic file (type png)
 
 <use ./ch4_figures/inl_summary.png>
-Package pdftex.def Info: ./ch4_figures/inl_summary.png used on input line 597.
+Package pdftex.def Info: ./ch4_figures/inl_summary.png used on input line 618.
 (pdftex.def)             Requested size: 343.51985pt x 278.17639pt.
- [35
+ [37
 
-] [36 <./ch4_figures/dnl_summary.png> <./ch4_figures/inl_summary.png>]
-<./ch4_figures/dnl_worst.png, id=607, 1115.16624pt x 902.37125pt>
+] [38 <./ch4_figures/dnl_summary.png> <./ch4_figures/inl_summary.png>]
+<./ch4_figures/dnl_worst.png, id=625, 1115.16624pt x 902.37125pt>
 File: ./ch4_figures/dnl_worst.png Graphic file (type png)
 
 <use ./ch4_figures/dnl_worst.png>
-Package pdftex.def Info: ./ch4_figures/dnl_worst.png used on input line 606.
+Package pdftex.def Info: ./ch4_figures/dnl_worst.png used on input line 627.
 (pdftex.def)             Requested size: 345.69797pt x 279.7322pt.
 
-<./ch4_figures/dac_average.png, id=608, 1115.16624pt x 902.37125pt>
+<./ch4_figures/dac_average.png, id=626, 1115.16624pt x 902.37125pt>
 File: ./ch4_figures/dac_average.png Graphic file (type png)
 
 <use ./ch4_figures/dac_average.png>
-Package pdftex.def Info: ./ch4_figures/dac_average.png used on input line 613.
+Package pdftex.def Info: ./ch4_figures/dac_average.png used on input line 634.
 (pdftex.def)             Requested size: 345.69797pt x 279.7322pt.
- [37 <./ch4_figures/dnl_worst.png>] [38 <./ch4_figures/dac_average.png>]
+ [39 <./ch4_figures/dnl_worst.png>] [40 <./ch4_figures/dac_average.png>]
 Chapter 5.
-[39
+[41
 
-] (./Orabutt_Thesis.bbl [40
+] (./Orabutt_Thesis.bbl [42
 
-]) [41]
+]) [43]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 681.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
 
 (./Orabutt_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 681.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 681.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
 Package rerunfilecheck Info: File `Orabutt_Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FDDEEF4FDD7E854F73F7F575DE606D6C;3125.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 681.
+(rerunfilecheck)             Checksum: E99B05D4E7114EF3ED1C33AA83BFC039;3135.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
  ) 
 Here is how much of TeX's memory you used:
- 11746 strings out of 494820
- 178666 string characters out of 3178050
- 321878 words of memory out of 3000000
- 14476 multiletter control sequences out of 15000+200000
- 12294 words of font info for 87 fonts, out of 3000000 for 9000
+ 11766 strings out of 494820
+ 179064 string characters out of 3178050
+ 322113 words of memory out of 3000000
+ 14486 multiletter control sequences out of 15000+200000
+ 12452 words of font info for 89 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
  36i,12n,49p,1314b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
@@ -981,10 +1002,10 @@ onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on Orabutt_Thesis.pdf (49 pages, 2373314 bytes).
+Output written on Orabutt_Thesis.pdf (51 pages, 2450361 bytes).
 PDF statistics:
- 718 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
- 145 named destinations out of 1000 (max. 500000)
- 6663 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 737 PDF objects out of 1000 (max. 8388607)
+ 611 compressed objects within 7 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 6673 words of extra memory for PDF output out of 10000 (max. 10000000)
 

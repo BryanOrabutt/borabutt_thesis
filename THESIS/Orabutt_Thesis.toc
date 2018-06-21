@@ -32,22 +32,22 @@
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{27}{subsection.3.2.8}
 \contentsline {section}{\numberline {3.3}Signal Channel}{29}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Programmable Nowlin circuit}{30}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Leading-edge detector}{31}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Zero-cross detector}{31}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{31}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Final output generation}{33}{subsection.3.3.5}
-\contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{35}{chapter.4}
+\contentsline {subsection}{\numberline {3.3.2}Leading-edge discriminator}{32}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Zero-cross discriminator}{32}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Output one-shot with lockout features}{32}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Final output generation}{34}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{37}{chapter.4}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Jitter Performance}{35}{section.4.3}
-\contentsline {section}{\numberline {4.4}Verification of One-Shot}{35}{section.4.4}
-\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{35}{section.4.5}
-\contentsline {section}{\numberline {4.6}Chip-Level Verification}{37}{section.4.6}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{39}{chapter.5}
+\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}Jitter Performance}{37}{section.4.3}
+\contentsline {section}{\numberline {4.4}Verification of One-Shot}{37}{section.4.4}
+\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{37}{section.4.5}
+\contentsline {section}{\numberline {4.6}Chip-Level Verification}{39}{section.4.6}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{41}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{39}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{39}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{39}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{41}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{41}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{40}{section.5.3}
+\contentsline {part}{REFERENCES}{42}{section.5.3}

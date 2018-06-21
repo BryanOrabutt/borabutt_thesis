@@ -528,7 +528,6 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \caption{Programmable capacitor circuit.}
 \label{fig:pcap}
 \end{figure}
-\vspace{2cm}
 \begin{table}[htbp!]
  \centering
  \includegraphics[scale=.25,keepaspectratio=true]{../data/pcap.png}
@@ -536,13 +535,33 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
  \label{tab:pcap}
 \end{table}
 
-\subsection{Leading-edge detector}
+\subsection{Leading-edge discriminator}
 
-\subsection{Zero-cross detector}
+\subsection{Zero-cross discriminator}
 
 
 \subsection{Output one-shot with lockout features}
 \par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit is a circuit that creates a fixed width output pulse in response to a narrow input pulse. The one-shot circuit in the signal channels is what produces the output timing pulse used to start the TVCs on the PSD8C. The one-shot circuit design is shown in Figure~\ref{fig:oneshot-circuit}.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.53,keepaspectratio=true]{./ch3_figures/oneshot_circuit.png} 
+\caption{One-shot circuit with lockout}
+\label{fig:oneshot-circuit}
+\end{figure}
+
+\par The one-shot circuit works but utilizing a D-type flip flop with an asynchronous clear input. When the CFD circuit (ie. Leading-edge and Zero-cross discriminators) produces an output a clock signal is created for this flip flop, provided lockout is disabled or the circuit is not in a lockout state. Since the input to the flip flop is tied to AVDD (logic high) the output will transition to a logic high state in response to the CFD circuit output. This causes a switch to close allowing a current source to charge a capacitor at the input of a comparator. Charging this capacitor produces a ramp voltage on the non-inverting input of the comparator, as seen in Figure~\ref{fig:ramp}.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.3,keepaspectratio=true]{./ch3_figures/ramp.png} 
+\caption{Comparator ramp input}
+\label{fig:ramp}
+\end{figure}
+
+\par The inverting input to the comparator is connected to a low pass filtered bandgap voltage. Thus, when the ramp input reaches 1.2 V the comparator output a logic high. The comparator output triggers the \emph{CLR} input on the D-flip flop to go low, forcing the output of the flip flop into a logic low state. This causes the switch controlling the current source to open and the switch in parallel with the capacitor to close, shorting the capacitor out and discharging it. The \emph{CLR} input on the flip flop can also be triggered by a master reset provided by the \emph{RST\_L} pin on the CFD16C. 
+
+\par By changing the value of the programmable capacitor the charge time changes, effectively changing how long the D-flip flop will be in the logic high state (ie. it sets the width of the timing pulse). The lockout one-shot circuit works on a similar principle but has a non-programmable capacitor with a programmable charge current. Changing the charge current allows the capacitor to charge faster or slower, changing the lockout time. The lockout one-shot provides an active low output as opposed to the active high output of the timing pulse one-shot.
 
 
 
