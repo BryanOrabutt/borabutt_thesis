@@ -7,28 +7,29 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{12}{figure.caption.5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces System level diagram of the common channel\relax }}{14}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Zero cross discriminator with DC cancellation\relax }}{15}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{16}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces System level diagram of one-shot stage\relax }}{17}{figure.caption.9}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Timing pulse output qualification\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The address, mode, \& data shared bus scheme\relax }}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Zero cross discriminator with DC cancellation\relax }}{15}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces System level diagram of one-shot stage\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Timing pulse output qualification\relax }}{17}{figure.caption.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{21}{figure.caption.15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{23}{figure.caption.16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{25}{figure.caption.18}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{25}{figure.caption.19}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 6-bit bipolar DAC\relax }}{26}{figure.caption.20}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces One stage of DAC using R2R ladder\relax }}{27}{figure.caption.21}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces DAC output current stage\relax }}{28}{figure.caption.22}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiplicity output buffer.\relax }}{29}{figure.caption.23}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Nowlin circuit.\relax }}{30}{figure.caption.24}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Programmable capacitor circuit.\relax }}{32}{figure.caption.25}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces One-shot circuit with lockout\relax }}{33}{figure.caption.27}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Comparator ramp input\relax }}{33}{figure.caption.28}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{36}{figure.caption.30}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{23}{figure.caption.18}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{25}{figure.caption.19}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{25}{figure.caption.20}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 6-bit bipolar DAC\relax }}{26}{figure.caption.21}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces One stage of DAC using R2R ladder\relax }}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces DAC output current stage\relax }}{28}{figure.caption.23}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiplicity output buffer.\relax }}{29}{figure.caption.24}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Nowlin circuit.\relax }}{30}{figure.caption.25}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Programmable capacitor circuit.\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces One-shot circuit with lockout\relax }}{33}{figure.caption.28}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Comparator ramp input\relax }}{33}{figure.caption.29}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{36}{figure.caption.31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 6-bit DAC DNL error summary\relax }}{38}{figure.caption.31}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC INL error summary\relax }}{38}{figure.caption.32}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC worst case error\relax }}{39}{figure.caption.33}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC average case error\relax }}{40}{figure.caption.34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 6-bit DAC DNL error summary\relax }}{38}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC INL error summary\relax }}{38}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC worst case error\relax }}{39}{figure.caption.34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC average case error\relax }}{40}{figure.caption.35}
 \addvspace {10\p@ }

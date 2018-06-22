@@ -275,8 +275,15 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:common-block}
 \end{figure}
 
-\par While the registers need to be provided with data, address, and mode information, only a single 8-bit bus is used to provide this. On the positive edge of the \emph{STB} input address and mode information are stored in a special purpose register that drives the internal \emph{ADDR} and \emph{MODE} busses (see Figure~\ref{fig:common-block}). On the negative edge of \emph{STB} data is then stored in all enabled registers.
+\par While the registers need to be provided with data, address, and mode information, only a single 8-bit bus is used to provide this. On the positive edge of the \emph{STB} input address and mode information are stored in a special purpose register that drives the internal \emph{ADDR} and \emph{MODE} busses (see Figure~\ref{fig:addrmode}). On the negative edge of \emph{STB} data is then stored in all enabled registers.
 \par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and reference voltages are generated here and distributed to each of the signal channels. More information on these circuits is presented in Chapter 3.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.7,keepaspectratio=true]{./ch2_figures/data_bus.png} 
+\caption{The address, mode, \& data shared bus scheme}
+\label{fig:addrmode}
+\end{figure}
 
 \subsection{Signal Channel}
 \par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, and is used by the leading-edge discriminator circuit.

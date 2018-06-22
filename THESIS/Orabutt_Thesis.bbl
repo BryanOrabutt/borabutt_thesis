@@ -22,6 +22,18 @@ Binkley, D.~M. (1994).
   circuits.
 \newblock {\em IEEE Transactions on Nuclear Science}, 41(4):1169--1175.
 
+\bibitem[Binkley and Casey, 1988]{12713}
+Binkley, D.~M. and Casey, M.~E. (1988).
+\newblock Performance of fast monolithic ecl voltage comparators in
+  constant-fraction discriminators and other timing circuits.
+\newblock {\em IEEE Transactions on Nuclear Science}, 35(1):226--230.
+
+\bibitem[Binkley et~al., 1991]{124172}
+Binkley, D.~M., Simpson, M.~L., and Rochelle, J.~M. (1991).
+\newblock A monolithic, 2 mu;m cmos constant-fraction discriminator for
+  moderate time resolution systems.
+\newblock {\em IEEE Transactions on Nuclear Science}, 38(6):1754--1759.
+
 \bibitem[B.S.~Budden, 2015]{BUDDEN}
 B.S.~Budden, L.C.Stonehill, A. (2015).
 \newblock Handheld readout electronics to fully exploit the particle
@@ -69,6 +81,14 @@ I.~Tilquin, Y. El~Masri, M.~P. (1995).
   related characteristics.
 \newblock {\em Nuclear Instruments and Methods in Physics}.
 
+\bibitem[Jackson et~al., 1996]{590890}
+Jackson, R.~G., Blalock, T.~V., Simpson, M.~L., Wintenberg, A.~L., and Young,
+  G.~R. (1996).
+\newblock Integrated constant-fraction discriminator shaping techniques for the
+  phenix lead-scintillator calorimeter.
+\newblock In {\em 1996 IEEE Nuclear Science Symposium. Conference Record},
+  volume~1, pages 51--55 vol.1.
+
 \bibitem[Kohley~Z., 2015]{KOHLEY}
 Kohley~Z., Baumann~T., C.~G. (2015).
 \newblock Three-body correlations in the ground-state decay of
@@ -102,6 +122,20 @@ Sadasivam, M. (2002).
 \newblock A multi-channel integrated circuit for use with silicon strip
   detectors in experiments in low and intermediate physics.
 \newblock Master's thesis, Southern Illinois University Edwardsville.
+
+\bibitem[Simpson et~al., 1994]{474405}
+Simpson, M.~L., Britton, C.~L., Wintenberg, A.~L., and Young, G.~R. (1994).
+\newblock An integrated, cmos, constant-fraction timing discriminator for
+  multichannel detector systems.
+\newblock In {\em Nuclear Science Symposium and Medical Imaging Conference,
+  1994., 1994 IEEE Conference Record}, volume~1, pages 320--324 vol.1.
+
+\bibitem[Simpson et~al., 1995]{504229}
+Simpson, M.~L., Young, G.~R., Jackson, R.~G., and Xu, M. (1995).
+\newblock A monolithic, constant-fraction discriminator using distributed r-c
+  delay line shaping.
+\newblock In {\em 1995 IEEE Nuclear Science Symposium and Medical Imaging
+  Conference Record}, volume~1, pages 292--296 vol.1.
 
 \bibitem[Singh et~al., 2012]{Singh2012OperationalTA}
 Singh, A.~P., Pandey, S.~K., and Kumar, M. (2012).
