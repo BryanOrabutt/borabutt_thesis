@@ -1,7 +1,7 @@
 \contentsline {part}{ABSTRACT}{ii}{Doc-Start}
 \contentsline {part}{ACKNOWLEDGEMENTS}{iii}{Doc-Start}
-\contentsline {part}{LIST OF FIGURES}{vi}{Doc-Start}
-\contentsline {part}{LIST OF TABLES}{vii}{Doc-Start}
+\contentsline {part}{LIST OF FIGURES}{vii}{Doc-Start}
+\contentsline {part}{LIST OF TABLES}{viii}{Doc-Start}
 \noindent \mbox {Chapter}\par 
 \contentsline {chapter}{\numberline {1.}INTRODUCTION}{1}{chapter.1}
 \noindent \vskip \baselineskip \par 
@@ -42,12 +42,12 @@
 \contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{37}{section.4.2}
 \contentsline {section}{\numberline {4.3}Jitter Performance}{37}{section.4.3}
 \contentsline {section}{\numberline {4.4}Verification of One-Shot}{37}{section.4.4}
-\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{37}{section.4.5}
+\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{39}{section.4.5}
 \contentsline {section}{\numberline {4.6}Chip-Level Verification}{39}{section.4.6}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{41}{chapter.5}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{43}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{41}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{41}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{43}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{43}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{42}{section.5.3}
+\contentsline {part}{REFERENCES}{44}{section.5.3}

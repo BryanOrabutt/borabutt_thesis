@@ -28,8 +28,9 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Comparator ramp input\relax }}{33}{figure.caption.29}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{36}{figure.caption.31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 6-bit DAC DNL error summary\relax }}{38}{figure.caption.32}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC INL error summary\relax }}{38}{figure.caption.33}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC worst case error\relax }}{39}{figure.caption.34}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC average case error\relax }}{40}{figure.caption.35}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Lockout times for short and long modes\relax }}{38}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC DNL error summary\relax }}{40}{figure.caption.34}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC INL error summary\relax }}{40}{figure.caption.35}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC worst case error\relax }}{41}{figure.caption.36}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 6-bit DAC average case error\relax }}{42}{figure.caption.37}
 \addvspace {10\p@ }
