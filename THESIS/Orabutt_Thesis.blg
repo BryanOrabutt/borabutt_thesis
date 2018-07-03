@@ -1,48 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: Orabutt_Thesis.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Orabutt_Thesis.aux
 The style file: apalike.bst
 Database file #1: ./Orabutt_Thesis.bib
 Warning--empty booktitle in Singh2012OperationalTA
-You've used 27 entries,
-            1935 wiz_defined-function locations,
-            626 strings with 7759 characters,
-and the built_in function-call counts, 9168 in all, are:
-= -- 888
-> -- 276
-< -- 29
-+ -- 100
-- -- 86
-* -- 655
-:= -- 1621
-add.period$ -- 81
-call.type$ -- 27
-change.case$ -- 171
-chr.to.int$ -- 27
-cite$ -- 28
-duplicate$ -- 411
-empty$ -- 695
-format.name$ -- 117
-if$ -- 1828
-int.to.chr$ -- 1
-int.to.str$ -- 0
-missing$ -- 31
-newline$ -- 138
-num.names$ -- 81
-pop$ -- 178
-preamble$ -- 1
-purify$ -- 178
-quote$ -- 0
-skip$ -- 323
-stack$ -- 0
-substring$ -- 571
-swap$ -- 59
-text.length$ -- 7
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 146
-warning$ -- 1
-while$ -- 65
-width$ -- 0
-write$ -- 348
 (There was 1 warning)

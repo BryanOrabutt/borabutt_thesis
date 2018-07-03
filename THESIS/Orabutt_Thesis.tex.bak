@@ -331,7 +331,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \begin{table}[htbp!]
 \centering
-\includegraphics[scale=.3,keepaspectratio=true]{../data/modes.png} 
+\includegraphics[scale=.35,keepaspectratio=true]{../data/modes.png} 
 \caption{Register modes and usage}
 \label{tab:modes}
 \end{table}
@@ -628,7 +628,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \section{Performance Characterization of DAC}
 \par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and derivative non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). Derivative non-linearity describes how much the output changes for each increment of the digital code word for the DAC \cite{ALLEN}. In an ideal DAC this change would be exactly the same for each increment but in reality there are minor differences between each increment. The accumulation of all of these DNL errors over the whole range of the DAC is the INL error \cite{ALLEN}. 
 
-\par Figures~\ref{fig:dnl}--\ref{fig:inl} show the results of 200 Monte Carlo simulations. With each separate Monte Carlo simulation, the values of the process parameteres such offset voltages, threshold voltages, etc. will be assigned differently allowing for process variation from chip to chip to be examined. As can be seen the INL and DNL errors are almost all below 0.5 LSBs with only a few outliers. It can also be seen that the worst case INL and DNL occured on simulation 150.
+\par Figures~\ref{fig:dnl}--\ref{fig:inl} show the results of 200 Monte Carlo simulations. With each separate Monte Carlo simulation, the values of the process parameters such offset voltages, threshold voltages, etc. will be assigned differently allowing for process variation from chip to chip to be examined. As can be seen the INL and DNL errors are almost all below 0.5 LSBs with only a few outliers. It can also be seen that the worst case INL and DNL occured on simulation 150.
 
 \begin{figure}[htbp!]
  \centering
@@ -671,12 +671,14 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \chapter{SUMMARY, CONCLUSIONS, AND FUTURE WORK}
 
 \section{Summary}
-
+\par The CFD16C was designed as a companion chip for the pulse shape discriminating IC called PSD8C. CFD16C will allow new experiments to be done with PSD8C that were previously not possible. The chip is highly configurable to allow it to be tailored to the needs of the experiment. 
+\par The CFD16C provides a precise timing pulse to start time-to-voltage converters on the PSD8C. 
 
 \section{Conclusions}
+\par The chip level simulations show that the CFD16C will work very well in new scintillator experiments accompanied with the PSD8C. The design of the IC is complete and layouts will be finished in time for a late 2018 submission.
 
 \section{Future Work}
-\par While the bulk of the design for CFD16C has been completed and the simulated performance looks promising, more robust and detailed simulations still need to be ran before the chip is ready to be sent out for fabrication. Once these simulations are completed and the chip has been fabricated a performance analysis on the physical IC will be done and any discrepencies from the simulated performance will be idetified. More simulations will then be run to find the cause of these discrepencies. 
+\par While the bulk of the design for CFD16C has been completed and the simulated performance looks promising, more robust and detailed simulations still need to be ran before the chip is ready to be sent out for fabrication. It is expected the chip will be sent for fabrication in November 2018. Once the chip has been fabricated a performance analysis on the physical IC will be done and any discrepancies from the simulated performance will be identified. More simulations will then be run to find the cause of these discrepancies. 
 
 \nocite{*}
 
