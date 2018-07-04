@@ -1,0 +1,333 @@
+#!/usr/bin/octave -qf
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% This Octave script will analyze a file containing the results of a monte carlo analysis.
+% This script should be called with single argument
+%
+% (1)   Name of data file (dac_pid.dat) to process (just give the process id)
+%
+% example usage 
+%
+% dac  12021
+% +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+% ################################
+% Read in data from veriloga file
+% Store in data matrix
+% ################################
+
+arg_list = argv () ;
+pid_num = arg_list{1} ;
+
+% Expect to find the data files in the results subdirectory
+
+filename = ['./results/dac_'  pid_num  '.dat'] ;
+fid = fopen(filename, 'rt') ; 
+
+% Read the file into the data matrix
+
+data = dlmread(filename, '\t') ;
+
+% Close the file up .. we are done with it
+
+fclose(fid) ;
+
+% Determine the number of monte carlo runs
+
+num_of_runs = length(data(:,1)) / 64 ;
+
+% ################
+% Create ideal DAC
+% ################
+
+vbg = 1.2 ;
+agnd = 1.65 ;
+fsr = vbg / 2.0 ;
+lsb = fsr / 32.0 ;
+fs = 31.0 * lsb ;
+
+# Count tells us how many LSBs the output should be
+
+for i=1:32
+  ideal_dac_pos(i) = (i - 1) * lsb ;
+end
+
+ideal_dac_pos = transpose(ideal_dac_pos) ;
+ideal_dac_neg = -1.0 .* ideal_dac_pos ;
+
+%
+% Creat a summary matrix
+%
+% Col 1 contains the run number
+% Col 2 contains the + gain error as a percentage
+% Col 3 contains the - gain error as a percentage
+% Col 4 contains the worst case  (+) INL error for the run
+% Col 5 contains the worst case  (-) INL error for the run
+% Col 6 contains the worst case (+) DNL error for the run
+% Col 7 contains the worst case (-) DNL error for the run
+
+summary = zeros(num_of_runs, 7) ;
+
+% $$$$$$$$$ START OF FOR LOOP $$$$$$$$$$$
+
+for run_num=1:num_of_runs 
+
+% Write the run number into the summary matrix
+
+    summary(run_num, 1) = run_num ;
+
+% ###############################
+% Extract the positve and negative 
+% curves from data matrix
+% #################################
+
+    first_elem = 64 * (run_num - 1) + 1 ;
+    last_elem = 64 * run_num - 32 ;
+
+    dac_code = data(first_elem:last_elem, 1) ;
+    actual_dac_pos = data(first_elem:last_elem, 2) ;
+
+    first_elem = 64 * (run_num - 1) + 33 ;
+    last_elem = 64 * run_num ;
+    actual_dac_neg = data(first_elem:last_elem, 2) ;
+
+% Subtract off AGND (1.65 Volts)
+
+    actual_dac_pos = actual_dac_pos - agnd ;
+    actual_dac_neg = actual_dac_neg - agnd ;
+
+% ##############################
+% Gain correct the actual curves
+% No reason to offset correct.
+% Architecture guarantees 0 offset.
+% #############################
+
+    gain_pos = actual_dac_pos(32) / fs 
+    gain_neg = -1.0 * actual_dac_neg(32) / fs 
+
+% Gain correct the actual responses
+
+    actual_dac_pos = actual_dac_pos ./ gain_pos ; 
+    actual_dac_neg = actual_dac_neg ./ gain_neg ;
+
+% #################################
+% Compute INL vectors
+% Express result in LSB equivalents
+% ##################################
+
+    inl_pos = actual_dac_pos - ideal_dac_pos ;
+    inl_pos = inl_pos ./ lsb ;
+    inl_neg = actual_dac_neg - ideal_dac_neg ;
+    inl_neg = inl_neg ./ lsb ;
+
+% #################################
+% Compute DNL vectors
+% Express result in LSB equivalents
+% ##################################
+
+    dnl_pos = actual_dac_pos(2:32)- actual_dac_pos(1:31) ;
+    dnl_pos = dnl_pos ./ lsb ;
+    column_of_ones = ones(31, 1) ;
+    dnl_pos = dnl_pos - column_of_ones ;
+
+    dnl_neg = actual_dac_neg(2:32)- actual_dac_neg(1:31) ;
+    dnl_neg = -1.0 .* dnl_neg ;
+    dnl_neg = dnl_neg ./ lsb ;
+    dnl_neg = dnl_neg - column_of_ones ;
+
+% #########################################
+% Plot the positve ideal and actual curves
+% #########################################
+
+    h_dac = figure('name', 'DAC Output', 'numbertitle', 'off', 'visible', 'off') ;
+
+% Positive plot
+
+    subplot(2, 1, 1) ;
+    plot(dac_code, actual_dac_pos, 'r.', 'MarkerSize', 15) ;
+    hold on ;
+    plot(dac_code, ideal_dac_pos, '-', "linewidth", 4) ;
+    grid on ;
+    xlabel('DAC Digital Code') ;
+    ylabel('DAC Positive Output') ;
+    str = ["+ DAC Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+% Negative plot
+
+    subplot(2, 1, 2) ;
+    plot(dac_code, actual_dac_neg,'r.', 'MarkerSize', 15) ;
+    hold on ;
+    plot(dac_code, ideal_dac_neg, '-', "linewidth", 4) ;
+    grid on ;
+    xlabel('DAC Digital Code') ;
+    ylabel('DAC Negative Output') ;
+    str = ["- DAC Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+    warning("off") ;
+    str = ["./pdf/DAC_" pid_num "_" num2str(run_num, '%d')  ".pdf"] ;
+    print(h_dac, '-dpdf', '-color', str) ;
+
+% #########################################
+% Plot INL
+% #########################################
+
+    h_inl = figure('name', 'INL', 'numbertitle', 'off', 'visible', 'off') ;
+
+    subplot(2, 1, 1) ;
+    plot(dac_code, inl_pos, 'r.', 'MarkerSize', 15) ;
+    grid on ;
+    xlabel('DAC Digital Code') ;
+    ylabel('INL for Positive Output (LSBs)') ;
+    str = ["INL for Positive Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+    subplot(2, 1, 2) ;
+    plot(dac_code, inl_neg,'r.', 'MarkerSize', 15) ;
+    grid on ;
+    xlabel('DAC Digital Code') ;
+    ylabel('INL for Negative Output (LSBs)') ;
+    str = ["INL for Negative Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+    warning("off") ;
+    str = ["./pdf/INL_" pid_num "_" num2str(run_num, '%d') ".pdf"] ;
+    print(h_inl, '-dpdf', '-color', str) ;
+
+% #########################################
+% Plot DNL
+% #########################################
+
+    h_dnl = figure('name', 'INL', 'numbertitle', 'off', 'visible', 'off') ;
+
+    dac_code = data(1:31, 1) ;
+
+    subplot(2, 1, 1) ;
+    plot(dac_code, dnl_pos, 'r.', 'MarkerSize', 15) ;
+    grid on ;
+    xlabel('DAC Digital Code') ;
+    ylabel('DNL Positive Output') ;
+    str = ["DNL for Positive Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+    subplot(2, 1, 2) ;
+    plot(dac_code, dnl_neg,'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('DAC Digital Code') ;
+    ylabel('DNL Negative Output') ;
+    str = ["DNL for Negative Output --> Run # " num2str(run_num, '%d')] ;
+    title(str) ;
+
+    warning("off") ;
+    str = ["./pdf/DNL_" pid_num "_" num2str(run_num, '%d') ".pdf"] ;
+    print(h_dnl, '-dpdf', '-color', str) ;
+
+%
+% Write results into summary matrix
+% Put the gain errors (as a percentage) into summary matrix
+%
+    err = gain_pos - 1.0 ;
+    summary(run_num, 2) = 100.0 * err ;
+    err = gain_neg - 1.0 ;
+    summary(run_num, 3) = 100.0 * err ;
+
+% And now the worst case INL errors
+
+    summary(run_num, 4) = max(abs(inl_pos)) ;
+    summary(run_num, 5) = max(abs(inl_neg)) ;
+
+% And now the worst case DNL errors
+
+    summary(run_num, 6) = max(abs(dnl_pos)) ;
+    summary(run_num, 7) = max(abs(dnl_neg)) ; 
+
+end
+
+% $$$$$$$$$$ END OF THE FOR LOOP $$$$$$$$$$$$
+
+%
+% We should plot out summary data
+% Perhaps this is all we really care about
+%
+    run_numbers = summary(1:num_of_runs, 1) ;
+    pos_gain_err = summary(1:num_of_runs, 2) 
+    neg_gain_err = summary(1:num_of_runs, 3) 
+    max_pos_inl = summary(1:num_of_runs, 4) ;
+    max_neg_inl = summary(1:num_of_runs, 5) ;
+    max_pos_dnl = summary(1:num_of_runs, 6) ;
+    max_neg_dnl = summary(1:num_of_runs, 7) ;
+
+% ***********
+    h_sum_gain = figure('name', 'Summary Gain Data', 'numbertitle', 'off', 'visible', 'off') ;
+
+    subplot(2, 1, 1) ;
+    plot(run_numbers, pos_gain_err, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Gain Error (%)') ;
+    str = "Positive Output Gain Error Plot"  ;
+    title(str) ;
+
+    subplot(2, 1, 2) ;
+    plot(run_numbers, neg_gain_err, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Gain Error (%)') ;
+    str = "Negative Output Gain Error Plot"  ;
+    title(str) ;
+
+    warning("off") ;
+    str = ["./pdf/Z_GAIN_SUMMARY_" pid_num ".pdf"] ;
+    print(h_sum_gain, '-dpdf', '-color', str) ;
+
+% ***********
+
+    h_sum_inl = figure('name', 'Summary INL Data', 'numbertitle', 'off', 'visible', 'off') ;
+
+    subplot(2, 1, 1) ;
+    plot(run_numbers, max_pos_inl, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Maximum INL') ;
+    str = "Positive Output Max INL Plot"  ;
+    title(str) ;
+
+    subplot(2, 1, 2) ;
+    plot(run_numbers, max_neg_inl, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Maximum INL') ;
+    str = "Negative Output Max INL Plot"  ;
+    title(str) ;
+    warning("off") ;
+    str = ["./pdf/Z_INL_SUMMARY_" pid_num ".pdf"] ;
+    print(h_sum_inl, '-dpdf', '-color', str) ;
+
+
+% ***********************
+
+    h_sum_dnl = figure('name', 'Summary DNL Data', 'numbertitle', 'off', 'visible', 'off') ;
+    subplot(2, 1, 1) ;
+    plot(run_numbers, max_pos_dnl, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Maximum DNL') ;
+    str = "Positive Output Max DNL Plot"  ;
+    title(str) ;
+
+    subplot(2, 1, 2) ;
+    plot(run_numbers, max_neg_dnl, 'r.', 'MarkerSize', 15) ;
+    grid on 
+    xlabel('Monte Carlo Run Number') ;
+    ylabel('Maximum DNL') ;
+    str = "Negative Output Max DNL Plot"  ;
+    title(str) ;
+
+    warning("off") ;
+    str = ["./pdf/Z_DNL_SUMMARY_" pid_num ".pdf"] ;
+    print(h_sum_dnl, '-dpdf', '-color', str) ;
+
+exit
+
+

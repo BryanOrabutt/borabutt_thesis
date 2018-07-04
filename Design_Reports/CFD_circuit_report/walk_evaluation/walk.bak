@@ -1,0 +1,79 @@
+#!/usr/bin/octave -qf
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% This Octave script will analyze a file containing the results of a 
+% monte carlo (MC) analysis.
+%
+% This script should be called with single argument.
+%
+% The script will produce a series of walk plots, one for each MC run
+%
+% example usage (where the single argument is the PID)
+%
+% walk 12021
+% +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+% ################################
+% Read in data from veriloga file
+% Store in data matrix
+% ################################
+
+arg_list = argv () ;
+pid_num = arg_list{1} ;
+
+exit 
+
+% Expect to find the data files in the results subdirectory
+
+filename = ['./results/walk_'  pid_num  '.dat'] ;
+fid = fopen(filename, 'rt') ; 
+
+% Read the file into the data matrix
+
+data = dlmread(filename, '\t') 
+
+% Close the file up .. we are done with it
+
+fclose(fid) ;
+
+exit ;
+
+%
+% Determine the number of monte carlo runs
+% The first column will contain indices
+% Count the number of 1s we find
+%
+
+index_vector = data(:,1) ;
+n = length(index_vector) 
+runs = 0 ;
+for i=1:n
+    if (index_vector(i) == 1) runs = runs + 1 ;
+end
+
+%
+% Second column contains the amplitude of the input signal
+% Convert to mv
+
+amp_vector = 1000.0 .* data(:,2) ;
+
+%
+% Fifth column contains the propagation delay
+% Convert to ns
+%
+
+tpd_vector = 1e9 .* data(:,5) ;
+
+% #########################################
+% Create the walk plot
+% #########################################
+
+h_walk = figure('name', 'Walk Plot', 'numbertitle', 'off', 'visible', 'off') ;
+
+plot(amp_vector, tpd_vector, 'r.', 'MarkerSize', 15) ;
+hold on ;
+grid on ;
+xlabel('Amplitude (mv)') ;
+ylabel('Propagation Delay (ns)') ;
+title("Walk Plot") ;
+

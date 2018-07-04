@@ -1,0 +1,215 @@
+;
+; Sim #1
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 0.0
+Corner = "typ"
+$
+;
+; Sim #2
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 50.0
+Corner = "typ"
+$
+;
+; Sim #3
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 27.0
+Corner = "typ"
+$
+;
+; Sim #4
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcp"
+$
+;
+; Sim #5
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcp"
+$
+;
+; Sim #6
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcp"
+$
+;
+; Sim #7
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcs"
+$
+;
+; Sim #8
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcs"
+$
+;
+; Sim #9
+;
+Vdd = 5.0
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcs"
+$
+; Sim #10
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 27.0
+Corner = "typ"
+$
+;
+; Sim #11
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 50.0
+Corner = "typ"
+$
+;
+; Sim #12
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 0.0
+Corner = "typ"
+$
+;
+; Sim #13
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcp"
+$
+;
+; Sim #14
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcp"
+$
+;
+; Sim #15
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcp"
+$
+;
+; Sim #16
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcs"
+$
+;
+; Sim #17
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcs"
+$
+;
+; Sim #18
+;
+Vdd = 4.75
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcs"
+$
+;
+; Sim #19
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 27.0
+Corner = "typ"
+$
+;
+; Sim #20
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 50.0
+Corner = "typ"
+$
+;
+; Sim #21
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 0.0
+Corner = "typ"
+$
+;
+; Sim #22
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcp"
+$
+;
+; Sim #23
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcp"
+$
+;
+; Sim #24
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcp"
+$
+;
+; Sim #25
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 27.0
+Corner = "wcs"
+$
+;
+; Sim #26
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 50.0
+Corner = "wcs"
+$
+;
+; Sim #27
+;
+Vdd = 5.25
+Agnd = 2.5
+Temperature = 0.0
+Corner = "wcs"
+$

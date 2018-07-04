@@ -1,0 +1,98 @@
+#!/usr/bin/env tclsh
+#
+# Determine the project directory
+# We will do the linearity analysis in the
+# psd_tvc_linearity sub-directory
+#
+
+set		phome	$env(PHOME)
+puts 	"\nMoving to the psd_tvc_linearity directory"
+cd		${phome}/psd_tvc_linearity
+
+#
+# Open up a file of design variable assignments
+#
+
+set  	pwd_dir  [pwd]
+puts 	"Working directory is ${pwd_dir}"
+puts 	"Opening up the dvars file"
+cd 	 	$pwd_dir
+
+set 	fid_var 	[open  "dvars"  "r"]
+
+# Read lines from the "dvars" file
+# End of data for a simulation run signaled by
+# encountering a line that starts with a $ sign
+# Comment lines begin with a ;
+#
+# We need to combine the information from the dvars file
+# with the ocean template to create the final ocean script
+# that we will use.
+# Once we have the final ocean script, we will run "ocean"
+#
+
+set  	new_sim   "true"
+while {[gets $fid_var line]  >=  0} {
+	if {$new_sim == "true"} {
+		cd  	$pwd_dir
+		puts    "Removing tvc.ocn if it exists"
+		file 	delete 	-force	"tvc.ocn"
+        puts    "Removing tvc.dat if it exists"
+		file 	delete 	-force	"tvc.dat"
+		puts  	"Creating a tvc.ocn script"
+		set		fid_ocn		[open "tvc.ocn" "w"]
+		set		fid_tmp		[open "ocn.template" "r"]
+		set		new_sim  	"false"
+	}
+	if {$line != "\$"} {
+		puts	$line
+ 		puts 	$fid_ocn	$line
+	}  else {
+		while {[gets $fid_tmp line2] >= 0} {
+			puts 	$fid_ocn  $line2
+		}
+		close 	$fid_tmp
+		close	$fid_ocn
+
+#
+# We can run ocean now
+#
+
+		set		ocean	"ocean < ${pwd_dir}/tvc.ocn >! ${pwd_dir}/ocean.log"
+		puts 	$ocean
+		flush	stdout
+		cd 		$phome
+		if 		{ [catch {eval	exec ${ocean}} errmsg ] } {
+				puts "Calling Ocean returned => $errmsg"
+		}
+		cd 		${pwd_dir}
+#
+# We need to get the file (va_reslts/tvc.csv) created by the verilogA data recorder
+# when the simulation was run and concatenate it with the header file which Ocean script
+# created called tvc_header.txt.  Resulting file is tvc.dat.
+#
+        set     file1           "${pwd_dir}/tvc_header.txt"
+        set     file2           "${phome}/va_results/tvc.csv"
+        set     ofile           "${pwd_dir}/tvc.dat"
+        set     concat_files    "cat ${file1} ${file2} > ${ofile}"
+		puts 	$concat_files
+		flush	stdout
+		if 		{ [catch {eval	exec ${concat_files}} errmsg ] } {
+				puts "Calling cat returned => $errmsg"
+		}        
+#
+# Need to give octave name of the data file (root name) and how many points
+# to exclude from the start and end of the data vector before
+# performaing the regression analysis
+#
+		set		octave	"tvc_linearity  tvc  2  17 "
+		puts 	$octave
+		flush	stdout
+		if 		{ [catch {eval	exec ${octave}} errmsg ] } {
+				puts "Calling Octave returned => $errmsg"
+		}
+		set 	new_sim  "true"
+	}
+}
+close	$fid_var
+exit

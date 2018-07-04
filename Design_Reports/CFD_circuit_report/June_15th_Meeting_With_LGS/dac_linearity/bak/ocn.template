@@ -1,0 +1,78 @@
+;
+; Sript to help run corner simulations on TVC circuit
+;
+
+; A Tcl script reads design variable information from a file
+; and concats it with this file
+;
+
+; Selecting the waveform Tool
+
+ocnWaveformTool( 'awd )
+
+; Start the simulator (Spectre)
+
+simulator( 'spectre )
+
+; Need to specify the design directory
+
+design(	"/home/psd/cds/PSD/simulation/channel_test_TVC_PSD4/spectre/schematic/netlist/netlist")
+
+; Need to specify the results directory
+
+resultsDir( "/home/psd/cds/PSD/simulation/channel_test_TVC_PSD4/spectre/schematic" )
+
+; We need to create a file where header inforamtion can be stored
+
+header_file = "/home/psd/cds/PSD/psd_tvc_linearity/tvc_header.txt"
+
+declare(fid[2])
+
+
+; *****************************************************************************
+
+; Select the process corner
+
+CornerType = case( Corner
+	 ("typ"  modelFile( '("$MODS/bip.scs" "typ") '("$MODS/cap.scs" "typ") '("$MODS/res.scs" "typ") '("$MODS/mos.scs" "typ") ) )
+	 ("wcp"  modelFile( '("$MODS/bip.scs" "fast")  '("$MODS/cap.scs" "amin")  '("$MODS/res.scs" "min") '("$MODS/mos.scs" "wcp") ) ) 
+     ("wcs"  modelFile( '("$MODS/bip.scs" "slow") '("$MODS/cap.scs" "amax") '("$MODS/res.scs" "max") '("$MODS/mos.scs" "wcs") ) )
+     (t      println("You must choose a corner") ) )
+
+;Select the analysis
+
+analysis('tran ?stop "500u"  ?errpreset "conservative"  ?step "10n"  )
+ 
+; Open up a file where we can write header information into
+
+fid[0] = outfile(header_file "w")
+
+; Put in a header line containing key parameters and a line for timestamp info
+
+fprintf(fid[0], "Vdd = %4.1f V, Agnd = %4.1f V, Temp = %4.1f C, Corner = %s\n", Vdd , Agnd, Temperature, Corner)
+timestamp = getCurrentTime() 
+fprintf(fid[0], "%s\n", timestamp) 
+drain(fid[0])
+
+;Close the header file which we called tvc_header.txt
+
+close(fid[0])
+
+; Set the design variables
+
+desVar( "AGND_VAL"  Agnd)
+desVar(	"AVDD_VAL"  Vdd	)
+
+; Set the temperature
+
+temp( Temperature ) 
+
+; Run the simulation
+
+run()
+; selectResult( 'tran )
+; saveOption('save "all")
+
+; Exit the Ocean script
+
+exit

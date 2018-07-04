@@ -1,0 +1,109 @@
+// VerilogA for Lib, CFD_test, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+`define		DATABITS	8
+`define		CHANNELS	16
+
+module Channel_Tester(IN, PEAK, TRIG, AGND, RISE, DATA, AVDD, AVSS, DVDD, DGND, GEN, NEG_POL, RST_L, AGND_INT_DISABLE, STB, SIG);
+	output AVDD, AVSS, DVDD, DGND, RST_L, STB, GEN, AGND_INT_DISABLE;
+	output[`DATABITS-1:0] DATA;
+	input AGND, RISE;
+	input[`CHANNELS-1:0] TRIG, PEAK, IN;
+	output[`CHANNELS-1:0] SIG;
+	electrical AVDD, AVSS, DVDD, DGND, RST_L, STB, GEN, AGND_INT_DISABLE, AGND, RISE;	
+	electrical[`DATABITS-1:0] DATA;
+	electrical[`CHANNELS-1:0] TRIG, PEAK;
+	electrical[`CHANNELS-1:0] SIG, IN;
+	electrical gnd;
+	ground gnd;
+
+	parameter real time_tol = 100p from[1p:100n]; //time tolerance for transitions and timers
+	parameter real load_cap = 10p; //load capacitance on the DOUT lines
+
+	real vpeak[`CHANNELS-1:0]; //peak amplitude of exp pulse
+	real exp_pulse[`CHANNELS-1:0]; //variable to hold current value of pulse
+	real t0[`CHANNELS-1:0]; //time the last pulse started
+	real t; //current time (used for calculating value of pulse)
+	
+
+	genvar j;
+	real time_fall, time_rise;
+	real vth;
+	real tau_r;
+	integer time_flag;
+	integer fid;
+	real start[`CHANNELS-1:0];
+
+	/*	Supply voltage lines */
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//AVDD.pwl")) V_avdd(AVDD, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//AVSS.pwl")) V_avss(AVSS, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DVDD.pwl")) V_dvdd(DVDD, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DGND.pwl")) V_dgnd(DGND, gnd);
+
+	/*	Data lines	*/
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA0.pwl")) V_data0(DATA[0], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA1.pwl")) V_data1(DATA[1], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA2.pwl")) V_data2(DATA[2], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA3.pwl")) V_data3(DATA[3], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA4.pwl")) V_data4(DATA[4], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA5.pwl")) V_data5(DATA[5], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA6.pwl")) V_data6(DATA[6], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//DATA7.pwl")) V_data7(DATA[7], gnd);
+
+	/*	Control Lines	*/
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//STB.pwl")) V_stb(STB, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//GEN.pwl")) V_gen(GEN, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//AGND_INT_DISABLE.pwl")) V_agnd_int_disable(AGND_INT_DISABLE, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//NEG_POL.pwl")) V_neg_pol(NEG_POL, gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//RST_L.pwl")) V_rst_l(RST_L, gnd);
+
+	analog begin
+		@(initial_step) begin
+			time_flag = 0;
+			fid = $fopen("~/cds/CFD/walk_results.csv");
+			tau_r = 3e-9;
+		end
+		
+		vth = (V(DVDD) + V(AVSS))/2.0;
+		t = $abstime;
+		for(j = 0; j < `CHANNELS; j = j + 1) begin
+			@(cross(V(TRIG[j]) - vth, 1, time_tol)) begin
+				vpeak[j] = V(PEAK[j]);
+				tau_r = V(RISE);
+				t0[j] = $abstime;
+				time_flag = 1;
+				time_fall = $abstime + 20*tau_r;
+				start[j] = t0[j]; //record pulse time when trigger line goes high
+				if(j == 0) $fwrite(fid, "\n\n"); 
+			end
+
+			exp_pulse[j] = exp(-(t-t0[j])/(10.0*tau_r)) - exp(-(t-t0[j])/tau_r);
+			V(SIG[j], AGND) <+ vpeak[j]*exp_pulse[j]*1.435;
+
+			@(cross(V(IN[j])-vth, 1, time_tol)) begin
+				$fstrobe(fid, "channel\t%d\tamp\t%g\tstart\t%g\tout\t%g", j, vpeak[j], start[j], $abstime); //record peak amplitude and output time when channel output goes high.
+			end
+		end
+
+		for(j = 0; j < `CHANNELS; j = j + 1) begin
+			I(IN[j]) <+ load_cap*ddt(V(IN[j]));
+		end
+
+		/*	After 20 time constants, clear the time flag	*/
+		@(timer(time_fall)) begin
+			time_flag = 0;
+		end
+
+		/*	While time flag is set, steps will be smaller to accurately model pulse	*/
+		if(time_flag) begin
+			$bound_step(tau_r/25.0);
+		end
+
+		@(final_step) begin
+			$fclose(fid);
+		end
+
+	end
+endmodule

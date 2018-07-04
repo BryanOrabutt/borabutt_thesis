@@ -1,0 +1,14 @@
+#!/bin/tcsh -f
+
+#
+# Script to clean the data directory and pdf directory
+# Data directory contains csv files created by
+# the PSD channel testbench.  
+#
+
+echo "Moving to pdf directory and removing all pdf files"
+cd pdf 
+rm *.pdf
+
+
+

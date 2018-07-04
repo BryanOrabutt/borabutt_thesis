@@ -1,0 +1,19 @@
+#!/usr/bin/tclsh
+#
+# Tcl script to produce a collection of pdf files
+#
+
+set     ofile     "combined.pdf"
+
+set     phome     $env(PHOME)
+set     pdf_dir   "${phome}/dac_linearity/pdf"
+cd      ${pdf_dir}
+
+# Combine the pdf documents into one file
+# Put the document in current working directory
+
+set file_list  [glob *.pdf]
+set file_list  [lsort ${file_list}]
+
+eval exec gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=${ofile} ${file_list}
+

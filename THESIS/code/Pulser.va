@@ -1,0 +1,56 @@
+// VerilogA for Lib, pulser, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+`define 	CHANNELS	16
+
+module pulser(TRIG, PEAK, RISE);
+	output[`CHANNELS-1:0] TRIG, PEAK;
+	output RISE;
+	electrical[`CHANNELS-1:0] TRIG, PEAK;
+	electrical gnd, RISE;
+	ground gnd;
+
+
+	/*	Pulse peak amplitude lines */	
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK0.pwl")) V_peak0(PEAK[0], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK1.pwl")) V_peak1(PEAK[1], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK2.pwl")) V_peak2(PEAK[2], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK3.pwl")) V_peak3(PEAK[3], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK4.pwl")) V_peak4(PEAK[4], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK5.pwl")) V_peak5(PEAK[5], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK6.pwl")) V_peak6(PEAK[6], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK7.pwl")) V_peak7(PEAK[7], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK8.pwl")) V_peak8(PEAK[8], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK9.pwl")) V_peak9(PEAK[9], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK10.pwl")) V_peak10(PEAK[10], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK11.pwl")) V_peak11(PEAK[11], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK12.pwl")) V_peak12(PEAK[12], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK13.pwl")) V_peak13(PEAK[13], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK14.pwl")) V_peak14(PEAK[14], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//PEAK15.pwl")) V_peak15(PEAK[15], gnd);
+
+
+	/*	Pulse trigger lines */
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG0.pwl")) V_trig0(TRIG[0], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG1.pwl")) V_trig1(TRIG[1], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG2.pwl")) V_trig2(TRIG[2], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG3.pwl")) V_trig3(TRIG[3], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG4.pwl")) V_trig4(TRIG[4], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG5.pwl")) V_trig5(TRIG[5], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG6.pwl")) V_trig6(TRIG[6], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG7.pwl")) V_trig7(TRIG[7], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG8.pwl")) V_trig8(TRIG[8], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG9.pwl")) V_trig9(TRIG[9], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG10.pwl")) V_trig10(TRIG[10], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG11.pwl")) V_trig11(TRIG[11], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG12.pwl")) V_trig12(TRIG[12], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG13.pwl")) V_trig13(TRIG[13], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG14.pwl")) V_trig14(TRIG[14], gnd);
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//TRIG15.pwl")) V_trig15(TRIG[15], gnd);
+
+	/* Risetime constant line */
+	vsource #(.type("pwl"), .file("~/cds/CFDtest/vcd//RISE.pwl")) V_rise(RISE, gnd);
+
+endmodule

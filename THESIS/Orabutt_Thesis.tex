@@ -71,7 +71,7 @@
 
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 3 nsec and 50 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 3 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -181,9 +181,7 @@ and CFD circuits are not on-chip so as to provide greater flexibility.
 PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode).
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
 problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the "common stop" signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs. (one for each of the chip's analog output pulse trains).
-
-(Still need to talk about enhancements that were made on PSD4)
-
+\par In the latest revision of PSD8C level translators were added to all of the digital pads on the chip. This level translators convert 5 V logic level outputs to 3.3 V logic levels to be used safely by an field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C.
 
 \section{Need for an Integrated Circuit}
 
@@ -229,7 +227,7 @@ The IC should support 16 detectors.
 \item
 It should support analog pulses of both polarities (relative to analog signal ground).
 \item
-It should accommodate analog exponentially shaped pulses with rise time constants ranging from 3 nsec to 50 nsec.
+It should accommodate analog exponentially shaped pulses with rise time constants ranging from 2 nsec to 192 nsec.
 \item
 It must exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 15 mV to 1.5 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
 \item
@@ -239,7 +237,7 @@ The discriminator in each of the 16 channels should be of the constant fraction 
 \item
 Each channel should have a leading-edge threshold.
 \item
-While the chip must support signals with rise time constants ranging from 3 nsec to 50 nsec, performance will be optimized for the shorter time constants. 
+While the chip must support signals with rise time constants ranging from 2 nsec to 192 nsec, performance will be optimized for the shorter time constants. 
 \item
 The output pulse width from a channel should be programmable.
 \item
@@ -671,9 +669,18 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \chapter{SUMMARY, CONCLUSIONS, AND FUTURE WORK}
 
 \section{Summary}
-\par The CFD16C was designed as a companion chip for the pulse shape discriminating IC called PSD8C. CFD16C will allow new experiments to be done with PSD8C that were previously not possible. The chip is highly configurable to allow it to be tailored to the needs of the experiment. 
-\par The CFD16C provides a precise timing pulse to start time-to-voltage converters on the PSD8C. 
+\par The CFD16C was designed as a companion chip for the pulse shape discriminating IC called PSD8C. CFD16C will allow new experiments to be done with PSD8C that were previously not possible. The CFD16C provides a precise timing pulse to start time-to-voltage converters on the PSD8C. The chip is highly configurable, allowing the following circuit parameters to be adjusted to an experiments needs:
 
+\begin{itemize}
+\item Timing pulse width control between 50 nsec and 500 nsec
+\item Leading edge theshold controllable via 6-bit bi-polar DAC
+\item Lockout time adjustable between 100 nsec and 16.8 $\mu$sec
+\item Test point output providing one of five selectable digital signals
+\item Controllable Nowlin delay to allow input risetimes between 2 nsec and 192 nsec
+\item On chip signal ground generator trimmable to match supply
+\end{itemize}
+
+\par The CFD16C contains sixteen signal channels allowing one chip to support two PSD8Cs. Each signal channel is comprised of an input Nowlin circuit, leading edge discriminator, zero cross discriminator, and an output one-shot circuit with lockout capabilities. The CFD16C provides a timing pulse output from each of the 16 signal channels, as well as a global logical OR of all channels and an analog multiplicity voltage proportional to the number of channels that have fired. The IC occupies a die area of approximately 1.9 mm x 3.5 mm and will be fabricated in the AMS-AG 0.35 micron NWELL process.
 \section{Conclusions}
 \par The chip level simulations show that the CFD16C will work very well in new scintillator experiments accompanied with the PSD8C. The design of the IC is complete and layouts will be finished in time for a late 2018 submission.
 
@@ -696,7 +703,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \multipleappendices
 \lstset{
-         language=C,
+         language=Verilog,
          basicstyle=\scriptsize\ttfamily,
          emptylines=0, 
          lineskip=1pt,
@@ -725,5 +732,55 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
          showstringspaces=false           
  }
 
+\chapter{Verilog-A pulse generator}
+\lstinputlisting{./code/Pulser.va}
+
+\chapter{Verilog-A Test fixture}
+\lstinputlisting{./code/CFD_Tester.va}
+
+\chapter{System Verilog global defines}
+\lstinputlisting{./code/localparams.vh}
+
+\chapter{System Verilog tasks}
+\lstinputlisting{./code/verilog_driver_tasks.sv}
+
+\chapter{System Verilog test fixture}
+\lstinputlisting{./code/verilog_driver.sv}
+
+\chapter{System Verilog instantiation}
+\lstinputlisting{./code/verilog_driver_tb.sv}
+
+\lstset{
+         language=Python,
+         basicstyle=\scriptsize\ttfamily,
+         emptylines=0, 
+         lineskip=1pt,
+         %numbers=left,            
+         numberstyle=\tiny,         
+         stepnumber=2,              
+         numbersep=5pt,             
+         tabsize=3,                
+         extendedchars=true,       
+         breaklines=true,            
+         commentstyle=\color{blue},
+         keywordstyle=\color{red},
+            frame=b,         
+ %        keywordstyle=[1]\textbf,    
+ %        keywordstyle=[2]\textbf,    
+ %        keywordstyle=[3]\textbf,  
+ %        keywordstyle=[4]\textbf,   \
+         stringstyle=\scriptsize\color{green}\ttfamily, 
+         showspaces=false,         
+         showtabs=false,            
+%         xleftmargin=17pt,
+%         framexleftmargin=17pt,
+%         framexrightmargin=5pt,
+%         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false           
+ }
+
+\chapter{VCD to PWL python script}
+\lstinputlisting{./code/vcd2pwl.py}
 
 \end{document}

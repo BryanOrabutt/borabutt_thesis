@@ -1,0 +1,122 @@
+#!/usr/bin/octave -qf
+
+%
+% This script will try to predict the jitter
+% characteristics of our CFD.
+%
+% This is for the "fast" mode
+%
+
+%
+% Compute the noise power for fast mode
+% Composed of 4 sources:
+% 
+
+q = 1.602e-19  ;                    % Charge of an electron
+Ut = 25e-3 ;                        % Thermal voltage at room temperature
+Rn = 2000.0 ;                       % The "Nowlin" resistor
+Cu = 0.5e-12 ;                      % Unit capacitor in Nowlin circuit
+R1a = 4e3 ;                         % Constant fraction resistor
+R1b = 2e3 ;                         % Constant fraction resistor
+Rth = (R1a * R1b) / (R1a + R1b) ;   % Thevenin resistance
+NBW = 200e6 ;                       % Noise bandwidth
+G = 4.6 ;                           % Gain of diff amp stage
+gm = 266e-6 ;                       % Transconductance of diff amp input device
+Rg = G / gm ;                       % Gain setting resistor
+SR = 2.0e9 ;                        % Slew rate of diff amp
+Ap = 15e-3 ;                        % Amplitude of input pulse
+overall_gain = realpow(G, 5) ;      % Gain of the cascade of 5 diff amps
+Cf = 20e-12 ;                       % Fast shaper capactior
+R1 = R1a + R1b ;
+Rf = (R1 * Rn) / (R1 + Rn) ;
+tau_0 = Cf * R1 ;                   % Time constant associated with fast shaper
+
+% Look at risetime constants from 1 ns to 16 ns
+% Assumption is that we set the risetime and nowlin 
+% constants equal to one another
+
+for i=1:16
+    tau_n = i * Cu * Rn ;                                   % Nowlin and risetime constants should match
+    tau_r = tau_n ;
+    vnp1 = (q * Ut * Rn) / tau_n ;                          % kT / C noise
+    vnp2 = 4 * q * Ut * Rth * NBW ;                         % Thermal noise of Rth
+    vnp3 = 8 * q * Ut * (Rg / (G * G)) * NBW ;              % Thermal noise of gain setting resistor
+    vnp4 = 8 * q * Ut * (2.0 / 3.0) * (1 / gm) * NBW ;      % Input device thermal noise
+    vnp = vnp1 + vnp2 + vnp3 + vnp4 ;
+    vn = sqrt(vnp) ;
+    slope = Ap / (4 * tau_n) ;                              % Compute slope when we go thru zero
+    r = tau_r / tau_0 ;
+    atten = tau_0 * realpow(r, r) - tau_r ;                 % Fast shaper attenuates the signal
+    atten = atten / (tau_0 - tau_r) ;
+    slope = atten * slope ;                                 % Account for this attenuation
+    slope = overall_gain * slope ;
+    if (slope > SR) 
+        slope = SR ;
+    end
+    vn_out = overall_gain * vn ;
+    jitter = vn_out / slope ;
+    risetime = 2.2 * tau_n ;
+    percent = 100.0 * (jitter / risetime) ;
+    fast_results(i, 1) = 1e9 * 2.2 * tau_n ;                % Express risetime in ns
+    fast_results(i, 2) = percent ;
+    fast_results(i, 3) = atten ;
+end
+
+% Create the theoretical jitter plot
+
+    h_jitter_fast = figure('name', 'Jitter in Fast Mode', 'numbertitle', 'off', 'visible', 'off') ;
+
+    plot(fast_results(:,1), fast_results(:,2), 'r.', 'MarkerSize', 15) ;
+    axis([0 40  0 12]) ;
+    hold on ;
+    grid on ;
+    xlabel('Input Pulse 10 - 90 Percent Risetime (ns)') ;
+    ylabel('Percentage') ;
+    title("Ratio of Jitter (1 sigma) to 10 - 90 Risetime of Pulse (Fast Mode)") ;
+
+% Superimpose the simulation data onto plot
+
+   fast_data = [2.2 7.24 0.97; 4.4  4.53  0.94; 11.0 2.98  0.85; 22  2.49   0.75 ; 35.2 2.35 0.66] ;
+   plot(fast_data(:,1), fast_data(:,2), 'b*', 'MarkerSize', 10) ;
+
+% Add legend to plot
+
+    legend('Theoretical Prediction', 'Electrical Simulation') ;
+
+% Annotate the plot with useful information
+
+    str = ["In FAST mode we can hanlde 10-90 risetimes up to 35 ns" ] ;
+    text(6, 9, str) ;
+
+% Save the plot as a PDF 
+
+    warning("off") ;
+    str = ["jitter_fast_mode.pdf"] ;
+    print(h_jitter_fast, '-dpdf', '-color', str) ;
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+% Also create an attenuation plot
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+    hold off ;
+    grid off ;
+
+    h_atten_fast = figure('name', 'Fast Mode Attenuation', 'numbertitle', 'off', 'visible', 'off') ;
+    plot(fast_results(:,1), fast_results(:,3), 'r.', 'MarkerSize', 15) ;
+    hold on ;
+    grid on ;
+    xlabel('Input Pulse 10 - 90 Percent Risetime (ns)') ;
+    ylabel('Ratio of Leading Edge to Input Pulse Peak Amplitude') ;
+    title("Attenuation of Input Pulse Amplitude in Fast Mode") ;
+
+% Superimpose the simulation data onto plot
+
+   plot(fast_data(:,1), fast_data(:,3), 'b*', 'MarkerSize', 10) ;
+
+% Save the plot as a PDF 
+
+    warning("off") ;
+    str = ["atteunuation_fast_mode.pdf"] ;
+    print(h_atten_fast, '-dpdf', '-color', str) ;
+
+exit
