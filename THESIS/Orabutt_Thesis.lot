@@ -1,15 +1,16 @@
 \noindent \mbox {Table}\hfill \makebox [1em]{Page}\par 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Register modes and usage\relax }}{18}{table.caption.12}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Pinout of CFD16C\relax }}{18}{table.caption.13}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Register modes and usage\relax }}{17}{table.caption.11}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Pinout of CFD16C\relax }}{18}{table.caption.12}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces NMOS Parameters\relax }}{19}{table.caption.14}
-\contentsline {table}{\numberline {3.2}{\ignorespaces PMOS Parameters\relax }}{20}{table.caption.15}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Programmable capacitor values and time constants.\relax }}{31}{table.caption.27}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Test point multiplexer outputs\relax }}{35}{table.caption.30}
+\contentsline {table}{\numberline {3.1}{\ignorespaces NMOS Parameters\relax }}{19}{table.caption.13}
+\contentsline {table}{\numberline {3.2}{\ignorespaces PMOS Parameters\relax }}{20}{table.caption.14}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Programmable capacitor values and time constants.\relax }}{34}{table.caption.28}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Device Sizes for Zero-Cross Detector Differential Amplifier\relax }}{39}{table.caption.32}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Test point multiplexer outputs\relax }}{44}{table.caption.37}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces One-shot pulse width variation from process and mismatch\relax }}{38}{table.caption.33}
+\contentsline {table}{\numberline {4.1}{\ignorespaces One-shot pulse width variation from process and mismatch\relax }}{47}{table.caption.40}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

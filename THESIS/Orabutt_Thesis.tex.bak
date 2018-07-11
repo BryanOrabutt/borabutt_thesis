@@ -286,7 +286,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \subsection{Signal Channel}
 \par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, and is used by the leading-edge discriminator circuit.
-\par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator (Figure~\ref{fig:zcd}). This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. To achieve amplitude independence it is important that the delay time set in the Nowlin circuit is optimal, as seen in Figure~\ref{fig:nowlinout}. With a short delay time there is very little under drive in the output of the final differential amplifier which could prevent the comparator from firing. With too much delay there is not enough slew rate to accommodate the fast timings that are needed.
+\par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator (Figure~\ref{fig:zcd}). This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. 
 \par A DC offset cancellation loop is used to remove the effects of systematic DC offsets. Without this DC compensation loop, the output comparator would be permanently stuck in one state regardless of input from the Nowlin circuit. This same DC cancellation loop is also used in the Leading-edge discriminator.
 
 \begin{figure}[htbp!]
@@ -295,15 +295,6 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \caption{Zero cross discriminator with DC cancellation}
 \label{fig:zcd}
 \end{figure}
-
-\begin{figure}[htbp!]
-\centering
-\includegraphics[scale=.4,keepaspectratio=true]{./ch2_figures/nowlin.png} 
-\caption{Input signal with 3 ns risetime constant showing Nowlin delay effects}
-\label{fig:nowlinout}
-\end{figure}
-
-
 
 \par The input to the leading-edge discriminator comes from the high-pass filter, or "fast shaper", in the Nowlin circuit. The leading-edge discriminator has a user controllable threshold that is compared against the input from the Nowlin circuit. This threshold will be set just above the noise floor, ensuring that the comparator will only fire in response to a real pulse coming off of a detector and not just inherent noise in the circuit. This threshold can be made negative by applying a logic high (3.3V) to the \emph{NEG\_POL} input pin. The output of the leading edge discriminator is then used to qualify the zero-cross detector.
 
@@ -474,7 +465,11 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \subsection{Lockout DAC}
 \par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
 \par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities.
-\par The input to the DAC is a ZTC current coming from the common channel. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror an extremely high output impedance of $r_{ds7}\cdot g_{m7} \cdot r_{ds6}$. A terminator circuit is used to ensure the current splits in half for the last stage (Stage0).
+\par The input to the DAC is a ZTC current coming from the common channel. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror an extremely high output impedance of 
+\begin{equation}
+Z_{o} = r_{ds7}\cdot g_{m7} \cdot r_{ds6}
+\end{equation} 
+A terminator circuit is used to ensure the current splits in half for the last stage (Stage0).
 
 \begin{figure}[htbp!]
 \centering
@@ -483,7 +478,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \label{fig:dac-block}
 \end{figure}
 
-\par The NFET \emph{M8} in Figure~\ref{fig:dac} acts as a switch to only allow current to flow when the control bit, \emph{D<i>}, is a logic 1. The currents are summed up and mirrored with another cascode current mirror in a final output stage of the DAC (Figure~\ref{fig:dac-out}). Either a PFET current mirror or NFET current mirror will be used depending on the sign bit. If the sign bit is high, meaning negative polarity is enabled, then the NFET current mirror will sink current from the DAC output. Conversely, if the sign bit is high, then the PFET current mirror sources current to the output.
+\par The NFET \emph{M8} in Figure~\ref{fig:dac} acts as a switch to only allow current to flow when the control bit, \emph{D$<i>$}, is a logic 1. The currents are summed up and mirrored with another cascode current mirror in a final output stage of the DAC (Figure~\ref{fig:dac-out}). Either a PFET current mirror or NFET current mirror will be used depending on the sign bit. If the sign bit is high, meaning negative polarity is enabled, then the NFET current mirror will sink current from the DAC output. Conversely, if the sign bit is high, then the PFET current mirror sources current to the output.
 \par For the lockout voltage, the DAC will only source current to the output where it is passed through a diode connected NFET to create a voltage. The same DAC design is also used for the leading-edge dsicriminator threshold, and must be bipolar in that design. 
 
 \begin{figure}[htbp!]
@@ -517,16 +512,55 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, a one-shot circuit, and an output generation circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par The Nowlin circuit is used at the input stage of each of the signal channels and is shown in Figure~\ref{fig:Nowlin}. The Nowlin circuit turns a single ended input pulse into a differential signal for use in the zero crossing discriminator. This is achieved by taking a fraction, in this case $\frac{2}{3}$, of the input voltage using a resistor voltage divider (ZC-). The other leg (ZC+) of the differential output is a delayed version of the input pulse. The delay comes from resistor R3 in Figure~\ref{fig:Nowlin} and the programmable capacitor C2. This creates a configurable RC time constant to delay the input signal. 
-\begin{figure}[ht]
+\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 128 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a "coarse" and "fine" grain adjustment of the Nowlin circuit was used. To accomplish this two modes are provided for the Nowlin Circuit: a "long" mode (coarse) and "short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the propose IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
+\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the long mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinshort}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
+
+\begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.3,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin.png} 
-\caption{Nowlin circuit.}
-\label{fig:Nowlin}
+\includegraphics[scale=.27,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_short.png} 
+\caption{Nowlin circuit for short mode}
+\label{fig:Nowlinshort}
 \end{figure}
-\par C1 and the series combination of R1 and R2 create a high pass filter whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(\frac{R1 \cdot R2}{R1 + R2})\cdot C2} \approxeq 475  kHz$. This high pass filter output is used as input the the leading edge discriminator. The reason for high pass filtering is to remove any low frequency and DC noise present on the input pin as the actual signal pulse will always be a high frequency exponential pulse.
-\par The programmable capacitor (C2) in the Nowlin circuit is created by using switches, in this case transmission gates, to connect individual capacitors in and out of circuit with the Nowlin. Two transmission gates (t-gates) per capacitor are used to accomplish this. The programmable capacitor circuit can be seen in Figure~\ref{fig:pcap}.
-\par In this configuration when a bit from the programmable capacitor bus is on (ie. 3.3V), the capacitor connects in parallel with C1 from Figure~\ref{fig:pcap}, adding more capacitance to the ZC+ node in the Nowlin circuit. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be $C_{total} = D \cdot 0.5 pF + 0.5 pF$ where D is the decimal value of the 4-bit programmable capacitor bus.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.27,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_long.png} 
+\caption{Nowlin circuit for long mode}
+\label{fig:Nowlinlong}
+\end{figure}
+
+\par The fraction $K = \frac{R1}{R1 + R2}$ helps determine the amount of underdrive. A typical value for K is $\frac{2}{3}$ and is what was chosen for this application. It is important that the comparator in the zero-cross circuit be driven low first and then high since it is the low-high transition that marks the onset of the pulse in an amplitude independent manner. It is important that the comparator underdrive and overdrive be comparable.
+\par While the input to the Nowlin circuit is an exponential unipolar pulse with amplitude , $\approx$A, and risetime constant, $\tau_{r}$. The signal associated with the differential output (i.e. difference in voltage on the ZC+ and ZC- nodes) from the Nowlin circuit, however, is a bipolar pulse centered around \emph{AGND}. The bipolar signal crosses through
+zero when the attenuated input signal and the delayed input signal are equal to one another. In other words
+\begin{equation}
+k \cdot A \cdot \left[ 1 - e^{\frac{-t}{\tau_r}} \right] = A \cdot \left[ 1 - e^{\frac{-(t - t_o)}{\tau_r}} \right]
+\end{equation}
+
+Notice that the amplitude, A, cancels out in the above expression and the time at which this bipolar pulse crosses through zero is independent of pulse amplitude. The delay, $t_{o}$ is approximately equal to the Nowlin time constant, $\tau_{n} \approx \tau_{r}$. This results in a zero-crossing time
+\begin{equation}
+t_z \approx \tau_r \cdot ln \left[ \frac{e - k}{1-k}\right] \approx 1.8 \cdot \tau_r.
+\end{equation}
+
+We shall refer to the slope of this signal, when crossing through zero, as the slew rate (SR) given by
+\begin{equation}
+SR \approx \frac{A}{4 \cdot \tau_r}.
+\end{equation}
+
+For the minimum pulse amplitude, A, of 15 $mV$ (and r value of 100) and a rise time constant, $\tau_r$, this results in a $SR_{max}$ of 1.7 $\frac{V}{\mu s}$. One can see from Figure~\ref{fig:nowlinout} that it is important that the Nowlin delay constant be matched to the risetime constant. If the Nowlin delay time constant is much too short, we have insufficent underdrive to the comparator to force it to the low state.  If the delay time constant is much too big, then the underdrive is large but the slew rate suffers. Setting the Nowlin delay time constant approximately equal to the rise time constant of the input waveform provides a good compromise between large underdrive and high slew rate.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/nowlin.png} 
+\caption{Input signal with 3 ns risetime constant showing Nowlin delay effects}
+\label{fig:nowlinout}
+\end{figure}
+
+\par C1 and the series combination of R1 and R2 create a high pass filter (or "fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input the the leading edge discriminator. 
+\par The resistor R3 along with the programmable capacitor C2 form a delay circuit. The delay time is given by $\tau_{n} = R2 \cdot C2$ and is referred to as the Nowlin delay constant. The programmable capacitor in the Nowlin circuit is created by using switches (i.e. transmission gates) to connect individual capacitors in and out of circuit. Two transmission gates (t-gates) per capacitor are used to accomplish this. The programmable capacitor circuit can be seen in Figure~\ref{fig:pcap}.
+\par In this configuration when a bit from the programmable capacitor bus is on (ie. 3.3V), the capacitor connects in parallel with C1 from Figure~\ref{fig:pcap}, adding more capacitance to the ZC+ node in the Nowlin circuit. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be \begin{equation}
+C_{total} = D \cdot 0.5 pF + 0.5 pF
+\end{equation} 
+where D is the decimal value of the 4-bit programmable capacitor bus.
 \par The programmable capacitor must be set properly in order to ensure proper operation of the signal channel. Using Table~\ref{tab:pcap} an appropriate time constant must be set. This time constant should be chosen such that it is as close as possible to the rise time constant expected from the exponential input pulses coming into the Nowlin circuit.
 \begin{figure}[htbp!]
 \centering
@@ -541,11 +575,105 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
  \label{tab:pcap}
 \end{table}
 
+\subsection{Dynamic Offset Cancellation Loop}
+\par For both the zero-cross discriminator and leading-edge discriminator to work properly DC offset voltages need to be canceled out before an input pulse arrives. This is achieved by placing a very slow ampfifier in the feedback path.  For the purposes of this amplifier we will model the forward path using a single pole model.
+\begin{equation}
+A(s) = \frac{K_1}{1 + \frac{s}{\omega_1}}
+\end{equation}
+We will do the same for the slow amplifier in the feedback path.
+\begin{equation}
+B(s) = \frac{K_2}{1 + \frac{s}{\omega_2}}
+\end{equation}
+The closed-loop response is then given by 
+\begin{equation}
+A_f(s) = \frac{A(s)}{1 + A(s) \cdot B(s)} 
+\end{equation}
+Using the expressions for A(s) and B(s) given above and assuming $K = K_1 \cdot K_2$ is large, then the closed-loop gain is approximately given by the expression 
+\begin{equation}
+A_f(s) \approx \frac{1}{K_2} \cdot \frac{1 + \frac{s}{\omega_2}}{1 + \frac{s}{K \cdot \omega_2} + \frac{s^2}{K \cdot \omega_1 \cdot \omega_2}}.
+\end{equation}
+In the given application, we will choose $\omega_2 \gg \omega_1$.  Under this assumption, the lower and upper corner frequencies, $\omega_L$ and $\omega_H$, become
+\begin{equation}
+\omega_L \approx K \cdot \omega_2 \text{ and } \omega_H \approx  \omega_1
+\end{equation}
+One observes that since K is large, the value of $\omega_2$ must be at an extremely low frequency if $f_L$ is to be less than 10 $kHz$.
+\par The key component of the DC offset cancellation is the slow amplifier in the feedback path. Since the amplifier only needs to drive a resistive load, a Symmetric Miller OTA (Operational Transconductance Amplfier) was utilized.  The circuit is given in Figure~\ref{fig:slowota}.
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.8,keepaspectratio=true, angle=90]{../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf}
+ 	\caption{Schematic of low bandwidth, low gain OTA.}
+ 	\label{fig:slowota}
+\end{figure}
+
 \subsection{Leading-edge discriminator}
+\par The leading edge circuit is very very similar to the zero cross circuit. The differential output voltage from the leading-edge preamplfier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.55,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_gm.pdf}
+ 	\caption{Schematic of differential voltage to single-ended current converter.}
+ 	\label{FIG:LE_GN}
+\end{figure}
+
+\par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the preamplfier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$.
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.65,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_cmp.pdf}
+ 	\caption{Schematic of leading edge comparator.}
+ 	\label{FIG:LE_CMP}
+\end{figure}
 
 \subsection{Zero-cross discriminator}
+\par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
+\par The purpose of cascading a relatively large number of high-bandwidth but low-gain stages is to force linear operation where delay is independent of amplitude. In short, the cascaded amplifier, which we shall refer to as the "pre-amplifier" serves as a slew rate enhancer.  For a first-order system, it is well-known that if the input risetime is not to be severely degraded, the bandwidth, BW, of the amplifier must obey the following equation
+\begin{equation}
+BW > \frac{0.35}{t_{10-90}} \approx \text{80 MHz}
+\end{equation}
+\par In the equation above we have assumed the shortest risetime constant that we must accommodate, \emph{i.e.}  2 nsec. Since we are cascading N (here N is 5) stages, the BW of each stage must be increased by $\sqrt{N} \approx 2.2$ resulting in a differential amplifier bandwidth of 180 MHz if the overall BW is to be at least 80 MHz.  If the stage gain, G, is approximately 4.5, then the GBW of a single differential amplifier stage must exceed 800 MHz. The overall gain of the pre-ampifier is
+\begin{equation}
+Gain = G^N = 4.5^5 \approx \text{ 2000 or 66 dB}.
+\end{equation}
+\par Thus, the highest rate of change at the output of the pre-amplifier is approximately 2000 times larger than the input worst case rate of 1.8 $\frac{V}{\mu s}$.  Hence, the slew rate of the differential amplifier must be at least 3.6 $\frac{V}{nsec}$ if the pre-amplifier is to be linear for signals near the zero-crossing point. In other words, CFD walk performance will be limited by how large a slew rate for the differential amplifier can be achieved. Increasing the effective voltage of the input devices maximizes slew rate but how large of an effective voltage that can be used is ultimately limited by the supply voltage.
+\par The heart of the zero cross discriminator is a wide-bandwidth low-gain differential amplifier. The amplifier design used is shown in Figure~\ref{fig:zcdiffamp}. The device sizes and bias currents are given in Table~\ref{tab:zcdiffamp}. The value \emph{ng} represents the number of fingers (i.e. gates) to use in the layout.
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.6,keepaspectratio=true]{./ch3_figures/zc_sizes.png}
+ \caption{Device Sizes for Zero-Cross Detector Differential Amplifier}
+ \label{tab:zcdiffamp}
+\end{table}
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.5,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf}
+ 	\caption{Schematic of low-gain high-bandwidth differential amplifier.}
+ 	\label{fig:zcdiffamp}
+\end{figure}
+
+The value of the resistors, $R_1$ and $R_2$, is 17 k$\Omega$ and the pair of matched resistors are implemented using a high resistance poly 2 layer. Transistor $M_3$ was added so that the output commmon-voltage could be set to approximately $\frac{V_{DD}}{2}$). Note, the current flowing through transistor $M_3$ is the same as the current, $I_B$, flowing through transistor $M_4$. Hence the drain of $M_3$ is a virtual ground in much the same main that the drain of $M_4$ is a virtual ground. Hence,the addition of $M_3$ has no impact on the speed of the amplifier. The low-frequency gain of stage is
+\begin{equation}
+A_0 = g_{m1} \cdot R \approx 4.6
+\end{equation}
+and the bandwidth of the stage is 
+\begin{equation}
+BW = \frac{1}{2 \cdot \pi \cdot R \cdot C_L}
+\end{equation}
+where $C_L$ is the total capacitive load on the output node. 
+\par The output swing for the differential amplifer is $ 2 \cdot R \cdot I_B$, centered around $\frac{V_{DD}}{2}$, where $I_B$ is the tail current or 46 $\mu A$.  Transistor $M_5$ mirrors the PTAT primary current of 11.5 $\mu A$ and hence the value of 4 for the "ng" parameter in Table~\ref{tab:zcdiffamp}
+\par Also crucial to the zero cross detector is a very fast high-bandwidth comparator. This circuit is shown in Figure~\ref{fig:zccomp}. Transitors $M_1$ - $M_4$ make up a simple symmetric Miller OTA. The input common-mode voltage is assumed to be approximately half the supply voltage. The DC bias current through each of the 4 transistors is approximately 200 $\mu A$.  The resulting GBW exceeds 3 GHz while the low-frequency open-loop gain is 26 dB.  
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.6,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf}
+ 	\caption{Schematic of high-bandwidth, very fast comparator.}
+ 	\label{fig:zccomp}
+\end{figure}
 
 
+
+Device sizes and bias currents are given in Table~\ref{TBL:ZC_CMP}. The value of \emph{ng} represents the number of fingers (\emph{i.e.} gates) to use in the layout.\\ 
 \subsection{Output one-shot with lockout features}
 \par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit is a circuit that creates a fixed width output pulse in response to a narrow input pulse. The one-shot circuit in the signal channels is what produces the output timing pulse used to start the TVCs on the PSD8C. The one-shot circuit design is shown in Figure~\ref{fig:oneshot-circuit}.
 
