@@ -23,22 +23,26 @@
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Multiplicity output buffer.\relax }}{29}{figure.caption.23}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Nowlin circuit for short mode\relax }}{30}{figure.caption.24}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Nowlin circuit for long mode\relax }}{31}{figure.caption.25}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Input signal with 3 ns risetime constant showing Nowlin delay effects\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Input signal with 3 nsec risetime constant showing Nowlin delay effects\relax }}{32}{figure.caption.26}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Programmable capacitor circuit.\relax }}{34}{figure.caption.27}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Schematic of low bandwidth, low gain OTA.\relax }}{36}{figure.caption.29}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Schematic of differential voltage to single-ended current converter.\relax }}{37}{figure.caption.30}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Schematic of leading edge comparator.\relax }}{38}{figure.caption.31}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Schematic of low-gain high-bandwidth differential amplifier.\relax }}{40}{figure.caption.33}
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Schematic of high-bandwidth, very fast comparator.\relax }}{41}{figure.caption.34}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces One-shot circuit with lockout\relax }}{42}{figure.caption.35}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Comparator ramp input\relax }}{43}{figure.caption.36}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{45}{figure.caption.38}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces One-shot circuit with lockout\relax }}{42}{figure.caption.36}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Comparator ramp input\relax }}{43}{figure.caption.37}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{46}{figure.caption.39}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Lockout times for short and long modes\relax }}{47}{figure.caption.39}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 6-bit DAC DNL error summary\relax }}{49}{figure.caption.41}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 6-bit DAC INL error summary\relax }}{49}{figure.caption.42}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 6-bit DAC worst case error\relax }}{50}{figure.caption.43}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 6-bit DAC average case error\relax }}{51}{figure.caption.44}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Typical walk performance with a a signal whose rise time constant is 3 nsec.\relax }}{49}{figure.caption.41}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Summary walk performance with a signal whose rise time constant is 3 nsec.\relax }}{50}{figure.caption.42}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Jitter performance for short time constant mode.\relax }}{51}{figure.caption.43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Jitter performance for short time constant mode.\relax }}{52}{figure.caption.44}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Lockout times for short and long modes\relax }}{53}{figure.caption.45}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 6-bit DAC DNL error summary\relax }}{55}{figure.caption.47}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 6-bit DAC INL error summary\relax }}{55}{figure.caption.48}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 6-bit DAC worst case error\relax }}{56}{figure.caption.49}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 6-bit DAC average case error\relax }}{56}{figure.caption.50}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
