@@ -41,23 +41,23 @@
 \noindent \vskip \baselineskip \par 
 \contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{47}{section.4.2}
-\contentsline {section}{\numberline {4.3}Jitter Performance}{48}{section.4.3}
+\contentsline {section}{\numberline {4.3}Jitter Performance}{49}{section.4.3}
 \contentsline {section}{\numberline {4.4}Verification of One-Shot}{51}{section.4.4}
-\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{53}{section.4.5}
-\contentsline {section}{\numberline {4.6}Chip-Level Verification}{54}{section.4.6}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{57}{chapter.5}
+\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{54}{section.4.5}
+\contentsline {section}{\numberline {4.6}Chip-Level Verification}{56}{section.4.6}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{58}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{57}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{58}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{58}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{58}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{59}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{59}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{59}{section.5.3}
-\contentsline {part}{APPENDICES}{62}{section.5.3}
+\contentsline {part}{REFERENCES}{60}{section.5.3}
+\contentsline {part}{APPENDICES}{63}{section.5.3}
 \vskip -\baselineskip 
-\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{62}{chapter.1}
-\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{64}{chapter.2}
-\contentsline {chapter}{\numberline {C.}System Verilog global defines}{66}{chapter.3}
-\contentsline {chapter}{\numberline {D.}System Verilog tasks}{67}{chapter.4}
-\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{74}{chapter.5}
-\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{79}{chapter.6}
-\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{81}{chapter.7}
+\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{63}{chapter.1}
+\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{65}{chapter.2}
+\contentsline {chapter}{\numberline {C.}System Verilog global defines}{67}{chapter.3}
+\contentsline {chapter}{\numberline {D.}System Verilog tasks}{68}{chapter.4}
+\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{75}{chapter.5}
+\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{80}{chapter.6}
+\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{82}{chapter.7}

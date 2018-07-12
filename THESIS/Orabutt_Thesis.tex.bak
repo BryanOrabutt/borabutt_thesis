@@ -529,7 +529,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \label{fig:Nowlinlong}
 \end{figure}
 
-\par The fraction $K = \frac{R1}{R1 + R2}$ helps determine the amount of underdrive. A typical value for K is $\frac{2}{3}$ and is what was chosen for this application. It is important that the comparator in the zero-cross circuit be driven low first and then high since it is the low-high transition that marks the onset of the pulse in an amplitude independent manner. It is important that the comparator underdrive and overdrive be comparable.
+\par The fraction $K = \frac{R2}{R1 + R2}$ helps determine the amount of underdrive. A typical value for K is $\frac{2}{3}$ and is what was chosen for this application. It is important that the comparator in the zero-cross circuit be driven low first and then high since it is the low-high transition that marks the onset of the pulse in an amplitude independent manner. It is important that the comparator underdrive and overdrive be comparable.
 \par While the input to the Nowlin circuit is an exponential unipolar pulse with amplitude, $\approx$A, and risetime constant, $\tau_{r}$. The signal associated with the differential output (i.e. difference in voltage on the ZC+ and ZC- nodes) from the Nowlin circuit, however, is a bipolar pulse centered around \emph{AGND}. The bipolar signal crosses through zero when the attenuated input signal and the delayed input signal are equal to one another. In other words
 \begin{equation}
 k \cdot A \cdot \left[ 1 - e^{\frac{-t}{\tau_r}} \right] = A \cdot \left[ 1 - e^{\frac{-(t - t_o)}{\tau_r}} \right]
@@ -557,7 +557,7 @@ For the minimum pulse amplitude, A, of 15 $mV$ (and r value of 100) and a rise t
 \par C1 and the series combination of R1 and R2 create a high pass filter (or "fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input the the leading edge discriminator. 
 \par The resistor R3 along with the programmable capacitor C2 form a delay circuit. The delay time is given by $\tau_{n} = R2 \cdot C2$ and is referred to as the Nowlin delay constant. The programmable capacitor in the Nowlin circuit is created by using switches (i.e. transmission gates) to connect individual capacitors in and out of circuit. Two transmission gates (t-gates) per capacitor are used to accomplish this. The programmable capacitor circuit can be seen in Figure~\ref{fig:pcap}.
 \par In this configuration when a bit from the programmable capacitor bus is on (ie. 3.3V), the capacitor connects in parallel with C1 from Figure~\ref{fig:pcap}, adding more capacitance to the ZC+ node in the Nowlin circuit. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be \begin{equation}
-C_{total} = D \cdot 0.5 pF + 0.5 pF
+C2 = D \cdot 0.5 pF + 0.5 pF
 \end{equation} 
 where D is the decimal value of the 4-bit programmable capacitor bus.
 \par The programmable capacitor must be set properly in order to ensure proper operation of the signal channel. Using Table~\ref{tab:pcap} an appropriate time constant must be set. This time constant should be chosen such that it is as close as possible to the rise time constant expected from the exponential input pulses coming into the Nowlin circuit.
@@ -718,7 +718,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}. The value of
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.35,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
+ \includegraphics[scale=.4,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
  \caption{Fast pseudo-NMOS NOR}
  \label{fig:pseudo-nmos}
 \end{figure}
@@ -731,6 +731,15 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}. The value of
 \chapter{SIMULATION RESULTS}
 
 \section{Verification of Circuits in Common Channel}
+\par To verify that the common channel circuits were functioning properly, a System Verilog test fixture was created to do the following:
+\begin{itemize}
+\item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper clock edge.
+\item Load each configuration register with data to test every possible configuration value.
+\item Pulse power on to simulate the chip turning on from a cold start.
+\item Hit every channel with a pulse of different amplitude to verify channel circuits are working (thus confirming biasing circuitry is operating).
+\end{itemize}
+
+\par Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
 
 \section{Walk Characteristics of CFD Circuit}
 \par Time walk is is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height.  If we assume a single-pole response for the analog comparator with a gain-bandwidth-product of $GBW_c$, it is not difficult to show that the variation in propagation delay, $\Delta t_{pd}$, due to input pulse amplitude is 
@@ -794,7 +803,11 @@ The theoretically predicted jitter performance plot for the short range mode is 
 
 \section{Verification of One-Shot}
 
-\par The output one-shot provides two important features to the CFD16C: generation of the timing pulse that starts the TVCs on PSD8C, and a lockout functionality to prevent misfirings. For the lockout feature a wide spread of lockout times was desired, with a logarithmic spread. Figure~\ref{fig:lockout-spread} shows the spread of the lockout times available in both the short and long modes. As can be seen from the plots the spread is nearly logarithmic, with the lockout time being given by $T_{lockout} = \frac{K}{D\cdot \Delta I}$, where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot), D is the digital code word given to the lockout DAC, and $\Delta$I is the change in current from one step of the lockout DAC. The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 3.8 nA in long mode. 
+\par The output one-shot provides two important features to the CFD16C: generation of the timing pulse that starts the TVCs on PSD8C, and a lockout functionality to prevent misfirings. For the lockout feature a wide spread of lockout times was desired, with a logarithmic spread. Figure~\ref{fig:lockout-spread} shows the spread of the lockout times available in both the short and long modes. As can be seen from the plots the spread is nearly logarithmic, with the lockout time being given by 
+\begin{equation}
+T_{lockout} = \frac{K}{D\cdot \Delta I}
+\end{equation}
+where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot), D is the digital code word given to the lockout DAC, and $\Delta$I is the change in current from one step of the lockout DAC. The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 3.8 nA in long mode. 
 
 \begin{figure}[htbp!]
  \centering
