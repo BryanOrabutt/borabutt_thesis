@@ -455,6 +455,13 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \label{fig:ztc}
 \end{figure}
 
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/ztc_sizes.png}
+ \caption{Zero tempco current generator device sizes.}
+ \label{tab:ztc-sizes}
+\end{table}
+
 \begin{figure}[htbp!]
 \centering
 \includegraphics[scale=.3,keepaspectratio=true]{../data/ztc.png} 
@@ -488,12 +495,26 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \label{fig:dac}
 \end{figure}
 
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.4,keepaspectratio=true]{./ch3_figures/dac_bit_sizes.png}
+ \caption{Device sizes for single stage of current scaling DAC}
+ \label{tab:dac-bit-sizes}
+\end{table}
+
 \begin{figure}[htbp!]
 \centering
 \includegraphics[scale=.6,keepaspectratio=true]{../LTspice_Drawings/dac/dac_out.png} 
 \caption{DAC output current stage}
 \label{fig:dac-out}
 \end{figure}
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.47,keepaspectratio=true]{./ch3_figures/dac_out_sizes.png}
+ \caption{Current scaling DAC output device sizes}
+ \label{tab:dac-out-sizes}
+\end{table}
 
 \subsection{Multiplicity output buffer}
 \par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
@@ -505,6 +526,13 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \caption{Multiplicity output buffer.}
 \label{fig:mult}
 \end{figure}
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.4,keepaspectratio=true]{./ch3_figures/mult_sizes.png}
+ \caption{Multiplicity buffer device sizes}
+ \label{tab:dac-bit-sizes}
+\end{table}
 
 % DESCRIPTION OF SIGNAL CHANNEL
 
@@ -615,6 +643,13 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
  	\label{FIG:LE_GM}
 \end{figure}
 
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/d2s_sizes.png}
+ \caption{Differential to single ended amplifier device sizes}
+ \label{tab:d2s-sizes}
+\end{table}
+
 \par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the preamplifier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$.
 
 \begin{figure}[htbp!]
@@ -623,6 +658,13 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
  	\caption{Schematic of leading edge comparator.}
  	\label{FIG:LE_CMP}
 \end{figure}
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/le_cmp_sizes.png}
+ \caption{Leading-edge comparator device sizes}
+ \label{tab:le-comp-sizes}
+\end{table}
 
 \subsection{Zero-cross discriminator}
 \par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
@@ -639,7 +681,7 @@ Gain = G^N = 4.5^5 \approx \text{ 2000 or 66 dB}.
 
 \begin{table}[htbp!]
  \centering
- \includegraphics[scale=.6,keepaspectratio=true]{./ch3_figures/zc_sizes.png}
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/zc_sizes.png}
  \caption{Device Sizes for Zero-Cross Detector Differential Amplifier}
  \label{tab:zcdiffamp}
 \end{table}
@@ -674,7 +716,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}. The value of
 
  \begin{table}[htbp!]
  \centering
- \includegraphics[scale=.6,keepaspectratio=true]{./ch3_figures/zc_cmp_sizes.png}
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/zc_cmp_sizes.png}
  \caption{Device Sizes for Zero-Cross comparator}
  \label{tab:zccomp}
 \end{table}
@@ -718,11 +760,17 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}. The value of
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.4,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
+ \includegraphics[scale=.45,keepaspectratio=true]{../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png}
  \caption{Fast pseudo-NMOS NOR}
  \label{fig:pseudo-nmos}
 \end{figure}
 
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/nor_sizes.png}
+ \caption{Pseudo-NMOS NOR gate device sizes}
+ \label{tab:nor-sizes}
+\end{table}
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 4
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -844,8 +892,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
  \label{fig:inl}
 \end{figure} 
 
-\par Figure~\ref{fig:dac-worst} shows the worst case run out of all 200 simulations. It can easily be seen here than the DNL is well below 0.5 LSB for all increments of the code word except at the half way point. Examining other simulation plots show that this is the case for the other outliers as well, showing that the INL and DNL errors are in general very good and more than acceptable for this application. An average case simulation result is shown below in Figure~\ref{fig:dac-average}, showing that on average the INL and DNL errors are very good.
-
+\par Figure~\ref{fig:dac-worst} shows the worst case run out of all 200 simulations. It can easily be seen here than the DNL is well below 0.5 LSB for all increments of the code word except at the half way point. An average case simulation result is shown below in Figure~\ref{fig:dac-average}, showing that on average the INL and DNL errors are very good.
 \begin{figure}[htbp!]
  \centering
  \includegraphics[scale=.3]{./ch4_figures/dnl_worst.png}
@@ -861,8 +908,40 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \end{figure} 
 
 \section{Chip-Level Verification}
+\par A large System Verilog test bench was used to test the performance of the chip as a whole. Every channel was hit with a pulse of increasing amplitudes between 15 mV and 1.5 V. Registers were configured between pulses to adjust circuit parameters and verify correctness. Multiple rise-time constants were tested and proved to be within specification. 
 
+\subsection{Power dissipation}
+\par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.8]{./ch4_figures/average_power.png}
+ \caption{Breakdown of average power dissipation}
+ \label{fig:avg_pwr}
+\end{figure} 
 
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.8]{./ch4_figures/peak_power.png}
+ \caption{Breakdown of peak power dissipation}
+ \label{fig:peak_pwr}
+\end{figure} 
+
+\subsection{Chip area usage}
+\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout.
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.9]{./ch4_figures/area_usage.png}
+ \caption{Breakdown of IC area usage}
+ \label{fig:area}
+\end{figure} 
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.6,angle=90]{./ch4_figures/cfd_chip.png}
+ \caption{CFD8C full layout}
+ \label{fig:layout}
+\end{figure} 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 5
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
