@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.1)  13 JUL 2018 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.1)  15 JUL 2018 18:34
 entering extended mode
 **./Orabutt_Thesis.tex
 (Orabutt_Thesis.tex
@@ -897,21 +897,22 @@ File: ../LTspice_Drawings/nowlin/nowlin_short.png Graphic file (type png)
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/nowlin_short.png  used on i
 nput line 548.
 (pdftex.def)             Requested size: 389.65343pt x 192.08267pt.
-<../LTspice_Drawings/nowlin/nowlin_long.png, id=676, 1443.14156pt x 691.08188pt
+ [31 <./ch3_figures/mult_sizes.png>]
+<../LTspice_Drawings/nowlin/nowlin_long.png, id=680, 1443.14156pt x 691.08188pt
 >
 File: ../LTspice_Drawings/nowlin/nowlin_long.png Graphic file (type png)
 <use ../LTspice_Drawings/nowlin/nowlin_long.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/nowlin_long.png  used on in
 put line 555.
 (pdftex.def)             Requested size: 389.65343pt x 186.59459pt.
- [31 <./ch3_figures/mult_sizes.png>] [32 <../LTspice_Drawings/nowlin/nowlin_sho
-rt.png> <../LTspice_Drawings/nowlin/nowlin_long.png>] [33]
-<./ch2_figures/nowlin.png, id=697, 794.97pt x 614.295pt>
+ [32 <../LTspice_Drawings/nowlin/nowlin_short.png> <../LTspice_Drawings/nowlin/
+nowlin_long.png>]
+<./ch2_figures/nowlin.png, id=688, 794.97pt x 614.295pt>
 File: ./ch2_figures/nowlin.png Graphic file (type png)
 <use ./ch2_figures/nowlin.png>
 Package pdftex.def Info: ./ch2_figures/nowlin.png  used on input line 580.
 (pdftex.def)             Requested size: 357.7332pt x 276.43019pt.
- [34 <./ch2_figures/nowlin.png>]
+ [33] [34 <./ch2_figures/nowlin.png>]
 <../LTspice_Drawings/nowlin/pcap.png, id=707, 707.443pt x 648.824pt>
 File: ../LTspice_Drawings/nowlin/pcap.png Graphic file (type png)
 <use ../LTspice_Drawings/nowlin/pcap.png>
@@ -923,8 +924,8 @@ File: ../data/pcap.png Graphic file (type png)
 <use ../data/pcap.png>
 Package pdftex.def Info: ../data/pcap.png  used on input line 600.
 (pdftex.def)             Requested size: 429.66162pt x 204.46693pt.
- [35 <../data/pcap.png>] [36 <../LTspice_Drawings/nowlin/pcap.png>]
-<../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf, id=723, 750.805p
+ [35 <../LTspice_Drawings/nowlin/pcap.png>] [36 <../data/pcap.png>]
+<../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf, id=724, 750.805p
 t x 321.2pt>
 File: ../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf Graphic file
  (type pdf)
@@ -932,7 +933,7 @@ File: ../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf Graphic file
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/small_gm_o
 ta.pdf  used on input line 631.
 (pdftex.def)             Requested size: 600.6448pt x 256.96034pt.
-<../Design_Reports/CFD_circuit_report/images/le_gm.pdf, id=725, 740.7675pt x 36
+<../Design_Reports/CFD_circuit_report/images/le_gm.pdf, id=726, 740.7675pt x 36
 1.35pt>
 File: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf Graphic file (type 
 pdf)
@@ -940,12 +941,14 @@ pdf)
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf 
  used on input line 641.
 (pdftex.def)             Requested size: 407.42339pt x 198.74312pt.
-<./ch3_figures/d2s_sizes.png, id=726, 1102.1175pt x 462.72874pt>
+<./ch3_figures/d2s_sizes.png, id=727, 1102.1175pt x 462.72874pt>
 File: ./ch3_figures/d2s_sizes.png Graphic file (type png)
 <use ./ch3_figures/d2s_sizes.png>
 Package pdftex.def Info: ./ch3_figures/d2s_sizes.png  used on input line 648.
 (pdftex.def)             Requested size: 385.7469pt x 161.95749pt.
-<../Design_Reports/CFD_circuit_report/images/le_cmp.pdf, id=728, 728.7225pt x 2
+ [37 <./ch3_figures/d2s_sizes.png>] [38 <../Design_Reports/CFD_circuit_report/i
+mages/small_gm_ota.pdf>]
+<../Design_Reports/CFD_circuit_report/images/le_cmp.pdf, id=745, 728.7225pt x 2
 96.10625pt>
 File: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf Graphic file (type
  pdf)
@@ -953,16 +956,15 @@ File: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf Graphic file (type
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf
   used on input line 657.
 (pdftex.def)             Requested size: 400.79861pt x 162.85893pt.
-<./ch3_figures/le_cmp_sizes.png, id=729, 1103.12125pt x 354.32375pt>
+<./ch3_figures/le_cmp_sizes.png, id=746, 1103.12125pt x 354.32375pt>
 File: ./ch3_figures/le_cmp_sizes.png Graphic file (type png)
 <use ./ch3_figures/le_cmp_sizes.png>
 Package pdftex.def Info: ./ch3_figures/le_cmp_sizes.png  used on input line 664
 .
 (pdftex.def)             Requested size: 386.09822pt x 124.01517pt.
- [37] [38 <../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf>] [39 <
-../Design_Reports/CFD_circuit_report/images/le_gm.pdf> <./ch3_figures/d2s_sizes
-.png> <./ch3_figures/le_cmp_sizes.png>] [40 <../Design_Reports/CFD_circuit_repo
-rt/images/le_cmp.pdf>]
+
+[39 <../Design_Reports/CFD_circuit_report/images/le_gm.pdf> <../Design_Reports/
+CFD_circuit_report/images/le_cmp.pdf>] [40 <./ch3_figures/le_cmp_sizes.png>]
 <./ch3_figures/zc_sizes.png, id=773, 1105.12875pt x 247.92625pt>
 File: ./ch3_figures/zc_sizes.png Graphic file (type png)
 <use ./ch3_figures/zc_sizes.png>
@@ -1453,7 +1455,7 @@ msy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Orabutt_Thesis.pdf (101 pages, 3404534 bytes).
+Output written on Orabutt_Thesis.pdf (101 pages, 3404733 bytes).
 PDF statistics:
  2530 PDF objects out of 2984 (max. 8388607)
  1356 named destinations out of 1440 (max. 500000)
