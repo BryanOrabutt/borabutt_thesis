@@ -16,7 +16,7 @@
 \contentsline {table}{\numberline {3.10}{\ignorespaces Device Sizes for Zero-Cross Detector Differential Amplifier\relax }}{41}{table.caption.38}
 \contentsline {table}{\numberline {3.11}{\ignorespaces Device Sizes for Zero-Cross comparator\relax }}{44}{table.caption.41}
 \contentsline {table}{\numberline {3.12}{\ignorespaces Test point multiplexer outputs\relax }}{47}{table.caption.44}
-\contentsline {table}{\numberline {3.13}{\ignorespaces Pseudo-NMOS NOR gate device sizes\relax }}{48}{table.caption.46}
+\contentsline {table}{\numberline {3.13}{\ignorespaces Pseudo-NMOS NOR gate device sizes\relax }}{47}{table.caption.46}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Time walk as function of risetime constant, $\tau _r$ for $G = 4.5$, $N = 5$ and $GBW_{c} = 3 GHz$.\relax }}{50}{table.caption.47}
 \contentsline {table}{\numberline {4.2}{\ignorespaces One-shot pulse width variation from process and mismatch\relax }}{56}{table.caption.53}

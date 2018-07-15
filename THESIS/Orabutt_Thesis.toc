@@ -46,20 +46,20 @@
 \contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{56}{section.4.5}
 \contentsline {section}{\numberline {4.6}Chip-Level Verification}{59}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}Power dissipation}{59}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Chip area usage}{60}{subsection.4.6.2}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{63}{chapter.5}
+\contentsline {subsection}{\numberline {4.6.2}Chip area usage}{59}{subsection.4.6.2}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{64}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{63}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{64}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{64}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{64}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{65}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{65}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{65}{section.5.3}
-\contentsline {part}{APPENDICES}{68}{section.5.3}
+\contentsline {part}{REFERENCES}{66}{section.5.3}
+\contentsline {part}{APPENDICES}{69}{section.5.3}
 \vskip -\baselineskip 
-\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{68}{chapter.1}
-\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{70}{chapter.2}
-\contentsline {chapter}{\numberline {C.}System Verilog global defines}{72}{chapter.3}
-\contentsline {chapter}{\numberline {D.}System Verilog tasks}{73}{chapter.4}
-\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{80}{chapter.5}
-\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{85}{chapter.6}
-\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{87}{chapter.7}
+\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{69}{chapter.1}
+\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{71}{chapter.2}
+\contentsline {chapter}{\numberline {C.}System Verilog global defines}{73}{chapter.3}
+\contentsline {chapter}{\numberline {D.}System Verilog tasks}{74}{chapter.4}
+\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{81}{chapter.5}
+\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{86}{chapter.6}
+\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{88}{chapter.7}

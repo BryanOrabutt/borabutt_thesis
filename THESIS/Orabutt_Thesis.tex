@@ -712,7 +712,7 @@ where $C_L$ is the total capacitive load on the output node.
  	\label{fig:zccomp}
 \end{figure}
 
-Device sizes and bias currents are given in Table~\ref{tab:zccomp}. The value of \emph{ng} represents the number of fingers (i.e. gates) to use in the layout.
+Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 
  \begin{table}[htbp!]
  \centering
@@ -914,24 +914,24 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.8]{./ch4_figures/average_power.png}
+ \includegraphics[scale=1]{./ch4_figures/average_power.png}
  \caption{Breakdown of average power dissipation}
  \label{fig:avg_pwr}
 \end{figure} 
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.8]{./ch4_figures/peak_power.png}
+ \includegraphics[scale=1]{./ch4_figures/peak_power.png}
  \caption{Breakdown of peak power dissipation}
  \label{fig:peak_pwr}
 \end{figure} 
 
 \subsection{Chip area usage}
-\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout.
+\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout. The entire chip die uses an area of 1.9 mm x 3.5 mm giving a total area usage of 6.6 mm$^{2}$, only slightly larger than the 6 mm$^{2}$ we were aiming for.
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.9]{./ch4_figures/area_usage.png}
+ \includegraphics[scale=1.2]{./ch4_figures/area_usage.png}
  \caption{Breakdown of IC area usage}
  \label{fig:area}
 \end{figure} 
