@@ -71,7 +71,7 @@
 
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -83,7 +83,7 @@
 \begin{acknowledgements} 
 
 \par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I am grateful to  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University Saint Louis, for their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
-\par I owe a debt of gratitude to my fellow graduate students I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, and Anil Korkmaz, Sri Kandula, and I all worked together to make CFD16C possible and they have helped make this project a pleasure to work on.
+\par I owe a debt of gratitude to my fellow graduate students whom I've been privileged to work with on this project as well. Pohan Wang, Prarthana Jani, Sneha Edula, Anil Korkmaz, Sri Kandula, and I all worked together to make CFD16C possible. They have helped make this project a pleasure to work on.
 \par I would not have gotten this far without my friends Jack White, Jared Charter, Andrew Quirin, Nelly Sanchez, and Shana Mankouski who have offered support during all of my endeavors in graduate school. I am forever grateful to my family for being a constant source of encouragement. My mother Marsha Orabutt, brother Sean Orabutt, and Vicki Kern, have all been there for me and I know I could not have come this far without them.
 \par Special thanks to the National Science Foundation (NSF) for funding the work presented in this thesis under NSF Grant\#1625499.
 
@@ -109,11 +109,11 @@
 
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
 
-This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits are helping to re-shape this field.  The IC described in this thesis, called CFD16C (Constant Fraction Discriminator--16 Channels), is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE) in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
+\par This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits are helping to re-shape this field.  The IC described in this thesis, called CFD16C (Constant Fraction Discriminator--16 Channels), is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE) in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
 
 \section{Research Background}
 
-The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, and (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer's seat. The goal is to develop a "tool box" of circuits,
+The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer's seat. The goal is to develop a "toolbox" of circuits,
 useful for researchers working with radioactive ion beams, which can be composed in different ways to meet the researchers' evolving needs and desires.
 
  
@@ -125,7 +125,7 @@ The second chip, christened Pulse Shape Discrimination--8 Channel(PSD8C), was de
 \begin{figure}[htbp!]
 	\centering
  	\includegraphics[scale=0.6,keepaspectratio=true]{./ch1_figures/PSD_block.png}
- 	\caption{Block diagram of typical PSD system.}
+ 	\caption{Block diagram of a typical PSD system.}
  	\label{FIG:PSD_BLOCK}
 \end{figure}
 
@@ -134,7 +134,7 @@ The second chip, christened Pulse Shape Discrimination--8 Channel(PSD8C), was de
 
 \section{PSD8C IC}
 
-Our PSD8C chip greatly simplifies the pulse-processing electronics needed for large arrays of scintillation detectors. Each channel(see Figure~\ref{FIG:PSD_CHANNEL}) possesses 3 sub-channels. The sub-channels are referred to as A, B, and C. A sub-channel consists of an integrator and a gate generator. External control voltages (DX, WX) determine the gate delay and the gate width. The structure of a single PSD8C sub-channel is illustrated in Figure~\ref{FIG:PSD_SUB_CHANNEL}. Because PSD8C employs (user-controlled) multi-region charge integration, particle identification is incorporated into the basic design. Each channel on the chip also contains a TVC that provides relative time information. The pulse height integrals and the relative time are all stored on capacitors and are either reset, after a user-controlled time, or sequentially read out if acquisition of the event is desired (in a manner similar to that of HINP16C). 
+Our PSD8C chip greatly simplifies the pulse-processing electronics needed for large arrays of scintillation detectors. Each channel(see Figure~\ref{FIG:PSD_CHANNEL}) possesses 3 sub-channels. The sub-channels are referred to as A, B, and C. The A sub-channel consists of an integrator and a gate generator. External control voltages (DX, WX) determine the gate delay and the gate width. The structure of a single PSD8C sub-channel is illustrated in Figure~\ref{FIG:PSD_SUB_CHANNEL}. Because PSD8C employs (user-controlled) multi-region charge integration, particle identification is incorporated into the basic design. Each channel on the chip also contains a TVC that provides relative time information. The pulse height integrals and the relative time are all stored on capacitors and are either reset after a user-controlled time, or sequentially read out, if acquisition of the event is desired (in a manner similar to that of HINP16C). 
 
 \begin{figure}[htbp!]
 	\centering
@@ -172,7 +172,7 @@ fast logical OR-gate and an analog multiplicity output to aid in
 trigger decisions;
 \item
 two power modes to facilitate use with fast and slow detectors
-and to thus allow for a more modest power budget for the
+thus allow for a more modest power budget for the
 latter; 
 \item
 and CFD circuits are not on-chip so as to provide greater flexibility.
@@ -180,12 +180,12 @@ and CFD circuits are not on-chip so as to provide greater flexibility.
 
 PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode).
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
-problems. First, the TVC circuit could inadvertently be re-started. In Rev. 2, once the rising edge of the "common stop" signal is detected, the TVC cannot re-start until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity has been greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs. (one for each of the chip's analog output pulse trains).
-\par In the latest revision of PSD8C level translators were added to all of the digital pads on the chip. This level translators convert 5 V logic level outputs to 3.3 V logic levels to be used safely by an field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C.
+problems. First, the TVC circuit could inadvertently be restarted. In Rev. 2, once the rising edge of the "common stop" signal is detected, the TVC cannot restart until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity was greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs (one for each of the chip's analog output pulse trains).
+\par In the latest revision of PSD8C level translators were added to all of the digital pads on the chip. These level translators convert 5 V logic level outputs into 3.3 V logic levels to be used safely by a field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C.
 
 \section{Need for an Integrated Circuit}
 
-While not including the timing circuits on PSD made it more flexible, those circuits are needed.  Currently, a large complex board with many ICs produce the timing signals required by the PSD chip. This thesis describes the design of multi-channel integrated circuit which can generate the timing signals for a pair of PSD chips.
+Although not including the timing circuits on PSD made it more flexible, those circuits are needed.  Currently, a large complex board with many ICs produce the timing signals required by the PSD chip. This thesis describes the design of a multi-channel integrated circuit which can generate the timing signals for a pair of PSD chips.
 
 \begin{figure}[htbp!]
 	\centering
@@ -198,7 +198,7 @@ While not including the timing circuits on PSD made it more flexible, those circ
 
 \section{Sample Applications}
 
-To focus the reader's attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and $^{26}\mathrm{O}$ \cite{KOHLEY}, sufferer for poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilation – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}).  
+To focus the reader's attention on what would be possible with the PSD chip complemented by the CFD chip described in this thesis, consider a highly granular discrete element array for neutron detection using the recently developed inorganic \cite{BUDDEN} and plastic \cite{ZAITSEVA} scintillators with PSD. Such a large array would open the n-rich side up to the kind of high-precision work the Washington University group has done on the p-rich side. (The existing work on the neutron-rich side, done at high energy and with detectors such as MONA-LISA \cite{BAUMANNA}, while providing provocative data on such cases as $^{16}\mathrm{Be}$ \cite{SPYROU} and $^{26}\mathrm{O}$ \cite{KOHLEY}, suffered from poor statistics and, compared to the proton-rich side, poor resolution.) An array to be deployed at low (reaccelerated beam) energies with thousands of optically isolated PSD elements made from the new generation of plastics, would revolutionize the study of multiple n-decay from what are generally high-isospin states. (The problem of detector-to-detector scattering cross-talk can also be improved with discrete pixilation – rather than using large bars – by corrugating the detectors in the same way as the conventional discrete array DEMON has \cite{TILQUIN}).  
 
 While we are enamored with the above idea, it is premature to propose such an array before the ground-work for scalable timing electronics, as we describe in this thesis, is successfully completed. (In fact the coupling of the scintillator – from Eljen – to the new blue sensitive SiPMs – from SensL – is simple compared to the development of the scalable electronics.) To this end however, we plan to develop a circuit board using the PSD and CFD chips to process signals from the new generation of PSD-capable plastic scintillators \cite{ZAITSEVA}. 
 
@@ -250,10 +250,10 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \end{itemize} 
 
 \section{Features}
-\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. Writing to configuration registers is performed using a signal 8-bit wide bus to provide address, mode, and data information. Using the user-controlled \emph{STB} line, address and mode can be presented on the rising edge and then data will be registered into the selected configuration register on the falling edge. Each channel can be individually enabled or disables as per the needs of the user. Additionally, should it be required, all sixteen channels can be disabled with a single global enable pin available to the user. Finally, a test point is provided to give the user feedback about how some of the digital circuit elements within the channel are performing. This test point can come from eight different nodes within a specified signal channel.
+\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. The  Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. Writing to configuration registers is performed using a signal 8-bit wide bus to provide address, mode, and data information. Using the user-controlled \emph{STB} line, address and mode can be presented on the rising edge and then data will be registered into the selected configuration register on the falling edge. Each channel can be individually enabled or disabled as per the needs of the user. Additionally, should it be required, all sixteen channels can be disabled with a single global enable pin available to the user. Finally, a test point is provided to give the user feedback about how some of the digital circuit elements within the channel are performing. This test point can come from eight different nodes within a specified signal channel.
 
 \section{System-Level Description}
-\par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector, and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
+\par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
 
 \begin{figure}[ht]
 \centering
@@ -262,7 +262,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:CFD}
 \end{figure}
 
-\par An analog input pulse will arrive at the input stage of of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
+\par An analog input pulse will arrive at the input stage of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
 
 \subsection{Common Channel}
 \par The common channel contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. To load any specific register the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. Table~\ref{tab:modes} shows the modes and usage for each of the registers.
@@ -517,7 +517,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \end{table}
 
 \subsection{Multiplicity output buffer}
-\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
+\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this, a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
 \par The source follower circuit, shown in Figure~\ref{fig:mult}, is biased with a 1 mA current using resistor R1. The signal channel multiplicity currents are summed up using R2 creating an output voltage on the source of M3. This output voltage is 1.15 V when no channels have fired and 2.7 V when all sixteen channels have fired. 
 
 \begin{figure}[htbp!]
@@ -540,8 +540,8 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, a one-shot circuit, and an output generation circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 128 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a "coarse" and "fine" grain adjustment of the Nowlin circuit was used. To accomplish this two modes are provided for the Nowlin Circuit: a "long" mode (coarse) and "short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the proposed IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
-\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the long mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinshort}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
+\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 128 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a "coarse" and "fine" grain adjustment of the Nowlin circuit was used. To do this, two modes are provided for the Nowlin Circuit: a "long" mode (coarse) and "short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the proposed IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
+\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the "short" mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinlong}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
 
 \begin{figure}[htbp!]
 \centering
@@ -563,7 +563,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
 k \cdot A \cdot \left[ 1 - e^{\frac{-t}{\tau_r}} \right] = A \cdot \left[ 1 - e^{\frac{-(t - t_o)}{\tau_r}} \right]
 \end{equation}
 
-Notice that the amplitude, A, cancels out in the above expression and the time at which this bipolar pulse crosses through zero is independent of pulse amplitude. The delay, $t_{o}$ is approximately equal to the Nowlin time constant, $\tau_{n} \approx \tau_{r}$. This results in a zero-crossing time
+Notice that the amplitude, A, cancels out in the above expression and the time at which this bipolar pulse crosses through zero is independent of pulse amplitude. The delay, $t_{o}$, is approximately equal to the Nowlin time constant, $\tau_{n} \approx \tau_{r}$. This results in a zero-crossing time
 \begin{equation}
 t_z \approx \tau_r \cdot ln \left[ \frac{e - k}{1-k}\right] \approx 1.8 \cdot \tau_r.
 \end{equation}
@@ -582,7 +582,7 @@ For the minimum pulse amplitude, A, of 15 $mV$ (and r value of 100) and a rise t
 \label{fig:nowlinout}
 \end{figure}
 
-\par C1 and the series combination of R1 and R2 create a high pass filter (or "fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input the the leading edge discriminator. 
+\par C1 and the series combination of R1 and R2 create a high pass filter (or "fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input to the the leading edge discriminator. 
 \par The resistor R3 along with the programmable capacitor C2 form a delay circuit. The delay time is given by $\tau_{n} = R2 \cdot C2$ and is referred to as the Nowlin delay constant. The programmable capacitor in the Nowlin circuit is created by using switches (i.e. transmission gates) to connect individual capacitors in and out of circuit. Two transmission gates (t-gates) per capacitor are used to accomplish this. The programmable capacitor circuit can be seen in Figure~\ref{fig:pcap}.
 \par In this configuration when a bit from the programmable capacitor bus is on (ie. 3.3V), the capacitor connects in parallel with C1 from Figure~\ref{fig:pcap}, adding more capacitance to the ZC+ node in the Nowlin circuit. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be \begin{equation}
 C2 = D \cdot 0.5 pF + 0.5 pF
@@ -634,7 +634,7 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
 \end{figure}
 
 \subsection{Leading-edge discriminator}
-\par The leading edge circuit is very very similar to the zero cross circuit. The differential output voltage from the leading-edge preamplifier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
+\par The leading edge circuit is very similar to the zero cross circuit. The differential output voltage from the leading-edge prea-mplifier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
 
 \begin{figure}[htbp!]
 	\centering
@@ -650,7 +650,7 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
  \label{tab:d2s-sizes}
 \end{table}
 
-\par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the preamplifier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$.
+\par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the pre-amplifier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$.
 
 \begin{figure}[htbp!]
 	\centering
@@ -827,7 +827,7 @@ where $V_{os}$ is the residual input referred offset and A is the amplitude of t
 \end{figure}
 
 \section{Jitter Performance}
-\par Jitter is a consequence of the electronics noise associated with the Nowlin circuit as well as the noise of the \emph{first} differential amplifier in the zero-cross discriminator circuit (where we assume the noise of succeeding stages when referred to the input is negligible). Worst case timing jitter can be estimated by taking the total integrated noise at the input to the zero-cross preamplifier and then dividing by the worst case SR given above.  The noise voltage is due to the thermal noise of the input devices on the first differential amplifier stage, the thermal noise of the gain-setting resistors in that stage, and the thermal noise of the resistors in the Nowlin circuit.  Jitter can be minimized by biasing the input FETs at high current levels and keeping all resistor values small.
+\par Jitter is a consequence of the electronics noise associated with the Nowlin circuit as well as the noise of the \emph{first} differential amplifier in the zero-cross discriminator circuit (where we assume the noise of succeeding stages when referred to the input is negligible). Worst case timing jitter can be estimated by taking the total integrated noise at the input to the zero-cross pre-amplifier and then dividing by the worst case SR given above.  The noise voltage is due to the thermal noise of the input devices on the first differential amplifier stage, the thermal noise of the gain-setting resistors in that stage, and the thermal noise of the resistors in the Nowlin circuit.  Jitter can be minimized by biasing the input FETs at high current levels and keeping all resistor values small.
 \begin{equation}
 \sigma_t = \frac{\sigma_v}{SR}
 \end{equation}
@@ -914,24 +914,24 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.8]{./ch4_figures/average_power.png}
+ \includegraphics[scale=1]{./ch4_figures/average_power.png}
  \caption{Breakdown of average power dissipation}
  \label{fig:avg_pwr}
 \end{figure} 
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.8]{./ch4_figures/peak_power.png}
+ \includegraphics[scale=1]{./ch4_figures/peak_power.png}
  \caption{Breakdown of peak power dissipation}
  \label{fig:peak_pwr}
 \end{figure} 
 
 \subsection{Chip area usage}
-\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout.
+\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout. The entire chip die uses an area of 1.9 mm x 3.5 mm giving a total area usage of 6.6 mm$^{2}$, only slightly larger than the 6 mm$^{2}$ we were aiming for.
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.9]{./ch4_figures/area_usage.png}
+ \includegraphics[scale=1.2]{./ch4_figures/area_usage.png}
  \caption{Breakdown of IC area usage}
  \label{fig:area}
 \end{figure} 
