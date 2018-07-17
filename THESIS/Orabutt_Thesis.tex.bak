@@ -1,9 +1,6 @@
 \documentclass[12pt,oneside,final]{siuethesis}
 \usepackage{microtype} % (optional) for more beautiful typesetting
 \usepackage{graphicx} 
-\usepackage{hyperref} %makes links clickable
-\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=blue,urlcolor=black} %good for electronic copy
-\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}%required for paper graduate school copy
 %\usepackage[alphabetic]{amsrefs} %required if using amsrefs, comment out if using bibtex
 \usepackage{fixltx2e}
 \usepackage{amsmath}
@@ -16,6 +13,10 @@
 \usepackage{rotating}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{hyperref} %makes links clickable
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=blue,urlcolor=black} %good for electronic copy
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}%required for paper graduate school copy
+\usepackage{bookmark}
 
 %% controls numbering of theorems
 %% this can be configured to your advisor's taste
@@ -34,7 +35,8 @@
 
 
 \author{Bryan Orabutt}
-\title{Design and Analysis of a Multi-Channel Discriminator Integrated Circuit for Use in Nuclear Physics Experiments}
+%have to protect and create paragraph box in order to have multiline and centered title
+\title{\protect\parbox{\textwidth}{\protect\centering Design and Analysis of a Multi-Channel Discriminator\protect\\ Integrated Circuit for Use in Nuclear Physics Experiments}}
 
 %%\advisor{John Q.\ Faculty} %% or 
 \advisor{Dr.}{George L. Engel}
@@ -68,7 +70,8 @@
 % ^^^^^^^^^^^^^^^^^^^^^
 % ABSTRACT
 % ^^^^^^^^^^^^^^^^^^^^^
-
+%use phantom sections in front matter to have PDF anchor's created since chapter numbering is turned off at this point
+\phantomsection
 \begin{abstract}
 
 \par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
@@ -79,7 +82,7 @@
 % ACKNOWLEDGEMNTS
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+\phantomsection
 \begin{acknowledgements} 
 
 \par I would first like to thank Dr. George Engel for being a continuous source of guidance through all my time working on this project. I would also like to thank Dr. Bradley Noble for encouraging me to investigate challenging problems and for being a source of guidance both in the classroom and out. I would also thank Dr. Timothy York for introducing me to IC design, without him I likely would never have gone to graduate school. I am grateful to  Dr.  Lee  Sobotka  and  Mr.  Jon  Elson,  department  of  chemistry, Washington  University Saint Louis, for their  help  during  the  various  stages  of  this  project. My  special  thanks  to all of the  faculty  and  staff  of  ECE  department  for  their  direct  and indirect support without which I simply could not have progressed with my work. Additionally, Dr. Gary Mayer of the Computer Science department has helped me expand knowledge beyond the skills learned in the classroom, and I am forever thankful. 
@@ -89,26 +92,26 @@
 
 \end{acknowledgements}
 
+\cleardoublepage
+\phantomsection
 \tableofcontents
 
 \cleardoublepage %cause correct numbering of list of figures
-
-\cleardoublepage
-
+\phantomsection
 \listoffigures %print list of figures page
 
 \cleardoublepage
-
+\phantomsection
 \listoftables
 
+\cleardoublepage
 \mainmatter %signals single spacing/arabic numeral paginations
-
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 1
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
-
+\setcounter{chapter}{1}
 \par This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits are helping to re-shape this field.  The IC described in this thesis, called CFD16C (Constant Fraction Discriminator--16 Channels), is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE) in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
 
 \section{Research Background}
@@ -307,7 +310,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:oneshot}
 \end{figure}
 
-\par A final output generation stage is used to qualify the timing pulse as well and create other useful channel outputs. The timing pulse should not be present on the pin of the chip package if the global enable signal is not present, or the channel enable bit is not set. Therefor the timing pulse is ANDed with these two signals before going off-chip as seen in Figure~\ref{fig:output-qual}. The digital test point, multiplicity, and global channel OR outputs are also created in this stage and explained in more detail in the next chapter.
+\par A final output generation stage is used to qualify the timing pulse as well and create other useful channel outputs. The timing pulse should not be present on the pin of the chip package if the global enable signal is not present, or the channel enable bit is not set. Therefore the timing pulse is ANDed with these two signals before going off-chip as seen in Figure~\ref{fig:output-qual}. The digital test point, multiplicity, and global channel OR outputs are also created in this stage and explained in more detail in the next chapter.
 
 \begin{figure}[h!]
 \centering
@@ -418,7 +421,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par The \emph{ADDR} and \emph{MODE} bits are compared against a hard coded value using the XOR and NOR gates. The hard coded values will be set to match the address of the channel the register is in, as well as the mode that should select the specific register. The \emph{ADDR} decoder circuit is then ORed with the MSB of \emph{MODE} so that all registers of a given mode can be selected if the global mode bit is set.
 
 \subsection{Power on reset circuit}
-\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power \cite{ALAN_BOOK}, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
 \par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
@@ -446,7 +449,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Zero-tempco current reference}
 \par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
-\par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
+\par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp \cite{BAKER}. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
 \par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
 \begin{figure}[htbp!]
 \centering
@@ -471,7 +474,7 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \subsection{Lockout DAC}
 \par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
-\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities.
+\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology \cite{BAKER} that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities.
 \par The input to the DAC is a ZTC current coming from the common channel. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror gives an extremely high output impedance of 
 \begin{equation}
 Z_{o} = r_{ds7}\cdot g_{m7} \cdot r_{ds6}
@@ -531,7 +534,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
  \centering
  \includegraphics[scale=.4,keepaspectratio=true]{./ch3_figures/mult_sizes.png}
  \caption{Multiplicity buffer device sizes}
- \label{tab:dac-bit-sizes}
+ \label{tab:mult-sizes}
 \end{table}
 
 % DESCRIPTION OF SIGNAL CHANNEL
@@ -667,7 +670,7 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
 \end{table}
 
 \subsection{Zero-cross discriminator}
-\par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
+\par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse \cite{474405}. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
 \par The purpose of cascading a relatively large number of high-bandwidth but low-gain stages is to force linear operation where delay is independent of amplitude. In short, the cascaded amplifier, which we shall refer to as the "pre-amplifier" serves as a slew rate enhancer.  For a first-order system, it is well-known that if the input risetime is not to be severely degraded, the bandwidth, BW, of the amplifier must obey the following equation
 \begin{equation}
 BW > \frac{0.35}{t_{10-90}} \approx \text{80 MHz}
@@ -731,7 +734,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \label{fig:oneshot-circuit}
 \end{figure}
 
-\par The one-shot circuit works but utilizing a D-type flip flop with an asynchronous clear input. When the CFD circuit (i.e.. Leading-edge and Zero-cross discriminators) produces an output, the pulse width can be variable depending on the conditions in the experiment. Because of this a narrow pulse generator is used to produce a fixed 5 nsec wide pulse in response to any width CFD output. This narrow pulse is used as a clock signal for this D-flip flop, provided lockout is disabled or the circuit is not in a lockout state. Since the input to the flip flop is tied to \emph{AVDD} (logic high) the output will transition to a logic high state in response to the CFD circuit output. This causes a switch to close allowing a current source to charge a capacitor at the input of a comparator. Charging this capacitor produces a ramp voltage on the non-inverting input of the comparator, as seen in Figure~\ref{fig:ramp}.
+\par The one-shot circuit works but utilizing a D-type flip flop with an asynchronous clear input. When the CFD circuit (i.e. Leading-edge and Zero-cross discriminators) produces an output, the pulse width can be variable depending on the conditions in the experiment. Because of this a narrow pulse generator is used to produce a fixed 5 nsec wide pulse in response to any width CFD output. This narrow pulse is used as a clock signal for this D-flip flop, provided lockout is disabled or the circuit is not in a lockout state. Since the input to the flip flop is tied to \emph{AVDD} (logic high) the output will transition to a logic high state in response to the CFD circuit output. This causes a switch to close allowing a current source to charge a capacitor at the input of a comparator. Charging this capacitor produces a ramp voltage on the non-inverting input of the comparator, as seen in Figure~\ref{fig:ramp}.
 
 \begin{figure}[htbp!]
 \centering
@@ -778,29 +781,79 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 
 \chapter{SIMULATION RESULTS}
 
-\section{Verification of Circuits in Common Channel}
-\par To verify that the common channel circuits were functioning properly, a System Verilog test fixture was created to do the following:
+\section{Testing Procedure}
+\par To verify that the all of the circuits in the IC were functioning properly, a System Verilog test fixture was created to do the following:
 \begin{itemize}
+\item Pulse power on to simulate the chip turning on from a cold start.
 \item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper clock edge.
 \item Load each configuration register with data to test every possible configuration value.
-\item Pulse power on to simulate the chip turning on from a cold start.
-\item Hit every channel with a pulse of different amplitude to verify channel circuits are working (thus confirming biasing circuitry is operating).
+\item Hit every channel with a pulse of different amplitude and risetimes to verify channel circuits are working.
 \end{itemize}
 
-\par Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
+\par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a test bench instantiation that is used to output the driver data to a value change dump file (VCD). Once the test bench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A.
+\par The tasks file specifies high level routines to manipulate power, data, and control lines on the IC. The first task to be called in any test driver is the \emph{init} task, which simply sets all lines to 0 V to simulate a chip that has been powered off for a long period of time. Another task, \emph{power\_on}, can then be used to simulate power being applied to the chip. This allows the IC to be simulated from a cold start rather than from a steady sate. Other tasks were written to set/clear each of the pin mounted control lines (see Table~\ref{tab:pinout}), as well as the \emph{STB} line to latch address, mode, and data. High level tasks were used to set mode by allowing the user to specify a named mode (e.g. PCAP, ONESHOT, etc.) rather than having to remember the correct mode bits from Table~\ref{tab:modes}. Similarily, data can be set by using a task to set a specific function. For example, the one-shot width can be set by \emph{set\_os\_width($<$2-bit data$>$)}. Finally, tasks are also provided to set the aplitude, risetime, and firing time of an expoenential input pulse. These analog lines are provided to a Verilog-A test fixture which can generate the pulse and record data.
+\par The driver file is used to specify the parameters of an experiment. The driver is best understood as a timeline of events that will happen during a simulation. For example, the general structure of the driver used for testing the CFD16C was the following:
+
+\begin{enumerate}
+\item Begin with cold start (i.e. call \emph{init} task
+\item Power the chip (i.e. call \emph{power\_on})
+\item Configure chip appropriateley for incoming pulses (i.e. call tasks to set registers)
+\item Enable/disable relevant control lines
+\item Generate analog pulses
+\item Repeat 3-5 for input pulses with different parameters
+\end{enumerate}
+
+\par Once a driver is prepared, it is instantiated in a test bench fixture. The test bench is used to create a driver object that can be simulated and captures the waveform data in VCD files. A an example VCD file is shown below.
+\lstset{
+         language=Verilog,
+         basicstyle=\scriptsize\ttfamily,
+         emptylines=0, 
+         lineskip=1pt,
+         %numbers=left,            
+         numberstyle=\tiny,         
+         stepnumber=2,              
+         numbersep=5pt,             
+         tabsize=3,                
+         extendedchars=true,       
+         breaklines=true,            
+         commentstyle=\color{blue},
+         keywordstyle=\color{red},
+            frame=b,         
+ %        keywordstyle=[1]\textbf,    
+ %        keywordstyle=[2]\textbf,    
+ %        keywordstyle=[3]\textbf,  
+ %        keywordstyle=[4]\textbf,   \
+         stringstyle=\scriptsize\color{green}\ttfamily, 
+         showspaces=false,         
+         showtabs=false,            
+%         xleftmargin=17pt,
+%         framexleftmargin=17pt,
+%         framexrightmargin=5pt,
+%         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false           
+ }
+ \lstinputlisting{./code/example.vcd}
+The VCD file header first gives a date and version number for the software that created the file. The file then specifies the timescale being used. In the example above the timescale of picoseconds (ps) is used. Next, the variables from the test bench fixture are given symbols to be referenced by in the \emph{\$dumpvars} section. In the example above there are three signals: an analog, or \emph{real}, signal called SIG\_A, a digital wire called SIG\_B, and a digital bus called SIG\_C. The symbols given to these are !, \$, and \% respectively. The \emph{\$dumpvars} section contains information about how the variables change over time. Timestamps are denoted by a number preceded by a \# (e.g. \#6000 above). Between timestamps are the variables that changed at that time and the value that they changed to, with the value given first followed by the symbol and no space seperating. For analog signals the value is preceded with an \textbf{r}. The timestamp at the end of a VCD file represents the end time of a simulation.
+\par While the VCD file contains all of the information needed to create a voltage source, there is no way to use it directly in the Cadence software tools. The simulation tools used for the design of this IC are, however, able to create voltage sources that are piecewise-linear in nature by providing a PWL file that describes them. For this a python script was used to parse the VCD file and create a PWL file with the same data contents. The script can be modified to change the rise/fall times, logic levels, and scale factors for analog signals. Once these values are set, running the script will create a PWL file for each of the symbols defined in the VCD file. A PWL file is similar to a VCD file but only defines timestamps and values for one signal line instead of many. The standard PWL format specifies the x-axis (time) first, followed by the y-axis value (voltage) for that x-input seperated by a space. An exaple is shown below.
+
+\lstinputlisting{./code/example.pwl}
+
+\par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file.
+
+\section{Verification of Circuits in Common Channel}
+\par The common channel contains configuration registers and biasing circuitry. In order to test the configuration, a System Verilog test fixture was used to load each configuration register with data. Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The biasing circuitry was verified by observing the outuput of the circuits being biased in the signal channels. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
 
 \section{Walk Characteristics of CFD Circuit}
 \par Time walk is is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height.  If we assume a single-pole response for the analog comparator with a gain-bandwidth-product of $GBW_c$, it is not difficult to show that the variation in propagation delay, $\Delta t_{pd}$, due to input pulse amplitude is 
 \begin{equation}
 \Delta t_{pd} \approx  \sqrt{\frac{V_{DD}}{2 \cdot \pi \cdot GBW_c \cdot G^N \cdot SR_{min}}}
 \end{equation}
-
 where $V_{DD}$ is the supply voltage, G is the gain of a single differential amplifier stage, N is the number of stages, and $SR_{min}$ is  the SR with a pulse amplitude of 15 mV.   Table~\ref{WalkTable} summarizes the expected walk performance (over the dynamic range of 15 mV - 1.5 V) for three representative risetime constants.
 \par In reality, the time walk may increase at low amplitudes because of residual offset.  Ultimately, how well the discriminator performs at low amplitude will depend on the effectiveness of the dynamic offset cancellation loop. It can be shown that residual offset alters the time at which one crosses zero as given by
 \begin{equation}
 \Delta t_{cross} \approx \tau_r \cdot \left[ \frac{V_{os}}{(1-k) \cdot A} \right]
 \end{equation}
-
 where $V_{os}$ is the residual input referred offset and A is the amplitude of the input pulse. It is important that the residual offset be driven to the sub-mV level.  The "slow" DC offset cancellation loop has to be "slow" enough so as not to interfere with the pulse as it passes through the zero-cross discriminator but yet fast enough so that pulse repetition rates as high as 1 kHz can be accommodated. 
 
 \begin{table}[htbp!]
@@ -939,7 +992,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \begin{figure}[htbp!]
  \centering
  \includegraphics[scale=.6,angle=90]{./ch4_figures/cfd_chip.png}
- \caption{CFD8C full layout}
+ \caption{CFD16C full layout}
  \label{fig:layout}
 \end{figure} 
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -970,7 +1023,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 
 \nocite{*}
 
-
+\phantomsection
 \references %single spacing / arabic numeral paginations, adds "REFERENCES" to table of contents
 
 %%%% for bibtex
@@ -981,7 +1034,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \bibliography{./Orabutt_Thesis}
 
 % If you have only a single appendix, do it this way.
-
+\phantomsection
 \multipleappendices
 \lstset{
          language=Verilog,
@@ -1013,7 +1066,13 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
          showstringspaces=false           
  }
 
+%Appendix restarts chapter counter causing PDF anchors to point to chapter 1.
+%Resetting counter and changing chapters to be alphabetized (i.e. Chapter A, B, C etc.) fixes pdf anchors
+\setcounter{chapter}{0}
+\renewcommand{\theHchapter}{\Alph{chapter}}
+\renewcommand{\thechapter}{\Alph{chapter}}
 \chapter{Verilog-A pulse generator}
+
 \lstinputlisting{./code/Pulser.va}
 
 \chapter{Verilog-A Test fixture}

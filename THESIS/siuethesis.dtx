@@ -1,0 +1,854 @@
+% \iffalse meta-comment
+%
+%% siuethesis:  Document class for SIUE Thesis (not officially endorsed by SIUE)
+%% Adam G. Weyhaupt (aweyhau@siue.edu)
+%% Based on the thesis class by
+%% N. Danner (ndanner@indiana.edu)
+%% Copyright 1999
+%% (N. Danner placed the copyright restriction; I have his permission to modify, but it is not clear to me what the license status of this file is.)
+
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{siuethesis.dtx}
+%</driver>
+%<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<class>\ProvidesClass{siuethesis}
+%<*class>
+    [2015/06/09 v0.2.5 siuethesis class]
+%</class>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{graphics}
+\EnableCrossrefs         
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{siuethesis.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{1030}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v0.1.1}{2010/11/09}{Initial version}
+% \changes{v0.1.2}{2010/11/09}{Added hooks for degree name, reference section name, etc. so that code is more department independent}
+% \changes{v0.1.4}{2010/11/10}{Fixed draft option (user can not change message)}
+% \changes{v0.1.5}{2010/11/20}{Numerous changes to conform with Graduate School requirement.}
+% \changes{v.0.1.6}{2011/09/08}{Added option to allow use of the class with amsrefs. Also added an option for two advisors (experimental).}
+% \changes{v.0.1.7}{2011/09/09}{Fixed a problem when 'subfig' package is used. (Thanks to Susanna Siebert and Andreas Stefik from CS.)}
+% \changes{v.0.1.8}{2012/1/05}{Made several changes at the request of graduate school (handing indent for multiline in TOC, appendices).  Put geometry commands in the class file instead of template.  Fixed multiply defined label issues.  This document now contains a draft of an automatically generated signature page.}
+%\changes{v.0.1.9}{2012/02/17}{Increased headlight and fixed issues with hyper ref that caused warnings to be generated. (Thanks to Vincent Kieftenbeld from Math/Stats.)}
+%\changes{v.0.2.1}{2013/07/23}{Modifications to match new requirements of electronic thesis submission (title page, signature page); fixed list of figures, made small changed to TOC to deal with appendices}
+%\changes{v.0.2.2}{2013/07/29}{Bug fixes: fixed "advisory cmte" on title page, fixed bottom of title page, page numbering should count first page as page i, double space abstract}
+%\changes{v.0.2.3}{2013/07/31}{Added optional fields to the advisor and readers to indicate their title and honorific, which will be used on the title page and abstract if defined.  This change adds the "space" package to the dependency list. Deprecated "undergraddegree" in favor of "highestdegree" for candidates who already have a masters in another field (thanks K. Schwent!), although the former still works.}
+%\changes{v.0.2.4}{2013/10/17}{Fixed formatting of list of tables by adding "table" and "page" at the top, adds hanging indents to bibliographies, fixes display of multiple appendices in TOC, reduced extraneous spaces at tops of some pages (thanks M. Vespa and R. Krauss!)}
+%\changes{v.0.2.5}{2015/06/09}{Modified formatting of the title page to conform to new graduate school requirements (thanks B. Amini!)}
+%
+% \GetFileInfo{siuethesis.dtx}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+% 
+%
+% \let\cls\textsf\let\pkg\textsf\let\option\textbf
+% \title{The \textsf{siuethesis} class\thanks{This document
+%   corresponds to \textsf{siuethesis}~\fileversion, dated \filedate.}}
+% \author{Adam G. Weyhaupt \\ \texttt{aweyhau@siue.edu}}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+%The \cls{siuethesis} document class is a derivative of the excellent \cls{iuthesis} class that was written by Norman Danner for students at Indiana University Bloomington.  \cls{siuethesis} provides output for masters
+%thesis that are (hopefully!) acceptable to the 
+%Graduate School of Southern Illinois University Edwardsville.  It is based on the \cls{book} document class and loads a number of packages, in particular: \pkg{amsmath}, \pkg{amsthm}, \pkg{amssymb}, \pkg{subfigure}, \pkg{fancyhdr}, \pkg{ulem}, \pkg{space}, and \pkg{pdfpages}.   One limitation is that second level headings to not automatically line break.  You can force them to break by putting \texttt{\textbackslash\textvisiblespace} (that's slash-space) instead of just a space near where the section heading should break.  This kludge is suggested by the \pkg{ulem} documentation.
+%
+%\section{The Options}
+%The following are the options that may be specified as optional
+%arguments to the |\documentclass| line.
+%
+%\begin{description}
+%
+%\item[final] This option suppresses printing of the draft message and
+%is also passed to \cls{book} and all packages that you load.  Of
+%course, it seems pointless since you might as well just not specify
+%\option{draft} as an option, but it is here so that it can also be
+%passed to packages that you may only want loaded during draft runs
+%(e.g., if you use the \pkg{showkeys} package, it will only really
+%be loaded if it is not passed the \option{final} option).
+%
+%\item[single] Single-space the thesis.  Of course, you cannot use this
+%for the official copy, but it saves paper if you want to print out a
+%copy for yourself.  
+%
+%\item[draft] Prints a message on the top of each page and also passes ``draft'' to the book class.
+%\item[twoadvisors] Changes the abstract page to permit the use of two advisors.  This is experimental; it is not clear how the graduate school deals with multiple advisors.
+%\end{description}
+%
+%All other options (e.g., \option{11pt}) are passed to \cls{book}.
+%The default option is \option{final}.  The
+%\option{oneside} option is automatically passed to \cls{book}.
+%
+%\section{Using the siuethesis Document Class}
+%
+%Figure~\ref{fig:galley} shows a sample galley file using the
+%\cls{siuethesis} document class.  
+%Here, we describe in order each of the commands and environments used.
+%Of course, we start with a |\documentclass| command, which should need
+%no additional explanation.  You should put your own |\usepackage| commands
+%and local macro definitions between the |\documentclass| and |\title|
+%commands.  The AMS classes \pkg{amsmath}, \pkg{amssymb}, and \pkg{amssymb} packages are automatically loaded; you should not explicity load any of these.  As far as I know, the class provided works with \pkg{hyperref} (but not when the single option is activated).
+%
+%
+%\newbox\galleyleft\newbox\galleyright\newbox\galleybox
+%\setbox\galleyleft\vbox{\hsize=3in%
+%\begin{verbatim}
+%\documentclass[11pt,final]{siuethesis}
+%
+%\title{A Proof of the Reimann Conjecture}
+%\author{Andrew Wiles}
+%
+%\advisor{Pierre Fermat}
+%
+%\department{Mathematics}
+%\submitdate{July 1999}
+%\copyrightyear{1999}
+%
+%\begin{document}
+%
+%\frontmatter
+%\maketitle
+%\copyrightpage
+%
+%\begin{abstract}
+%In this thesis, we prove the Riemann Conjecture.
+%What more need be said?
+%\end{abstract}
+%
+%\begin{acknowledgements}
+%I acknowledge, therefore I am.
+%\end{acknowledgements}
+%\end{verbatim}
+%}
+%
+%\setbox\galleyright\vbox{\hsize=3in%
+%\begin{verbatim}
+%
+%\tableofcontents
+%\cleardoublepage
+%\listoffigures
+%
+%\mainmatter
+%
+%\include{intro}
+%\include{proof}
+%
+%\references
+%\bibliographystyle{alpha}
+%\bibliography{mybib}
+%
+%\end{document}
+%\end{verbatim}
+%}
+%
+%
+%
+%\DescribeMacro{\title}\DescribeMacro{\author}
+%The |\title| and |\author| command specify the title and
+%author of your dissertation (presumably the latter is you).  These
+%macros do \emph{not} take any optional arguments (for example, to
+%specify short versions).
+%
+%\DescribeMacro{\advisor}\DescribeMacro{\secondadvisor}\DescribeMacro{\secondreader}
+%\DescribeMacro{\thirdreader}\DescribeMacro{\fourthreader}
+%\DescribeMacro{\fifthreader}
+%Use the |\advisor| and |reader| macros to specify your advisor and other 
+%committee members' names.  The macros take two possible forms.  If you want to specify an honorific on the first page, then use the format |\advisor{Dr.}{Jill Smith}|.  If you do not wish to specify with honorific, use |\advisor{Jill Smith}|.  If the first argument is present it may not be empty.  All the other advisor/reader macros behave the same. If the |twoadvisors| option is passed to the class then the |\secondadvisor| macro is used; otherwise it is ignored.  
+%\DescribeMacro{\abstracttext}
+% This macro can be used to change the text on the abstract page that refers to the committee chair.
+%
+%\DescribeMacro{\department}\DescribeMacro{\submitdate}
+%\DescribeMacro{\copyrightyear}\DescribeMacro{\departmentname}\DescribeMacro{\major}
+%Use the |\department|, |\submitdate|, and |\copyrightyear| macros
+%to specify the department in which you will receive your degree (default is ``Mathematics and Statistics''),
+%when you actually hold the defense, and the year of the copyright
+%(usually the year of graduation).  The command |\major| specifies the major to appear on the title page.  You do not need to specify the copyright
+%year if you do not use |\copyrightpage|.  Use the |\departmentname| macro
+%to specify what to call your ``department'' if something other than
+% ``Department'' (e.g., if your thesis is in the School of Library and
+% Information Sciences, you would have 
+% |\department{Library and Information Sciences}| 
+% and |\departmentname{School}| in your preamble so that the title page
+% would say ``School of Library and Information Sciences'').  The default is ``Department''.
+%\DescribeMacro{\degree} \DescribeMacro{\undergraddegree}
+%Use the |\degree| macro to specify the degree you are seeking (the default is Master of Science).  Use the |\highestdegree| to specify your highest earned degree (usually a bachelor's degree or a master's in another field), which is shown on the title page.  The default is Bachelor of Science.
+%\DescribeMacro{\refname}
+%The |\refname| macro specifies the name of the references section; the default is "REFERENCES".  Any name must be in all caps.
+%
+%\DescribeEnv{acknowledgements}\DescribeEnv{abstract}
+%These environments typeset the optional abstract and acknowledgements sections.
+%
+%\DescribeMacro{\frontmatter}
+%The |\frontmatter| command must come before any text is actually typeset
+%(including the title page).  Primarily it sets up page numbering correctly.
+%The title page will be unnumbered, and every other
+%page that occurs between the
+%|\frontmatter| and |\mainmatter| commands will be given page numbers in
+%lower-case roman type, starting with page ii.  
+%The order in which the next set of commands before
+%the |\mainmatter| command are issued is specified by the Graduate School;
+%they'll be unhappy if you do anything else (although currently the 
+%document class will let you do whatever you want).
+%
+%\DescribeMacro{\maketitle}
+%The |\maketitle| command prints the title page.  This page is formatted
+%as prescribed by the graduate school.
+%
+%
+%\DescribeMacro{\copyrightpage}
+%The |\copyrightpage| command creates the copyright page (go figure).  It is optional.
+%
+%\DescribeMacro{\tableofcontents}\DescribeMacro{\listoffigures}\DescribeMacro{\listoftables}
+%The |\tableofcontents| command is the usual one.  It is here just to point
+%out where it should appear (i.e., as front matter).  Likewise any other
+%such lists, such as a list of figures, should also appear here.
+%
+%\DescribeMacro{\mainmatter}
+%Put the |\mainmatter| command just before the actual text of your 
+%dissertation.  Pages will be numbered in arabic starting over at page 1.
+%Following the |\mainmatter| command will either be your
+%thesis, or (more likely) a sequence of |\include| commands to include the
+%files containing the various chapters of your thesis, as shown here.
+%Also notice that appendices, bibliography, and the index (if you have any
+%of them) are considered part of the main matter, and these are all created
+%as usual.  I don't know whether appendices and the index work properly right now.  You are responsible for putting |\thispagestyle{empty}| on the first page of your first chapter (only) to ensure that no page number is printed there.
+%
+%\DescribeMacro{\singleappendix}\DescribeMacro{\multipleappendices}
+%These commands set the proper formatting of appendices.  Use |\singleappendix| if you have only one appendix; you \emph{must} then use the |\chapter*| command to begin your appendix.  Use |\multipleappendices| if you have more than one appendix; you \emph{must} then use the |\chapter| command to begin each appendix.  The reason for this is that the graduate school has different formatting requirements for the table of contents depending on whether there is one or more appendices.
+%
+%\DescribeMacro{\references}\DescribeMacro{\refname}
+%The |\references| command sets up the proper formatting for the bibliography.  It puts the "REFERENCES" heading but does not actually produce the bibliography. 
+%
+% \StopEventually{\PrintChanges\PrintIndex}
+%
+% \section{Implementation}
+%
+%\begin{macro}{\ifIUT@debugging}
+%\begin{macro}{\IUT@debuggingtrue}
+%\begin{macro}{\IUT@debuggingfalse}
+%Some miscellaneous macros for debugging and displaying what options 
+%have been chosen in the |\documentclass| command.  Also sets up an if-statement required for the |twoadvisors| option.
+%    \begin{macrocode}
+\newif\ifIUT@debugging \IUT@debuggingtrue \IUT@debuggingfalse
+\newif\ifIUT@twoadvisors \IUT@twoadvisorstrue \IUT@twoadvisorsfalse
+\def\IUT@dbgmsg#1{\ifIUT@debugging\message{#1}\fi}
+\def\IUT@optionmsg#1{\message{  siuethesis option: #1}}
+%    \end{macrocode}
+%\end{macro}\end{macro}\end{macro}%
+%Now start handling the options, along with any additional macros,
+%conditionals, etc. they may rely upon.  
+%Unless the \option{draft} option is given,
+%no draft line will displayed.  It is not currently possible to modify the draft message.We also pass the \option{draft} option to
+%\cls{book}.
+%    \begin{macrocode}
+\def\dm@internal{}
+\DeclareOption{draft}{
+  \IUT@optionmsg{draft}
+  \def\dm@internal{DRAFT: \today}
+  \PassOptionsToClass{draft}{book}
+}
+%    \end{macrocode}
+%The \option{final} option causes the previous two macros to be a no-op
+%and emtpy, respectively, and is also passed to \cls{book}.
+%    \begin{macrocode}
+\DeclareOption{final}{
+  \IUT@optionmsg{final}
+  \def\dm@internal{}
+  \PassOptionsToClass{final}{book}
+}
+%    \end{macrocode}
+
+
+% \option{ms} for Master of Science, \option{ma} for Master of Arts.
+% |\degree| is called when |\@degree| is initially defined, so we just
+% override it at the end of class loading.
+%    \begin{macrocode}
+\DeclareOption{ms}{
+  \AtEndOfClass{\degree{Master of Science}}
+}
+\DeclareOption{ma}{
+  \AtEndOfClass{\degree{Master of Arts}}
+}
+%    \end{macrocode}
+
+
+% Make the document single-spaced.
+%    \begin{macrocode}
+\DeclareOption{single}{
+  \AtEndOfClass{\def\IUT@blstretch{1}}
+}
+%    \end{macrocode}
+
+% Set the abstract for two advisors
+%    \begin{macrocode}
+\DeclareOption{twoadvisors}{
+  \IUT@twoadvisorstrue
+}
+%    \end{macrocode}
+
+%Turn on debugging output.
+%    \begin{macrocode}
+\DeclareOption{debug}{
+  \IUT@debuggingtrue
+}
+%    \end{macrocode}
+
+%Set everything up.  The |hassections| counter is used to ensure appropriate spacing in the table of contents.
+%    \begin{macrocode}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
+\ExecuteOptions{abstractsigs}
+\ProcessOptions
+
+\PassOptionsToClass{oneside}{book}
+\LoadClass{book}[1995/01/27]
+\RequirePackage{amsmath,subfig,amssymb,amsthm,fancyhdr,xspace}
+\RequirePackage[left=1.5in,top=1in,right=0.75in,bottom=0.8in,includehead, heightrounded,letterpaper,head=14.5pt]{geometry} %sets margins
+\usepackage[titles,subfigure]{tocloft}
+\setcounter{tocdepth}{2}
+\usepackage[normalem]{ulem}
+\newcounter{hassections}[chapter]
+%    \end{macrocode}
+
+
+%\paragraph{Preamble Commands}
+%There will only be one author, and his/her name will only appear 
+%on the title page and only in full form, so there is no need for the
+%short form or andifying that \cls{amsbook} does.  Nothing interesting
+%with |\title| is currently done by \cls{amsbook}, but we make sure
+%that nothing interesting ever happens, except that we immediately
+%convert it into uppercase.  The reason is that we may need an uppercase
+%version twice (for \option{umiabstract}), and it seems that
+%|\uppercasenonmath| hangs if you use it a second time on the same
+%argument.
+%    \begin{macrocode}
+\renewcommand{\author}[1]{\gdef\@author{#1}}\let\@author\relax
+\renewcommand{\title}[1]{\gdef\@title{#1}}\let\@title\relax
+
+\def\submitdate#1{\gdef\@submitdate{#1}}\let\@submitdate\relax
+\def\defensedate#1{\gdef\@defensedate{#1}}\let\@defensedate\relax
+\def\department#1{\gdef\@department{#1}}\department{Mathematics and Statistics}
+\def\major#1{\gdef\@major{#1}}\major{Mathematics}
+\def\departmentname#1{\gdef\@departmentname{#1}}\departmentname{Department}
+\def\degree#1{\gdef\@degree{#1}}\degree{Master of Science}
+\def\undergraddegree#1{\gdef\@highestdegree{#1}}
+\def\highestdegree#1{\gdef\@highestdegree{#1}}\highestdegree{Bachelor of Science}
+\def\advisor#1{%
+\@ifnextchar\bgroup%
+   {\@twoargadvisor{#1}}
+   {\@oneargadvisor{#1}}
+}
+\def\@oneargadvisor#1{%
+   \gdef\@principaladvisor{#1}\gdef\@advisorhonoriffic{}%
+}
+\def\@twoargadvisor#1#2{%
+   \gdef\@principaladvisor{#2}\gdef\@advisorhonoriffic{#1\@\xspace}%
+}\let\@principaladvisor\relax
+%%%\def\secondadvisor#1{\gdef\@secondaryadvisor{#1}}\let\@secondaryadvisor\relax
+\def\secondadvisor#1{%
+\@ifnextchar\bgroup%
+   {\@twoargsecadvisor{#1}}
+   {\@oneargsecadvisor{#1}}
+}
+\def\@oneargsecadvisor#1{%
+   \gdef\@secondaryadvisor{#1}\gdef\@secondaryadvisorhonoriffic{}%
+}
+\def\@twoargsecadvisor#1#2{%
+   \gdef\@secondaryadvisor{#2}\gdef\@secondaryadvisorhonoriffic{#1\@\xspace}%
+}\let\@secondaryadvisor\relax
+%%%\def\secondreader#1{\gdef\@secondreader{#1}}\let\@secondreader\relax
+\def\secondreader#1{%
+\@ifnextchar\bgroup%
+   {\@twoargsecreader{#1}}
+   {\@oneargsecreader{#1}}
+}
+\def\@oneargsecreader#1{%
+   \gdef\@secondreader{#1}\gdef\@secondreaderhonoriffic{}%
+}
+\def\@twoargsecreader#1#2{%
+   \gdef\@secondreader{#2}\gdef\@secondreaderhonoriffic{#1\@\xspace}%
+}\let\@secondreader\relax\let\@secondreaderhonoriffic\relax%
+%%%\def\thirdreader#1{\gdef\@thirdreader{#1}}\let\@thirdreader\relax
+\def\thirdreader#1{%
+\@ifnextchar\bgroup%
+   {\@twoargthirdreader{#1}}
+   {\@oneargthirdreader{#1}}
+}
+\def\@oneargthirdreader#1{%
+   \gdef\@thirdreader{#1}\gdef\@thirdreaderhonoriffic{}%
+}
+\def\@twoargthirdreader#1#2{%
+   \gdef\@thirdreader{#2}\gdef\@thirdreaderhonoriffic{#1\@\xspace}%
+}\let\@thirdreader\relax\let\@thirdreaderhonoriffic\relax%
+%%%\def\fourthreader#1{\gdef\@fourthreader{#1}}\let\@fourthreader\relax
+\def\fourthreader#1{%
+\@ifnextchar\bgroup%
+   {\@twoargfourthreader{#1}}
+   {\@oneargfourthreader{#1}}
+}
+\def\@oneargfourthreader#1{%
+   \gdef\@fourthreader{#1}\gdef\@fourthreaderhonoriffic{}%
+}
+\def\@twoargfourthreader#1#2{%
+   \gdef\@fourthreader{#2}\gdef\@fourthreaderhonoriffic{#1\@\xspace}%
+}\let\@fourthreader\relax\let\@fourthreaderhonoriffic\relax%
+%%%\def\fifthreader#1{\gdef\@fifthreader{#1}}\let\@fifthreader\relax
+\def\fifthreader#1{%
+\@ifnextchar\bgroup%
+   {\@twoargfifthreader{#1}}
+   {\@oneargfifthreader{#1}}
+}
+\def\@oneargfifthreader#1{%
+   \gdef\@fifthreader{#1}\gdef\@fifthreaderhonoriffic{}%
+}
+\def\@twoargfifthreader#1#2{%
+   \gdef\@fifthreader{#2}\gdef\@fifthreaderhonoriffic{#1\@\xspace}%
+}\let\@fifthreader\relax\let\@fifthreaderhonoriffic\relax%
+\def\abstracttext#1{\gdef\@abstracttext{#1}}
+\ifIUT@twoadvisors\abstracttext{Chairpersons: Professors \check@val\@principaladvisor ~and \check@val\@secondaryadvisor}\else\abstracttext{Chairperson: Professor \check@val\@principaladvisor}\fi%
+\def\refname#1{\gdef\@refname{#1}}\refname{REFERENCES}
+
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}}
+\let\@copyrightyear\relax
+
+%    \end{macrocode}
+
+%    \begin{macrocode}
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                       \if@mainmatter
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{chapter}%
+                                   {\protect\numberline{\thechapter .}#1}%
+                       \else
+                         \addcontentsline{toc}{chapter}{#1}%
+                       \fi
+                    \else
+                      \addcontentsline{toc}{chapter}{#1}%
+                    \fi
+                    \chaptermark{#1}%
+                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
+%    \end{macrocode}
+
+%\paragraph{Front Matter Commands}~\\
+
+
+% Creates an abstract environment for the book class (book doesn't have one built in)
+%    \begin{macrocode}
+\newenvironment{abstract}{\clearpage
+\label{abstract}
+  \addcontentsline{toc}{part}{ABSTRACT}
+\begin{center}{ABSTRACT}\\ \end{center}
+\begin{center}\MakeUppercase{\check@val\@title}\\ \end{center}
+\begin{center}by\\ \end{center}
+\begin{center}\MakeUppercase{\check@val\@author}\\ \end{center}
+ \begin{center}\@abstracttext%
+\hspace{0pt}\\ \end{center}  \renewcommand{\baselinestretch}{2.0}\selectfont
+}{\clearpage    \renewcommand{\baselinestretch}{1.0}
+}{\clearpage
+}
+%    \end{macrocode}
+
+%The title page is prescribed by the graduate school.
+%    \begin{macrocode}
+  \def\maketitle{
+    \pagenumbering{alph}
+\begin{titlepage}
+\begin{sloppypar}
+\begin{center}
+\ \\[1\baselineskip]
+\check@val\@title\\[1\baselineskip]
+by \check@val\@author, \check@val\@highestdegree \\[6\baselineskip]
+A Thesis Submitted in Partial \\
+Fulfillment of the Requirements \\
+for the Degree of \\
+\check@val\@degree\ \\
+in the field of \check@val\@major\ \\[5\baselineskip]
+Advisory Committee:\\[1\baselineskip]
+\ifIUT@twoadvisors \else \@advisorhonoriffic\check@val\@principaladvisor, Chair \\[1\baselineskip]\fi
+\ifIUT@twoadvisors \@advisorhonoriffic\check@val\@principaladvisor, Co-chair \\[1\baselineskip] \fi
+\ifIUT@twoadvisors \@secondaryadvisorhonoriffic\check@val\@secondaryadvisor, Co-chair \\[1\baselineskip] \fi
+\@secondreaderhonoriffic\check@val\@secondreader\ \\[1\baselineskip]
+\@thirdreaderhonoriffic\@thirdreader\ \\[1\baselineskip]
+\@fourthreaderhonoriffic\@fourthreader\ \\[1\baselineskip]
+\@fifthreaderhonoriffic\@fifthreader\ \\[1\baselineskip]
+\ \\[4\baselineskip]
+Graduate School \\
+Southern Illinois University Edwardsville \\
+\check@val\@submitdate
+\end{center} 
+\end{sloppypar}
+
+\end{titlepage}
+  }
+%    \end{macrocode}
+
+% Acknowledgments section
+% \begin{macrocode}
+\newenvironment{acknowledgements}{\clearpage
+\label{acknowledgements}
+  \addcontentsline{toc}{part}{ACKNOWLEDGEMENTS}
+\begin{center}{ACKNOWLEDGEMENTS} \end{center}
+\renewcommand{\baselinestretch}{2.0}\selectfont
+}{\clearpage \renewcommand{\baselinestretch}{1.0}\selectfont
+}
+% \end{macrocode}
+
+
+% According to Shelly Robinson the copyright page gets no page number if it appears.
+%    \begin{macrocode}
+  \def\copyrightpage{%
+    \typeout{Copyright Page}%
+    \newcounter{temppage}  % place to store the current page number
+\setcounter{temppage}{\arabic{page}}
+      \pagenumbering{Alph}
+    \thispagestyle{empty} %no page number
+\addtocounter{page}{-1} %ignore this page when counting
+    \hbox{}\vfill%
+    \begin{center}%
+    \copyright ~Copyright by \check@val\@author ~\check@val\@submitdate \\%
+    All rights reserved%
+    \end{center}%
+    \vfill%
+    \newpage%
+           \pagenumbering{roman}%
+       \setcounter{page}{\thetemppage}%
+  }
+%    \end{macrocode}
+
+
+% The dedication is untitled and set one inch from the top margin, unless
+% a different vertical skip is specified by the optional argument to
+% |\makededication|.  This is a holdover from IU Thesis class; I'm not sure if SIUE Grad School allows for a dedication.  
+%    \begin{macrocode}
+  \newcommand{\makededication}[1][1in]{
+    \ifvoid\dedicationbox\else
+    \typeout{Dedication}
+    \hbox{}\vskip#1\unvbox\dedicationbox\vfill%
+    \newpage
+    \fi
+  }
+%    \end{macrocode}
+
+
+
+% We redefine |\l@XXX| so that the table of contents is properly aligned ``under the p in Chapter''.  At the moment the class will not behave properly if the font is changed because the class does not calculate the length of ``Cha''.  Same for ``Figure''.
+%    \begin{macrocode}
+\let\tocbaselineskip\baselineskip
+%%%\renewcommand*{\l@part}{\@dottedtocline{-1}{0em}{2.3em}} 
+%%%\renewcommand*{\l@chapter}{\@dottedtocline{0}{1.8em}{2em}} %1.8 + 1.5 = 3.3
+ 	\def\l@part#1#2{{ 
+	    \@dottedtocline{-1}{0em}{2.3em}{#1}{#2} \vskip \baselineskip}}
+  \def\l@chapter#1#2{{
+ \vskip \tocbaselineskip
+    \hangindent=1em\@dottedtocline{0}{1.8em}{2em}{#1}{#2} }}
+\renewcommand*{\l@section}{\hangindent=1em\@dottedtocline{1}{3.8em}{2em}}
+\renewcommand*{\l@subsection}{\hangindent=1em\@dottedtocline{2}{8em}{3em}}
+\renewcommand*{\l@subsubsection}{\hangindent=1em\@dottedtocline{3}{1.8em}{2.3em}}
+\renewcommand*\l@figure{\setlength\@tempdima{2.9em}%
+\hangindent=1.8em\@dottedtocline{1}{1em}{\@tempdima}}
+    \renewcommand*\l@table{\setlength\@tempdima{2.9em}%
+    \hangindent=1.8em\@dottedtocline{1}{1em}{\@tempdima}}
+%% have a look at http://www.tex.ac.uk/cgi-bin/texfaq2html?label=findwidth
+%    \end{macrocode}
+
+% Sets formatting of TOC, LOF.
+% Similar for list of tables and figures.
+%    \begin{macrocode}
+\renewcommand{\bibname}{\check@val\@refname}
+  
+\def\tableofcontents{
+  \bgroup
+  \renewcommand{\baselinestretch}{1.0}\renewcommand{\@tocrmarg}{5em plus1fil} %singlespacing and no hyphenation
+\begin{center}{TABLE OF CONTENTS}\\ \end{center}
+%%\begin{center}\hspace{0pt}\hspace{0pt}\\ \end{center} % S. Robinson prefers this spacing
+  \@starttoc{toc}%%\contentsname
+  \egroup
+}
+\def\listoffigures{
+  \bgroup
+  \renewcommand{\baselinestretch}{1.0}\renewcommand{\@tocrmarg}{5em plus1fil} 
+  \addcontentsline{toc}{part}{LIST OF FIGURES}
+\begin{center}{LIST OF FIGURES}\\ \end{center}
+%\begin{center}\hspace{0pt}\hspace{0pt}\\ \end{center} % S. Robinson prefers this spacing
+  \@starttoc{lof}%%\listfigurename
+  \egroup
+}
+\def\listoftables{
+ \bgroup
+  \renewcommand{\baselinestretch}{1.0}\renewcommand{\@tocrmarg}{5em plus1fil} 
+  \addcontentsline{toc}{part}{LIST OF TABLES}
+\begin{center}{LIST OF TABLES}\\ \end{center}
+%\begin{center}\hspace{0pt}\hspace{0pt}\\ \end{center} % S. Robinson prefers this spacing
+  \@starttoc{lot}%%\listfigurename
+  \egroup
+}
+%    \end{macrocode}
+
+% Front matter has page numbers at the bottom in lower roman type.
+%    \begin{macrocode}
+\def\frontmatter{\cleardoublepage\pagenumbering{roman}\setcounter{page}{2}\fancypagestyle{plain}{% 
+\fancyhf{} %% clear all header and footer fields 
+  \renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage} %% except the center 
+\fancyhead[L]{} %% except the center 
+}
+\pagestyle{plain}}
+%    \end{macrocode}
+
+% Main matter uses fancy page style, arabic numbering, and double
+% spacing.
+%    \begin{macrocode}
+\def\mainmatter{
+  \cleardoublepage
+  \pagenumbering{arabic}
+  \addtocontents{toc}{\noindent\protect\mbox{Chapter}\par}
+\addtocontents{lof}{\noindent\protect\mbox{Figure}\hfill\protect\makebox[1em]{Page}\par}
+\addtocontents{lot}{\noindent\protect\mbox{Table}\hfill\protect\makebox[1em]{Page}\par}
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{% 
+\fancyhf{} %% clear all header and footer fields 
+\fancyhead[R]{\thepage} %% except the center 
+\fancyhead[L]{\normalfont\scriptsize \tt \dm@internal}
+}
+\pagestyle{fancy}
+\lhead{\normalfont\scriptsize \tt \dm@internal}
+\chead{}
+\rhead{\thepage}
+\lfoot{ }
+\cfoot{}
+\rfoot{}
+  \renewcommand{\baselinestretch}{\IUT@blstretch}
+  \normalfont
+}
+%    \end{macrocode}
+
+%\begin{macrocode}
+\def\references{
+    \newcommand{\BibHangIndent}{% %from https://groups.google.com/forum/#!topic/comp.text.tex/jZirZPWWoiA
+        \setlength{\labelwidth}{0pt}%
+        \setlength{\leftmargin}{2\leftmargini}%
+        \setlength{\itemindent}{-\leftmargin}%
+        \renewcommand{\makelabel}[1]{\hspace\labelsep####1}%
+    }
+  \cleardoublepage
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+\fancyhf{} %% clear all header and footer fields
+\fancyhead[R]{\thepage} %% except the center
+\fancyhead[L]{\normalfont\scriptsize \tt \dm@internal}
+}
+\pagestyle{fancy}
+\lhead{\normalfont\scriptsize \tt \dm@internal}
+\chead{}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+  \addtocontents{toc}{\noindent\protect\vskip\baselineskip\par}
+\addcontentsline{toc}{part}{\check@val\@refname}
+    \renewcommand{\baselinestretch}{1.0}
+      \normalfont
+      \begin{center}{REFERENCES}\\ \end{center}
+}
+% 
+%\end{macrocode}
+
+% Set style of section, subsection, etc. (code from amsbook.cls)
+%\begin{macrocode}
+\newdimen\linespacing
+  \normalsize \linespacing=\baselineskip
+  \newdimen\normalparindent
+\normalparindent=18pt
+\parindent=\normalparindent
+\def\section{\ifnum \value{hassections} < 1 \addtocontents{toc}{\noindent\protect \vskip \baselineskip \par}\fi \stepcounter{hassections} \@startsection{section}{1}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  %    \end{macrocode}
+%  The code above puts a blank line in the TOC if this is the first line of the section.
+  %\begin{macrocode}
+  {\normalfont\flushleft\uline}}\def\subsection{\@startsection{subsection}{2}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\normalfont\itshape\flushleft}}
+\def\subsubsection{\@startsection{subsubsection}{3}%
+  \z@\z@{-.5em}%
+  {\normalfont\itshape\flushleft}}
+\def\paragraph{\@startsection{paragraph}{4}%
+  \normalparindent\z@{-\fontdimen2\font}%
+  \normalfont}
+\def\subparagraph{\@startsection{subparagraph}{5}%
+  \z@\z@{-\fontdimen2\font}%
+  \normalfont}
+  %    \end{macrocode}
+
+% Set style of the chapter headings (code from book.cls)
+%\begin{macrocode}
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \normalsize \centering\MakeUppercase\@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 10\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+     \centering#1\par\nobreak
+    \vskip 20\p@
+  }}
+%    \end{macrocode}
+
+% Set style of the starred-chapter headings (code from book.cls)
+%\begin{macrocode}
+  \def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \normalsize \centering\MakeUppercase\@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 10\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+     \centering#1\par\nobreak
+    \vskip 20\p@
+  }}
+%    \end{macrocode}
+
+
+% Ensure that bibliography has the same style as TOC, etc.
+%    \begin{macrocode}
+\renewenvironment{thebibliography}[1]
+     {%\begin{center}{\check@val\@refname}\\ \end{center}
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin20pt% change 20 pt according to your needs
+            \advance\leftmargin\labelsep
+            \setlength\itemindent{-20pt}% change using the inverse of the length used before
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+%    \end{macrocode}
+
+% Back matter (for vita only) gets empty page style (no numbering) and
+% single spacing.  Not tested with Appendices; SIUE requires no vita.
+%    \begin{macrocode}
+\def\backmatter{
+  \newpage
+  \pagestyle{empty}
+  \renewcommand{\baselinestretch}{1}
+  \normalfont
+}
+%    \end{macrocode}
+
+% Sets style for the appendices; a different style is required if there is a single vs. multiple appendices
+%    \begin{macrocode}
+\def\singleappendix{
+    \renewcommand{\baselinestretch}{2.0}\selectfont
+  \cleardoublepage
+    \addcontentsline{toc}{part}{APPENDIX}
+\addtocontents{toc}{\def\tocbaselineskip{0em}} %cause single spacing of appendices in TOC
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@Alph\c@chapter}
+}
+%    \end{macrocode}
+
+%    \begin{macrocode}
+\def\multipleappendices{
+    \renewcommand{\baselinestretch}{2.0}\selectfont
+  \cleardoublepage
+    \addcontentsline{toc}{part}{APPENDICES}
+     \addtocontents{toc}{\vskip-\baselineskip} %correct for an extra space caused by double spacing chapters
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@Alph\c@chapter}
+}
+%    \end{macrocode}
+
+% \paragraph{Utility Macros}
+% |\check@val| checks to see that its argument has been defined; if so,
+% it is used, otherwise a warning is issued and ??? printed.  Those
+% comment markers at the end of lines are necessary--otherwise we get
+% stray spaces.
+%    \begin{macrocode}
+\def\check@val#1{%
+  \ifx#1\relax%
+    \typeout{}%
+    \typeout{!!!!!!!!}%
+    \typeout{Warning: #1 not set!}%
+    \typeout{!!!!!!!!}%
+    \hbox{???}%
+  \else%
+    #1%
+  \fi%
+}
+%    \end{macrocode}
+% The |\baselinestretch| is set according to typeset (LC, page 53).
+% |\@mainsize| is an AMS macro that gives the (multiple digit) main font size.
+% This may be overriden by the \option{single} option.
+%    \begin{macrocode}
+\def\IUT@blstretch{1.67}
+%    \end{macrocode}
+
+% Initialize things.
+%    \begin{macrocode}
+%%\pagestyle{chapter}
+\pagenumbering{arabic}
+\normalsize
+%    \end{macrocode}
+
+
+
+% \Finale
+\endinput

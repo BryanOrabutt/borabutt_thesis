@@ -1,0 +1,27 @@
+$date
+    Jul  2, 2018  10:36:01
+$end
+$version
+    TOOL:	ncsim	09.20-s038
+$end
+$timescale
+    1 ps
+$end
+
+$scope module verilog_driver_tb $end
+$var real     64 !    SIG_A  $end
+$var wire      1 $    SIG_B  $end
+$var wire      8 %    SIG_C  $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+r0 !
+b0$
+b00000000%
+$end
+#6000
+r3.3 !
+b1$
+b10100101%
+#8000

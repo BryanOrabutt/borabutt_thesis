@@ -29,7 +29,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{siuethesis}
-    [2013/10/17 v0.2.4 siuethesis class]
+    [2015/06/09 v0.2.5 siuethesis class]
 \newif\ifIUT@debugging \IUT@debuggingtrue \IUT@debuggingfalse
 \newif\ifIUT@twoadvisors \IUT@twoadvisorstrue \IUT@twoadvisorsfalse
 \def\IUT@dbgmsg#1{\ifIUT@debugging\message{#1}\fi}
@@ -71,8 +71,7 @@
 
 \PassOptionsToClass{oneside}{book}
 \LoadClass{book}[1995/01/27]
-\RequirePackage{amsmath,amssymb,amsthm,fancyhdr,xspace}
-%\RequirePackage{amsmath,subfig,amssymb,amsthm,fancyhdr,xspace}
+\RequirePackage{amsmath,subfig,amssymb,amsthm,fancyhdr,xspace}
 \RequirePackage[left=1.5in,top=1in,right=0.75in,bottom=0.8in,includehead, heightrounded,letterpaper,head=14.5pt]{geometry} %sets margins
 \usepackage[titles,subfigure]{tocloft}
 \setcounter{tocdepth}{2}
@@ -226,9 +225,9 @@ Advisory Committee:\\[1\baselineskip]
 \@thirdreaderhonoriffic\@thirdreader\ \\[1\baselineskip]
 \@fourthreaderhonoriffic\@fourthreader\ \\[1\baselineskip]
 \@fifthreaderhonoriffic\@fifthreader\ \\[1\baselineskip]
-\ \\[2\baselineskip]
+\ \\[4\baselineskip]
 Graduate School \\
-Southern Illinois University Edwardsville \\[4\baselineskip]
+Southern Illinois University Edwardsville \\
 \check@val\@submitdate
 \end{center}
 \end{sloppypar}

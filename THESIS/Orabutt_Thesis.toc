@@ -1,7 +1,7 @@
-\contentsline {part}{ABSTRACT}{ii}{Doc-Start}
-\contentsline {part}{ACKNOWLEDGEMENTS}{iii}{Doc-Start}
-\contentsline {part}{LIST OF FIGURES}{vii}{Doc-Start}
-\contentsline {part}{LIST OF TABLES}{ix}{Doc-Start}
+\contentsline {part}{ABSTRACT}{ii}{section*.1}
+\contentsline {part}{ACKNOWLEDGEMENTS}{iii}{section*.2}
+\contentsline {part}{LIST OF FIGURES}{vii}{section*.4}
+\contentsline {part}{LIST OF TABLES}{ix}{section*.5}
 \noindent \mbox {Chapter}\par 
 \contentsline {chapter}{\numberline {1.}INTRODUCTION}{1}{chapter.1}
 \noindent \vskip \baselineskip \par 
@@ -24,10 +24,10 @@
 \contentsline {section}{\numberline {3.2}Common Channel}{19}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Configuration registers}{20}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Power on reset circuit}{21}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Signal ground generator}{21}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Signal ground generator}{22}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Bandgap voltage reference}{22}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}PTAT current reference}{22}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Zero-tempco current reference}{24}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Zero-tempco current reference}{23}{subsection.3.2.6}
 \contentsline {subsection}{\numberline {3.2.7}Lockout DAC}{26}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Multiplicity output buffer}{30}{subsection.3.2.8}
 \contentsline {section}{\numberline {3.3}Signal Channel}{31}{section.3.3}
@@ -39,27 +39,28 @@
 \contentsline {subsection}{\numberline {3.3.6}Final output generation}{46}{subsection.3.3.6}
 \contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{49}{chapter.4}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{49}{section.4.1}
-\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{49}{section.4.2}
-\contentsline {section}{\numberline {4.3}Jitter Performance}{51}{section.4.3}
-\contentsline {section}{\numberline {4.4}Verification of One-Shot}{53}{section.4.4}
-\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{56}{section.4.5}
-\contentsline {section}{\numberline {4.6}Chip-Level Verification}{59}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Power dissipation}{59}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Chip area usage}{59}{subsection.4.6.2}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{64}{chapter.5}
+\contentsline {section}{\numberline {4.1}Testing Procedure}{49}{section.4.1}
+\contentsline {section}{\numberline {4.2}Verification of Circuits in Common Channel}{52}{section.4.2}
+\contentsline {section}{\numberline {4.3}Walk Characteristics of CFD Circuit}{52}{section.4.3}
+\contentsline {section}{\numberline {4.4}Jitter Performance}{54}{section.4.4}
+\contentsline {section}{\numberline {4.5}Verification of One-Shot}{58}{section.4.5}
+\contentsline {section}{\numberline {4.6}Performance Characterization of DAC}{59}{section.4.6}
+\contentsline {section}{\numberline {4.7}Chip-Level Verification}{60}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Power dissipation}{62}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Chip area usage}{62}{subsection.4.7.2}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{67}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{64}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{65}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{65}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{67}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{68}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{68}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{66}{section.5.3}
-\contentsline {part}{APPENDICES}{69}{section.5.3}
+\contentsline {part}{REFERENCES}{69}{section*.67}
+\contentsline {part}{APPENDICES}{72}{section*.68}
 \vskip -\baselineskip 
-\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{69}{chapter.1}
-\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{71}{chapter.2}
-\contentsline {chapter}{\numberline {C.}System Verilog global defines}{73}{chapter.3}
-\contentsline {chapter}{\numberline {D.}System Verilog tasks}{74}{chapter.4}
-\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{81}{chapter.5}
-\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{86}{chapter.6}
-\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{88}{chapter.7}
+\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{72}{chapter.A}
+\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{74}{chapter.B}
+\contentsline {chapter}{\numberline {C.}System Verilog global defines}{76}{chapter.C}
+\contentsline {chapter}{\numberline {D.}System Verilog tasks}{77}{chapter.D}
+\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{84}{chapter.E}
+\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{89}{chapter.F}
+\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{91}{chapter.G}
