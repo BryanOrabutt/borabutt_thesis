@@ -39,9 +39,9 @@
 \title{\protect\parbox{\textwidth}{\protect\centering Design and Analysis of a Multi-Channel Discriminator\protect\\ Integrated Circuit for Use in Nuclear Physics Experiments}}
 
 %%\advisor{John Q.\ Faculty} %% or 
-\advisor{Dr.}{George L. Engel}
-\secondreader{Dr.}{Bradley Noble} %% or \secondreader{Dr.}{Karl Gauss}
-\thirdreader{Dr.}{Timothy York}
+\advisor{George L. Engel}
+\secondreader{Bradley Noble} %% or \secondreader{Dr.}{Karl Gauss}
+\thirdreader{Timothy York}
 %\fourthreader{Karl Gauss, Sr.}
 %\fifthreader{Karl Gauss, Sr.}
 %\secondadvisor{Karl Gauss} %if you haves two advisors (rare) then use this line also and pass the option `twoadvisors' to the class
@@ -112,6 +112,7 @@
 
 \chapter{INTRODUCTION}  %% chapter titles must be typed in all caps to conform with regulations
 \setcounter{chapter}{1}
+\thispagestyle{empty} %remove page number from first page (required by grad school)
 \par This chapter will introduce the reader to the field of radiation monitoring and describe how custom multi-channel integrated circuits are helping to re-shape this field.  The IC described in this thesis, called CFD16C (Constant Fraction Discriminator--16 Channels), is the newest addition to the family of ICs which are being developed by the IC Design Research Laboratory at Southern Illinois University Edwardsville (SIUE) in collaboration with researchers from the Nuclear Reactions Group at Washington University (WUSTL).
 
 \section{Research Background}
@@ -267,7 +268,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \par An analog input pulse will arrive at the input stage of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
 
-\subsection{Common Channel}
+\subsection{Common channel}
 \par The common channel contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. To load any specific register the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. Table~\ref{tab:modes} shows the modes and usage for each of the registers.
 
 \begin{figure}[htbp!]
@@ -287,7 +288,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:addrmode}
 \end{figure}
 
-\subsection{Signal Channel}
+\subsection{Signal channel}
 \par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, and is used by the leading-edge discriminator circuit.
 \par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator (Figure~\ref{fig:zcd}). This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. 
 \par A DC offset cancellation loop is used to remove the effects of systematic DC offsets. Without this DC compensation loop, the output comparator would be permanently stuck in one state regardless of input from the Nowlin circuit. This same DC cancellation loop is also used in the Leading-edge discriminator.
@@ -1072,7 +1073,6 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \renewcommand{\theHchapter}{\Alph{chapter}}
 \renewcommand{\thechapter}{\Alph{chapter}}
 \chapter{Verilog-A pulse generator}
-
 \lstinputlisting{./code/Pulser.va}
 
 \chapter{Verilog-A Test fixture}

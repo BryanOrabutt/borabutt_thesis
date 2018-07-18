@@ -15,8 +15,8 @@
 \contentsline {section}{\numberline {2.1}System Specifications}{10}{section.2.1}
 \contentsline {section}{\numberline {2.2}Features}{11}{section.2.2}
 \contentsline {section}{\numberline {2.3}System-Level Description}{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Common Channel}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Signal Channel}{13}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.1}Common channel}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Signal channel}{13}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Chip Pinout}{17}{section.2.4}
 \contentsline {chapter}{\numberline {3.}ELECTRICAL LEVEL DESIGN}{19}{chapter.3}
 \noindent \vskip \baselineskip \par 
@@ -56,7 +56,7 @@
 \noindent \vskip \baselineskip \par 
 \contentsline {part}{REFERENCES}{69}{section*.67}
 \contentsline {part}{APPENDICES}{72}{section*.68}
-\vskip -\baselineskip 
+\def \tocbaselineskip {0em}
 \contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{72}{chapter.A}
 \contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{74}{chapter.B}
 \contentsline {chapter}{\numberline {C.}System Verilog global defines}{76}{chapter.C}
