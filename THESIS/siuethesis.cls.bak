@@ -472,7 +472,7 @@ Southern Illinois University Edwardsville \\
      \addtocontents{toc}{\def\tocbaselineskip{0em}} %correct for an extra space caused by double spacing chapters
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
-  \gdef\@chapapp{\protect\parbox{\textwidth}{\protect\centering APPENDICIES\protect\\\appendixname}}%
+  \gdef\@chapapp{\protect\centering APPENDICES\protect\\\appendixname}%
   \gdef\thechapter{\@Alph\c@chapter}
 }
 

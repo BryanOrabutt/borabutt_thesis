@@ -39,9 +39,9 @@
 \title{\protect\parbox{\textwidth}{\protect\centering Design and Analysis of a Multi-Channel Discriminator\protect\\ Integrated Circuit for Use in Nuclear Physics Experiments}}
 
 %%\advisor{John Q.\ Faculty} %% or 
-\advisor{George L. Engel}
-\secondreader{Bradley Noble} %% or \secondreader{Dr.}{Karl Gauss}
-\thirdreader{Timothy York}
+\advisor{George L. Engel, D.Sc}
+\secondreader{Bradley Noble, D.Sc} %% or \secondreader{Dr.}{Karl Gauss}
+\thirdreader{Timothy York, PhD}
 %\fourthreader{Karl Gauss, Sr.}
 %\fifthreader{Karl Gauss, Sr.}
 %\secondadvisor{Karl Gauss} %if you haves two advisors (rare) then use this line also and pass the option `twoadvisors' to the class
@@ -74,7 +74,8 @@
 \phantomsection
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. \par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. 
+\par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. The IC will have an average power dissipation of 220 mW and occupy an area of 1.9x3.5 mm$^{2}$. The jitter in the trailing edge of the output timing pulse will be less than 5 nsec (for pulse width of 50 nsec). Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -425,7 +426,15 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power \cite{ALAN_BOOK}, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
-\par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed by $\pm 250$ mV.
+\par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed according to Table~\ref{tab:trim}.
+
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.30,keepaspectratio=true]{./ch3_figures/trim.png}
+ \caption{Signal ground generator trim values}
+ \label{tab:trim}
+\end{table}
 
 \subsection{Bandgap voltage reference}
 \par A bandgap voltage reference is a circuit that provides a temperature and power supply independent voltage \cite{ALLEN}. The bandgap voltage reference used in this design was provided in an analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{^{\circ}C}$ as can be seen in Figure~\ref{fig:bandgap}.
@@ -637,39 +646,6 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
  	\label{fig:slowota}
 \end{figure}
 
-\subsection{Leading-edge discriminator}
-\par The leading edge circuit is very similar to the zero cross circuit. The differential output voltage from the leading-edge prea-mplifier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
-
-\begin{figure}[htbp!]
-	\centering
- 	\includegraphics[scale=0.55,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_gm.pdf}
- 	\caption{Schematic of differential voltage to single-ended current converter.}
- 	\label{FIG:LE_GM}
-\end{figure}
-
-\begin{table}[htbp!]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/d2s_sizes.png}
- \caption{Differential to single ended amplifier device sizes}
- \label{tab:d2s-sizes}
-\end{table}
-
-\par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the pre-amplifier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$.
-
-\begin{figure}[htbp!]
-	\centering
- 	\includegraphics[scale=0.55,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_cmp.pdf}
- 	\caption{Schematic of leading edge comparator.}
- 	\label{FIG:LE_CMP}
-\end{figure}
-
-\begin{table}[htbp!]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/le_cmp_sizes.png}
- \caption{Leading-edge comparator device sizes}
- \label{tab:le-comp-sizes}
-\end{table}
-
 \subsection{Zero-cross discriminator}
 \par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse \cite{474405}. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
 \par The purpose of cascading a relatively large number of high-bandwidth but low-gain stages is to force linear operation where delay is independent of amplitude. In short, the cascaded amplifier, which we shall refer to as the "pre-amplifier" serves as a slew rate enhancer.  For a first-order system, it is well-known that if the input risetime is not to be severely degraded, the bandwidth, BW, of the amplifier must obey the following equation
@@ -723,6 +699,40 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
  \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/zc_cmp_sizes.png}
  \caption{Device Sizes for Zero-Cross comparator}
  \label{tab:zccomp}
+\end{table}
+\par The performance is identical for both positive and negative polarities. This is because for the negative polarity, transmission gates are used to flip the inputs to the comparator. This makes negative polarity pulses functionally identical to positive polarity pulses as seen from the input of the comparator, simplifying the design.
+
+\subsection{Leading-edge discriminator}
+\par The leading edge circuit is very similar to the zero cross circuit. The differential output voltage from the leading-edge prea-mplifier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.55,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_gm.pdf}
+ 	\caption{Schematic of differential voltage to single-ended current converter.}
+ 	\label{FIG:LE_GM}
+\end{figure}
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/d2s_sizes.png}
+ \caption{Differential to single ended amplifier device sizes}
+ \label{tab:d2s-sizes}
+\end{table}
+
+\par The leading-edge comparator is presented in Figure~\ref{FIG:LE_CMP}. It is very similar to the zero-cross comparator except two resistive voltage dividers have been added, one on the inverting and one on the non-inverting inputs.  All resistors are 34 $k \Omega$ so that each divider can be represented by a Thevenin voltage equal to one-half the supply voltage and a Thevenin resistance of 17 $k \Omega$.  The divider on the non-inverting input is used to convert the sum of the differential current output from the pre-amplifier and the current output of the DAC into a voltage which is then compared to $\frac{V_{DD}}{2}$. Just as with the zero-cross comparator, the inputs of the leading edge comparator are swapped in the negative polarity mode.
+
+\begin{figure}[htbp!]
+	\centering
+ 	\includegraphics[scale=0.55,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/le_cmp.pdf}
+ 	\caption{Schematic of leading edge comparator.}
+ 	\label{FIG:LE_CMP}
+\end{figure}
+
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/le_cmp_sizes.png}
+ \caption{Leading-edge comparator device sizes}
+ \label{tab:le-comp-sizes}
 \end{table}
 
 \subsection{Output one-shot with lockout features}
@@ -792,11 +802,11 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \end{itemize}
 
 \par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a test bench instantiation that is used to output the driver data to a value change dump file (VCD). Once the test bench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A.
-\par The tasks file specifies high level routines to manipulate power, data, and control lines on the IC. The first task to be called in any test driver is the \emph{init} task, which simply sets all lines to 0 V to simulate a chip that has been powered off for a long period of time. Another task, \emph{power\_on}, can then be used to simulate power being applied to the chip. This allows the IC to be simulated from a cold start rather than from a steady sate. Other tasks were written to set/clear each of the pin mounted control lines (see Table~\ref{tab:pinout}), as well as the \emph{STB} line to latch address, mode, and data. High level tasks were used to set mode by allowing the user to specify a named mode (e.g. PCAP, ONESHOT, etc.) rather than having to remember the correct mode bits from Table~\ref{tab:modes}. Similarily, data can be set by using a task to set a specific function. For example, the one-shot width can be set by \emph{set\_os\_width($<$2-bit data$>$)}. Finally, tasks are also provided to set the aplitude, risetime, and firing time of an expoenential input pulse. These analog lines are provided to a Verilog-A test fixture which can generate the pulse and record data.
+\par The tasks file specifies high level routines to manipulate power, data, and control lines on the IC. The first task to be called in any test driver is the \emph{init} task, which simply sets all lines to 0 V to simulate a chip that has been powered off for a long period of time. Another task, \emph{power\_on}, can then be used to simulate power being applied to the chip. This allows the IC to be simulated from a cold start rather than from a steady sate. Other tasks were written to set/clear each of the pin mounted control lines (see Table~\ref{tab:pinout}), as well as the \emph{STB} line to latch address, mode, and data. High level tasks were used to set mode by allowing the user to specify a named mode (e.g. PCAP, ONESHOT, etc.) rather than having to remember the correct mode bits from Table~\ref{tab:modes}. Similarily, data can be set by using a task to set a specific function. For example, the one-shot output pulse width can be set by \emph{set\_os\_width($<$2-bit data$>$)}. Finally, tasks are also provided to set the amplitude, risetime, and firing time of an expoenential input pulse. These analog lines are provided to a Verilog-A test fixture which can generate the pulse and record data.
 \par The driver file is used to specify the parameters of an experiment. The driver is best understood as a timeline of events that will happen during a simulation. For example, the general structure of the driver used for testing the CFD16C was the following:
 
 \begin{enumerate}
-\item Begin with cold start (i.e. call \emph{init} task
+\item Begin with cold start (i.e. call \emph{init} task)
 \item Power the chip (i.e. call \emph{power\_on})
 \item Configure chip appropriateley for incoming pulses (i.e. call tasks to set registers)
 \item Enable/disable relevant control lines
@@ -840,7 +850,7 @@ The VCD file header first gives a date and version number for the software that 
 
 \lstinputlisting{./code/example.pwl}
 
-\par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file.
+\par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file. 
 
 \section{Verification of Circuits in Common Channel}
 \par The common channel contains configuration registers and biasing circuitry. In order to test the configuration, a System Verilog test fixture was used to load each configuration register with data. Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The biasing circuitry was verified by observing the outuput of the circuits being biased in the signal channels. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
@@ -908,8 +918,9 @@ The theoretically predicted jitter performance plot for the short range mode is 
 \par The output one-shot provides two important features to the CFD16C: generation of the timing pulse that starts the TVCs on PSD8C, and a lockout functionality to prevent misfirings. For the lockout feature a wide spread of lockout times was desired, with a logarithmic spread. Figure~\ref{fig:lockout-spread} shows the spread of the lockout times available in both the short and long modes. As can be seen from the plots the spread is nearly logarithmic, with the lockout time being given by 
 \begin{equation}
 T_{lockout} = \frac{K}{D\cdot \Delta I}
+\label{eq:lockout}
 \end{equation}
-where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot), D is the digital code word given to the lockout DAC, and $\Delta$I is the change in current from one step of the lockout DAC. The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 3.8 nA in long mode. 
+where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot), D is the digital code word given to the lockout DAC, and $\Delta$I is the change in current from one step of the lockout DAC. The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 38 nA in long mode. 
 
 \begin{figure}[htbp!]
  \centering
@@ -918,7 +929,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
  \label{fig:lockout-spread}
 \end{figure}
 
-\par The primary one-shot that creates the output timing pulse needs very low jitter and low variance from process and mismatch. The jitter proved to be accurately modeled by the formula $\sigma_{j} = \frac{\sigma_{V}}{V{BG}}\cdot T_{oneshot}$, where $\sigma_{V}$ is the noise voltage in the current source (PFET current mirror) charging the one-shot capacitor in Figure~\ref{fig:oneshot-circuit} and V$_{BG}$ is the bandgap voltage. For process variance and mismatch, 20 Monte Carlo simulations were run and showed acceptable variance in the trailing edge of the one-shot timing pulse (Table~\ref{tab:one-shot-mc}). This result is within two sigma, and it is expected that across all process and mismatch a variance of no more than $\pm$5 nsec in the trailing edge of the one-shot pulse is expected.
+\par The primary one-shot that creates the output timing pulse needs very low jitter and low variance from process and mismatch. The jitter proved to be accurately modeled by the formula $\sigma_{j} = \frac{\sigma_{V}}{V_{BG}}\cdot T_{oneshot}$, where $\sigma_{V}$ is the noise voltage in the current source (PFET current mirror) charging the one-shot capacitor in Figure~\ref{fig:oneshot-circuit} and V$_{BG}$ is the bandgap voltage. For process variance and mismatch, 20 Monte Carlo simulations were run and showed acceptable variance in the trailing edge of the one-shot timing pulse (Table~\ref{tab:one-shot-mc}). This result is within two sigma, and it is expected that across all process and mismatch a variance of no more than $\pm$5 nsec in the trailing edge of the one-shot pulse is expected.
 
 \begin{table}[htbp!]
  \centering
@@ -962,7 +973,20 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \end{figure} 
 
 \section{Chip-Level Verification}
-\par A large System Verilog test bench was used to test the performance of the chip as a whole. Every channel was hit with a pulse of increasing amplitudes between 15 mV and 1.5 V. Registers were configured between pulses to adjust circuit parameters and verify correctness. Multiple rise-time constants were tested and proved to be within specification. 
+\par A large System Verilog test bench was used to test the performance of the chip as a whole. Every channel was hit with a pulse of increasing amplitudes between 15 mV and 1.5 V. Registers were configured between pulses to adjust circuit parameters and verify correctness. Full chip simulations have already been completed to test the functionality of the following:
+
+\begin{itemize}
+\item Walk characteristics of the output timing pulse
+\item Both Nowlin time constant modes
+\item Both lockout time modes
+\item Multiple input pulse amplitudes and risetime constants, and both polarities
+\item Multiple lockout times (matching the predicted values from Eq~\ref{eq:lockout})
+\item Global mode bit to load all registers of a given mode
+\item Global enable control to disable all 16 channels
+\item Power on from a cold start
+\item All four oneshot pulse widths and their tolerance
+\item Individual channel enable bits to disable specific channels
+\end{itemize}
 
 \subsection{Power dissipation}
 \par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.
@@ -1020,9 +1044,18 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \par The chip level simulations show that the CFD16C will work very well in new scintillator experiments accompanied with the PSD8C. The design of the IC is complete and layouts will be finished in time for a late 2018 submission.
 
 \section{Future Work}
-\par While the bulk of the design for CFD16C has been completed and the simulated performance looks promising, more robust and detailed simulations still need to be ran before the chip is ready to be sent out for fabrication. It is expected the chip will be sent for fabrication in November 2018. Once the chip has been fabricated a performance analysis on the physical IC will be done and any discrepancies from the simulated performance will be identified. More simulations will then be run to find the cause of these discrepancies. 
+\par While the bulk of the design for CFD16C has been completed and the simulated performance looks promising, more robust and detailed simulations still need to be ran before the chip is ready to be sent out for fabrication. Smulations for the following must be completed:
+\begin{itemize}
+\item Disabling the internal signal ground generator and providing an external signal ground reference
+\item Increasing/decreasing the \emph{AVDD} supply voltage and trimming the internal \emph{AGND} to match
+\item Test each channel with a different leading edge threshold value
+\item Check that all test point nodes can be routed and from each channel
+\item Test \emph{RST\_L} functionality
+\item Chip level simulations including parasitic extraction
+\end{itemize}
+Layout of the CFD circuits (i.e. leading edge and zero cross discriminators) needs to be completed, as well as the top level interconnect routing. It is expected the chip will be sent for fabrication in November 2018. Once the chip has been fabricated a performance analysis on the physical IC will be done and any discrepancies from the simulated performance will be identified. More simulations will then be run to find the cause of any discrepancies. 
 
-\nocite{*}
+\nocite{*} %incude all refences in bibliography, not just those cited in text
 
 \phantomsection
 \references %single spacing / arabic numeral paginations, adds "REFERENCES" to table of contents

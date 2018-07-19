@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  18 JUL 2018 12:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2018.3.1)  19 JUL 2018 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,34 +680,34 @@ Package microtype Info: Loading generic settings for font family
 
 
 
-] <./ch1_figures/PSD_block.png, id=296, 744.53156pt x 563.10374pt>
+] <./ch1_figures/PSD_block.png, id=299, 744.53156pt x 563.10374pt>
 File: ./ch1_figures/PSD_block.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_block.png>
-Package pdftex.def Info: ./ch1_figures/PSD_block.png used on input line 131.
+Package pdftex.def Info: ./ch1_figures/PSD_block.png used on input line 132.
 (pdftex.def)             Requested size: 446.72238pt x 337.86485pt.
  [2 <./ch1_figures/PSD_block.png>]
-<./ch1_figures/PSD_channel.png, id=306, 287.55853pt x 307.1475pt>
+<./ch1_figures/PSD_channel.png, id=309, 287.55853pt x 307.1475pt>
 File: ./ch1_figures/PSD_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_channel.png>
-Package pdftex.def Info: ./ch1_figures/PSD_channel.png used on input line 145.
+Package pdftex.def Info: ./ch1_figures/PSD_channel.png used on input line 146.
 (pdftex.def)             Requested size: 287.55783pt x 307.14674pt.
 
-<./ch1_figures/PSD_sub_channel.png, id=307, 343.5234pt x 407.121pt>
+<./ch1_figures/PSD_sub_channel.png, id=310, 343.5234pt x 407.121pt>
 File: ./ch1_figures/PSD_sub_channel.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_sub_channel.png>
 Package pdftex.def Info: ./ch1_figures/PSD_sub_channel.png used on input line 1
-53.
+54.
 (pdftex.def)             Requested size: 446.58035pt x 529.25725pt.
  [3] [4 <./ch1_figures/PSD_channel.png>] [5 <./ch1_figures/PSD_sub_channel.png>
 ] [6]
-<./ch1_figures/PSD_system.png, id=335, 547.8066pt x 355.5684pt>
+<./ch1_figures/PSD_system.png, id=337, 547.8066pt x 355.5684pt>
 File: ./ch1_figures/PSD_system.png Graphic file (type png)
 
 <use ./ch1_figures/PSD_system.png>
-Package pdftex.def Info: ./ch1_figures/PSD_system.png used on input line 196.
+Package pdftex.def Info: ./ch1_figures/PSD_system.png used on input line 197.
 (pdftex.def)             Requested size: 438.24586pt x 284.4551pt.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
@@ -733,165 +733,170 @@ Missing character: There is no ì in font cmr12!
 Chapter 2.
 [10
 
-] [11] <./ch2_figures/channel_block.png, id=374, 960.58875pt x 330.23375pt>
+] [11] <./ch2_figures/channel_block.png, id=376, 960.58875pt x 330.23375pt>
 File: ./ch2_figures/channel_block.png Graphic file (type png)
 
 <use ./ch2_figures/channel_block.png>
-Package pdftex.def Info: ./ch2_figures/channel_block.png used on input line 264
+Package pdftex.def Info: ./ch2_figures/channel_block.png used on input line 265
 .
 (pdftex.def)             Requested size: 451.47678pt x 155.20987pt.
  [12 <./ch2_figures/channel_block.png>]
-<./ch2_figures/common_block.png, id=381, 824.07875pt x 673.51625pt>
+<./ch2_figures/common_block.png, id=383, 824.07875pt x 673.51625pt>
 File: ./ch2_figures/common_block.png Graphic file (type png)
 
 <use ./ch2_figures/common_block.png>
-Package pdftex.def Info: ./ch2_figures/common_block.png used on input line 276.
+Package pdftex.def Info: ./ch2_figures/common_block.png used on input line 277.
 
 (pdftex.def)             Requested size: 412.03836pt x 336.7573pt.
 
-<./ch2_figures/data_bus.png, id=383, 420.57124pt x 109.40875pt>
+<./ch2_figures/data_bus.png, id=385, 420.57124pt x 109.40875pt>
 File: ./ch2_figures/data_bus.png Graphic file (type png)
 
 <use ./ch2_figures/data_bus.png>
-Package pdftex.def Info: ./ch2_figures/data_bus.png used on input line 286.
+Package pdftex.def Info: ./ch2_figures/data_bus.png used on input line 287.
 (pdftex.def)             Requested size: 294.39786pt x 76.58559pt.
  [13] [14 <./ch2_figures/common_block.png> <./ch2_figures/data_bus.png>]
-<./ch2_figures/zcd.png, id=396, 969.6225pt x 272.01625pt>
+<./ch2_figures/zcd.png, id=398, 969.6225pt x 272.01625pt>
 File: ./ch2_figures/zcd.png Graphic file (type png)
 
 <use ./ch2_figures/zcd.png>
-Package pdftex.def Info: ./ch2_figures/zcd.png used on input line 298.
+Package pdftex.def Info: ./ch2_figures/zcd.png used on input line 299.
 (pdftex.def)             Requested size: 436.3261pt x 122.40617pt.
  [15 <./ch2_figures/zcd.png>]
-<./ch2_figures/oneshot.png, id=405, 660.4675pt x 277.035pt>
+<./ch2_figures/oneshot.png, id=407, 660.4675pt x 277.035pt>
 File: ./ch2_figures/oneshot.png Graphic file (type png)
 
 <use ./ch2_figures/oneshot.png>
-Package pdftex.def Info: ./ch2_figures/oneshot.png used on input line 309.
+Package pdftex.def Info: ./ch2_figures/oneshot.png used on input line 310.
 (pdftex.def)             Requested size: 429.29878pt x 180.0706pt.
  [16 <./ch2_figures/oneshot.png>]
-<./ch2_figures/output.png, id=412, 503.8825pt x 122.4575pt>
+<./ch2_figures/output.png, id=414, 503.8825pt x 122.4575pt>
 File: ./ch2_figures/output.png Graphic file (type png)
 
 <use ./ch2_figures/output.png>
-Package pdftex.def Info: ./ch2_figures/output.png used on input line 318.
+Package pdftex.def Info: ./ch2_figures/output.png used on input line 319.
 (pdftex.def)             Requested size: 352.71535pt x 85.71965pt.
 
-<../data/modes.png, id=414, 1251.67625pt x 381.425pt>
+<../data/modes.png, id=416, 1251.67625pt x 381.425pt>
 File: ../data/modes.png Graphic file (type png)
  <use ../data/modes.png>
-Package pdftex.def Info: ../data/modes.png used on input line 327.
+Package pdftex.def Info: ../data/modes.png used on input line 328.
 (pdftex.def)             Requested size: 438.09325pt x 133.50075pt.
 
-<./ch2_figures/pinout.png, id=415, 929.4725pt x 821.0675pt>
+<./ch2_figures/pinout.png, id=417, 929.4725pt x 821.0675pt>
 File: ./ch2_figures/pinout.png Graphic file (type png)
 
 <use ./ch2_figures/pinout.png>
-Package pdftex.def Info: ./ch2_figures/pinout.png used on input line 334.
+Package pdftex.def Info: ./ch2_figures/pinout.png used on input line 335.
 (pdftex.def)             Requested size: 325.32025pt x 287.37793pt.
  [17 <./ch2_figures/output.png> <../data/modes.png>] [18 <./ch2_figures/pinout.
 png>]
 Chapter 3.
 [19
 
-] <./ch3_figures/Register.png, id=433, 900.36375pt x 588.1975pt>
+] <./ch3_figures/Register.png, id=435, 900.36375pt x 588.1975pt>
 File: ./ch3_figures/Register.png Graphic file (type png)
 
 <use ./ch3_figures/Register.png>
-Package pdftex.def Info: ./ch3_figures/Register.png used on input line 417.
+Package pdftex.def Info: ./ch3_figures/Register.png used on input line 418.
 (pdftex.def)             Requested size: 405.15994pt x 264.68643pt.
  [20] [21 <./ch3_figures/Register.png>]
-<../data/bandgap_temp.png, id=449, 1434.86063pt x 654.19406pt>
+<./ch3_figures/trim.png, id=449, 695.59875pt x 437.635pt>
+File: ./ch3_figures/trim.png Graphic file (type png)
+
+<use ./ch3_figures/trim.png>
+Package pdftex.def Info: ./ch3_figures/trim.png used on input line 434.
+(pdftex.def)             Requested size: 208.68123pt x 131.2915pt.
+ [22 <./ch3_figures/trim.png>]
+<../data/bandgap_temp.png, id=458, 1434.86063pt x 654.19406pt>
 File: ../data/bandgap_temp.png Graphic file (type png)
 
 <use ../data/bandgap_temp.png>
-Package pdftex.def Info: ../data/bandgap_temp.png used on input line 436.
+Package pdftex.def Info: ../data/bandgap_temp.png used on input line 445.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
- [22]
-<../data/ptat.png, id=457, 1434.86063pt x 618.05907pt>
+
+<../data/ptat.png, id=461, 1434.86063pt x 618.05907pt>
 File: ../data/ptat.png Graphic file (type png)
  <use ../data/ptat.png>
-Package pdftex.def Info: ../data/ptat.png used on input line 446.
+Package pdftex.def Info: ../data/ptat.png used on input line 455.
 (pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
 
 [23 <../data/bandgap_temp.png>]
-<../LTspice_Drawings/ztc_iref/circuit.png, id=466, 1233.408pt x 593.417pt>
+<../LTspice_Drawings/ztc_iref/circuit.png, id=470, 1233.408pt x 593.417pt>
 File: ../LTspice_Drawings/ztc_iref/circuit.png Graphic file (type png)
 
 <use ../LTspice_Drawings/ztc_iref/circuit.png>
 Package pdftex.def Info: ../LTspice_Drawings/ztc_iref/circuit.png used on input
- line 457.
+ line 466.
 (pdftex.def)             Requested size: 444.02655pt x 213.62994pt.
-
-<./ch3_figures/ztc_sizes.png, id=467, 1107.13625pt x 95.35625pt>
+ [24 <../data/ptat.png>]
+<./ch3_figures/ztc_sizes.png, id=478, 1107.13625pt x 95.35625pt>
 File: ./ch3_figures/ztc_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/ztc_sizes.png>
-Package pdftex.def Info: ./ch3_figures/ztc_sizes.png used on input line 464.
+Package pdftex.def Info: ./ch3_figures/ztc_sizes.png used on input line 473.
 (pdftex.def)             Requested size: 387.5035pt x 33.37517pt.
 
-<../data/ztc.png, id=468, 1434.86063pt x 654.19406pt>
+<../data/ztc.png, id=479, 1434.86063pt x 654.19406pt>
 File: ../data/ztc.png Graphic file (type png)
  <use ../data/ztc.png>
-Package pdftex.def Info: ../data/ztc.png used on input line 471.
+Package pdftex.def Info: ../data/ztc.png used on input line 480.
 (pdftex.def)             Requested size: 430.46152pt x 196.25972pt.
 
-[24 <../data/ptat.png>] [25 <../LTspice_Drawings/ztc_iref/circuit.png> <./ch3_f
-igures/ztc_sizes.png> <../data/ztc.png>]
-<./ch3_figures/dac.png, id=486, 807.015pt x 249.93375pt>
+[25 <../LTspice_Drawings/ztc_iref/circuit.png> <./ch3_figures/ztc_sizes.png>]
+<./ch3_figures/dac.png, id=489, 807.015pt x 249.93375pt>
 File: ./ch3_figures/dac.png Graphic file (type png)
 
 <use ./ch3_figures/dac.png>
-Package pdftex.def Info: ./ch3_figures/dac.png used on input line 487.
+Package pdftex.def Info: ./ch3_figures/dac.png used on input line 496.
 (pdftex.def)             Requested size: 443.85962pt x 137.46397pt.
- [26]
-<../LTspice_Drawings/dac/dac_stage.png, id=495, 849.574pt x 673.717pt>
+ [26 <../data/ztc.png>]
+<../LTspice_Drawings/dac/dac_stage.png, id=499, 849.574pt x 673.717pt>
 File: ../LTspice_Drawings/dac/dac_stage.png Graphic file (type png)
 
 <use ../LTspice_Drawings/dac/dac_stage.png>
 Package pdftex.def Info: ../LTspice_Drawings/dac/dac_stage.png used on input li
-ne 497.
+ne 506.
 (pdftex.def)             Requested size: 339.82358pt x 269.48203pt.
 
-<./ch3_figures/dac_bit_sizes.png, id=496, 1103.12125pt x 395.4775pt>
+<./ch3_figures/dac_bit_sizes.png, id=500, 1103.12125pt x 395.4775pt>
 File: ./ch3_figures/dac_bit_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/dac_bit_sizes.png>
-Package pdftex.def Info: ./ch3_figures/dac_bit_sizes.png used on input line 504
+Package pdftex.def Info: ./ch3_figures/dac_bit_sizes.png used on input line 513
 .
 (pdftex.def)             Requested size: 441.24068pt x 158.18819pt.
 
-<../LTspice_Drawings/dac/dac_out.png, id=497, 670.505pt x 703.428pt>
+<../LTspice_Drawings/dac/dac_out.png, id=501, 670.505pt x 703.428pt>
 File: ../LTspice_Drawings/dac/dac_out.png Graphic file (type png)
 
 <use ../LTspice_Drawings/dac/dac_out.png>
 Package pdftex.def Info: ../LTspice_Drawings/dac/dac_out.png used on input line
- 511.
+ 520.
 (pdftex.def)             Requested size: 402.3061pt x 422.06006pt.
-
-<./ch3_figures/dac_out_sizes.png, id=498, 918.43124pt x 468.75125pt>
+ [27 <./ch3_figures/dac.png> <./ch3_figures/dac_bit_sizes.png>]
+<./ch3_figures/dac_out_sizes.png, id=508, 918.43124pt x 468.75125pt>
 File: ./ch3_figures/dac_out_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/dac_out_sizes.png>
-Package pdftex.def Info: ./ch3_figures/dac_out_sizes.png used on input line 518
+Package pdftex.def Info: ./ch3_figures/dac_out_sizes.png used on input line 527
 .
 (pdftex.def)             Requested size: 431.66275pt x 220.31311pt.
- [27 <./ch3_figures/dac.png> <../LTspice_Drawings/dac/dac_stage.png>] [28 <./ch
-3_figures/dac_bit_sizes.png> <./ch3_figures/dac_out_sizes.png>] [29 <../LTspice
-_Drawings/dac/dac_out.png>]
-<../LTspice_Drawings/multiplicity/mult_buffer.png, id=516, 709.049pt x 585.387p
+ [28 <../LTspice_Drawings/dac/dac_stage.png> <./ch3_figures/dac_out_sizes.png>]
+ [29 <../LTspice_Drawings/dac/dac_out.png>]
+<../LTspice_Drawings/multiplicity/mult_buffer.png, id=520, 709.049pt x 585.387p
 t>
 File: ../LTspice_Drawings/multiplicity/mult_buffer.png Graphic file (type png)
  <use ../LTspice_Drawings/multiplicity/mult_buffer.png>
 Package pdftex.def Info: ../LTspice_Drawings/multiplicity/mult_buffer.png used 
-on input line 529.
+on input line 538.
 (pdftex.def)             Requested size: 319.06909pt x 263.4217pt.
 
-<./ch3_figures/mult_sizes.png, id=517, 1099.10625pt x 172.645pt>
+<./ch3_figures/mult_sizes.png, id=521, 1099.10625pt x 172.645pt>
 File: ./ch3_figures/mult_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/mult_sizes.png>
-Package pdftex.def Info: ./ch3_figures/mult_sizes.png used on input line 536.
+Package pdftex.def Info: ./ch3_figures/mult_sizes.png used on input line 545.
 (pdftex.def)             Requested size: 439.6347pt x 69.05676pt.
  [30 <../LTspice_Drawings/multiplicity/mult_buffer.png>]
 Missing character: There is no ‚ in font cmr12!
@@ -919,164 +924,165 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-<../LTspice_Drawings/nowlin/nowlin_short.png, id=527, 1443.14156pt x 711.4078pt
+<../LTspice_Drawings/nowlin/nowlin_short.png, id=531, 1443.14156pt x 711.4078pt
 >
 File: ../LTspice_Drawings/nowlin/nowlin_short.png Graphic file (type png)
  <use ../LTspice_Drawings/nowlin/nowlin_short.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/nowlin_short.png used on in
-put line 552.
+put line 561.
 (pdftex.def)             Requested size: 389.65343pt x 192.08267pt.
  [31 <./ch3_figures/mult_sizes.png>]
-<../LTspice_Drawings/nowlin/nowlin_long.png, id=532, 1443.14156pt x 691.08188pt
+<../LTspice_Drawings/nowlin/nowlin_long.png, id=536, 1443.14156pt x 691.08188pt
 >
 File: ../LTspice_Drawings/nowlin/nowlin_long.png Graphic file (type png)
  <use ../LTspice_Drawings/nowlin/nowlin_long.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/nowlin_long.png used on inp
-ut line 559.
+ut line 568.
 (pdftex.def)             Requested size: 389.65343pt x 186.59459pt.
  [32 <../LTspice_Drawings/nowlin/nowlin_short.png> <../LTspice_Drawings/nowlin/
 nowlin_long.png>]
-<./ch2_figures/nowlin.png, id=540, 794.97pt x 614.295pt>
+<./ch2_figures/nowlin.png, id=544, 794.97pt x 614.295pt>
 File: ./ch2_figures/nowlin.png Graphic file (type png)
 
 <use ./ch2_figures/nowlin.png>
-Package pdftex.def Info: ./ch2_figures/nowlin.png used on input line 584.
+Package pdftex.def Info: ./ch2_figures/nowlin.png used on input line 593.
 (pdftex.def)             Requested size: 357.7332pt x 276.43019pt.
  [33] [34 <./ch2_figures/nowlin.png>]
-<../LTspice_Drawings/nowlin/pcap.png, id=559, 707.443pt x 648.824pt>
+<../LTspice_Drawings/nowlin/pcap.png, id=563, 707.443pt x 648.824pt>
 File: ../LTspice_Drawings/nowlin/pcap.png Graphic file (type png)
 
 <use ../LTspice_Drawings/nowlin/pcap.png>
 Package pdftex.def Info: ../LTspice_Drawings/nowlin/pcap.png used on input line
- 598.
+ 607.
 (pdftex.def)             Requested size: 282.97218pt x 259.525pt.
 
-<../data/pcap.png, id=560, 1227.58624pt x 584.1825pt>
+<../data/pcap.png, id=564, 1227.58624pt x 584.1825pt>
 File: ../data/pcap.png Graphic file (type png)
  <use ../data/pcap.png>
-Package pdftex.def Info: ../data/pcap.png used on input line 604.
+Package pdftex.def Info: ../data/pcap.png used on input line 613.
 (pdftex.def)             Requested size: 429.66162pt x 204.46693pt.
 
 [35 <../LTspice_Drawings/nowlin/pcap.png>] [36 <../data/pcap.png>]
-<../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf, id=576, 750.805p
+<../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf, id=580, 750.805p
 t x 321.2pt>
 File: ../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf Graphic file
  (type pdf)
 
 <use ../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/small_gm_o
-ta.pdf used on input line 635.
+ta.pdf used on input line 644.
 (pdftex.def)             Requested size: 600.6448pt x 256.96034pt.
-
-<../Design_Reports/CFD_circuit_report/images/le_gm.pdf, id=578, 740.7675pt x 36
-1.35pt>
-File: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf Graphic file (type 
-pdf)
- <use ../Design_Reports/CFD_circuit_report/images/le_gm.pdf>
-Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf 
-used on input line 645.
-(pdftex.def)             Requested size: 407.42339pt x 198.74312pt.
-
-<./ch3_figures/d2s_sizes.png, id=579, 1102.1175pt x 462.72874pt>
-File: ./ch3_figures/d2s_sizes.png Graphic file (type png)
-
-<use ./ch3_figures/d2s_sizes.png>
-Package pdftex.def Info: ./ch3_figures/d2s_sizes.png used on input line 652.
-(pdftex.def)             Requested size: 385.7469pt x 161.95749pt.
- [37 <./ch3_figures/d2s_sizes.png>] [38 <../Design_Reports/CFD_circuit_report/i
-mages/small_gm_ota.pdf>]
-<../Design_Reports/CFD_circuit_report/images/le_cmp.pdf, id=598, 728.7225pt x 2
-96.10625pt>
-File: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf Graphic file (type
- pdf)
- <use ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf>
-Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf
- used on input line 661.
-(pdftex.def)             Requested size: 400.79861pt x 162.85893pt.
-
-<./ch3_figures/le_cmp_sizes.png, id=599, 1103.12125pt x 354.32375pt>
-File: ./ch3_figures/le_cmp_sizes.png Graphic file (type png)
-
-<use ./ch3_figures/le_cmp_sizes.png>
-Package pdftex.def Info: ./ch3_figures/le_cmp_sizes.png used on input line 668.
-
-(pdftex.def)             Requested size: 386.09822pt x 124.01517pt.
- [39 <../Design_Reports/CFD_circuit_report/images/le_gm.pdf> <../Design_Reports
-/CFD_circuit_report/images/le_cmp.pdf>]
-[40 <./ch3_figures/le_cmp_sizes.png>]
-<./ch3_figures/zc_sizes.png, id=628, 1105.12875pt x 247.92625pt>
+ [37]
+[38 <../Design_Reports/CFD_circuit_report/images/small_gm_ota.pdf>]
+<./ch3_figures/zc_sizes.png, id=603, 1105.12875pt x 247.92625pt>
 File: ./ch3_figures/zc_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/zc_sizes.png>
-Package pdftex.def Info: ./ch3_figures/zc_sizes.png used on input line 688.
+Package pdftex.def Info: ./ch3_figures/zc_sizes.png used on input line 664.
 (pdftex.def)             Requested size: 386.80086pt x 86.77548pt.
 
-<../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf, id=629, 658.46pt x 
+<../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf, id=604, 658.46pt x 
 573.14125pt>
 File: ../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf Graphic file (t
 ype pdf)
  <use ../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/zc_dm_amp.
-pdf used on input line 695.
+pdf used on input line 671.
 (pdftex.def)             Requested size: 329.2292pt x 286.56992pt.
 
-[41 <./ch3_figures/zc_sizes.png>] [42 <../Design_Reports/CFD_circuit_report/ima
+[39 <./ch3_figures/zc_sizes.png>] [40 <../Design_Reports/CFD_circuit_report/ima
 ges/zc_dm_amp.pdf>]
-<../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf, id=648, 719.68875pt x 
+<../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf, id=624, 719.68875pt x 
 360.34625pt>
 File: ../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf Graphic file (type
  pdf)
  <use ../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf
- used on input line 714.
+ used on input line 690.
 (pdftex.def)             Requested size: 431.81659pt x 216.20941pt.
 
-<./ch3_figures/zc_cmp_sizes.png, id=650, 1103.12125pt x 354.32375pt>
+<./ch3_figures/zc_cmp_sizes.png, id=626, 1103.12125pt x 354.32375pt>
 File: ./ch3_figures/zc_cmp_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/zc_cmp_sizes.png>
-Package pdftex.def Info: ./ch3_figures/zc_cmp_sizes.png used on input line 723.
+Package pdftex.def Info: ./ch3_figures/zc_cmp_sizes.png used on input line 699.
 
 (pdftex.def)             Requested size: 386.09822pt x 124.01517pt.
- [43 <../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf>]
-<./ch3_figures/oneshot_circuit.png, id=665, 861.2175pt x 287.0725pt>
+ [41 <./ch3_figures/zc_cmp_sizes.png>]
+<../Design_Reports/CFD_circuit_report/images/le_gm.pdf, id=634, 740.7675pt x 36
+1.35pt>
+File: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf Graphic file (type 
+pdf)
+ <use ../Design_Reports/CFD_circuit_report/images/le_gm.pdf>
+Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_gm.pdf 
+used on input line 710.
+(pdftex.def)             Requested size: 407.42339pt x 198.74312pt.
+
+<./ch3_figures/d2s_sizes.png, id=635, 1102.1175pt x 462.72874pt>
+File: ./ch3_figures/d2s_sizes.png Graphic file (type png)
+
+<use ./ch3_figures/d2s_sizes.png>
+Package pdftex.def Info: ./ch3_figures/d2s_sizes.png used on input line 717.
+(pdftex.def)             Requested size: 385.7469pt x 161.95749pt.
+
+<../Design_Reports/CFD_circuit_report/images/le_cmp.pdf, id=637, 728.7225pt x 2
+96.10625pt>
+File: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf Graphic file (type
+ pdf)
+ <use ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf>
+Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/le_cmp.pdf
+ used on input line 726.
+(pdftex.def)             Requested size: 400.79861pt x 162.85893pt.
+
+[42 <../Design_Reports/CFD_circuit_report/images/zc_cmp.pdf>] [43 <../Design_Re
+ports/CFD_circuit_report/images/le_gm.pdf> <./ch3_figures/d2s_sizes.png>]
+<./ch3_figures/le_cmp_sizes.png, id=660, 1103.12125pt x 354.32375pt>
+File: ./ch3_figures/le_cmp_sizes.png Graphic file (type png)
+
+<use ./ch3_figures/le_cmp_sizes.png>
+Package pdftex.def Info: ./ch3_figures/le_cmp_sizes.png used on input line 733.
+
+(pdftex.def)             Requested size: 386.09822pt x 124.01517pt.
+
+<./ch3_figures/oneshot_circuit.png, id=662, 861.2175pt x 287.0725pt>
 File: ./ch3_figures/oneshot_circuit.png Graphic file (type png)
 
 <use ./ch3_figures/oneshot_circuit.png>
 Package pdftex.def Info: ./ch3_figures/oneshot_circuit.png used on input line 7
-33.
+43.
 (pdftex.def)             Requested size: 430.6077pt x 143.53589pt.
- [44 <./ch3_figures/zc_cmp_sizes.png> <./ch3_figures/oneshot_circuit.png>]
-<./ch3_figures/ramp.png, id=672, 1434.86063pt x 618.05907pt>
+ [44 <../Design_Reports/CFD_circuit_report/images/le_cmp.pdf> <./ch3_figures/le
+_cmp_sizes.png>]
+<./ch3_figures/ramp.png, id=675, 1434.86063pt x 618.05907pt>
 File: ./ch3_figures/ramp.png Graphic file (type png)
 
 <use ./ch3_figures/ramp.png>
-Package pdftex.def Info: ./ch3_figures/ramp.png used on input line 742.
+Package pdftex.def Info: ./ch3_figures/ramp.png used on input line 752.
 (pdftex.def)             Requested size: 430.46152pt x 185.41914pt.
- [45 <./ch3_figures/ramp.png>]
-<../data/test_points.png, id=681, 1238.6275pt x 624.3325pt>
+ [45 <./ch3_figures/oneshot_circuit.png>] [46 <./ch3_figures/ramp.png>]
+<../data/test_points.png, id=689, 1238.6275pt x 624.3325pt>
 File: ../data/test_points.png Graphic file (type png)
 
 <use ../data/test_points.png>
-Package pdftex.def Info: ../data/test_points.png used on input line 757.
+Package pdftex.def Info: ../data/test_points.png used on input line 767.
 (pdftex.def)             Requested size: 247.72112pt x 124.86429pt.
- [46]
-<../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png, id=688, 806.212pt x 629.552pt
+ [47 <../data/test_points.png>]
+<../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png, id=697, 806.212pt x 629.552pt
 >
 File: ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png Graphic file (type png)
  <use ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png>
 Package pdftex.def Info: ../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png used o
-n input line 767.
+n input line 777.
 (pdftex.def)             Requested size: 362.79205pt x 283.29578pt.
 
-<./ch3_figures/nor_sizes.png, id=689, 758.835pt x 158.5925pt>
+<./ch3_figures/nor_sizes.png, id=698, 758.835pt x 158.5925pt>
 File: ./ch3_figures/nor_sizes.png Graphic file (type png)
 
 <use ./ch3_figures/nor_sizes.png>
-Package pdftex.def Info: ./ch3_figures/nor_sizes.png used on input line 774.
+Package pdftex.def Info: ./ch3_figures/nor_sizes.png used on input line 784.
 (pdftex.def)             Requested size: 265.59624pt x 55.5082pt.
- [47 <../data/test_points.png> <./ch3_figures/nor_sizes.png>] [48 <../LTspice_D
-rawings/pseudo-nmos/pseudo-nmos.png>]
+ [48 <../LTspice_Drawings/pseudo-nmos/pseudo-nmos.png> <./ch3_figures/nor_sizes
+.png>]
 Chapter 4.
 [49
 
@@ -1090,11 +1096,11 @@ File: lstlang2.sty 2004/09/05 1.3 listings language file
 File: lstlang3.sty 2004/09/05 1.3 listings language file
 )
 (./code/example.vcd [50]) [51] (./code/example.pwl) [52]
-<./ch4_figures/walk_table.png, id=771, 236.38312pt x 112.92188pt>
+<./ch4_figures/walk_table.png, id=775, 236.38312pt x 112.92188pt>
 File: ./ch4_figures/walk_table.png Graphic file (type png)
 
 <use ./ch4_figures/walk_table.png>
-Package pdftex.def Info: ./ch4_figures/walk_table.png used on input line 862.
+Package pdftex.def Info: ./ch4_figures/walk_table.png used on input line 872.
 (pdftex.def)             Requested size: 165.46704pt x 79.04475pt.
  [53 <./ch4_figures/walk_table.png>]
 
@@ -1102,14 +1108,14 @@ pdfTeX warning: pdflatex (file ../Design_Reports/CFD_circuit_report/images/typi
 cal_walk.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 > allowed
 
-<../Design_Reports/CFD_circuit_report/images/typical_walk.pdf, id=783, 582.175p
+<../Design_Reports/CFD_circuit_report/images/typical_walk.pdf, id=787, 582.175p
 t x 434.62375pt>
 File: ../Design_Reports/CFD_circuit_report/images/typical_walk.pdf Graphic file
  (type pdf)
 
 <use ../Design_Reports/CFD_circuit_report/images/typical_walk.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/typical_wa
-lk.pdf used on input line 871.
+lk.pdf used on input line 881.
 (pdftex.def)             Requested size: 407.51973pt x 304.23454pt.
 
 
@@ -1117,133 +1123,132 @@ pdfTeX warning: pdflatex (file ../Design_Reports/CFD_circuit_report/images/summ
 ary_walk.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 > allowed
 
-<../Design_Reports/CFD_circuit_report/images/summary_walk.pdf, id=784, 589.4522
+<../Design_Reports/CFD_circuit_report/images/summary_walk.pdf, id=788, 589.4522
 pt x 453.94594pt>
 File: ../Design_Reports/CFD_circuit_report/images/summary_walk.pdf Graphic file
  (type pdf)
 
 <use ../Design_Reports/CFD_circuit_report/images/summary_walk.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/summary_wa
-lk.pdf used on input line 878.
+lk.pdf used on input line 888.
 (pdftex.def)             Requested size: 412.61372pt x 317.75998pt.
  [54 <../Design_Reports/CFD_circuit_report/images/typical_walk.pdf>] [55 <../De
 sign_Reports/CFD_circuit_report/images/summary_walk.pdf>]
-<../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf, id=805, 589.
+<../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf, id=809, 589.
 20125pt x 435.6275pt>
 File: ../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf Graphic 
 file (type pdf)
 
 <use ../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/jitter_fas
-t_mode.pdf used on input line 893.
+t_mode.pdf used on input line 903.
 (pdftex.def)             Requested size: 412.43805pt x 304.93716pt.
 
-<../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf, id=806, 577.
+<../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf, id=810, 577.
 15625pt x 444.66125pt>
 File: ../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf Graphic 
 file (type pdf)
 
 <use ../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf>
 Package pdftex.def Info: ../Design_Reports/CFD_circuit_report/images/jitter_slo
-w_mode.pdf used on input line 901.
+w_mode.pdf used on input line 911.
 (pdftex.def)             Requested size: 404.0066pt x 311.26074pt.
  [56 <../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf>] [57 <.
 ./Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf>]
-<./ch4_figures/lockout_plot.png, id=830, 674.52pt x 408.77719pt>
+<./ch4_figures/lockout_plot.png, id=834, 674.52pt x 408.77719pt>
 File: ./ch4_figures/lockout_plot.png Graphic file (type png)
 
 <use ./ch4_figures/lockout_plot.png>
-Package pdftex.def Info: ./ch4_figures/lockout_plot.png used on input line 916.
+Package pdftex.def Info: ./ch4_figures/lockout_plot.png used on input line 927.
 
 (pdftex.def)             Requested size: 424.94984pt x 257.53099pt.
  [58 <./ch4_figures/lockout_plot.png>]
-<../data/oneshot_mc.png, id=839, 1048.91875pt x 299.1175pt>
+<../data/oneshot_mc.png, id=843, 1048.91875pt x 299.1175pt>
 File: ../data/oneshot_mc.png Graphic file (type png)
 
 <use ../data/oneshot_mc.png>
-Package pdftex.def Info: ../data/oneshot_mc.png used on input line 925.
+Package pdftex.def Info: ../data/oneshot_mc.png used on input line 936.
 (pdftex.def)             Requested size: 262.22903pt x 74.77919pt.
 
-<./ch4_figures/dnl_summary.png, id=844, 1108.14pt x 897.3525pt>
+<./ch4_figures/dnl_summary.png, id=848, 1108.14pt x 897.3525pt>
 File: ./ch4_figures/dnl_summary.png Graphic file (type png)
 
 <use ./ch4_figures/dnl_summary.png>
-Package pdftex.def Info: ./ch4_figures/dnl_summary.png used on input line 937.
+Package pdftex.def Info: ./ch4_figures/dnl_summary.png used on input line 948.
 (pdftex.def)             Requested size: 343.51985pt x 278.17639pt.
  [59 <../data/oneshot_mc.png>]
-<./ch4_figures/inl_summary.png, id=849, 1108.14pt x 897.3525pt>
+<./ch4_figures/inl_summary.png, id=853, 1108.14pt x 897.3525pt>
 File: ./ch4_figures/inl_summary.png Graphic file (type png)
 
 <use ./ch4_figures/inl_summary.png>
-Package pdftex.def Info: ./ch4_figures/inl_summary.png used on input line 944.
+Package pdftex.def Info: ./ch4_figures/inl_summary.png used on input line 955.
 (pdftex.def)             Requested size: 343.51985pt x 278.17639pt.
 
-<./ch4_figures/dnl_worst.png, id=852, 1115.16624pt x 902.37125pt>
+<./ch4_figures/dnl_worst.png, id=856, 1115.16624pt x 902.37125pt>
 File: ./ch4_figures/dnl_worst.png Graphic file (type png)
 
 <use ./ch4_figures/dnl_worst.png>
-Package pdftex.def Info: ./ch4_figures/dnl_worst.png used on input line 952.
+Package pdftex.def Info: ./ch4_figures/dnl_worst.png used on input line 963.
 (pdftex.def)             Requested size: 334.55246pt x 270.71346pt.
 
-<./ch4_figures/dac_average.png, id=853, 1115.16624pt x 902.37125pt>
+<./ch4_figures/dac_average.png, id=857, 1115.16624pt x 902.37125pt>
 File: ./ch4_figures/dac_average.png Graphic file (type png)
 
 <use ./ch4_figures/dac_average.png>
-Package pdftex.def Info: ./ch4_figures/dac_average.png used on input line 959.
+Package pdftex.def Info: ./ch4_figures/dac_average.png used on input line 970.
 (pdftex.def)             Requested size: 334.55246pt x 270.71346pt.
-
-<./ch4_figures/average_power.png, id=856, 386.94562pt x 402.75468pt>
+ [60 <./ch4_figures/dnl_summary.png>]
+[61 <./ch4_figures/inl_summary.png> <./ch4_figures/dnl_worst.png>]
+<./ch4_figures/average_power.png, id=869, 386.94562pt x 402.75468pt>
 File: ./ch4_figures/average_power.png Graphic file (type png)
 
 <use ./ch4_figures/average_power.png>
-Package pdftex.def Info: ./ch4_figures/average_power.png used on input line 971
+Package pdftex.def Info: ./ch4_figures/average_power.png used on input line 995
 .
 (pdftex.def)             Requested size: 386.94467pt x 402.7537pt.
- [60 <./ch4_figures/dnl_summary.png>]
-[61 <./ch4_figures/inl_summary.png> <./ch4_figures/dnl_worst.png>]
-<./ch4_figures/peak_power.png, id=865, 376.40625pt x 416.30531pt>
+ [62 <./ch4_figures/dac_average.png>]
+<./ch4_figures/peak_power.png, id=874, 376.40625pt x 416.30531pt>
 File: ./ch4_figures/peak_power.png Graphic file (type png)
 
 <use ./ch4_figures/peak_power.png>
-Package pdftex.def Info: ./ch4_figures/peak_power.png used on input line 978.
+Package pdftex.def Info: ./ch4_figures/peak_power.png used on input line 1002.
 (pdftex.def)             Requested size: 376.40532pt x 416.30429pt.
-
-<./ch4_figures/area_usage.png, id=868, 330.48468pt x 316.93407pt>
+ [63 <./ch4_figures/average_power.png>]
+[64 <./ch4_figures/peak_power.png>]
+<./ch4_figures/area_usage.png, id=887, 330.48468pt x 316.93407pt>
 File: ./ch4_figures/area_usage.png Graphic file (type png)
 
 <use ./ch4_figures/area_usage.png>
-Package pdftex.def Info: ./ch4_figures/area_usage.png used on input line 988.
+Package pdftex.def Info: ./ch4_figures/area_usage.png used on input line 1012.
 (pdftex.def)             Requested size: 396.57964pt x 380.31897pt.
 
-<./ch4_figures/cfd_chip.png, id=869, 922.94812pt x 510.40688pt>
+<./ch4_figures/cfd_chip.png, id=888, 922.94812pt x 510.40688pt>
 File: ./ch4_figures/cfd_chip.png Graphic file (type png)
 
 <use ./ch4_figures/cfd_chip.png>
-Package pdftex.def Info: ./ch4_figures/cfd_chip.png used on input line 995.
+Package pdftex.def Info: ./ch4_figures/cfd_chip.png used on input line 1019.
 (pdftex.def)             Requested size: 553.77315pt x 306.24648pt.
- [62 <./ch4_figures/dac_average.png>] [63 <./ch4_figures/average_power.png>] [6
-4 <./ch4_figures/peak_power.png>] [65 <./ch4_figures/area_usage.png>] [66 <./ch
-4_figures/cfd_chip.png>]
+ [65 <./ch4_figures/area_usage.png>] [66 <./ch4_figures/cfd_chip.png>]
 Chapter 5.
 [67
 
 ] [68] (./Orabutt_Thesis.bbl [69
 
 ] [70]) [71]
-\centeringAPPENDICIES\\Appendix A.
+\centeringAPPENDICES\\Appendix A.
 (./code/Pulser.va [72
 
 
 ]) [73]
-\centeringAPPENDICIES\\Appendix B.
+\centeringAPPENDICES\\Appendix B.
 (./code/CFD_Tester.va [74
 
 ]) [75]
-\centeringAPPENDICIES\\Appendix C.
+\centeringAPPENDICES\\Appendix C.
 (./code/localparams.vh) [76
 
 ]
-\centeringAPPENDICIES\\Appendix D.
+\centeringAPPENDICES\\Appendix D.
 (./code/verilog_driver_tasks.sv
 Overfull \hbox (22.22255pt too wide) in paragraph at lines 2--3
 [][][][] 
@@ -1447,35 +1452,35 @@ Overfull \hbox (22.22255pt too wide) in paragraph at lines 286--287
  []
 
 [81] [82]) [83]
-\centeringAPPENDICIES\\Appendix E.
+\centeringAPPENDICES\\Appendix E.
 (./code/verilog_driver.sv [84
 
 ] [85] [86] [87]) [88]
-\centeringAPPENDICIES\\Appendix F.
+\centeringAPPENDICES\\Appendix F.
 (./code/verilog_driver_tb.sv [89
 
 ])
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) [90]
-\centeringAPPENDICIES\\Appendix G.
+\centeringAPPENDICES\\Appendix G.
 (./code/vcd2pwl.py [91
 
 ] [92] [93])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1159.
  [94]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1126.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1159.
  (./Orabutt_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1126.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1126.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1159.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1159.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1159.
  ) 
 Here is how much of TeX's memory you used:
- 14109 strings out of 494820
- 215190 string characters out of 3178050
- 634703 words of memory out of 3000000
- 15474 multiletter control sequences out of 15000+200000
- 13959 words of font info for 99 fonts, out of 3000000 for 9000
+ 14119 strings out of 494820
+ 215359 string characters out of 3178050
+ 634895 words of memory out of 3000000
+ 15480 multiletter control sequences out of 15000+200000
+ 14068 words of font info for 100 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
  51i,12n,45p,1315b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
@@ -1492,10 +1497,10 @@ y6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Orabutt_Thesis.pdf (104 pages, 3304647 bytes).
+Output written on Orabutt_Thesis.pdf (104 pages, 3335222 bytes).
 PDF statistics:
- 2659 PDF objects out of 2984 (max. 8388607)
- 2412 compressed objects within 25 object streams
- 1418 named destinations out of 1440 (max. 500000)
- 9464 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2664 PDF objects out of 2984 (max. 8388607)
+ 2416 compressed objects within 25 object streams
+ 1419 named destinations out of 1440 (max. 500000)
+ 9469 words of extra memory for PDF output out of 10000 (max. 10000000)
 
