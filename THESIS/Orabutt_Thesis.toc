@@ -39,28 +39,28 @@
 \contentsline {subsection}{\numberline {3.3.6}Final output generation}{46}{subsection.3.3.6}
 \contentsline {chapter}{\numberline {4.}SIMULATION RESULTS}{49}{chapter.4}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {4.1}Testing Procedure}{49}{section.4.1}
-\contentsline {section}{\numberline {4.2}Verification of Circuits in Common Channel}{52}{section.4.2}
-\contentsline {section}{\numberline {4.3}Walk Characteristics of CFD Circuit}{52}{section.4.3}
-\contentsline {section}{\numberline {4.4}Jitter Performance}{54}{section.4.4}
-\contentsline {section}{\numberline {4.5}Verification of One-Shot}{58}{section.4.5}
-\contentsline {section}{\numberline {4.6}Performance Characterization of DAC}{59}{section.4.6}
-\contentsline {section}{\numberline {4.7}Chip-Level Verification}{60}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Power dissipation}{63}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Chip area usage}{65}{subsection.4.7.2}
-\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{67}{chapter.5}
+\contentsline {section}{\numberline {4.1}Verification of Circuits in Common Channel}{49}{section.4.1}
+\contentsline {section}{\numberline {4.2}Walk Characteristics of CFD Circuit}{49}{section.4.2}
+\contentsline {section}{\numberline {4.3}Jitter Performance}{50}{section.4.3}
+\contentsline {section}{\numberline {4.4}Verification of One-Shot}{55}{section.4.4}
+\contentsline {section}{\numberline {4.5}Performance Characterization of DAC}{56}{section.4.5}
+\contentsline {section}{\numberline {4.6}Chip-Level Verification}{57}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Testing Procedure}{60}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Power dissipation}{64}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Chip area usage}{64}{subsection.4.6.3}
+\contentsline {chapter}{\numberline {5.}SUMMARY, CONCLUSIONS, AND FUTURE WORK}{69}{chapter.5}
 \noindent \vskip \baselineskip \par 
-\contentsline {section}{\numberline {5.1}Summary}{67}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusions}{68}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{68}{section.5.3}
+\contentsline {section}{\numberline {5.1}Summary}{69}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{70}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{70}{section.5.3}
 \noindent \vskip \baselineskip \par 
-\contentsline {part}{REFERENCES}{69}{section*.68}
-\contentsline {part}{APPENDICES}{72}{section*.69}
+\contentsline {part}{REFERENCES}{71}{section*.71}
+\contentsline {part}{APPENDICES}{74}{section*.72}
 \def \tocbaselineskip {0em}
-\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{72}{chapter.A}
-\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{74}{chapter.B}
-\contentsline {chapter}{\numberline {C.}System Verilog global defines}{76}{chapter.C}
-\contentsline {chapter}{\numberline {D.}System Verilog tasks}{77}{chapter.D}
-\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{84}{chapter.E}
-\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{89}{chapter.F}
-\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{91}{chapter.G}
+\contentsline {chapter}{\numberline {A.}Verilog-A pulse generator}{74}{chapter.A}
+\contentsline {chapter}{\numberline {B.}Verilog-A Test fixture}{76}{chapter.B}
+\contentsline {chapter}{\numberline {C.}System Verilog global defines}{78}{chapter.C}
+\contentsline {chapter}{\numberline {D.}System Verilog tasks}{79}{chapter.D}
+\contentsline {chapter}{\numberline {E.}System Verilog test fixture}{86}{chapter.E}
+\contentsline {chapter}{\numberline {F.}System Verilog instantiation}{91}{chapter.F}
+\contentsline {chapter}{\numberline {G.}VCD to PWL python script}{93}{chapter.G}

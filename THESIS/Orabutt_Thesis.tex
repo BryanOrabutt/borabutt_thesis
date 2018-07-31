@@ -118,7 +118,7 @@
 
 \section{Research Background}
 
-The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer's seat. The goal is to develop a "toolbox" of circuits,
+The Integrated Circuits Design Research Laboratory at SIUE and the Nuclear Reactions Group at WUSTL have been working (since 2001) on a family of multi-channel custom integrated circuits.  The group became interested in developing a family of microchips for use in the detection and measurement of ionizing radiation because: (1) the need for high-density signal processing in the low- and intermediate-energy nuclear physics community is widespread, (2) no commercial chips were identified that were capable of doing what the researchers wanted, and (3) the scientists deemed it necessary for the experimenter to be in the designer's seat. The goal is to develop a ``toolbox'' of circuits,
 useful for researchers working with radioactive ion beams, which can be composed in different ways to meet the researchers' evolving needs and desires.
 
  
@@ -185,7 +185,7 @@ and CFD circuits are not on-chip so as to provide greater flexibility.
 
 PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode).
 A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
-problems. First, the TVC circuit could inadvertently be restarted. In Rev. 2, once the rising edge of the "common stop" signal is detected, the TVC cannot restart until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity was greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs (one for each of the chip's analog output pulse trains).
+problems. First, the TVC circuit could inadvertently be restarted. In Rev. 2, once the rising edge of the ``common stop" signal is detected, the TVC cannot restart until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity was greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs (one for each of the chip's analog output pulse trains).
 \par In the latest revision of PSD8C level translators were added to all of the digital pads on the chip. These level translators convert 5 V logic level outputs into 3.3 V logic levels to be used safely by a field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C.
 
 \section{Need for an Integrated Circuit}
@@ -234,7 +234,7 @@ It should support analog pulses of both polarities (relative to analog signal gr
 \item
 It should accommodate analog exponentially shaped pulses with rise time constants ranging from 2 nsec to 192 nsec.
 \item
-It must exhibit "excellent" walk and jitter characteristics for input pulse amplitudes ranging from 15 mV to 1.5 V. The adjective "excellent" will be quantified in a later chapter of this thesis.
+It must exhibit ``excellent" walk and jitter characteristics for input pulse amplitudes ranging from 15 mV to 1.5 V. The adjective ``excellent" will be quantified in a later chapter of this thesis.
 \item
 Pulse repetition rates up to 1 KHz must be accommodated.
 \item
@@ -297,11 +297,18 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \begin{figure}[htbp!]
 \centering
 \includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/zcd.png} 
-\caption{Zero cross discriminator with DC cancellation}
+\caption{Zero cross discriminator with DC offset cancellation}
 \label{fig:zcd}
 \end{figure}
 
-\par The input to the leading-edge discriminator comes from the high-pass filter, or "fast shaper", in the Nowlin circuit. The leading-edge discriminator has a user controllable threshold that is compared against the input from the Nowlin circuit. This threshold will be set just above the noise floor, ensuring that the comparator will only fire in response to a real pulse coming off of a detector and not just inherent noise in the circuit. This threshold can be made negative by applying a logic high (3.3 V) to the \emph{NEG\_POL} input pin. The output of the leading edge discriminator is then used to qualify the zero-cross detector.
+\par The input to the leading-edge discriminator comes from the high-pass filter, or ``fast shaper", in the Nowlin circuit. The leading-edge discriminator (Figure~\ref{fig:led}) has a user controllable threshold that is compared against the input from the Nowlin circuit. This threshold will be set just above the noise floor, ensuring that the comparator will only fire in response to a real pulse coming off of a detector and not just inherent noise in the circuit. This threshold can be made negative by applying a logic high (3.3 V) to the \emph{NEG\_POL} input pin. The output of the leading edge discriminator is then used to qualify the zero-cross detector.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[scale=.45,keepaspectratio=true]{./ch2_figures/led.png} 
+\caption{Leading edge discriminator with DC offset cancellation}
+\label{fig:led}
+\end{figure}
 
 \par Qualified zero-cross discriminator pulse is used as input for a narrow pulse circuit that triggers the one-shot. Figure~\ref{fig:oneshot} shows this in more detail. The one-shot circuit creates the channel's output timing pulse. It is provided with a two bit pulse width selection bus that allows the user to configure the output width of this pulse between 50 nsec and 500 nsec. There is another one-shot circuit used to create a lockout period which will prevent the creation of an output timing pulse regardless of the presence of any stimuli from the narrow pulse generator. This lockout time is also user configurable with a control voltage provided by a 5-bit DAC in the common area. The lockout feature can also be completely turned off by the user if desired.
 
@@ -553,8 +560,8 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, a one-shot circuit, and an output generation circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 192 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a "coarse" and "fine" grain adjustment of the Nowlin circuit was used. To do this, two modes are provided for the Nowlin Circuit: a "long" mode (coarse) and "short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the proposed IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
-\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the "short" mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinlong}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
+\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 192 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a ``coarse" and ``fine" grain adjustment of the Nowlin circuit was used. To do this, two modes are provided for the Nowlin Circuit: a ``long" mode (coarse) and ``short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the proposed IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
+\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the ``short" mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinlong}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
 
 \begin{figure}[htbp!]
 \centering
@@ -595,7 +602,7 @@ For the minimum pulse amplitude, A, of 15 $mV$ (and r value of 100) and a rise t
 \label{fig:nowlinout}
 \end{figure}
 
-\par C1 and the series combination of R1 and R2 create a high pass filter (or "fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input to the the leading edge discriminator. 
+\par C1 and the series combination of R1 and R2 create a high pass filter (or ``fast shaper") whose output is called LE+. The corner frequency of this high pass filter is given by $f_{c} = \frac{1}{2\pi \cdot(R1 + R2)\cdot C1}$. This gives a corner frequency of $\approx$1.3 MHz in the short mode and $\approx$35 KHz in the long mode. This high pass filter output is used as input to the the leading edge discriminator. 
 \par The resistor R3 along with the programmable capacitor C2 form a delay circuit. The delay time is given by $\tau_{n} = R2 \cdot C2$ and is referred to as the Nowlin delay constant. The programmable capacitor in the Nowlin circuit is created by using switches (i.e. transmission gates) to connect individual capacitors in and out of circuit. Two transmission gates (t-gates) per capacitor are used to accomplish this. The programmable capacitor circuit can be seen in Figure~\ref{fig:pcap}.
 \par In this configuration when a bit from the programmable capacitor bus is on (ie. 3.3V), the capacitor connects in parallel with C1 from Figure~\ref{fig:pcap}, adding more capacitance to the ZC+ node in the Nowlin circuit. If the control signal is off (ie. 0V) then the capacitor is shorted out to \emph{AGND} discharging it and removing capacitance from the ZC+ node. In total there are four of these capacitor circuits, one for each bit of the programmable capacitor bus. Each capacitor is binary weighted with the following values: 0.5 pF, 1 pF, 2 pF, and 4 pF. This gives a total in circuit capacitance of 8 pF and a minimum in circuit capacitance of 0.5 pF. Table~\ref{tab:pcap} shows the bit order of these capacitor elements. Referencing this table shows that the total capacitance at the ZC+ node will be \begin{equation}
 C2 = D \cdot 0.5 pF + 0.5 pF
@@ -648,7 +655,7 @@ One observes that since K is large, the value of $\omega_2$ must be at an extrem
 
 \subsection{Zero-cross discriminator}
 \par The purpose of the zero cross detector is to produce a digital signal which marks the onset of the analog input pulse \cite{474405}. It is important that this time be independent of pulse amplitude, $A$.  The zero-cross circuit is constructed by cascading N differential amplifier stages (where we have chosen N equal to 5) each possessing a very wide bandwidth, but relatively low-gain ($\approx$ 4.5) with the final output stage driving a simple, yet very fast analog comparator.
-\par The purpose of cascading a relatively large number of high-bandwidth but low-gain stages is to force linear operation where delay is independent of amplitude. In short, the cascaded amplifier, which we shall refer to as the "pre-amplifier" serves as a slew rate enhancer.  For a first-order system, it is well-known that if the input risetime is not to be severely degraded, the bandwidth, BW, of the amplifier must obey the following equation
+\par The purpose of cascading a relatively large number of high-bandwidth but low-gain stages is to force linear operation where delay is independent of amplitude. In short, the cascaded amplifier, which we shall refer to as the ``pre-amplifier" serves as a slew rate enhancer.  For a first-order system, it is well-known that if the input risetime is not to be severely degraded, the bandwidth, BW, of the amplifier must obey the following equation
 \begin{equation}
 BW > \frac{0.35}{t_{10-90}} \approx \text{80 MHz}
 \end{equation}
@@ -682,7 +689,7 @@ and the bandwidth of the stage is
 BW = \frac{1}{2 \cdot \pi \cdot R \cdot C_L}
 \end{equation}
 where $C_L$ is the total capacitive load on the output node. 
-\par The output swing for the differential amplifier is $ 2 \cdot R \cdot I_B$, centered around $\frac{V_{DD}}{2}$, where $I_B$ is the tail current or 46 $\mu A$.  Transistor $M_5$ mirrors the PTAT primary current of 11.5 $\mu A$ and hence the value of 4 for the "ng" parameter in Table~\ref{tab:zcdiffamp}
+\par The output swing for the differential amplifier is $ 2 \cdot R \cdot I_B$, centered around $\frac{V_{DD}}{2}$, where $I_B$ is the tail current or 46 $\mu A$.  Transistor $M_5$ mirrors the PTAT primary current of 11.5 $\mu A$ and hence the value of 4 for the ``ng" parameter in Table~\ref{tab:zcdiffamp}
 \par Also crucial to the zero cross detector is a very fast high-bandwidth comparator. This circuit is shown in Figure~\ref{fig:zccomp}. Transistors $M_1$ - $M_4$ make up a simple symmetric Miller OTA. The input common-mode voltage is assumed to be approximately half the supply voltage. The DC bias current through each of the 4 transistors is approximately 200 $\mu A$.  The resulting GBW exceeds 3 GHz while the low-frequency open-loop gain is 26 dB.  
 
 \begin{figure}[htbp!]
@@ -792,71 +799,11 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 
 \chapter{SIMULATION RESULTS}
 
-\section{Testing Procedure}
-\par To verify that the all of the circuits in the IC were functioning properly, a System Verilog test fixture was created to do the following:
-\begin{itemize}
-\item Pulse power on to simulate the chip turning on from a cold start.
-\item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper clock edge.
-\item Load each configuration register with data to test every possible configuration value.
-\item Hit every channel with a pulse of different amplitude and risetimes to verify channel circuits are working.
-\end{itemize}
-
-\par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a test bench instantiation that is used to output the driver data to a value change dump file (VCD). Once the test bench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A.
-\par The tasks file specifies high level routines to manipulate power, data, and control lines on the IC. The first task to be called in any test driver is the \emph{init} task, which simply sets all lines to 0 V to simulate a chip that has been powered off for a long period of time. Another task, \emph{power\_on}, can then be used to simulate power being applied to the chip. This allows the IC to be simulated from a cold start rather than from a steady sate. Other tasks were written to set/clear each of the pin mounted control lines (see Table~\ref{tab:pinout}), as well as the \emph{STB} line to latch address, mode, and data. High level tasks were used to set mode by allowing the user to specify a named mode (e.g. PCAP, ONESHOT, etc.) rather than having to remember the correct mode bits from Table~\ref{tab:modes}. Similarily, data can be set by using a task to set a specific function. For example, the one-shot output pulse width can be set by \emph{set\_os\_width($<$2-bit data$>$)}. Finally, tasks are also provided to set the amplitude, risetime, and firing time of an expoenential input pulse. These analog lines are provided to a Verilog-A test fixture which can generate the pulse and record data.
-\par The driver file is used to specify the parameters of an experiment. The driver is best understood as a timeline of events that will happen during a simulation. For example, the general structure of the driver used for testing the CFD16C was the following:
-
-\begin{enumerate}
-\item Begin with cold start (i.e. call \emph{init} task)
-\item Power the chip (i.e. call \emph{power\_on})
-\item Configure chip appropriateley for incoming pulses (i.e. call tasks to set registers)
-\item Enable/disable relevant control lines
-\item Generate analog pulses
-\item Repeat 3-5 for input pulses with different parameters
-\end{enumerate}
-
-\par Once a driver is prepared, it is instantiated in a test bench fixture. The test bench is used to create a driver object that can be simulated and captures the waveform data in VCD files. A an example VCD file is shown below.
-\lstset{
-         language=Verilog,
-         basicstyle=\scriptsize\ttfamily,
-         emptylines=0, 
-         lineskip=1pt,
-         %numbers=left,            
-         numberstyle=\tiny,         
-         stepnumber=2,              
-         numbersep=5pt,             
-         tabsize=3,                
-         extendedchars=true,       
-         breaklines=true,            
-         commentstyle=\color{blue},
-         keywordstyle=\color{red},
-            frame=b,         
- %        keywordstyle=[1]\textbf,    
- %        keywordstyle=[2]\textbf,    
- %        keywordstyle=[3]\textbf,  
- %        keywordstyle=[4]\textbf,   \
-         stringstyle=\scriptsize\color{green}\ttfamily, 
-         showspaces=false,         
-         showtabs=false,            
-%         xleftmargin=17pt,
-%         framexleftmargin=17pt,
-%         framexrightmargin=5pt,
-%         framexbottommargin=4pt,
-         %backgroundcolor=\color{lightgray},
-         showstringspaces=false           
- }
- \lstinputlisting{./code/example.vcd}
-The VCD file header first gives a date and version number for the software that created the file. The file then specifies the timescale being used. In the example above the timescale of picoseconds (ps) is used. Next, the variables from the test bench fixture are given symbols to be referenced by in the \emph{\$dumpvars} section. In the example above there are three signals: an analog, or \emph{real}, signal called SIG\_A, a digital wire called SIG\_B, and a digital bus called SIG\_C. The symbols given to these are !, \$, and \% respectively. The \emph{\$dumpvars} section contains information about how the variables change over time. Timestamps are denoted by a number preceded by a \# (e.g. \#6000 above). Between timestamps are the variables that changed at that time and the value that they changed to, with the value given first followed by the symbol and no space seperating. For analog signals the value is preceded with an \textbf{r}. The timestamp at the end of a VCD file represents the end time of a simulation.
-\par While the VCD file contains all of the information needed to create a voltage source, there is no way to use it directly in the Cadence software tools. The simulation tools used for the design of this IC are, however, able to create voltage sources that are piecewise-linear in nature by providing a PWL file that describes them. For this a python script was used to parse the VCD file and create a PWL file with the same data contents. The script can be modified to change the rise/fall times, logic levels, and scale factors for analog signals. Once these values are set, running the script will create a PWL file for each of the symbols defined in the VCD file. A PWL file is similar to a VCD file but only defines timestamps and values for one signal line instead of many. The standard PWL format specifies the x-axis (time) first, followed by the y-axis value (voltage) for that x-input seperated by a space. An exaple is shown below.
-
-\lstinputlisting{./code/example.pwl}
-
-\par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file. 
-
 \section{Verification of Circuits in Common Channel}
 \par The common channel contains configuration registers and biasing circuitry. In order to test the configuration, a System Verilog test fixture was used to load each configuration register with data. Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The biasing circuitry was verified by observing the outuput of the circuits being biased in the signal channels. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
 
 \section{Walk Characteristics of CFD Circuit}
-\par Time walk is is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height.  If we assume a single-pole response for the analog comparator with a gain-bandwidth-product of $GBW_c$, it is not difficult to show that the variation in propagation delay, $\Delta t_{pd}$, due to input pulse amplitude is 
+\par Time walk is is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height. If we assume a single-pole response for the analog comparator with a gain-bandwidth-product of $GBW_c$, it is not difficult to show that the variation in propagation delay, $\Delta t_{pd}$, due to input pulse amplitude is 
 \begin{equation}
 \Delta t_{pd} \approx  \sqrt{\frac{V_{DD}}{2 \cdot \pi \cdot GBW_c \cdot G^N \cdot SR_{min}}}
 \end{equation}
@@ -865,7 +812,7 @@ where $V_{DD}$ is the supply voltage, G is the gain of a single differential amp
 \begin{equation}
 \Delta t_{cross} \approx \tau_r \cdot \left[ \frac{V_{os}}{(1-k) \cdot A} \right]
 \end{equation}
-where $V_{os}$ is the residual input referred offset and A is the amplitude of the input pulse. It is important that the residual offset be driven to the sub-mV level.  The "slow" DC offset cancellation loop has to be "slow" enough so as not to interfere with the pulse as it passes through the zero-cross discriminator but yet fast enough so that pulse repetition rates as high as 1 kHz can be accommodated. 
+where $V_{os}$ is the residual input referred offset and A is the amplitude of the input pulse. It is important that the residual offset be driven to the sub-mV level.  The ``slow" DC offset cancellation loop has to be ``slow" enough so as not to interfere with the pulse as it passes through the zero-cross discriminator but yet fast enough so that pulse repetition rates as high as 1 kHz can be accommodated. 
 
 \begin{table}[htbp!]
  \centering
@@ -987,6 +934,83 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \item All four oneshot pulse widths and their tolerance
 \item Individual channel enable bits to disable specific channels
 \end{itemize}
+
+\par The walk times were more thoroughly tested using a seperate simulation of the CFD and oneshot circuits however since every channel is hit with a different amplitude pulse, the walk comes out of the full chip simulations by default. Walk is easily visualized in Figure~\ref{fig:walk-plot}, which shows the rising edge of an output timing pulse from each channel after hitting each channel with an input pulse of increasing amplitudes (15 mV on Channel 0, 1.5 V on Channel 15). 
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.3]{./ch4_figures/walk_plot.png}
+ \caption{16 output timing pulses overlayed to demonstrate walk characteristics}
+ \label{fig:walk-plot}
+\end{figure} 
+
+\subsection{Testing Procedure}
+\par To verify that the all of the circuits in the IC were functioning properly, a System Verilog test fixture was created to do the following:
+\begin{itemize}
+\item Pulse power on to simulate the chip turning on from a cold start.
+\item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper clock edge.
+\item Load each configuration register with data to test every possible configuration value.
+\item Hit every channel with a pulse of different amplitude and risetimes to verify channel circuits are working.
+\end{itemize}
+
+\par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a test bench instantiation that is used to output the driver data to a value change dump file (VCD). Once the test bench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A. Figure~\ref{fig:test} details the process of setting up a simulation for the IC.
+
+\begin{figure}[htbp!]
+ \centering
+ \includegraphics[scale=.55,keepaspectratio=true]{./ch4_figures/sim.png}
+ \caption{Full chip testing procedure}
+ \label{fig:test}
+\end{figure}
+
+\par The tasks file specifies high level routines to manipulate power, data, and control lines on the IC. The first task to be called in any test driver is the \emph{init} task, which simply sets all lines to 0 V to simulate a chip that has been powered off for a long period of time. Another task, \emph{power\_on}, can then be used to simulate power being applied to the chip. This allows the IC to be simulated from a cold start rather than from a steady sate. Other tasks were written to set/clear each of the pin mounted control lines (see Table~\ref{tab:pinout}), as well as the \emph{STB} line to latch address, mode, and data. High level tasks were used to set mode by allowing the user to specify a named mode (e.g. PCAP, ONESHOT, etc.) rather than having to remember the correct mode bits from Table~\ref{tab:modes}. Similarily, data can be set by using a task to set a specific function. For example, the one-shot output pulse width can be set by \emph{set\_os\_width($<$2-bit data$>$)}. Finally, tasks are also provided to set the amplitude, risetime, and firing time of an expoenential input pulse. These analog lines are provided to a Verilog-A test fixture which can generate the pulse and record data.
+\par The driver file is used to specify the parameters of an experiment. The driver is best understood as a timeline of events that will happen during a simulation. For example, the general structure of the driver used for testing the CFD16C was the following:
+
+\begin{enumerate}
+\item Begin with cold start (i.e. call \emph{init} task)
+\item Power the chip (i.e. call \emph{power\_on})
+\item Configure chip appropriateley for incoming pulses (i.e. call tasks to set registers)
+\item Enable/disable relevant control lines
+\item Generate analog pulses
+\item Repeat 3-5 for input pulses with different parameters
+\end{enumerate}
+
+\par Once a driver is prepared, it is instantiated in a test bench fixture. The test bench is used to create a driver object that can be simulated and captures the waveform data in VCD files. A an example VCD file is shown below.
+\lstset{
+         language=Verilog,
+         basicstyle=\scriptsize\ttfamily,
+         emptylines=0, 
+         lineskip=1pt,
+         %numbers=left,            
+         numberstyle=\tiny,         
+         stepnumber=2,              
+         numbersep=5pt,             
+         tabsize=3,                
+         extendedchars=true,       
+         breaklines=true,            
+         commentstyle=\color{blue},
+         keywordstyle=\color{red},
+            frame=b,         
+ %        keywordstyle=[1]\textbf,    
+ %        keywordstyle=[2]\textbf,    
+ %        keywordstyle=[3]\textbf,  
+ %        keywordstyle=[4]\textbf,   \
+         stringstyle=\scriptsize\color{green}\ttfamily, 
+         showspaces=false,         
+         showtabs=false,            
+%         xleftmargin=17pt,
+%         framexleftmargin=17pt,
+%         framexrightmargin=5pt,
+%         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false           
+ }
+ \lstinputlisting{./code/example.vcd}
+The VCD file header first gives a date and version number for the software that created the file. The file then specifies the timescale being used. In the example above the timescale of picoseconds (ps) is used. Next, the variables from the test bench fixture are given symbols to be referenced by in the \emph{\$dumpvars} section. In the example above there are three signals: an analog, or \emph{real}, signal called SIG\_A, a digital wire called SIG\_B, and a digital bus called SIG\_C. The symbols given to these are !, \$, and \% respectively. The \emph{\$dumpvars} section contains information about how the variables change over time. Timestamps are denoted by a number preceded by a \# (e.g. \#6000 above). Between timestamps are the variables that changed at that time and the value that they changed to, with the value given first followed by the symbol and no space seperating. For analog signals the value is preceded with an \textbf{r}. The timestamp at the end of a VCD file represents the end time of a simulation.
+\par While the VCD file contains all of the information needed to create a voltage source, there is no way to use it directly in the Cadence software tools. The simulation tools used for the design of this IC are, however, able to create voltage sources that are piecewise-linear in nature by providing a PWL file that describes them. For this a python script was used to parse the VCD file and create a PWL file with the same data contents. The script can be modified to change the rise/fall times, logic levels, and scale factors for analog signals. Once these values are set, running the script will create a PWL file for each of the symbols defined in the VCD file. A PWL file is similar to a VCD file but only defines timestamps and values for one signal line instead of many. The standard PWL format specifies the x-axis (time) first, followed by the y-axis value (voltage) for that x-input seperated by a space. An exaple is shown below.
+
+\lstinputlisting{./code/example.pwl}
+
+\par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file. 
 
 \subsection{Power dissipation}
 \par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.

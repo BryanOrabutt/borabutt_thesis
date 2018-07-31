@@ -8,45 +8,48 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces System level overview for one channel of the CFD16C\relax }}{12}{figure.caption.10}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces System level diagram of the common channel\relax }}{14}{figure.caption.11}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces The address, mode, \& data shared bus scheme\relax }}{14}{figure.caption.12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Zero cross discriminator with DC cancellation\relax }}{15}{figure.caption.13}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces System level diagram of one-shot stage\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Timing pulse output qualification\relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Zero cross discriminator with DC offset cancellation\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Leading edge discriminator with DC offset cancellation\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces System level diagram of one-shot stage\relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Timing pulse output qualification\relax }}{17}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{21}{figure.caption.20}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{23}{figure.caption.22}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{24}{figure.caption.23}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{25}{figure.caption.24}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{26}{figure.caption.26}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 6-bit bipolar DAC\relax }}{27}{figure.caption.27}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces One stage of DAC using R2R ladder\relax }}{28}{figure.caption.28}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces DAC output current stage\relax }}{29}{figure.caption.30}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiplicity output buffer.\relax }}{30}{figure.caption.32}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Nowlin circuit for short mode\relax }}{32}{figure.caption.34}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Nowlin circuit for long mode\relax }}{32}{figure.caption.35}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Input signal with 3 nsec risetime constant showing Nowlin delay effects\relax }}{34}{figure.caption.36}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Programmable capacitor circuit.\relax }}{35}{figure.caption.37}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Schematic of low bandwidth, low gain OTA.\relax }}{38}{figure.caption.39}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Schematic of low-gain high-bandwidth differential amplifier.\relax }}{40}{figure.caption.41}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Schematic of high-bandwidth, very fast comparator.\relax }}{42}{figure.caption.42}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Schematic of differential voltage to single-ended current converter.\relax }}{43}{figure.caption.44}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Schematic of leading edge comparator.\relax }}{44}{figure.caption.46}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces One-shot circuit with lockout\relax }}{45}{figure.caption.48}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Comparator ramp input\relax }}{46}{figure.caption.49}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{48}{figure.caption.51}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Register address and mode decoding\relax }}{21}{figure.caption.21}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bandgap temperature dependence.\relax }}{23}{figure.caption.23}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PTAT current reference temperature dependence.\relax }}{24}{figure.caption.24}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Zero temperature coefficient current generator.\relax }}{25}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Zero temperature coefficient current temperature dependence.\relax }}{26}{figure.caption.27}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 6-bit bipolar DAC\relax }}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces One stage of DAC using R2R ladder\relax }}{28}{figure.caption.29}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces DAC output current stage\relax }}{29}{figure.caption.31}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiplicity output buffer.\relax }}{30}{figure.caption.33}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Nowlin circuit for short mode\relax }}{32}{figure.caption.35}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Nowlin circuit for long mode\relax }}{32}{figure.caption.36}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Input signal with 3 nsec risetime constant showing Nowlin delay effects\relax }}{34}{figure.caption.37}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Programmable capacitor circuit.\relax }}{35}{figure.caption.38}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Schematic of low bandwidth, low gain OTA.\relax }}{38}{figure.caption.40}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Schematic of low-gain high-bandwidth differential amplifier.\relax }}{40}{figure.caption.42}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Schematic of high-bandwidth, very fast comparator.\relax }}{42}{figure.caption.43}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Schematic of differential voltage to single-ended current converter.\relax }}{43}{figure.caption.45}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Schematic of leading edge comparator.\relax }}{44}{figure.caption.47}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces One-shot circuit with lockout\relax }}{45}{figure.caption.49}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Comparator ramp input\relax }}{46}{figure.caption.50}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Fast pseudo-NMOS NOR\relax }}{48}{figure.caption.52}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Typical walk performance with a a signal whose rise time constant is 3 nsec.\relax }}{54}{figure.caption.54}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Summary walk performance with a signal whose rise time constant is 3 nsec.\relax }}{55}{figure.caption.55}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Jitter performance for short time constant mode.\relax }}{56}{figure.caption.56}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Jitter performance for short time constant mode.\relax }}{57}{figure.caption.57}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Lockout times for short and long modes\relax }}{58}{figure.caption.58}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces 6-bit DAC DNL error summary\relax }}{60}{figure.caption.60}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces 6-bit DAC INL error summary\relax }}{61}{figure.caption.61}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 6-bit DAC worst case error\relax }}{61}{figure.caption.62}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces 6-bit DAC average case error\relax }}{62}{figure.caption.63}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Breakdown of average power dissipation\relax }}{63}{figure.caption.64}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Breakdown of peak power dissipation\relax }}{64}{figure.caption.65}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Breakdown of IC area usage\relax }}{65}{figure.caption.66}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces CFD16C full layout\relax }}{66}{figure.caption.67}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Typical walk performance with a a signal whose rise time constant is 3 nsec.\relax }}{51}{figure.caption.55}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Summary walk performance with a signal whose rise time constant is 3 nsec.\relax }}{52}{figure.caption.56}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Jitter performance for short time constant mode.\relax }}{53}{figure.caption.57}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Jitter performance for short time constant mode.\relax }}{54}{figure.caption.58}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Lockout times for short and long modes\relax }}{55}{figure.caption.59}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 6-bit DAC DNL error summary\relax }}{57}{figure.caption.61}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 6-bit DAC INL error summary\relax }}{58}{figure.caption.62}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 6-bit DAC worst case error\relax }}{58}{figure.caption.63}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 6-bit DAC average case error\relax }}{59}{figure.caption.64}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 16 output timing pulses overlayed to demonstrate walk characteristics\relax }}{60}{figure.caption.65}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Full chip testing procedure\relax }}{61}{figure.caption.66}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Breakdown of average power dissipation\relax }}{65}{figure.caption.67}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Breakdown of peak power dissipation\relax }}{66}{figure.caption.68}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Breakdown of IC area usage\relax }}{67}{figure.caption.69}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces CFD16C full layout\relax }}{68}{figure.caption.70}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
