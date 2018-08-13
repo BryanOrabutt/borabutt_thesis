@@ -74,8 +74,8 @@
 \phantomsection
 \begin{abstract}
 
-\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. 
-\par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. The IC will have an average power dissipation of 220 mW and occupy an area of 1.9x3.5 mm$^{2}$. The jitter in the trailing edge of the output timing pulse will be less than 5 nsec (for pulse width of 50 nsec). Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is using the AMS-AG 0.35 micron NWELL process.
+\par This thesis presents the design and simulation of a multi-channel integrated circuit (IC) that will be used in nuclear physics experiments. The chip is being designed as a companion chip for another IC used in particle identification called PSD8C. The IC described in this thesis is used to create precise timing pulses for starting time-to-voltage converters (TVCs) and gated integrators on the PSD8C. These timing pulses are created using a technique called Constant Fraction Discrimination (CFD). Each of the sixteen channels in the IC contains a Nowlin circuit, leading-edge discriminator, zero-cross discriminator, and a one-shot circuit to generate the output. 
+\par The IC will support input pulse amplitudes between 15 mV and 1.5 V (both positive and negative), and input pulse rise times between 2 nsec and 192 nsec. The IC will feature a programmable output pulse width between 50 nsec and 500 nsec. The IC will have an average power dissipation of 220 mW and occupy an area of 2.4 x 3.5 mm. The jitter in the trailing edge of the output timing pulse will be less than 5 nsec (for pulse width of 50 nsec). Most importantly the output pulse firing time variation will be independent of the input amplitude, having a time walk of only 500 psec or less (for input pulse rise time constants of 2 nsec). The IC has been named CFD16C and the design presented is implemented in a 0.35 micron NWELL process.
 \end{abstract}
 
 
@@ -169,7 +169,7 @@ three (3) integration regions each with: (a) independent
 control of time offset (beginning), (b) width (ending) of the
 integration window, and (c) a menu of eight (8) charging rates;
 \item
-each channel possesses a TVC with two time ranges: 500 nsec and 2 msec;
+each channel possesses a TVC (Time-to-Voltage Converter) with two time ranges: 500 nsec and 2 msec;
 \item
 three triggering modes;
 \item
@@ -183,10 +183,10 @@ latter;
 and CFD circuits are not on-chip so as to provide greater flexibility.
 \end{itemize}
 
-PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 $mm^2$ and is packaged in a 14 by 14 $mm^2$, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode)and 150 mW (high-bias mode).
-A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempts to correct several minor
+PSD8C is described in detail in \cite{PROCTOR} and \cite{HALL}. PSD8C is 2.25 by 5.7 mm and is packaged in a 14 by 14 mm, 128 lead thin quad flat pack. Power consumption is 65 mW (low-bias mode) and 150 mW (high-bias mode).
+A second version (Rev. 2) of PSD8C was submitted for fabrication in May 2010. Rev. 2 attempted to correct several minor
 problems. First, the TVC circuit could inadvertently be restarted. In Rev. 2, once the rising edge of the ``common stop" signal is detected, the TVC cannot restart until the channel is reset. Second, undesirable temperature dependence (1 $\frac{nsec}{^{\circ}C}$) in the TVC circuit was identified and traced to the local channel buffer. The buffer was redesigned, and the TVC temperature sensitivity was greatly reduced (5 $\frac{psec}{^{\circ}C}$ in the 500 nsec mode, 40 $\frac{psec}{^{\circ}C}$ in the 2 msec mode). Third, some TVC crosstalk issues were identified and remedied. Fourth, additional shielding was added to the integrator circuits. Finally, at the system level, the chip-boards (printed-circuit boards) were redesigned to include on-board analog to digital converters, or ADCs (one for each of the chip's analog output pulse trains).
-\par In the latest revision of PSD8C level translators were added to all of the digital pads on the chip. These level translators convert 5 V logic level outputs into 3.3 V logic levels to be used safely by a field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C.
+\par In the latest revision of PSD8C, level translators were added to all of the digital pads on the chip. These level translators convert 5 V logic level outputs into 3.3 V logic levels to be used safely by a field programmable gate array (FPGA). The input level translators perform the opposite function, converting 3.3 V signals into 5 V logic levels so the FPGA can reliably provide data to the PSD8C. Aslo, in the latest version of the chip, the TVC circuits start on the ``falling'' rather than ``rising'' edge of the CFD input timimg pulse.  This change has profound implications for the the design presented in this thesis.  Most notably, the timimg pulses produced by the CFD chip described herein must possess low jitter (stocahistic timimg uncertainty) for both edges of the output pulses.
 
 \section{Need for an Integrated Circuit}
 
@@ -250,12 +250,14 @@ The IC should operate from a single 3.3 Volt supply.
 \item
 Power consumption of the 16 channel IC should not exceed 350 mW \emph{i.e.} 20 mW per channel with 30 mW budgeted for the circuits common to all channels. 
 \item
-The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip should be packaged in a 64-pin plastic package.  
+The IC is not to occupy an area greater than roughly 2 mm x 4 mm.  The chip should be packaged in a 64-pin plastic package.  
 
 \end{itemize} 
 
 \section{Features}
-\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. The  Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. Writing to configuration registers is performed using a signal 8-bit wide bus to provide address, mode, and data information. Using the user-controlled \emph{STB} line, address and mode can be presented on the rising edge and then data will be registered into the selected configuration register on the falling edge. Each channel can be individually enabled or disabled as per the needs of the user. Additionally, should it be required, all sixteen channels can be disabled with a single global enable pin available to the user. Finally, a test point is provided to give the user feedback about how some of the digital circuit elements within the channel are performing. This test point can come from eight different nodes within a specified signal channel.
+\par In order to achieve the intended system design specification many of the analog circuity in the chip is user configurable. The  Nowlin delay time, leading edge threshold, one-shot pulse width, and lockout times are all able to be configured to the user's needs. Writing to configuration registers is performed using a signal 8-bit wide bus to provide address, mode, and data information. 
+Using the user-controlled \emph{STB} line, address and mode can be presented on the rising edge and then data will be registered into the selected configuration register on the falling edge. 
+\par Each channel can be individually enabled or disabled as per the needs of the user. Additionally, should it be required, all sixteen channels can be disabled with a single global enable pin available to the user. Finally, a test point is provided to give the user feedback about how some of the digital circuit elements within the channel are performing. This test point can come from eight different nodes within a specified signal channel.
 
 \section{System-Level Description}
 \par The CFD16C is designed in a 0.35 micron CMOS process. The chip is designed to act as a multi-channel constant fraction discriminator with very low jitter and time walk in the output timing pulse. The chip contains sixteen signal channels that are driven by a detector and a single common channel that contains circuitry used by all of the signal channels. A system level block diagram of a single signal channel can be seen in Figure~\ref{fig:CFD}.
@@ -267,20 +269,26 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:CFD}
 \end{figure}
 
-\par An analog input pulse will arrive at the input stage of the channel in the form of an exponential voltage pulse with a rise time $\approx$10 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
+\par An analog input pulse will arrive at the input stage of the channel in the form of an exponential voltage pulse with a rise time approximately 10 to 100 times faster than its fall time. This stage contains a Nowlin circuit that creates a differential output and a high pass filtered output (often referred to in the literature as the "fast shaper" output) from the input pulse. The differential output is used as input to a zero crossing discriminator while the high pass filtered output is used as input to a leading edge discriminator. The outputs of the two discriminator channels are ANDed together to provide input to a one shot that creates the output timing pulse. Additional outputs such as a test point and multiplicity output are generated in a final output stage of the channel. 
 
 \subsection{Common channel}
-\par The common channel contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. To load any specific register the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. Table~\ref{tab:modes} shows the modes and usage for each of the registers.
+\par The common channel presented in Figure~\ref{fig:common-block} contains configuration registers to change the performance of the various analog circuits in the signal channels. There are a total of three configuration registers in the common channel and one on the signal channel. These registers can be individually selected and loaded by using an special address and mode scheme. Each channel is assigned a 4-bit address from 0000 to 1111 and each register is assigned a 3-bit mode. In order to load any specific register, the correct mode and address must be provided. A fourth bit of mode, the MSB, is used to select all registers of a given mode regardless of what address is provided. Table~\ref{tab:modes} shows the mode value and the purpose of each of the bits in the configuration registers.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.5,keepaspectratio=true]{./ch2_figures/common_block.png} 
+\includegraphics[scale=.6,keepaspectratio=true, angle = 90]{./ch2_figures/common_block.png} 
 \caption{System level diagram of the common channel}
 \label{fig:common-block}
 \end{figure}
 
-\par While the registers need to be provided with data, address, and mode information, only a single 8-bit bus is used to provide this. On the positive edge of the \emph{STB} input address and mode information are stored in a special purpose register that drives the internal \emph{ADDR} and \emph{MODE} busses (see Figure~\ref{fig:addrmode}). On the negative edge of \emph{STB} data is then stored in all enabled registers.
-\par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and reference voltages are generated here and distributed to each of the signal channels. More information on these circuits is presented in Chapter 3.
+\begin{table}[htbp!]
+\centering
+\includegraphics[scale=.35,keepaspectratio=true]{../data/modes.png} 
+\caption{Register modes and usage}
+\label{tab:modes}
+\end{table}
+
+\par While the registers need to be provided with data, address, and mode information, only a single 8-bit bus is used to provide this. On the positive edge of the \emph{STB}, input address and mode information are stored in a special purpose register that drives the internal \emph{ADDR} and \emph{MODE} busses (see Figure~\ref{fig:addrmode}). On the negative edge of \emph{STB}, data is then stored in all enabled registers.
 
 \begin{figure}[htbp!]
 \centering
@@ -289,10 +297,13 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:addrmode}
 \end{figure}
 
+
+\par The common channel also contains biasing circuitry for many of the analog circuits in the signal channels. Bias currents and reference voltages are generated here and distributed to each of the signal channels. More information on these circuits is presented in Chapter 3.
+
 \subsection{Signal channel}
-\par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin as well, and is used by the leading-edge discriminator circuit.
+\par The input to a signal channel comes from a detector in the form of a pulse with an exponential rise in voltage and an exponential decay. The programmable Nowlin circuit acts as the input stage to the signal channel. The Nowlin circuit is used to create a differential output from this single-ended input pulse. One leg of this differential signal is composed of a constant fraction of the input pulse. The other leg of this output is a delayed version of the input pulse. This delay time is determined by an RC time constant that is configurable by changing the value of a programmable capacitor. A high pass filter output is provided by the Nowlin circuit as well, and is used by the leading-edge discriminator circuit.
 \par The differential outputs of the Nowlin circuit are used as inputs to a zero-crossing discriminator (Figure~\ref{fig:zcd}). This discriminator is created by cascading several amplifiers together and connecting the final output to a high speed comparator. This circuit will provide a digital output that is a logic high (3.3V) when the two differential output voltages from the Nowlin cross the 0V threshold when referenced to analog ground (\emph{AGND}). This will allow the circuit to produce an output independent of the input pulse amplitude \cite{CFD}. 
-\par A DC offset cancellation loop is used to remove the effects of systematic DC offsets. Without this DC compensation loop, the output comparator would be permanently stuck in one state regardless of input from the Nowlin circuit. This same DC cancellation loop is also used in the Leading-edge discriminator.
+\par A dynamic DC offset cancellation loop is used to remove the effects of systematic DC offsets. Without this DC compensation loop, the output comparator would be permanently stuck in one state regardless of input from the Nowlin circuit. This same DC cancellation loop is also used in the leading-edge discriminator.
 
 \begin{figure}[htbp!]
 \centering
@@ -310,7 +321,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:led}
 \end{figure}
 
-\par Qualified zero-cross discriminator pulse is used as input for a narrow pulse circuit that triggers the one-shot. Figure~\ref{fig:oneshot} shows this in more detail. The one-shot circuit creates the channel's output timing pulse. It is provided with a two bit pulse width selection bus that allows the user to configure the output width of this pulse between 50 nsec and 500 nsec. There is another one-shot circuit used to create a lockout period which will prevent the creation of an output timing pulse regardless of the presence of any stimuli from the narrow pulse generator. This lockout time is also user configurable with a control voltage provided by a 5-bit DAC in the common area. The lockout feature can also be completely turned off by the user if desired.
+\par The qualified zero-cross discriminator pulse is used as input for a narrow pulse circuit that triggers the one-shot. Figure~\ref{fig:oneshot} shows this in more detail. The one-shot circuit creates the channel's output timing pulse. It is provided with a two-bit pulse-width selection bus that allows the user to configure the output width of this pulse between 50 nsec and 500 nsec. There is another one-shot circuit used to create a lockout period which will prevent the creation of an output timing pulse regardless of the presence of any stimuli from the narrow pulse generator. This lockout time is also user configurable with a control voltage provided by a 5-bit DAC in the common area. The lockout feature can also be completely turned off by the user if desired.\\
 
 \begin{figure}[h!]
 \centering
@@ -319,7 +330,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \label{fig:oneshot}
 \end{figure}
 
-\par A final output generation stage is used to qualify the timing pulse as well and create other useful channel outputs. The timing pulse should not be present on the pin of the chip package if the global enable signal is not present, or the channel enable bit is not set. Therefore the timing pulse is ANDed with these two signals before going off-chip as seen in Figure~\ref{fig:output-qual}. The digital test point, multiplicity, and global channel OR outputs are also created in this stage and explained in more detail in the next chapter.
+\par A final output generation stage is used to qualify the timing pulse as well and create other useful channel outputs. The timing pulse for a channel should not be present on the pin of the chip package if the global enable signal is not present, or the channel enable bit is not set. Therefore the timing pulse is ANDed with these two signals before going off-chip as seen in Figure~\ref{fig:output-qual}. The digital test point, multiplicity, and global channel OR outputs are also created in this stage and explained in more detail in the next chapter.\\
 
 \begin{figure}[h!]
 \centering
@@ -327,15 +338,13 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 \caption{Timing pulse output qualification}
 \label{fig:output-qual}
 \end{figure}
+
+
+
 \section{Chip Pinout}
 \par The CFD16C will be packaged in a 64-pin QFN plastic package. The pinout is detailed in Table~\ref{tab:pinout}. Pins with no electrical connection to the chip die are labeled as \emph{NC} (no connection).
 
-\begin{table}[htbp!]
-\centering
-\includegraphics[scale=.35,keepaspectratio=true]{../data/modes.png} 
-\caption{Register modes and usage}
-\label{tab:modes}
-\end{table}
+
 
 \begin{table}[htbp!]
  \centering
@@ -354,7 +363,7 @@ The IC is not to occupy an area greater than roughly 2 mm x 3 mm.  The chip shou
 
 \section{Fabrication Process}
 
-The IC described in this thesis will be fabricated in the AMS-AG 0.35 micron NWELL process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs, and a high-resistance layer are all available to the designer. NFET device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET device properties are available in Table~\ref{TBL:PMOS_PARMS}.
+The IC described in this thesis will be fabricated in a 0.35 micron n-well process.  The process supports two poly and 4 metal layers. Double poly capacitors, BJTs (Bipolar Junction Transistors) and a high-resistance layer are all available to the designer. NFET (N-type Field Effect Transistor) device properties are given in Table~\ref{TBL:NMOS_PARMS} while PFET (P-type Field Effect Transistor) device properties are available in Table~\ref{TBL:PMOS_PARMS}.  These parameters are provided to the reader because they may prove useful for understanding transistor-level circuits and evaluating design decisions discussed later in this chapter.
 
 % NFET device properties
 
@@ -415,10 +424,10 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 % DESCRIPTION OF COMMON CHANNEL
 
 \section{Common Channel}
-\par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, signal ground generator, bandgap reference, and bias current generators.
+\par The CFD16C is composed of sixteen signal channels and a single larger common channel. As the name implies, the common channel contains configuration and biasing circuitry that is common to all of the signal channels. These include a power on reset circuit, a signal ground generator, a bandgap reference, and a pair of bias current generators.
 
 \subsection{Configuration registers}
-\par There are three registers in the common channel as well as one in each of the signal channels. These registers were made using digital standard cells provided in the AMS design kit. The registers are D-registers with an enable input. The enable signal is active when a specified register's address and mode has been selected. A single 8-bit wide bus is used to present address, mode, and data to each of the registers. An 8-bit register in the common channel will register \emph{ADDR} and \emph{MODE} on the rising edge of \emph{STB}, with \emph{ADDR} being in the upper four bits. The 8-bits of data are then registered on the falling edge of \emph{STB}. This decoding topology can be seen in Figure~\ref{fig:register}.
+\par There are three registers in the common channel as well as one in each of the signal channels. These registers were designed by selecting digital standard cells provided in our PDK (Process Design Kit). The registers are D-registers possessing an enable input. The enable signal is active when a specified register's address and mode have been selected. A single 8-bit wide bus is used to present address, mode, and data to each of the registers. An 8-bit register in the common channel will register \emph{ADDR} and \emph{MODE} on the rising edge of \emph{STB}, with \emph{ADDR} being in the upper four bits. The 8-bits of data are then registered on the falling edge of \emph{STB}. This decoding logic is presented in Figure~\ref{fig:register}.
 
 \begin{figure}[htbp!]
  \centering
@@ -427,14 +436,13 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
  \label{fig:register}
 \end{figure}
 
-\par The \emph{ADDR} and \emph{MODE} bits are compared against a hard coded value using the XOR and NOR gates. The hard coded values will be set to match the address of the channel the register is in, as well as the mode that should select the specific register. The \emph{ADDR} decoder circuit is then ORed with the MSB of \emph{MODE} so that all registers of a given mode can be selected if the global mode bit is set.
+\par The \emph{ADDR} and \emph{MODE} bits are compared against a hard-coded value using the XOR and NOR gates. The hard-coded values are set to match the address of the channel the register is located in, as well as the mode that should select the specific register. The output of the \emph{ADDR} decoder circuit is then ORed with the MSB of the \emph{MODE} field so that all registers of a given mode can be selected if the global mode bit is set.
 
 \subsection{Power on reset circuit}
-\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the AMS design kit. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long. The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power \cite{ALAN_BOOK}, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
+\par A power on reset circuit is used to start the PTAT bias current generator circuit. The POR circuit was used from the provided analog cells library with the PDK. When power is applied to the CFD16C, the power on reset (POR) circuit generates a single low active reset pulse. This reset pulse is guaranteed to be at least 2 $\mu sec$ long (typically 3.5 $\mu sec$). The POR signal pulse is used to start the PTAT current reference. This PTAT current reference circuit can converge on a 11.5 $\mu$A or 0 A output current when the CFD16C first receives power \cite{ALAN_BOOK}, but the 0 A solution is not useful. This long reset pulse guarantees that the PTAT current generator will start correctly and provide an 11.5 $\mu A$ bias current.
 
 \subsection{Signal ground generator}
-\par In each of the signal channels the analog input circuitry is all referenced to a separate signal ground. This signal ground, called \emph{AGND}, must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in an analog cell library from AMS. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed according to Table~\ref{tab:trim}.
-
+\par In each of the signal channels the analog input circuitry is referenced to a analog signal ground. This signal ground, called \emph{AGND}, and must be at a potential half way between \emph{AVDD} and \emph{AVSS}. An analog ground generator circuit was provided in our PDK analog cell library so we used it. The signal ground generator circuit can be trimmed to a specific voltage using three trim bits. The signal ground generator has a nominal reference voltage of 1.63 V and can be trimmed according to Table~\ref{tab:trim}.
 
 \begin{table}[htbp!]
  \centering
@@ -444,33 +452,33 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 \end{table}
 
 \subsection{Bandgap voltage reference}
-\par A bandgap voltage reference is a circuit that provides a temperature and power supply independent voltage \cite{ALLEN}. The bandgap voltage reference used in this design was provided in an analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference point that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT series resistor and a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a nodal voltage with a temperature coefficient of only -87 $\frac{\mu V}{^{\circ}C}$ as can be seen in Figure~\ref{fig:bandgap}.
-\par This bandgap topology produces an output voltage of $\approx 1.2 V$ with near zero temperature independence. The bandgap reference is further filtered by an RC lowpass filter before being used by any other circuits. This is mostly due to the sensitivity of the circuits that use the bandgap reference to noise, rather than an inherently noisy bandgap reference.
+\par A bandgap voltage reference is a circuit that provides a temperature and power supply independent voltage \cite{ALLEN}. The bandgap voltage reference used in this design was selected from the PDK's analog cells library, and is a known working design. The bandgap voltage reference is used to provide a 1.2 V reference  that is independent of temperature or power supply noise. The bandgap voltage is created by generating a PTAT current and then passing it through a resistor which in turn is placed in series with a diode-connected parasitic bipolar PNP transistor \cite{ALLEN}. The PTAT current has a positive temperature coefficient while the PNP transistor has a negative temperature coefficient creating a reference voltage with a temperature coefficient of only -87 $\frac{\mu V}{^{\circ}C}$ (over the range of temperatures that the IC is expected to operate) as can be seen in Figure~\ref{fig:bandgap}.
+\par This bandgap circuit produces an output voltage of $\approx 1.2 V$ with near zero temperature independence. The bandgap reference is further filtered by an RC lowpass filter before being used by any other circuits. This is mostly due to the sensitivity of the circuits that use the bandgap reference to noise, rather than an inherently noisy bandgap reference.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.3,keepaspectratio=true]{../data/bandgap_temp.png} 
+\includegraphics[scale=.4,keepaspectratio=true, angle=90]{../data/bandgap_temp.png} 
 \caption{Bandgap temperature dependence.}
 \label{fig:bandgap}
 \end{figure}
 
 \subsection{PTAT current reference}
-\par A PTAT current reference was used from the analog cells library provided by AMS. This current reference produces a bias current between 7.3 $\mu$A and 17.8 $\mu$A with a nominal value of 11.5 $\mu$A. This bias current is proportional to absolute temperature and is used to bias all of the amplifiers on the chip. A weakly or moderately inverted FET has a transconductance linearly proportional to bias current but inversely proportional to absolute temperature. Thus by using PTAT currents for the moderately inverted FETs in the amplifier designs, the transconductance of the FETs becomes independent of temperature \cite{ALLEN}. Figure~\ref{fig:ptat} shows the temperature dependence of the PTAT current reference circuit.
+\par A PTAT current reference was also selected from the analog cells in our PDK. This current reference produces a bias current between 7.3 $\mu$A and 17.8 $\mu$A (across process corners) with a nominal value of 11.5 $\mu$A. This bias current is proportional to absolute temperature and is used to bias all of the amplifiers on the chip. A weakly or moderately inverted FET has a transconductance linearly proportional to bias current but inversely proportional to absolute temperature. Thus by using PTAT currents for the moderately inverted FETs in the amplifier designs, the transconductance of the FETs becomes independent of temperature \cite{ALLEN}. Figure~\ref{fig:ptat} shows the temperature dependence of the PTAT current reference circuit.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.3,keepaspectratio=true]{../data/ptat.png} 
+\includegraphics[scale=.4,keepaspectratio=true, angle=90]{../data/ptat.png} 
 \caption{PTAT current reference temperature dependence.}
 \label{fig:ptat}
 \end{figure}
 
 \subsection{Zero-tempco current reference}
-\par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no temperature dependence. This zero temperature coefficient (ZTC) current was generated using an opamp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the opamp is made to the drain of the PFET as well. 
+\par In order to function correctly, some of the circuitry in the signal channel needs to be biased with a current that has no (or at least very little) temperature dependence. This zero temperature coefficient (ZTC) current was generated using the op-amp circuit shown in Figure~\ref{fig:ztc}. In this circuit, the temperature independent bandgap voltage is applied to the inverting terminal of an opamp. The output of the opamp connects to the gate of a PFET whose drain is connected to a zero temperature coefficient 100 k$\Omega$ resistor. A feedback connection to the non-inverting terminal of the op-amp is made to the drain of the PFET as well. 
 \par Because of this feedback connection, the opamp will drive the gate of the PFET to a voltage that ensures there is no potential difference between the inverting and non-inverting terminals of the opamp \cite{BAKER}. This means the voltage drop across the ZTC resistor has to be equal to the bandgap voltage and so the current through the PFET has to be 12 $\mu$A. This ZTC current reference produces a current with a temperature dependence of only 2.07 $\frac{nA}{^{\circ}C}$ as seen in Figure~\ref{fig:ztc-temp}.
-\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that doesn't depend on temperature.
+\par The ZTC resistor is made from a resistor with positive temperature coefficient (rpoly2), and one that has a negative temperature coefficient (rpolyh). The ratio to achieve temperature independence in this process is $\approx$0.56 rpoly2 to 0.44 rpolyh. Since a 12 $\mu$A ZTC current is desired, a 100 k$\Omega$ resistor was made using a 56 k$\Omega$ rpoly2 resistor and a 44 k$\Omega$ rpolyh resistor. This ZTC current is replicated using 17 current mirrors to provide one for each channel, as well as one for the lockout DAC in the common channel. The ZTC currents are used to give the DAC circuits an output that does not depend on temperature.
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.36,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
+\includegraphics[scale=.35,keepaspectratio=true]{../LTspice_Drawings/ztc_iref/circuit.png} 
 \caption{Zero temperature coefficient current generator.}
 \label{fig:ztc}
 \end{figure}
@@ -484,14 +492,14 @@ Transconductance Matching Coefficient & $A_{KPP}$  &  1.0 \% $\cdot$ $\mu m$ \\
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.3,keepaspectratio=true]{../data/ztc.png} 
+\includegraphics[scale=.4, keepaspectratio=true, angle = 90]{../data/ztc.png} 
 \caption{Zero temperature coefficient current temperature dependence.}
 \label{fig:ztc-temp}
 \end{figure}
 
 \subsection{Lockout DAC}
-\par It is desirable to prevent the one-shot circuit in the signal channels from firing for a set amount of time after it has already fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is proportional to the voltage at the output of a 6-bit digital to analog converter (DAC). 
-\par The DAC itself is implemented as a current scaling DAC using an R2R ladder topology \cite{BAKER} that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities.
+\par It is desirable to prevent the one-shot circuit in the signal channels from re-firing for a given amount of time after they have fired. The length of this lockout time may need to change depending on the nature of the experiment. To do this, a lockout time can be set that is inversely proportional to the current at the output of a 6-bit digital to analog converter (DAC). 
+\par The DAC is implemented as a current scaling DAC using a R2R ladder topology \cite{BAKER} that makes use of MOSFETs as resistors. While MOSFET resistors are generally non-linear and not suitable for use in DAC design, a special technique was used in this design to ensure linearity for current division \cite{DAC}. This technique allowed for the R2R ladder to be made much smaller than using traditional poly resistors, while having very good current division capabilities. The technique relies on the excellent matching characteristics of FETs.
 \par The input to the DAC is a ZTC current coming from the common channel. The R2R ladder equally divides the input current in half and uses this divisor current as the input to the next stage of the DAC, as seen in Figure~\ref{fig:dac-block}. The other half of the current is mirrored using a cascode current mirror to create part of the output current of the DAC (Figure~\ref{fig:dac}). The use of a cascode current mirror gives an extremely high output impedance of 
 \begin{equation}
 Z_{o} = r_{ds7}\cdot g_{m7} \cdot r_{ds6}
@@ -505,7 +513,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \label{fig:dac-block}
 \end{figure}
 
-\par The NFET \emph{M8} in Figure~\ref{fig:dac} acts as a switch to only allow current to flow when the control bit, \emph{D$<i>$}, is a logic 1. The currents are summed up and mirrored with another cascode current mirror in a final output stage of the DAC (Figure~\ref{fig:dac-out}). Either a PFET current mirror or NFET current mirror will be used depending on the sign bit. If the sign bit is high, meaning negative polarity is enabled, then the NFET current mirror will sink current from the DAC output. Conversely, if the sign bit is high, then the PFET current mirror sources current to the output.
+\par The NFET \emph{M8} in Figure~\ref{fig:dac} acts as a switch to only allow current to flow when the control bit, \emph{D$<i>$}, is a logic 1. The currents are summed up and mirrored with another cascode current mirror in a final output stage of the DAC (Figure~\ref{fig:dac-out}). Either a PFET current mirror or NFET current mirror will be used depending on the sign bit. If the sign bit is high, denoting negative polarity is enabled, then the NFET current mirror will sink current from the DAC output. Conversely, if the sign bit is high, then the PFET current mirror sources current to the output.
 \par For the lockout voltage, the DAC will only source current to the output where it is passed through a diode connected NFET to create a voltage. The same DAC design is also used for the leading-edge discriminator threshold, and must be bipolar in that design. 
 
 \begin{figure}[htbp!]
@@ -517,7 +525,7 @@ A terminator circuit is used to ensure the current splits in half for the last s
 
 \begin{table}[htbp!]
  \centering
- \includegraphics[scale=.4,keepaspectratio=true]{./ch3_figures/dac_bit_sizes.png}
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/dac_bit_sizes.png}
  \caption{Device sizes for single stage of current scaling DAC}
  \label{tab:dac-bit-sizes}
 \end{table}
@@ -531,14 +539,14 @@ A terminator circuit is used to ensure the current splits in half for the last s
 
 \begin{table}[htbp!]
  \centering
- \includegraphics[scale=.47,keepaspectratio=true]{./ch3_figures/dac_out_sizes.png}
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/dac_out_sizes.png}
  \caption{Current scaling DAC output device sizes}
  \label{tab:dac-out-sizes}
 \end{table}
 
 \subsection{Multiplicity output buffer}
-\par One of the outputs of the CFD16C is an analog voltage that is proportional to the number of channels that have fired. To create this output each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this, a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m M_{2}}}$. 
-\par The source follower circuit, shown in Figure~\ref{fig:mult}, is biased with a 1 mA current using resistor R1. The signal channel multiplicity currents are summed up using R2 creating an output voltage on the source of M3. This output voltage is 1.15 V when no channels have fired and 2.7 V when all sixteen channels have fired. 
+\par One of the outputs of the CFD16C chip is an analog voltage that is proportional to the number of channels that have fired. To create this output, each of the signal channels outputs a copy of the PTAT current but only when the channel has fired. All of these PTAT currents are summed up using a resistor to create a voltage. However, it is necessary to buffer this output voltage before sending it off chip. For this, a source follower output buffer is used to present a high input impedance, but low output impedance of $\frac{1}{g_{m2}}$ (here about 230 $\Omega$). 
+\par The source follower circuit, shown in Figure~\ref{fig:mult}, is biased with a 1 mA current using resistor R1. The signal channel multiplicity currents are summed up using R2 creating an output voltage on the source of M3. This output voltage is 1.15 V when no channels have fired and 2.7 V when all sixteen channels have fired. The circuit can accommodate load capacitance up to approximately 30 pF with a settling time of less than 50 ns.  The capacitor C1 provides compensation and ensures that the circuit has real poles so that the step response displays little or no ringing.
 
 \begin{figure}[htbp!]
 \centering
@@ -560,19 +568,19 @@ A terminator circuit is used to ensure the current splits in half for the last s
 \par The CFD16C is made up of sixteen signal channels capable of producing a precise output pulse. Each of the signal channels is identical but contain configurable analog blocks that can be changed on a per channel basis. The signal channel consists of a Nowlin circuit, leading-edge detector circuit, zero-crossing detector circuit, a one-shot circuit, and an output generation circuit. 
 
 \subsection{Programmable Nowlin circuit}
-\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 192 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a ``coarse" and ``fine" grain adjustment of the Nowlin circuit was used. To do this, two modes are provided for the Nowlin Circuit: a ``long" mode (coarse) and ``short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the proposed IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
-\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the ``short" mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinlong}. Table~\ref{tab:pcap} shows all possible choices for the risetime constant.
+\par In order to meet our walk and jitter specifications over such a large range of rise times (2 nsec to 192 nsec), the proposed Nowlin circuit must be highly programmable. To accomplish this, a ``coarse" and ``fine" grain adjustment of the Nowlin circuit was used. To do this, two modes are provided for the Nowlin circuit: a ``long" mode (coarse) and ``short" mode (fine). In the ”short” mode the circuit must handle rise time constants in the range from 1 nsec to 16 nsec (in 1 nsec increments) while in ”long” mode the  IC will accommodate risetimes from 12 nsec to 192 nsec (in 12 nsec increments).
+\par The fine adjustment is accomplished through the use of a programmable capacitor array. In other words, 10 - 90 \% ristimes in the range of 2 nsec to 420 nsec will be supported by the IC. A 4-bit digital code allows the user to select one of 16 capacitor values from 0.5 pF to 8 pF (in 0.5 pF increments), thereby providing the ”fine” adjustment. The circuit for the ``short" mode is presented in Figure~\ref{fig:Nowlinshort} while the circuit for the ”long” mode is given in Figure~\ref{fig:Nowlinlong}. 
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.27,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_short.png} 
+\includegraphics[scale=.30,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_short.png} 
 \caption{Nowlin circuit for short mode}
 \label{fig:Nowlinshort}
 \end{figure}
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[scale=.27,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_long.png} 
+\includegraphics[scale=.30,keepaspectratio=true]{../LTspice_Drawings/nowlin/nowlin_long.png} 
 \caption{Nowlin circuit for long mode}
 \label{fig:Nowlinlong}
 \end{figure}
@@ -622,7 +630,7 @@ where D is the decimal value of the 4-bit programmable capacitor bus.
  \label{tab:pcap}
 \end{table}
 
-\subsection{Dynamic Offset Cancellation Loop}
+\subsection{Dynamic offset cancellation loop}
 \par For both the zero-cross discriminator and leading-edge discriminator to work properly DC offset voltages need to be canceled out before an input pulse arrives. This is achieved by placing a very slow amplifier in the feedback path.  For the purposes of this amplifier we will model the forward path using a single pole model.
 \begin{equation}
 A(s) = \frac{K_1}{1 + \frac{s}{\omega_1}}
@@ -643,8 +651,8 @@ In the given application, we will choose $\omega_2 \gg \omega_1$.  Under this as
 \begin{equation}
 \omega_L \approx K \cdot \omega_2 \text{ and } \omega_H \approx  \omega_1
 \end{equation}
-One observes that since K is large, the value of $\omega_2$ must be at an extremely low frequency if $f_L$ is to be less than 10 $kHz$.
-\par The key component of the DC offset cancellation is the slow amplifier in the feedback path. Since the amplifier only needs to drive a resistive load, a Symmetric Miller OTA (Operational Transconductance Amplifier) was utilized.  The circuit is given in Figure~\ref{fig:slowota}.
+One observes that since K is large, the value of $\omega_2$ must be at an extremely low frequency if $f_L$ is to be less than 10 $kHz$.  The frequency $\omega_2$ is set by the time constant formed by the output resistance of the amplifier in the feedback path and a double-poly capacitor placed on the output of the amplifier.  The value of the capacitor is 10 pF in the zero-cross circuit but 2 pF in the leading-edge circuit.
+\par The key component of the DC offset cancellation is the slow amplifier in the feedback path. Since the amplifier only needs to drive a capacitive load, a Symmetric Miller OTA (Operational Transconductance Amplifier) was utilized.  The circuit is given in Figure~\ref{fig:slowota}.  The circuit makes use of source degeneration (resistive PFETs $M_{11}$ and $M_{12}$) to reduce the transconductance of the OTA.  The transconductance is further reduced by reducing the bias currents flowing through the input devices $M_1$ and $M_2$.  Bias current is diverted to ground using PFETs $M_5$ and $M_6$. The gain of the circuit is quite low (around 30 dB). The design is not fully complete at the present time so device sizes for this OTA will not be given. 
 
 \begin{figure}[htbp!]
 	\centering
@@ -666,13 +674,6 @@ Gain = G^N = 4.5^5 \approx \text{ 2000 or 66 dB}.
 \par Thus, the highest rate of change at the output of the pre-amplifier is approximately 2000 times larger than the input worst case rate of 1.8 $\frac{V}{\mu s}$.  Hence, the slew rate of the differential amplifier must be at least 3.6 $\frac{V}{nsec}$ if the pre-amplifier is to be linear for signals near the zero-crossing point. In other words, CFD walk performance will be limited by how large a slew rate for the differential amplifier can be achieved. Increasing the effective voltage of the input devices maximizes slew rate but how large of an effective voltage that can be used is ultimately limited by the supply voltage.
 \par The heart of the zero cross discriminator is a wide-bandwidth low-gain differential amplifier. The amplifier design used is shown in Figure~\ref{fig:zcdiffamp}. The device sizes and bias currents are given in Table~\ref{tab:zcdiffamp}. The value \emph{ng} represents the number of fingers (i.e. gates) to use in the layout.
 
-\begin{table}[htbp!]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/zc_sizes.png}
- \caption{Device Sizes for Zero-Cross Detector Differential Amplifier}
- \label{tab:zcdiffamp}
-\end{table}
-
 \begin{figure}[htbp!]
 	\centering
  	\includegraphics[scale=0.5,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/zc_dm_amp.pdf}
@@ -680,7 +681,14 @@ Gain = G^N = 4.5^5 \approx \text{ 2000 or 66 dB}.
  	\label{fig:zcdiffamp}
 \end{figure}
 
-The value of the resistors, $R_1$ and $R_2$, is 17 k$\Omega$ and the pair of matched resistors are implemented using a high resistance poly 2 layer. Transistor $M_3$ was added so that the output common-voltage could be set to approximately $\frac{V_{DD}}{2}$). Note, the current flowing through transistor $M_3$ is the same as the current, $I_B$, flowing through transistor $M_4$. Hence the drain of $M_3$ is a virtual ground in much the same main that the drain of $M_4$ is a virtual ground. Hence,the addition of $M_3$ has no impact on the speed of the amplifier. The low-frequency gain of stage is
+\begin{table}[htbp!]
+ \centering
+ \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/zc_sizes.png}
+ \caption{Device Sizes for Zero-Cross Detector Differential Amplifier}
+ \label{tab:zcdiffamp}
+\end{table}
+
+The value of the resistors, $R_1$ and $R_2$, is 17 k$\Omega$ and the pair of matched resistors are implemented using a high resistance poly 2 layer. Transistor $M_3$ was added so that the output common-voltage could be set to approximately $\frac{V_{DD}}{2}$). Note, the current flowing through transistor $M_3$ is the same as the current, $I_B$, flowing through transistor $M_4$. Hence the drain of $M_3$ is a virtual ground in much the same way that the drain of $M_4$ is a virtual ground. Hence,the addition of $M_3$ has no impact on the speed of the amplifier. The low-frequency gain of stage is
 \begin{equation}
 A_0 = g_{m1} \cdot R \approx 4.6
 \end{equation}
@@ -710,7 +718,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \par The performance is identical for both positive and negative polarities. This is because for the negative polarity, transmission gates are used to flip the inputs to the comparator. This makes negative polarity pulses functionally identical to positive polarity pulses as seen from the input of the comparator, simplifying the design.
 
 \subsection{Leading-edge discriminator}
-\par The leading edge circuit is very similar to the zero cross circuit. The differential output voltage from the leading-edge prea-mplifier must be converted to a single ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
+\par The leading-edge circuit is very similar to the zero-cross circuit. The differential output voltage from the leading-edge pre-amplifier must be converted to a single-ended current. This is done using the linear transconductor shown in Figure~\ref{FIG:LE_GM}.  The transconductance of the stage is $\frac{1}{R}$ where $R$ is 17 k$\Omega$.
 
 \begin{figure}[htbp!]
 	\centering
@@ -743,7 +751,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \end{table}
 
 \subsection{Output one-shot with lockout features}
-\par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit is a circuit that creates a fixed width output pulse in response to a narrow input pulse. The one-shot circuit in the signal channels is what produces the output timing pulse used to start the TVCs on the PSD8C. The one-shot circuit design is shown in Figure~\ref{fig:oneshot-circuit}.
+\par The output timing pulse for each of the channels is generated from a one-shot circuit with lockout capabilities. A one-shot circuit is a circuit that creates a fixed width output pulse in response to a narrow input pulse. The one-shot circuit in the signal channels is what produces the output timing pulses used to start the gated integrators and the TVCs on the PSD8C chip. Recall that the gating of the integrators is relative to the rising edge of the one-shot output while the TVC is started by the trailing edge of the one-shot output. Thus, both edges of these one-shot output pulses must exhibit low timing jitter. The one-shot circuit design is shown in Figure~\ref{fig:oneshot-circuit}.
 
 \begin{figure}[htbp!]
 \centering
@@ -752,7 +760,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \label{fig:oneshot-circuit}
 \end{figure}
 
-\par The one-shot circuit works but utilizing a D-type flip flop with an asynchronous clear input. When the CFD circuit (i.e. Leading-edge and Zero-cross discriminators) produces an output, the pulse width can be variable depending on the conditions in the experiment. Because of this a narrow pulse generator is used to produce a fixed 5 nsec wide pulse in response to any width CFD output. This narrow pulse is used as a clock signal for this D-flip flop, provided lockout is disabled or the circuit is not in a lockout state. Since the input to the flip flop is tied to \emph{AVDD} (logic high) the output will transition to a logic high state in response to the CFD circuit output. This causes a switch to close allowing a current source to charge a capacitor at the input of a comparator. Charging this capacitor produces a ramp voltage on the non-inverting input of the comparator, as seen in Figure~\ref{fig:ramp}.
+\par The one-shot circuit works by utilizing a D-type flip flop with an asynchronous clear input. When the CFD circuit (i.e. Leading-edge and Zero-cross discriminators) produces an output, the pulse width can be variable depending on the conditions in the experiment. Because of this a narrow pulse generator is used to produce a fixed 5 nsec wide pulse in response to any width CFD output. This narrow pulse is used as a clock signal for this D-flip flop, provided lockout is disabled or the circuit is not in a lockout state. Since the input to the flip flop is tied to \emph{AVDD} (logic high) the output will transition to a logic high state in response to the CFD circuit output. This causes a switch to close allowing a current source to charge a capacitor at the input of a comparator. Charging this capacitor produces a ramp voltage on the non-inverting input of the comparator, as seen in Figure~\ref{fig:ramp}.
 
 \begin{figure}[htbp!]
 \centering
@@ -761,12 +769,13 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \label{fig:ramp}
 \end{figure}
 
-\par The inverting input to the comparator is connected to a low pass filtered bandgap voltage. Thus, when the ramp input reaches 1.2 V the comparator outputs a logic high. The comparator output triggers the \emph{CLR} input on the D-flip flop to go low, forcing the output of the flip flop into a logic low state. This causes the switch controlling the current source to open and the switch in parallel with the capacitor to close, shorting the capacitor out and discharging it. The \emph{CLR} input on the flip flop can also be triggered by a master reset provided by the \emph{RST\_L} pin on the CFD16C. 
+\par The inverting input to the comparator is connected to a low pass filtered bandgap voltage. Thus, when the ramp input reaches 1.2 V the comparator outputs a logic high. The comparator output triggers the \emph{CLR} input on the D-flip flop to go low, forcing the output of the flip flop into a logic low state. This causes the switch controlling the current source to open and the switch in parallel with the capacitor to close, shorting the capacitor out and discharging it. The \emph{CLR} input on the flip flop can also be triggered by a master reset provided by the \emph{RST\_L} pin on the CFD16C.  By changing the value of the programmable capacitor the charge time changes, effectively changing how long the D-flip flop will be in the logic high state (i.e.. it sets the width of the timing pulse). 
 
-\par By changing the value of the programmable capacitor the charge time changes, effectively changing how long the D-flip flop will be in the logic high state (i.e.. it sets the width of the timing pulse). The lockout one-shot circuit works on a similar principle but has a non-programmable capacitor (250 fF) with a programmable charge current. Changing the charge current allows the capacitor to charge faster or slower, changing the lockout time. Two lockout modes are also available by writing to a mode bit as seen in Table~\ref{tab:modes}. When Lockout Mode is a logic high, shorter $\approx$110 nsec time incremented are provided for a total lockout time of 3.4 $\mu$sec. When the Lockout Mode is a logic low, a long mode is used providing $\approx$565 nsec increments for a total lockout time of 16.6 $\mu$sec. The lockout one-shot provides an active low output as opposed to the active high output of the timing pulse one-shot.
+\par The lockout one-shot circuit works on a similar principle but has a non-programmable capacitor (250 fF) with a programmable charge current. Changing the charge current allows the capacitor to charge faster or slower, changing the lockout time. Two lockout modes are also available by writing to a mode bit as seen in Table~\ref{tab:modes}. When Lockout Mode is a logic high, shorter $\approx$110 nsec time steps are provided for a total lockout time of 3.4 $\mu$sec. When the Lockout Mode is a logic low, a long mode is used providing $\approx$565 nsec time steps for a total lockout time of 16.6 $\mu$sec. The lockout one-shot provides an active low output as opposed to the active high output of the timing pulse one-shot.
 
 \subsection{Final output generation}
-\par All of the signal channel output are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
+\par All of the signal channel outputs are generated in a final output generation stage. In this stage the timing pulse, multiplicity current, global OR, and test point outputs are produced. While the timing pulse is generated in the previous stage by the one-shot circuit, it is necessary to further qualify this output before sending it off chip. Each signal channel can be individually enabled or disabled using a configuration bit, or the whole CFD16C chip can be disabled using a global enable (fast) input pin. If the global enable signal or the channel enable bit are not asserted then the timing pulse from the one shot will not be present on the output pin and will not trigger the global OR output. 
+
 \par A number of test point nodes from within the channel can be selected to be routed to a pin on the chip package. These available test point nodes are detailed in Table~\ref{tab:test-point}. A multiplexer at the end of each channel controls which test point is used. To prevent all sixteen channels from trying to drive the test point pin at once, a tri-state buffer with enable is used. This enable signal will only be active for the channel whose address is currently selected on the \emph{ADDR} bus, and all other channels will have their test point outputs put into a high impedance state.  
 
 \begin{table}[ht]
@@ -777,6 +786,7 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \end{table}
 
 \par The multiplicity current is produced in response to the timing pulse output firing. Once the timing pulse has fired and been qualified, a PFET switch is turned on and allows a copy of the PTAT current to be sourced to the multiplicity buffer in the common channel. All of the channel multiplicity current output are sourced to the same node so that the voltage across the resistor in the multiplicity buffer will be determined by the sum of all of the currents from the fired channels. 
+
 \par The global OR signal is produced by the timing pulse as well. This output is generated using a pseudo-NMOS NOR gate. As shown in Figure~\ref{fig:pseudo-nmos}, in a pseudo-NMOS NOR gate a PFET acts as a pullup for parallel connected NFETs \cite{WESTE}. Thus if any one NFET is turned on then the output node will be pulled to \emph{AVSS}. Each channel contains one of these NFETs with the PFET and a CMOS inverter being in the common channel. This allows for a very fast active high logic OR of all of the channels with reduced complexity since the NOR gate is distributed across all channels (reducing the amount of interconnect needed).
 
 \begin{figure}[htbp!]
@@ -785,13 +795,6 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
  \caption{Fast pseudo-NMOS NOR}
  \label{fig:pseudo-nmos}
 \end{figure}
-
-\begin{table}[htbp!]
- \centering
- \includegraphics[scale=.35,keepaspectratio=true]{./ch3_figures/nor_sizes.png}
- \caption{Pseudo-NMOS NOR gate device sizes}
- \label{tab:nor-sizes}
-\end{table}
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 %  CHAPTER 4
 % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -800,14 +803,17 @@ Device sizes and bias currents are given in Table~\ref{tab:zccomp}.
 \chapter{SIMULATION RESULTS}
 
 \section{Verification of Circuits in Common Channel}
-\par The common channel contains configuration registers and biasing circuitry. In order to test the configuration, a System Verilog test fixture was used to load each configuration register with data. Setting the configuration registers agreed with the expected behaviour from each of the bits outlined in Table~\ref{tab:modes}. The biasing circuitry was verified by observing the outuput of the circuits being biased in the signal channels. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
+
+\par The common channel contains configuration registers and biasing circuitry. In order to test the configuration, a System Verilog test fixture was used to load each configuration register with data. Setting the configuration registers agreed with the expected behavior from each of the bits outlined in Table~\ref{tab:modes}. The biasing circuitry was verified by observing the output of the circuits being biased in the signal channels. The channel circuitry worked as expected as well confirming that the biasing circuitry was functioning within specification.
 
 \section{Walk Characteristics of CFD Circuit}
+
 \par Time walk is is used to describe systematic variation in the rising edge of the discriminator output signal as a function of pulse height. If we assume a single-pole response for the analog comparator with a gain-bandwidth-product of $GBW_c$, it is not difficult to show that the variation in propagation delay, $\Delta t_{pd}$, due to input pulse amplitude is 
 \begin{equation}
 \Delta t_{pd} \approx  \sqrt{\frac{V_{DD}}{2 \cdot \pi \cdot GBW_c \cdot G^N \cdot SR_{min}}}
 \end{equation}
 where $V_{DD}$ is the supply voltage, G is the gain of a single differential amplifier stage, N is the number of stages, and $SR_{min}$ is  the SR with a pulse amplitude of 15 mV.   Table~\ref{WalkTable} summarizes the expected walk performance (over the dynamic range of 15 mV - 1.5 V) for three representative risetime constants.
+
 \par In reality, the time walk may increase at low amplitudes because of residual offset.  Ultimately, how well the discriminator performs at low amplitude will depend on the effectiveness of the dynamic offset cancellation loop. It can be shown that residual offset alters the time at which one crosses zero as given by
 \begin{equation}
 \Delta t_{cross} \approx \tau_r \cdot \left[ \frac{V_{os}}{(1-k) \cdot A} \right]
@@ -821,18 +827,20 @@ where $V_{os}$ is the residual input referred offset and A is the amplitude of t
 \label{WalkTable}
 \end{table}
 
-\par The values given in Table~\ref{WalkTable} assume no residual offset.  For the case of $\tau_r$ = 3 nsec, A = 15 mV, and a residual offset of just 200 $\mu V$, the effect of the residual offset is to add an additional 130 psec of walk resulting in a value of 430 psec. The typical simulated walk performance for a signal with a rise time constant of 3 nsec is presented in Figure~\ref{FIG:TYPICAL_WALK}.  Two hundred Monte Carlo runs were performed and the results of this simulation is presented in Figure~\ref{FIG:SUMMARY_WALK}. As can be seen from Figure~\ref{FIG:SUMMARY_WALK}, the walk across all process and mismatch is centered between 400 psec and 600 psec for a three sigma design. The expected walk performance is thus within the 500 psec or less design specification.
+\par The values given in Table~\ref{WalkTable} assume no residual offset.  For the case of $\tau_r$ = 3 nsec, A = 15 mV, and a residual offset of just 200 $\mu V$, the effect of the residual offset is to add an additional 130 psec of walk resulting in a value of 430 psec. The typical simulated walk performance for a signal with a rise time constant of 3 nsec is presented in Figure~\ref{FIG:TYPICAL_WALK}.  Two hundred Monte Carlo runs were performed and the results of this simulation is presented in Figure~\ref{FIG:SUMMARY_WALK}. 
+
+\par As can be seen from Figure~\ref{FIG:SUMMARY_WALK}, the walk across all process and mismatch is centered between 400 psec and 600 psec for a three sigma design. The expected walk performance is thus within the 500 psec or less design specification. Moreover, given the monotonic and systematic behavior of the response, calibration techniques can be used to compensate for the effects of walk. 
 
 \begin{figure}[htbp!]
 	\centering
- 	\includegraphics[scale=0.7,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/typical_walk.pdf} 	
+ 	\includegraphics[scale=0.8,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/typical_walk.pdf} 	
  	\caption{Typical walk performance with a a signal whose rise time constant is 3 nsec.}
  	\label{FIG:TYPICAL_WALK}
 \end{figure}
 
 \begin{figure}[htbp!]
 	\centering
- 	\includegraphics[scale=0.7,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/summary_walk.pdf} 	
+ 	\includegraphics[scale=0.8,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/summary_walk.pdf} 	
  	\caption{Summary walk performance with a signal whose rise time constant is 3 nsec.}
  	\label{FIG:SUMMARY_WALK}
 \end{figure}
@@ -843,11 +851,11 @@ where $V_{os}$ is the residual input referred offset and A is the amplitude of t
 \sigma_t = \frac{\sigma_v}{SR}
 \end{equation}
 
-The theoretically predicted jitter performance plot for the short range mode is given in Figure~\ref{FIG:JITTER_FAST} and the expected performance in the long range mode is provided in Figure~\ref{FIG:JITTER_SLOW}.
+The theoretically predicted jitter performance plot for the short range mode is given in Figure~\ref{FIG:JITTER_FAST} and the expected performance in the long range mode is provided in Figure~\ref{FIG:JITTER_SLOW}.  One observes that for the short range mode, the jitter (as a percentage of the 10-90 risetime of the input signal is less than about 3 percent.  For the long range mode this value only increases to about 5 percent.  These values are generally considered to be "excelllent".
 
 \begin{figure}[htbp!]
 	\centering
- 	\includegraphics[scale=0.7,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf} 	
+ 	\includegraphics[scale=0.8,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/jitter_fast_mode.pdf} 	
  	\caption{Jitter performance for short time constant mode.}
  	\label{FIG:JITTER_FAST}
  	
@@ -855,19 +863,19 @@ The theoretically predicted jitter performance plot for the short range mode is 
 
 \begin{figure}[htbp!]
 	\centering
- 	\includegraphics[scale=0.7,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf}
+ 	\includegraphics[scale=0.8,keepaspectratio=true]{../Design_Reports/CFD_circuit_report/images/jitter_slow_mode.pdf}
  	\caption{Jitter performance for short time constant mode.}
  	\label{FIG:JITTER_SLOW}
 \end{figure}
 
 \section{Verification of One-Shot}
 
-\par The output one-shot provides two important features to the CFD16C: generation of the timing pulse that starts the TVCs on PSD8C, and a lockout functionality to prevent misfirings. For the lockout feature a wide spread of lockout times was desired, with a logarithmic spread. Figure~\ref{fig:lockout-spread} shows the spread of the lockout times available in both the short and long modes. As can be seen from the plots the spread is nearly logarithmic, with the lockout time being given by 
+\par The output of the one-shot provides two important features to the CFD16C: generation of the timing pulse that starts the TVCs on PSD8C, and a lockout functionality to prevent mis-firings. For the lockout feature, a wide distribution of programmable lockout times was desired (\emph{i.e.} a a logarithmic distribution). Figure~\ref{fig:lockout-spread} shows the distribution of the lockout times available in both the short and long modes. As can be seen from the plots the distribution is nearly logarithmic, with the lockout time being given by 
 \begin{equation}
 T_{lockout} = \frac{K}{D\cdot \Delta I}
 \label{eq:lockout}
 \end{equation}
-where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot), D is the digital code word given to the lockout DAC, and $\Delta$I is the change in current from one step of the lockout DAC. The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 38 nA in long mode. 
+where K is given by the the expression $K = C\cdot V_{C}$ (C is the value of the capacitor in the lockout one-shot \emph{i.e.} 0.25 pF), D is the digital code word given to the lockout DAC, and $\Delta$I is the step-size of the lockout DAC. $V_{C}$ is peak amplitude of the voltage ramp generated within the lockout circuit.  The $\Delta$I term will change depending on the lockout mode, being 380 nA in short mode and 38 nA in long mode. 
 
 \begin{figure}[htbp!]
  \centering
@@ -876,7 +884,10 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
  \label{fig:lockout-spread}
 \end{figure}
 
-\par The primary one-shot that creates the output timing pulse needs very low jitter and low variance from process and mismatch. The jitter proved to be accurately modeled by the formula $\sigma_{j} = \frac{\sigma_{V}}{V_{BG}}\cdot T_{oneshot}$, where $\sigma_{V}$ is the noise voltage in the current source (PFET current mirror) charging the one-shot capacitor in Figure~\ref{fig:oneshot-circuit} and V$_{BG}$ is the bandgap voltage. For process variance and mismatch, 20 Monte Carlo simulations were run and showed acceptable variance in the trailing edge of the one-shot timing pulse (Table~\ref{tab:one-shot-mc}). This result is within two sigma, and it is expected that across all process and mismatch a variance of no more than $\pm$5 nsec in the trailing edge of the one-shot pulse is expected.
+
+\par For process variance and mismatch, 20 Monte Carlo simulations were run and showed acceptable variance in the trailing edge of the one-shot timing pulse (Table~\ref{tab:one-shot-mc}). This result is within two sigma, and it is expected that across all process and mismatch a variance of no more than $\pm$5 nsec in the trailing edge of the one-shot pulse is expected.
+
+\par The primary one-shot that creates the output timing pulse needs very low jitter and low variance from process and mismatch. The jitter proved to be accurately modeled by the formula $\sigma_{j} = \frac{\sigma_{V}}{V_{BG}}\cdot T_{oneshot}$, where $\sigma_{V}$ is the noise voltage in the current source (PFET current mirror) charging the one-shot capacitor in Figure~\ref{fig:oneshot-circuit} and V$_{BG}$ is the bandgap voltage.  We estimate the jitter to be approximatlely 8 ps for the 50 ns wide output pulse while the 500 ns wide output pulse will display 25 ps of jitter.  The noise associated with the current source is not 10 time worse (but rather just $\sqrt{10}$ time worse) as one might expect because a larger capacitor, C, was used (5 pF versus 0.5 pF for the 50 ns wide pulse). The use of the larger capacitor value reduces $\sigma_V$.
 
 \begin{table}[htbp!]
  \centering
@@ -886,9 +897,9 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \end{table}
 
 \section{Performance Characterization of DAC}
-\par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and derivative non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). Derivative non-linearity describes how much the output changes for each increment of the digital code word for the DAC \cite{ALLEN}. In an ideal DAC this change would be exactly the same for each increment but in reality there are minor differences between each increment. The accumulation of all of these DNL errors over the whole range of the DAC is the INL error \cite{ALLEN}. 
+\par The 6-bit bipolar DAC needed to have excellent integral non-linearity error (INL) and differential non-linearity error (DNL) of less than 0.5 least significant bits (LSBs). Differential non-linearity describes how much the output changes for each increment of the digital code word for the DAC \cite{ALLEN}. In an ideal DAC this change would be exactly the same for each increment (1 LSB) but in reality there are minor differences between each increment. The accumulation of all of these DNL errors over the whole range of the DAC is the INL error \cite{ALLEN}. 
 
-\par Figures~\ref{fig:dnl}--\ref{fig:inl} show the results of 200 Monte Carlo simulations. With each separate Monte Carlo simulation, the values of the process parameters such offset voltages, threshold voltages, etc. will be assigned differently allowing for process variation from chip to chip to be examined. As can be seen the INL and DNL errors are almost all below 0.5 LSBs with only a few outliers. It can also be seen that the worst case INL and DNL occurred on simulation 150.
+\par Figures~\ref{fig:dnl}--\ref{fig:inl} show the results of 200 Monte Carlo simulations. With each separate Monte Carlo simulation, the values of the process parameters such as offset voltages, threshold voltages, etc. will be assigned differently allowing for process variation from chip to chip to be examined. As can be seen, the INL and DNL errors are almost all below 0.5 LSBs with only a few exceptions. It can also be seen that the worst case INL and DNL performance occurred during simulation number 150.
 
 \begin{figure}[htbp!]
  \centering
@@ -920,13 +931,13 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \end{figure} 
 
 \section{Chip-Level Verification}
-\par A large System Verilog test bench was used to test the performance of the chip as a whole. Every channel was hit with a pulse of increasing amplitudes between 15 mV and 1.5 V. Registers were configured between pulses to adjust circuit parameters and verify correctness. Full chip simulations have already been completed to test the functionality of the following:
+\par A large System Verilog testbench was used to test the performance of the chip as a whole. Every channel was hit with a pulse of increasing amplitudes between 15 mV and 1.5 V. Registers were configured between pulses to adjust circuit parameters and verify correctness. Full chip simulations have already been completed to test the functionality of the following:
 
 \begin{itemize}
 \item Walk characteristics of the output timing pulse
 \item Both Nowlin time constant modes
 \item Both lockout time modes
-\item Multiple input pulse amplitudes and risetime constants, and both polarities
+\item Multiple input pulse amplitudes and risetime constants (both polarities)
 \item Multiple lockout times (matching the predicted values from Eq~\ref{eq:lockout})
 \item Global mode bit to load all registers of a given mode
 \item Global enable control to disable all 16 channels
@@ -935,12 +946,12 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \item Individual channel enable bits to disable specific channels
 \end{itemize}
 
-\par The walk times were more thoroughly tested using a seperate simulation of the CFD and oneshot circuits however since every channel is hit with a different amplitude pulse, the walk comes out of the full chip simulations by default. Walk is easily visualized in Figure~\ref{fig:walk-plot}, which shows the rising edge of an output timing pulse from each channel after hitting each channel with an input pulse of increasing amplitudes (15 mV on Channel 0, 1.5 V on Channel 15). 
+\par The walk times were more thoroughly tested using a separate simulation of the CFD and oneshot circuits; however, since every channel is hit with a different amplitude pulse, the walk perfromance can be observed in a full chip simulation. Walk is easily visualized in Figure~\ref{fig:walk-plot}, which shows the rising edge of an output timing pulse from each channel after hitting each channel with an input pulse of increasing amplitudes (15 mV on Channel 0, 1.5 V on Channel 15). 
 
 \begin{figure}[htbp!]
  \centering
- \includegraphics[scale=.3]{./ch4_figures/walk_plot.png}
- \caption{16 output timing pulses overlayed to demonstrate walk characteristics}
+ \includegraphics[scale=.42, angle = 90]{./ch4_figures/walk_plot.png}
+ \caption{Sixteen output timing pulses overlayed to demonstrate walk characteristics}
  \label{fig:walk-plot}
 \end{figure} 
 
@@ -948,12 +959,12 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \par To verify that the all of the circuits in the IC were functioning properly, a System Verilog test fixture was created to do the following:
 \begin{itemize}
 \item Pulse power on to simulate the chip turning on from a cold start.
-\item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper clock edge.
+\item Set the \emph{ADDRDAT} bus to the appropriate address/mode and data values on the proper \emph{STB} edge.
 \item Load each configuration register with data to test every possible configuration value.
-\item Hit every channel with a pulse of different amplitude and risetimes to verify channel circuits are working.
+\item Hit every channel with a pulse of different amplitude and risetime to verify channel circuits are working.
 \end{itemize}
 
-\par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a test bench instantiation that is used to output the driver data to a value change dump file (VCD). Once the test bench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A. Figure~\ref{fig:test} details the process of setting up a simulation for the IC.
+\par The test fixture consists of three parts: a tasks file that specifies routines for setting the power, data, and control lines, a driver that specifies which routines to execute and with what parameters at given times, and a testbench instantiation that is used to output the driver data to a value change dump file (VCD). Once the testbench was simulated and a VCD file was generated, a python script was used to convert the VCD data to piecewise-linear (PWL) which could be instantiated as a voltage source using Verilog-A. Figure~\ref{fig:test} details the process of setting up a simulation for the IC.
 
 \begin{figure}[htbp!]
  \centering
@@ -974,7 +985,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
 \item Repeat 3-5 for input pulses with different parameters
 \end{enumerate}
 
-\par Once a driver is prepared, it is instantiated in a test bench fixture. The test bench is used to create a driver object that can be simulated and captures the waveform data in VCD files. A an example VCD file is shown below.
+\par Once a driver is prepared, it is instantiated in a testbench fixture. The testbench is used to create a driver object that can be simulated and captures the waveform data in VCD files. A an example VCD file is shown below.
 \lstset{
          language=Verilog,
          basicstyle=\scriptsize\ttfamily,
@@ -1005,7 +1016,7 @@ where K is determined by $K = C\cdot V_{C}$ (C is capacitor in lockout one-shot)
          showstringspaces=false           
  }
  \lstinputlisting{./code/example.vcd}
-The VCD file header first gives a date and version number for the software that created the file. The file then specifies the timescale being used. In the example above the timescale of picoseconds (ps) is used. Next, the variables from the test bench fixture are given symbols to be referenced by in the \emph{\$dumpvars} section. In the example above there are three signals: an analog, or \emph{real}, signal called SIG\_A, a digital wire called SIG\_B, and a digital bus called SIG\_C. The symbols given to these are !, \$, and \% respectively. The \emph{\$dumpvars} section contains information about how the variables change over time. Timestamps are denoted by a number preceded by a \# (e.g. \#6000 above). Between timestamps are the variables that changed at that time and the value that they changed to, with the value given first followed by the symbol and no space seperating. For analog signals the value is preceded with an \textbf{r}. The timestamp at the end of a VCD file represents the end time of a simulation.
+The VCD file header first gives a date and version number for the software that created the file. The file then specifies the timescale being used. In the example above the timescale of picoseconds (ps) is used. Next, the variables from the testbench fixture are given symbols to be referenced by in the \emph{\$dumpvars} section. In the example above there are three signals: an analog, or \emph{real}, signal called SIG\_A, a digital wire called SIG\_B, and a digital bus called SIG\_C. The symbols given to these are !, \$, and \% respectively. The \emph{\$dumpvars} section contains information about how the variables change over time. Timestamps are denoted by a number preceded by a \# (e.g. \#6000 above). Between timestamps are the variables that changed at that time and the value that they changed to, with the value given first followed by the symbol and no space seperating. For analog signals the value is preceded with an \textbf{r}. The timestamp at the end of a VCD file represents the end time of a simulation.
 \par While the VCD file contains all of the information needed to create a voltage source, there is no way to use it directly in the Cadence software tools. The simulation tools used for the design of this IC are, however, able to create voltage sources that are piecewise-linear in nature by providing a PWL file that describes them. For this a python script was used to parse the VCD file and create a PWL file with the same data contents. The script can be modified to change the rise/fall times, logic levels, and scale factors for analog signals. Once these values are set, running the script will create a PWL file for each of the symbols defined in the VCD file. A PWL file is similar to a VCD file but only defines timestamps and values for one signal line instead of many. The standard PWL format specifies the x-axis (time) first, followed by the y-axis value (voltage) for that x-input seperated by a space. An exaple is shown below.
 
 \lstinputlisting{./code/example.pwl}
@@ -1013,7 +1024,7 @@ The VCD file header first gives a date and version number for the software that 
 \par Once the PWL files are generated Verilog-A can be used to create software voltage sources that are useable by the simulator used for testing the IC. The Verilog-A test fixture also creates the exponential pulses from the analog voltages created in the System Verilog driver, and records timing data to a file. 
 
 \subsection{Power dissipation}
-\par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the peak power usage that occurs when 16 input pulses arrive at the same time.
+\par Power usage will vary depending on if the chip is idle or being hit by a pulse. For this reason it is worthwhile to look at both average power and peak power dissipation in the IC. Figure~\ref{fig:avg_pwr} shows a breakdown of the average power usage of the various subcircuits in the IC, while Figure~\ref{fig:peak_pwr} shows the breakdown peak power usage that occurs when 16 input pulses arrive at the same time. The IC has a peak power usage for the core of $\approx$360 mW (very briefly during output generation) and an average power usage of $\approx$220 mW.
 \begin{figure}[htbp!]
  \centering
  \includegraphics[scale=1]{./ch4_figures/average_power.png}
@@ -1029,7 +1040,7 @@ The VCD file header first gives a date and version number for the software that 
 \end{figure} 
 
 \subsection{Chip area usage}
-\par Chip area usage needed to be minimized due to the cost of working in the AMS-AG 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout. The entire chip die uses an area of 1.9 mm x 3.5 mm giving a total area usage of 6.6 mm$^{2}$, only slightly larger than the 6 mm$^{2}$ we were aiming for.
+\par Chip area usage needed to be minimized due to the cost of working in this 0.35 micron NWELL process. Figure~\ref{fig:area} shows how the area was utilized in the IC. Figure~\ref{fig:layout} shows the full IC layout. The entire chip die uses an area of 2.4 mm x 3.5 mm giving a total area usage of 8.4 mm$^{2}$, only slightly larger than the 8 mm$^{2}$ target.
 
 \begin{figure}[htbp!]
  \centering
@@ -1052,20 +1063,22 @@ The VCD file header first gives a date and version number for the software that 
 \chapter{SUMMARY, CONCLUSIONS, AND FUTURE WORK}
 
 \section{Summary}
-\par The CFD16C was designed as a companion chip for the pulse shape discriminating IC called PSD8C. CFD16C will allow new experiments to be done with PSD8C that were previously not possible. The CFD16C provides a precise timing pulse to start time-to-voltage converters on the PSD8C. The chip is highly configurable, allowing the following circuit parameters to be adjusted to an experiments needs:
+\par The CFD16C was designed as a companion chip for the pulse shape discriminating IC called PSD8C. CFD16C will allow new experiments to be done with PSD8C that were previously not possible. The CFD16C provides a precise timing pulse to start time-to-voltage converters (falling edge) and gated integrators (rising edge) on the PSD8C. The chip is highly configurable, allowing the following circuit parameters to be adjusted to an experiments needs:
 
 \begin{itemize}
-\item Timing pulse width control between 50 nsec and 500 nsec
+\item Timing pulse width control with four choices: 50, 100, 200 and 500 nsec
 \item Leading edge threshold controllable via 6-bit bi-polar DAC
 \item Lockout time adjustable between 100 nsec and 16.8 $\mu$sec
 \item Test point output providing one of five selectable digital signals
 \item Controllable Nowlin delay to allow input risetimes between 2 nsec and 192 nsec
-\item On chip signal ground generator trimmable to match supply
+\item On chip signal ground generator trimmable to match supply voltage
 \end{itemize}
 
-\par The CFD16C contains sixteen signal channels allowing one chip to support two PSD8Cs. Each signal channel is comprised of an input Nowlin circuit, leading edge discriminator, zero cross discriminator, and an output one-shot circuit with lockout capabilities. The CFD16C provides a timing pulse output from each of the 16 signal channels, as well as a global logical OR of all channels and an analog multiplicity voltage proportional to the number of channels that have fired. The IC occupies a die area of approximately 1.9 mm x 3.5 mm and will be fabricated in the AMS-AG 0.35 micron NWELL process.
+\par The CFD16C contains sixteen signal channels allowing one chip to support two PSD8Cs. Each signal channel is comprised of an input Nowlin circuit with two modes. A short mode to provide support for input pulse time constants between 2 nsec and 16 nsec (1 nsec steps), and a long mode to cover a range from 12 nsec to 192 nsec (12 nsec steps). Next is a zero cross and leading edge discriminator with DC offset cancellation loops that can support pulse repetition rates of up to 1 kHz. Finally the signal channel has an output one-shot circuit used to create the timing pulse. This one-shot has lockout capabilities with two modes. A short mode provides 31 selectable lockout times from 100 nsec to 1.6 $\mu$sec, and the long mode provides 31 selectable lockout times from 600 nsec to 16 $\mu$sec. Both lockout modes have lockout times that are inversely proportional to the 5-bit digital code word that controls them. 
+\par The CFD16C provides a timing pulse output from each of the 16 signal channels, as well as a global logical OR of all channels and an analog multiplicity voltage proportional to the number of channels that have fired (100 mV per channel). Each signal channel can support input pulse amplitudes between 15 mV and 1.5V (both positive and negative). A single common channel is used to contain bias circuitry and chip configuration registers, using a single 8-bit wide bus for both data and adress. 
+\par Simulated performance indicates that the IC performs as expected. There is low variation (due to process and mismatch) in the falling edge of the timing pulse, being $\approx$10\% for all one-shot pulse width modes. The jitter in the rising edge of the timing pulse is also very good, being around 8 psec for the 50 nsec wide pulse width mode, and 25 psec for the 500 nsec wide pulse width mode. The IC exhibits excellent walk characteristics, having a walk time of only $\approx$430 psec for input rise time constants of 3 nsec (and less than 8\% of the risetime constant for the longest supported rise time constant). There is an average power dissipation of 220 mW and a peak power dissipation of 360 mW for the core of the IC. The IC occupies a die area of approximately 2.4 mm x 3.5 mm and will be fabricated in a 0.35 micron NWELL process.
 \section{Conclusions}
-\par The chip level simulations show that the CFD16C will work very well in new scintillator experiments accompanied with the PSD8C. The design of the IC is complete and layouts will be finished in time for a late 2018 submission.
+\par The chip level simulations show that the CFD16C will work very well in new scintillator experiments accompanied with the PSD8C. The design of the IC is complete and the performance simulations show it will meet or exceed all design specifications. The final layouts will be finished in time for a late 2018 submission.
 
 \section{Future Work}
 \par While the bulk of the design for CFD16C has been completed and the simulated performance looks promising, more robust and detailed simulations still need to be ran before the chip is ready to be sent out for fabrication. Smulations for the following must be completed:
@@ -1073,11 +1086,10 @@ The VCD file header first gives a date and version number for the software that 
 \item Disabling the internal signal ground generator and providing an external signal ground reference
 \item Increasing/decreasing the \emph{AVDD} supply voltage and trimming the internal \emph{AGND} to match
 \item Test each channel with a different leading edge threshold value
-\item Check that all test point nodes can be routed and from each channel
-\item Test \emph{RST\_L} functionality
 \item Chip level simulations including parasitic extraction
 \end{itemize}
 Layout of the CFD circuits (i.e. leading edge and zero cross discriminators) needs to be completed, as well as the top level interconnect routing. It is expected the chip will be sent for fabrication in November 2018. Once the chip has been fabricated a performance analysis on the physical IC will be done and any discrepancies from the simulated performance will be identified. More simulations will then be run to find the cause of any discrepancies. 
+\par Finally, we are looking into adding capabilities of doing pulse shape discrimination using a time over threshold  (TOT) method. With this technique, the PSD8C would not be needed as the 16 leading edge discriminator outputs would be brought out to pins on the chip package. Since we cannot add 16 more pins and still use the same 64 pin package, the 8-bit \emph{ADDRDAT} bus would be converted to a bidirectional bus and a pin would be added to control the direction (input during chip configuration, output during an experiment). Doing this allows only 9 pins to be added (8 for LE outputs, 1 for direction control on the 8-bit bus). This technique would involve setting a very low leading edge threshold and measuring the width of the LE output pulse to determine how long the input pulse was above the threshold. Particles with longer decay times (e.g. neutrons) will how a longer LE pulse width while those with shorter decay times (e.g. gamma particles) will have a shorter pulse width. This was a feature proposed late in the design of the CFD16C and is currently being investigated.
 
 \nocite{*} %incude all refences in bibliography, not just those cited in text
 
